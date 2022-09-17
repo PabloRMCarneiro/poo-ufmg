@@ -100,13 +100,13 @@ Pessoa::Pessoa()
   this->telefone = 0;
 }
 
-Pessoa::Pessoa(string Nome, string Endereco, string Email, string Documento, int Telefone)
+Pessoa::Pessoa(string valNome, string valEndereco, string valEmail, string valDocumento, int valTelefone)
 {
-  this->nome = Nome;
-  this->endereco = Endereco;
-  this->email = Email;
-  this->documento = Documento;
-  this->telefone = Telefone;
+  this->nome = valNome;
+  this->endereco = valEndereco;
+  this->email = valEmail;
+  this->documento = valDocumento;
+  this->telefone = valTelefone;
 }
 
 Pessoa::~Pessoa() {}
@@ -140,42 +140,42 @@ int Pessoa::getTelefone()
 
 // Metodos set:
 
-void Pessoa::setNome(string Nome)
+void Pessoa::setNome(string valNome)
 {
-  this->nome = Nome;
+  this->nome = valNome;
 }
 
-void Pessoa::setEndereco(string Endereco)
+void Pessoa::setEndereco(string valEndereco)
 {
-  this->endereco = Endereco;
+  this->endereco = valEndereco;
 }
 
-void Pessoa::setEmail(string Email)
+void Pessoa::setEmail(string valEmail)
 {
-  this->email = Email;
+  this->email = valEmail;
 }
 
-void Pessoa::setDocumento(string Documento)
+void Pessoa::setDocumento(string valDocumento)
 {
-  this->documento = Documento;
+  this->documento = valDocumento;
 }
 
-void Pessoa::setTelefone(int Telefone)
+void Pessoa::setTelefone(int valTelefone)
 {
-  this->telefone = Telefone;
+  this->telefone = valTelefone;
 }
 
 // Método valida documento (CPF ou CNPJ)
 
-bool Pessoa::validaDocumento(string Documento)
+bool Pessoa::validaDocumento(string valDocumento)
 {
-  if(Documento.length() == 11)
+  if(valDocumento.length() == 11)
   {
-    return validaCPF(Documento);
+    return validaCPF(valDocumento);
   }
-  if(Documento.length() == 14)
+  if(valDocumento.length() == 14)
   {
-    return validaCNPJ(Documento);
+    return validaCNPJ(valDocumento);
   }
   else
     return false;

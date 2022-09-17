@@ -15,7 +15,7 @@ private:
     
 public:
     Pessoa();
-    Pessoa(string Nome, string Endereco, string Email, string Documento, int Telefone);
+    Pessoa(string valNome, string valEndereco, string valEmail, string valDocumento, int valTelefone);
     virtual ~Pessoa();
     
     //Metodos get:
@@ -26,11 +26,11 @@ public:
     int getTelefone();
     
     //Metodos set:
-    void setNome(string Nome);
-    void setEndereco(string Endereco);
-    void setEmail(string Email);
-    void setDocumento(string Documento);
-    void setTelefone(int Telefone);
+    void setNome(string valNome);
+    void setEndereco(string valEndereco);
+    void setEmail(string valEmail);
+    void setDocumento(string valDocumento);
+    void setTelefone(int valTelefone);
 
 
     //Método valida documento (CPF ou CNPJ)
