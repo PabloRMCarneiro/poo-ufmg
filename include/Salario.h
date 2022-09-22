@@ -1,6 +1,6 @@
 #ifndef SALARIO_H_INCLUDED
 #define SALARIO_H_INCLUDED
-#include "../ClasseData/data.h"
+#include "data.h"
 #include <string>
 #include <vector>
 using namespace std;

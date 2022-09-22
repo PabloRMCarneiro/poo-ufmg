@@ -1,9 +1,9 @@
 #ifndef FUNCIONARIO_H_INCLUDED
 #define FUNCIONARIO_H_INCLUDED
-#include "../ClassePessoa/Pessoa.h"
-#include "../ClasseSalario/Salario.h"
-#include "../ClasseDepartamento/Departamento.h"
-#include "../ClasseCargo/Cargo.h"
+#include "Pessoa.h"
+#include "Salario.h"
+#include "Departamento.h"
+#include "Cargo.h"
 #include <string>
 #include <vector>
 
