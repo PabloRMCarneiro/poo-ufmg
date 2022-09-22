@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "*.html": "html",
+    "**/templates/*.html": "django-html",
+    "**/templates/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "string": "cpp",
+    "map": "cpp",
+    "vector": "cpp",
+    "cstddef": "cpp"
+  }
+}
