@@ -1,14 +1,11 @@
-
 #include "../include/data.h"
-=======
-#include "data.h"
 
 /**
  * Data::Data()
  * 
  * This is a constructor for the class Data. It initializes the class variables to default values
  */
- 
+
 Data::Data()
 {
     ano= 1970;
