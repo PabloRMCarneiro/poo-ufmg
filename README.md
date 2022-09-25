@@ -12,6 +12,12 @@ Depois, de o comando "make" para compilar todos os arquivos, como mostrado na im
 
 ![comocompilar](https://user-images.githubusercontent.com/97178655/192149932-4c46a641-ad5d-4d08-b20e-72ca33273801.png)
 
-Agora, de o comando "./main" para executar o arquivo "main" que foi gerado.
+Agora, de o comando "./main" para executar o arquivo "main" que foi gerado. Depois disso, o programa estará rodando :)
 
 ![executaromain](https://user-images.githubusercontent.com/97178655/192150184-d1512160-ec59-4e8b-b791-c01f010752d2.png)
+
+## - No Windows:
+Repita os mesmos passos que estão descritos para o Linux/WSL e não se esqueça de criar a pasta "build" também, caso ainda não possua ela.
+As únicas diferenças para o processo de compilação são: 
+### 1 - ao invés do comando "make", de o comando "mingw32-make"
+### 2 - ao invés do comando "./main", de o comando ".\main"
