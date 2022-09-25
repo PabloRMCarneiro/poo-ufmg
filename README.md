@@ -7,5 +7,7 @@ Clone o repositório no VS Code ou no seu editor de código preferido como na im
 
 ![clonar repositorio](https://user-images.githubusercontent.com/97178655/192149111-17b9a555-15c5-4021-b1d5-503ea1e12ecc.png)
 
-Depois, de o comando "make" para compilar todos os arquivos, e em seguida o comando "./main" para executar o arquivo que foi gerado pela compilação!
-![comocompilar](https://user-images.githubusercontent.com/97178655/192149876-84d20ddc-d872-4597-bb3a-1ddd6755bb51.png)
+Se vc ainda não tiver uma pasta "build" criada junto com as pastas do projeto, crie-a para que a compilação de certo sendo que não é necessário adicionar nenhum arquivo na pasta.
+Depois, de o comando "make" para compilar todos os arquivos, como mostrado na imagem abaixo!
+
+![comocompilar](https://user-images.githubusercontent.com/97178655/192149932-4c46a641-ad5d-4d08-b20e-72ca33273801.png)
