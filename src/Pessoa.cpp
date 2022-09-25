@@ -2,7 +2,13 @@
 #include <string>
 
 using namespace std;
-
+/**
+ * It validates a CPF number.
+ * 
+ * @param Cpf The CPF number to be validated.
+ * 
+ * @return A boolean value.
+ */
 bool validaCPF(string Cpf)
 {   
     if (Cpf == "00000000000" || 
@@ -42,8 +48,13 @@ bool validaCPF(string Cpf)
     else
         return false;
 }
-
-
+/**
+ * It validates a CNPJ number.
+ * 
+ * @param Cnpj The CNPJ number to be validated.
+ * 
+ * @return A boolean value.
+ */
 bool validaCNPJ(string Cnpj)
 {
     if (Cnpj == "00000000000000" || 
@@ -90,7 +101,9 @@ bool validaCNPJ(string Cnpj)
     return true;
     
 }
-
+/**
+ * Pessoa::Pessoa()
+ */
 Pessoa::Pessoa()
 {
   this->nome = "";
@@ -99,7 +112,15 @@ Pessoa::Pessoa()
   this->documento = "";
   this->telefone = 0;
 }
-
+/**
+ * The constructor for the Pessoa class
+ * 
+ * @param valNome
+ * @param valEndereco Rua dos Bobos, 0
+ * @param valEmail
+ * @param valDocumento CPF
+ * @param valTelefone
+ */
 Pessoa::Pessoa(string valNome, string valEndereco, string valEmail, string valDocumento, int valTelefone)
 {
   this->nome = valNome;
@@ -108,65 +129,103 @@ Pessoa::Pessoa(string valNome, string valEndereco, string valEmail, string valDo
   this->documento = valDocumento;
   this->telefone = valTelefone;
 }
+/**
+ * The destructor is called when the object is destroyed
+ */
+Pessoa::~Pessoa()
+{
 
-Pessoa::~Pessoa() {}
-
-// Metodos get:
-
+}
+/**
+ * It returns the name of the person.
+ * 
+ * @return The name of the person.
+ */
 string Pessoa::getNome()
 {
   return this->nome;
 }
 
+/* Returning the address of the person. */
 string Pessoa::getEndereco()
 {
   return this->endereco;
 }
-
+/**
+ * It returns the email of the person.
+ * 
+ * @return The email of the person.
+ */
 string Pessoa::getEmail()
 {
   return this->email;
 }
-
+/**
+ * It returns the documento variable.
+ * 
+ * @return The documento attribute of the object.
+ */
 string Pessoa::getDocumento()
 {
   return this->documento;
 }
-
+/**
+ * It returns the value of the private variable telefone.
+ * 
+ * @return The value of the variable telefone.
+ */
 int Pessoa::getTelefone()
 {
   return this->telefone;
 }
-
-// Metodos set:
-
+/**
+ * This function sets the value of the private variable nome to the value of the parameter valNome
+ * 
+ * @param valNome The value of the name that will be assigned to the object.
+ */
 void Pessoa::setNome(string valNome)
 {
   this->nome = valNome;
 }
-
+/**
+ * It sets the value of the endereco variable.
+ * 
+ * @param valEndereco The value of the address
+ */
 void Pessoa::setEndereco(string valEndereco)
 {
   this->endereco = valEndereco;
 }
-
+/**
+ * It sets the value of the email variable.
+ * 
+ * @param valEmail The value of the email
+ */
 void Pessoa::setEmail(string valEmail)
 {
   this->email = valEmail;
 }
-
+/**
+ * It sets the value of the documento variable.
+ * 
+ * @param valDocumento The value of the documento
+ */
 void Pessoa::setDocumento(string valDocumento)
 {
   this->documento = valDocumento;
 }
-
+/**
+ * It sets the value of the telefone variable.
+ * 
+ * @param valTelefone The value of the telefone
+ */
 void Pessoa::setTelefone(int valTelefone)
 {
   this->telefone = valTelefone;
 }
-
-// Método valida documento (CPF ou CNPJ)
-
+/**
+ * It prints the attributes of the object.
+ */
 bool Pessoa::validaDocumento(string valDocumento)
 {
   if(valDocumento.length() == 11)
