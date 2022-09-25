@@ -15,6 +15,7 @@ Depois, de o comando "make" para compilar todos os arquivos, como mostrado na im
 Agora, de o comando "./main" para executar o arquivo "main" que foi gerado. Depois disso, o programa estará rodando :)
 
 ![executaromain](https://user-images.githubusercontent.com/97178655/192150184-d1512160-ec59-4e8b-b791-c01f010752d2.png)
+### Atenção: caso queria upar alguma melhoria no código e/ou sugestão para o Github do projeto, não se esqueça de dar o comando "make clean" no terminal para limpar os arquivos ".d" e ".o" criados!
 
 ## - No Windows:
 Repita os mesmos passos que estão descritos para o Linux/WSL e não se esqueça de criar a pasta "build" também, caso ainda não possua ela.
