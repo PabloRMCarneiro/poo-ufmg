@@ -21,4 +21,5 @@ Agora, de o comando "./main" para executar o arquivo "main" que foi gerado. Depo
 Repita os mesmos passos que estão descritos para o Linux/WSL e não se esqueça de criar a pasta "build" também, caso ainda não possua ela.
 As únicas diferenças para o processo de compilação são: 
 ### 1 - ao invés do comando "make", de o comando "mingw32-make"
-### 2 - ao invés do comando "./main", de o comando ".\main"
+### 2 - ao invés do comando "make clean", de o comando "mingw32-make cleanw" no terminal para limpar os arquivos ".d" e ".o" criados
+O comando "./main" para executar o arquivo principal permanece igual para ambos os sistemas operacionais.
