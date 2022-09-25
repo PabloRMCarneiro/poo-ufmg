@@ -2,7 +2,7 @@
 Disicplina de Programação Orientada a Objeto da Escola de Engenharia da UFMG
 
 # 🚀 Como compilar e executar
-## - No Linux/WSL:
+## 🐧 - No Linux/WSL:
 Clone o repositório no VS Code ou no seu editor de código preferido como na imagem abaixo:
 
 ![clonar repositorio](https://user-images.githubusercontent.com/97178655/192149111-17b9a555-15c5-4021-b1d5-503ea1e12ecc.png)
@@ -17,7 +17,7 @@ Agora, de o comando "./main" para executar o arquivo "main" que foi gerado. Depo
 ![executaromain](https://user-images.githubusercontent.com/97178655/192150184-d1512160-ec59-4e8b-b791-c01f010752d2.png)
 ### Atenção: caso queria upar alguma melhoria no código e/ou sugestão para o Github do projeto, não se esqueça de dar o comando "make clean" no terminal para limpar os arquivos ".d" e ".o" criados!
 
-## - No Windows:
+## 👻 - No Windows:
 Repita os mesmos passos que estão descritos para o Linux/WSL e não se esqueça de criar a pasta "build" também, caso ainda não possua ela.
 As únicas diferenças para o processo de compilação são: 
 ### 1 - ao invés do comando "make", de o comando "mingw32-make"
