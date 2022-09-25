@@ -1,4 +1,4 @@
-#include "Departamento.h"
+#include "../include/Departamento.h"
 #include <string>
 
 using namespace std;

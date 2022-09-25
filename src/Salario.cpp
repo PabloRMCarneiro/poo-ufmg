@@ -1,4 +1,4 @@
-#include "Salario.h"
+#include "../include/Salario.h"
 #include <string>
 #include <vector>
 

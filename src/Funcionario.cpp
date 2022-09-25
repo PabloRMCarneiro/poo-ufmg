@@ -1,9 +1,9 @@
-#include "Funcionario.h"
-#include "Pessoa.h"
-#include "data.h"
-#include "Salario.h"
-#include "Cargo.h"
-#include "Departamento.h"
+#include "../include/Funcionario.h"
+#include "../include/Pessoa.h"
+#include "../include/data.h"
+#include "../include/Salario.h"
+#include "../include/Cargo.h"
+#include "../include/Departamento.h"
 #include <string>
 #include <vector>
 

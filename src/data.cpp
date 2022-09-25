@@ -1,4 +1,4 @@
-#include "data.h"
+#include "../include/data.h"
 Data::Data()
 {
     ano= 1970;

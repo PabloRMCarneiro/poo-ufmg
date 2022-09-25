@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "Pessoa.h"
-#include "Salario.h"
+#include "../include/Pessoa.h"
+#include "../include/Salario.h"
 // #include "./ClasseCargo/Cargo.h"
 // #include "./ClasseDepartamento/Departamento.h"
 // #include "./ClasseFuncionario/Funcionario.h"

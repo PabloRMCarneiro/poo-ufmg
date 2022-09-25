@@ -1,4 +1,4 @@
-#include "Pessoa.h"
+#include "../include/Pessoa.h"
 #include <string>
 
 using namespace std;
