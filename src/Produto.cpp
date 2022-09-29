@@ -1,22 +1,18 @@
-#include <string>
-#include <vector>
 #include "../include/Produto.h"
-
-using namespace std;
-
-
+vector <Produto*> Produto::produtolist;
 Produto::Produto()
 {
-  this->nome = "";
-  this->codigo = 0;
-  this->valorDeVenda = 0;
-  this->tamanhoDoLoteMinimo = 0;
-  this->estoqueMinimo = 0;
-  this->qtdEstoque = 0;
-  this->ordemDeProducao = Data();
+  // this->nome = "";
+  // this->codigo = 0;
+  // this->valorDeVenda = 0;
+  // this->tamanhoDoLoteMinimo = 0;
+  // this->estoqueMinimo = 0;
+  // this->qtdEstoque = 0;
+  // this->ordemDeProducao = Data();
+  this->novoProduto(this);
 }
 
-Produto::Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, Data ordemDeProducao)
+Produto::Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, string categ)
 {
   this->nome = nome;
   this->codigo = codigo;
@@ -24,7 +20,9 @@ Produto::Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteM
   this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
   this->estoqueMinimo = estoqueMinimo;
   this->qtdEstoque = qtdEstoque;
-  this->ordemDeProducao = ordemDeProducao;
+  this->setCategoria(categ);
+  //this->ordemDeProducao();
+  this->novoProduto(this);
 }
 
 Produto::~Produto()
@@ -60,11 +58,23 @@ int Produto::getQtdEstoque()
 {
   return this->qtdEstoque;
 }
-
+string Produto::getCategoria(){
+  return categoria->getTipo();
+}
 Data Produto::getOrdemDeProducao()
 {
   return this->ordemDeProducao;
 }
+Lote* Produto::getLote(int nl){
+  for(auto it : lotes){
+    if(it->getNumLote() == nl){
+      return it;
+    }
+  }
+  return nullptr;
+}
+
+
 
 void Produto::setNome(string nome)
 {
@@ -95,15 +105,32 @@ void Produto::setQtdEstoque(int qtdEstoque)
 {
   this->qtdEstoque = qtdEstoque;
 }
-
-void Produto::setOrdemDeProducao(Data ordemDeProducao)
-{
-  this->ordemDeProducao = ordemDeProducao;
+void Produto::setCategoria(string categ){
+  if(Categoria::getCategoria(categ) != nullptr){
+    this->setCategoria(categ);
+  }else {
+    this->categoria = new Categoria(categ);
+  }
 }
-
-void Produto::realizaVenda(int quantidade)
+void Produto::registraLote(int numeroLote, Data dataDeProducao){
+  this->lotes.push_back(new Lote(dataDeProducao, numeroLote, this->tamanhoDoLoteMinimo, this->nome));
+  this->qtdEstoque += this->tamanhoDoLoteMinimo;
+}
+pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
 {
-  this->qtdEstoque -= quantidade;
+  int lote, faltaVender;
+  for(auto it : this->lotes){
+    if(it->getQuantidadeAtual() > 0){
+      lote = it->getNumLote();
+      faltaVender = it->vende(quantidade);
+      this->qtdEstoque-=(quantidade-faltaVender);
+      break;
+    }
+  }
+  if(this->qtdEstoque < this->estoqueMinimo){
+    geraOrdemDeProducao(venda);
+  }
+  return make_pair(lote, faltaVender);
 }
 
 void Produto::geraOrdemDeProducao(Data dataQuandoAcabaEstoque)
@@ -111,7 +138,18 @@ void Produto::geraOrdemDeProducao(Data dataQuandoAcabaEstoque)
   this->ordemDeProducao = dataQuandoAcabaEstoque;
 }
 
-bool Produto::temEstoque()
+bool Produto::temEstoque(int q)
 {
-  return this->qtdEstoque > 0;
+  return (this->qtdEstoque >= q);
+}
+void Produto::novoProduto(Produto* novo){
+  produtolist.push_back(novo);
+}
+Produto* Produto::getProduto(string n){
+  for(auto it : produtolist){
+    if(it->getNome() == n){
+      return it;
+    }
+  }
+  return nullptr;
 }

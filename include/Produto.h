@@ -1,10 +1,8 @@
 #ifndef PRODUTO_H_INCLUDED
 #define PRODUTO_H_INCLUDED
-#include <string>
 #include <vector>
-#include "../include/data.h"
-/* #include "../include/Categoria.h"
-#include "../include/Lote.h" */
+#include "../include/Lote.h"
+#include "../include/Categoria.h"
 
 using namespace std;
 
@@ -14,15 +12,15 @@ class Produto {
     string nome;
     int codigo;
     float valorDeVenda;
-    /*Categoria categoria;*/
-    /* vector <Lote*> lotes;*/
+    Categoria* categoria;
+    vector <Lote*> lotes;
     int tamanhoDoLoteMinimo;
     int estoqueMinimo;
     int qtdEstoque;
     Data ordemDeProducao;
 
   public:
-    Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, Data ordemDeProducao);
+    Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, string categ);
     Produto();
     ~Produto();
 
@@ -32,8 +30,9 @@ class Produto {
     int getTamanhoDoLoteMinimo();
     int getEstoqueMinimo();
     int getQtdEstoque();
-    /*Categoria* getCategoria()*/
+    string getCategoria();
     Data getOrdemDeProducao();
+    Lote* getLote(int nl);
 
     void setNome(string nome);
     void setCodigo(int codigo);
@@ -41,14 +40,16 @@ class Produto {
     void setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo);
     void setEstoqueMinimo(int estoqueMinimo);
     void setQtdEstoque(int qtdEstoque);
-    void setOrdemDeProducao(Data ordemDeProducao);
-    void setCategoria(string);
+    void setCategoria(string categ);
 
-    void registraLote(int quantidade, Data dataDeProducao, int quantidadeProduzida, string nomeDoProduto);
-    void realizaVenda(int quantidade);
+    void registraLote(int numeroLote, Data dataDeProducao);
+    pair<int, int> realizaVenda(int quantidade, Data venda);
     void geraOrdemDeProducao(Data dataQuandoAcabaEstoque);
 
-    bool temEstoque();
+    bool temEstoque(int q);
+    static vector <Produto*> produtolist;
+    static void novoProduto(Produto* novo);
+    static Produto* getProduto(string n);
 
 };
 
