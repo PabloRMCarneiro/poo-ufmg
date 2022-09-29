@@ -1,16 +1,21 @@
 #include "../include/RegistroVendas.h"
 //construtores
-RegistroVendas::RegistroVendas(Data dv, string p, int q){
+RegistroVendas::RegistroVendas(Data dv, string p, int q, Cliente* cl){
     this->setDataDeVenda(dv);
     this->setProduto(p);
     this->setQuantidadeVenda(q);
+    this->setCliente(cl);
 }
-RegistroVendas::RegistroVendas(Data dv, Produto* p, int q){
+RegistroVendas::RegistroVendas(Data dv, Produto* p, int q, Cliente* cl){
     this->setDataDeVenda(dv);
     this->setProduto(p);
     this->setQuantidadeVenda(q);
+    this->setCliente(cl);
 }
 //metodos get
+Cliente* RegistroVendas::getCliente(){
+    return this->cliente;
+}
 Data RegistroVendas::getDataDeVenda(){
     return this->dataDeVenda;
 }
@@ -24,6 +29,9 @@ int RegistroVendas::getQuantidadeVenda(){
     return this->quantidadeVenda;
 }
 //metodos set
+void RegistroVendas::setCliente(Cliente* cl){
+    this->cliente = cl;
+}
 void RegistroVendas::setDataDeVenda(Data v){
     this->dataDeVenda = v;
 }

@@ -1,6 +1,7 @@
 #ifndef REGISTROVENDAS_H_INCLUDED
 #define REGISTROVENDAS_H_INCLUDED
 #include "../include/Produto.h"
+#include "../include/Cliente.h"
 
 class RegistroVendas{
     private:
@@ -9,17 +10,19 @@ class RegistroVendas{
         Produto* produto;
         int quantidadeVenda;
         bool vendido = false;
-        //Cliente* cliente //////////////////
+        Cliente* cliente;
     public:
         //construtor
-        RegistroVendas(Data dv, string p, int q);
-        RegistroVendas(Data dv, Produto* p, int q);
+        RegistroVendas(Data dv, string p, int q, Cliente* cl);
+        RegistroVendas(Data dv, Produto* p, int q, Cliente* cl);
         //metodos get
         Data getDataDeVenda();
         vector<int> getNumeroDoLote();
         Produto* getProduto();
         int getQuantidadeVenda();
+        Cliente* getCliente();
         //metodos set
+        void setCliente(Cliente* cl);
         void setDataDeVenda(Data v);
         void setNumeroDoLote(int nl);
         void setProduto(string p);
