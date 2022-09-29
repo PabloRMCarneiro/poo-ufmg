@@ -23,7 +23,7 @@ bool validaCPF(string Cpf)
         Cpf == "99999999999")
         return false;
       
-    int i, j, digito1, digito2, resto, soma;
+    int i, digito1, digito2, resto, soma;
     string nDigResult;
     soma = 0;
     digito1 = 0;

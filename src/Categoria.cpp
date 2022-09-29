@@ -1,18 +1,15 @@
-#include <string>
-#include <vector>
 #include "../include/Categoria.h"
 
-using namespace std;
-
+vector <Categoria*> Categoria::categorialist;
 Categoria::Categoria()
 {
-  this->tipo = "";
-  
+    this->novaCategoria(this);
 }
 
-Categoria::Categoria(string tipo)
+Categoria::Categoria(string t)
 {
-  this->tipo = tipo;
+  this->setTipo(t);
+  this->novaCategoria(this);
 }
 
 Categoria::~Categoria()
@@ -24,10 +21,19 @@ string Categoria::getTipo()
   return this->tipo;
 }
 
-void Categoria::setTipo(string tipo)
+void Categoria::setTipo(string t)
 {
-  this->tipo = tipo;
+  this->tipo = t;
   
 }
-
-
+void Categoria::novaCategoria(Categoria* nova){
+    categorialist.push_back(nova);
+}
+Categoria* Categoria::getCategoria(string t){
+    for(auto it : categorialist){
+            if(it->getTipo() == t){
+                return it;
+            }
+        }
+    return nullptr;
+}
