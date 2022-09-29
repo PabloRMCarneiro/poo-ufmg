@@ -1,0 +1,14 @@
+#ifndef CLIENTE_H_INCLUDED
+#define CLIENTE_H_INCLUDED
+#include "../include/Pessoa.h"
+class Cliente:public Pessoa{
+    private:
+        string tipoCliente;
+    public:
+        Cliente();
+        Cliente(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone);
+        void setTipoCliente(string tc);
+        string getTipoCliente();
+};
+
+#endif //CLIENTE_H_INCLUDED

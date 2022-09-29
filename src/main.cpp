@@ -2,7 +2,7 @@
 #include <string>
 /* #include "../include/Pessoa.h"
 #include "../include/Salario.h" */
-#include "../include/Categoria.h"
+#include "../include/Cliente.h"
 // #include "./ClasseCargo/Cargo.h"
 // #include "./ClasseDepartamento/Departamento.h"
 // #include "./ClasseFuncionario/Funcionario.h"
@@ -14,11 +14,11 @@
 using namespace std;
 
 int main(){
-  
-  Categoria categoria("Professor");
+  //TESTE CLIENTE
+  // Cliente um("oreo", "BH", "oreo.com", "14425925000199", 38991182014);
+  // cout << um.getNome() << ", " << um.getEndereco() << ", " << um.getEmail() << ", " << um.getDocumento() << ", ";
+  // cout << um.getTelefone() << ", " << um.getTipoCliente() << endl;
 
-  
-  cout << categoria.getTipo() << endl;
 
   return 0;
 }

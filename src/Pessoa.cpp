@@ -1,5 +1,6 @@
 #include "../include/Pessoa.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 /**
@@ -121,12 +122,12 @@ Pessoa::Pessoa()
  * @param valDocumento CPF
  * @param valTelefone
  */
-Pessoa::Pessoa(string valNome, string valEndereco, string valEmail, string valDocumento, int valTelefone)
+Pessoa::Pessoa(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone)
 {
   this->nome = valNome;
   this->endereco = valEndereco;
   this->email = valEmail;
-  this->documento = valDocumento;
+  this->setDocumento(valDocumento);
   this->telefone = valTelefone;
 }
 /**
@@ -174,7 +175,7 @@ string Pessoa::getDocumento()
  * 
  * @return The value of the variable telefone.
  */
-int Pessoa::getTelefone()
+long int Pessoa::getTelefone()
 {
   return this->telefone;
 }
@@ -212,14 +213,16 @@ void Pessoa::setEmail(string valEmail)
  */
 void Pessoa::setDocumento(string valDocumento)
 {
-  this->documento = valDocumento;
+  if(this->validaDocumento(valDocumento)){
+    this->documento = valDocumento;
+  }else cout << "Documento inválido." << endl;
 }
 /**
  * It sets the value of the telefone variable.
  * 
  * @param valTelefone The value of the telefone
  */
-void Pessoa::setTelefone(int valTelefone)
+void Pessoa::setTelefone(long int valTelefone)
 {
   this->telefone = valTelefone;
 }

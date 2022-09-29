@@ -11,11 +11,11 @@ private:
     string endereco;
     string email;
     string documento;
-    int telefone;
+    long int telefone;
     
 public:
     Pessoa();
-    Pessoa(string valNome, string valEndereco, string valEmail, string valDocumento, int valTelefone);
+    Pessoa(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone);
     virtual ~Pessoa();
     
     //Metodos get:
@@ -23,14 +23,14 @@ public:
     string getEndereco();
     string getEmail();
     string getDocumento();
-    int getTelefone();
+    long int getTelefone();
     
     //Metodos set:
     void setNome(string valNome);
     void setEndereco(string valEndereco);
     void setEmail(string valEmail);
     void setDocumento(string valDocumento);
-    void setTelefone(int valTelefone);
+    void setTelefone(long int valTelefone);
 
 
     //Método valida documento (CPF ou CNPJ)
