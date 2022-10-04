@@ -1,6 +1,7 @@
 #ifndef CLIENTE_H_INCLUDED
 #define CLIENTE_H_INCLUDED
 #include "../include/Pessoa.h"
+
 class Cliente:public Pessoa{
     private:
         string tipoCliente;
@@ -11,4 +12,4 @@ class Cliente:public Pessoa{
         string getTipoCliente();
 };
 
-#endif //CLIENTE_H_INCLUDED
+#endif 

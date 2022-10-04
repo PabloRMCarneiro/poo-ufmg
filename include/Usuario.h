@@ -3,13 +3,12 @@
 #include <string>
 #include <vector>
 using namespace std;
+
 class Usuario{
     private:
-       
         string email;
         string senha;
         vector <string> permissoes;
-     
     public:
         Usuario();
         Usuario(string email, string senha);

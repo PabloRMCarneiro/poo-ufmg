@@ -5,35 +5,24 @@
 #include <vector>
 using namespace std;
 
-class Salario 
-{
-  private:
-    float valor;
-    vector<pair<Data, float>> registro;
-  
-  protected:
-    float dissidio;
-  
+class Salario {
+    private:
+      float valor;
+      vector<pair<Data, float>> registro;
+    protected:
+      float dissidio;
   public:
-    Salario();
-    Salario(float valValor);
-    virtual ~Salario();
-
-    //Metodos get:
-    float getValor();
-    vector<pair<Data, float>> getRegistro();
-    float getDissidio();
-
-    //Metodos set:
-    void setValor(float valValor);
-    void setDissidio(float valDissidio);
-
-    //Metodos:
-
-    void promocao(float valPercentual);
-    void reajuste(float valDissidio);
-    void alteraRegistro(Data valData, float valValor);
-
+      Salario();
+      Salario(float valValor);
+      virtual ~Salario();
+      float getValor();
+      vector<pair<Data, float>> getRegistro();
+      float getDissidio();
+      void setValor(float valValor);
+      void setDissidio(float valDissidio);
+      void promocao(float valPercentual);
+      void reajuste(float valDissidio);
+      void alteraRegistro(Data valData, float valValor);
 }; 
 
 #endif
