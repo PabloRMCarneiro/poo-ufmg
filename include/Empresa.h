@@ -14,11 +14,9 @@ using namespace std;
 
 class Empresa
 {
-  static Empresa* empresa;
-  static Empresa* getEmpresa();
-  static bool getAcesso(string, Usuario*);
 
   private:
+    static Empresa* empresa;
     Usuario* usuarioLogado;
     vector <Departamento> departamentos;
     vector <Funcionario> funcionarios;
@@ -28,6 +26,8 @@ class Empresa
     Empresa();
 
   public:
+  static bool getAcesso(string, Usuario*);
+  static Empresa* getEmpresa();
     void login(Usuario* valUsuario);
     Usuario* getUsuario();
     Cargo* getCargo();
@@ -37,11 +37,11 @@ class Empresa
     RegistroVendas* getRegistroVendas();
 
     void setUsuario();
-    void setCargo(string valCargo);
-    void setDepartamento(string valDepartamento);
-    void setCliente(string valCliente);
-    void setFuncionario(string valFuncionario);
-    void setRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente);
+    void setCargo(Cargo* valCargo);
+    void setDepartamento(Departamento* valDepartamento);
+    void setCliente(Cliente* valCliente);
+    void setFuncionario(Funcionario* valFuncionario);
+    void setRegistroVendas(RegistroVendas* valRegistro)
 
 };
 
