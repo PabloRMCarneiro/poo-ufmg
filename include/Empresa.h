@@ -14,7 +14,6 @@ using namespace std;
 
 class Empresa
 {
-
   private:
     static Empresa* empresa;
     Usuario* usuarioLogado;
@@ -26,7 +25,8 @@ class Empresa
     Empresa();
 
   public:
-  static bool getAcesso(string, Usuario*);
+
+  static bool getAcesso(string valFuncoes) ;
   static Empresa* getEmpresa();
     void login(Usuario* valUsuario);
     Usuario* getUsuario();
@@ -41,7 +41,7 @@ class Empresa
     void setDepartamento(Departamento* valDepartamento);
     void setCliente(Cliente* valCliente);
     void setFuncionario(Funcionario* valFuncionario);
-    void setRegistroVendas(RegistroVendas* valRegistro)
+    void setRegistroVendas(RegistroVendas* valRegistro);
 
 };
 

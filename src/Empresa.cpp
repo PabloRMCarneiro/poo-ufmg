@@ -7,5 +7,6 @@
 #include "../include/Usuario.h"
 #include "../include/data.h"
 
+using namespace std;
 
 
