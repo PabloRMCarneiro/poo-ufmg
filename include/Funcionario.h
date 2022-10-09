@@ -11,22 +11,27 @@ using namespace std;
 class Funcionario : public Pessoa
 {
   private:
+    Pessoa pessoa;
     Departamento departamento;
     Data dataNascimento;
     Salario salario;
     vector <Data> registro;
     Cargo cargo;
     bool estadoAtivo;
+
   public:
     Funcionario();
-    Funcionario(Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo);
+    Funcionario(Pessoa valPessoa, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo);
     virtual ~Funcionario();
+    Pessoa getPessoa();
     Departamento getDepartamento();
     Data getDataNascimento();
     Salario getSalario();
     vector <Data> getRegistro();
     Cargo getCargo();
     bool getEstadoAtivo();
+
+    void setPessoa(Pessoa valPessoa);
     void setDepartamento(Departamento valDepartamento);
     void setDataNascimento(Data valDataNascimento);
     void setSalario(Salario valSalario);

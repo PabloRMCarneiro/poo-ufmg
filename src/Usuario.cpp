@@ -1,4 +1,4 @@
-#include "../include/Usuario.h";
+#include "../include/Usuario.h"
 
 Usuario::Usuario()
 {
@@ -21,10 +21,13 @@ string Usuario::getSenha()
 {
     return senha;
 }
-bool Usuario::getPermissoes(string valFuncoes){
-    for(auto it: this->permissoes){
-        return it == valFuncoes ? true : false;
+bool Usuario::getPermissoes(string valFuncoes)
+{
+    for (auto it : this->permissoes)
+    {
+        if (it == valFuncoes) return true;
     }
+    return false;
 }
 void Usuario::setEmail(string email)
 {

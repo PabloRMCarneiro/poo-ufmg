@@ -90,7 +90,7 @@ void Salario::promocao(float valPercentual)
  */
 void Salario::reajuste(float valDissidio)
 {
-  this->valor = this->valor + valDissidio;
+  this->valor = this->valor + (this->valor * valDissidio);
 }
 /**
  * This function sets the value of the private variable registro to the value of the parameter valRegistro
