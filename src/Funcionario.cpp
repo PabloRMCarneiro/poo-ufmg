@@ -15,9 +15,8 @@ using namespace std;
  * This is a constructor for the class Funcionario. It initializes the class attributes to default
  * values
  */
-Funcionario::Funcionario()
+Funcionario::Funcionario():Pessoa()
 {
-  this->pessoa = Pessoa();
   this->departamento = Departamento();
   this->dataNascimento = Data();
   this->salario = Salario();
@@ -26,7 +25,7 @@ Funcionario::Funcionario()
   this->estadoAtivo = false;
 }
 /**
- * Funcionario::Funcionario(Departamento valDepartamento, Data valDataNascimento, Salario valSalario,
+ * Funcionario::Funcionario(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario,
  * vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
  * 
  * @param valDepartamento
@@ -36,9 +35,9 @@ Funcionario::Funcionario()
  * @param valCargo enum
  * @param valEstadoAtivo
  */
-Funcionario::Funcionario(Pessoa valPessoa, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
+Funcionario::Funcionario(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
+:Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
 {
-  this->pessoa = valPessoa;
   this->departamento = valDepartamento;
   this->dataNascimento = valDataNascimento;
   this->salario = valSalario;
@@ -51,15 +50,6 @@ Funcionario::Funcionario(Pessoa valPessoa, Departamento valDepartamento, Data va
  */
 Funcionario::~Funcionario()
 {
-}
-/**
- * It returns the pessoa object.
- * 
- * @return A copy of the object.
- */
-Pessoa Funcionario::getPessoa()
-{
-  return this->pessoa;
 }
 /**
  * It returns the department of the employee.
@@ -114,16 +104,6 @@ Cargo Funcionario::getCargo()
 bool Funcionario::getEstadoAtivo()
 {
   return this->estadoAtivo;
-}
-/**
- * It sets the value of the private variable pessoa to the value of the parameter
- * valPessoa.
- * 
- * @param valPessoa The value of the Pessoa object to be set.
- */
-void Funcionario::setPessoa(Pessoa valPessoa)
-{
-  this->pessoa = valPessoa;
 }
 /**
  * The function sets the name of the department of the employee

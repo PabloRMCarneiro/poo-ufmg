@@ -11,7 +11,6 @@ using namespace std;
 class Funcionario : public Pessoa
 {
   private:
-    Pessoa pessoa;
     Departamento departamento;
     Data dataNascimento;
     Salario salario;
@@ -21,9 +20,8 @@ class Funcionario : public Pessoa
 
   public:
     Funcionario();
-    Funcionario(Pessoa valPessoa, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo);
+    Funcionario(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo);
     virtual ~Funcionario();
-    Pessoa getPessoa();
     Departamento getDepartamento();
     Data getDataNascimento();
     Salario getSalario();
@@ -31,7 +29,6 @@ class Funcionario : public Pessoa
     Cargo getCargo();
     bool getEstadoAtivo();
 
-    void setPessoa(Pessoa valPessoa);
     void setDepartamento(Departamento valDepartamento);
     void setDataNascimento(Data valDataNascimento);
     void setSalario(Salario valSalario);
