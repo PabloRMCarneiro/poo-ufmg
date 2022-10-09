@@ -61,9 +61,9 @@ int Produto::getQtdEstoque()
 string Produto::getCategoria(){
   return categoria->getTipo();
 }
-Data Produto::getOrdemDeProducao()
+OrdemDeProducao* Produto::getOrdem()
 {
-  return this->ordemDeProducao;
+  return &this->ordem;
 }
 Lote* Produto::getLote(int nl){
   for(auto it : lotes){
@@ -128,14 +128,14 @@ pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
     }
   }
   if(this->qtdEstoque < this->estoqueMinimo){
-    geraOrdemDeProducao(venda);
+    geraOrdem(venda);
   }
   return make_pair(lote, faltaVender);
 }
 
-void Produto::geraOrdemDeProducao(Data dataQuandoAcabaEstoque)
-{
-  this->ordemDeProducao = dataQuandoAcabaEstoque;
+void Produto::geraOrdem(Data dataQuandoAcabaEstoque)
+{ 
+  this->ordem = OrdemDeProducao(dataQuandoAcabaEstoque, this->nome, this->tamanhoDoLoteMinimo);
 }
 
 bool Produto::temEstoque(int q)

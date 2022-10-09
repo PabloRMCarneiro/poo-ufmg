@@ -3,6 +3,7 @@
 #include <vector>
 #include "../include/Lote.h"
 #include "../include/Categoria.h"
+#include "../include/OrdemDeProducao.h"
 using namespace std;
 
 class Produto {
@@ -15,7 +16,7 @@ class Produto {
     int tamanhoDoLoteMinimo;
     int estoqueMinimo;
     int qtdEstoque;
-    Data ordemDeProducao;
+    OrdemDeProducao* ordem;
   public:
     Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, string categ);
     Produto();
@@ -27,7 +28,7 @@ class Produto {
     int getEstoqueMinimo();
     int getQtdEstoque();
     string getCategoria();
-    Data getOrdemDeProducao();
+    OrdemDeProducao* getOrdem();
     Lote* getLote(int nl);
     void setNome(string nome);
     void setCodigo(int codigo);
@@ -38,7 +39,7 @@ class Produto {
     void setCategoria(string categ);
     void registraLote(int numeroLote, Data dataDeProducao);
     pair<int, int> realizaVenda(int quantidade, Data venda);
-    void geraOrdemDeProducao(Data dataQuandoAcabaEstoque);
+    void geraOrdem(Data dataQuandoAcabaEstoque);
     bool temEstoque(int q);
     static vector <Produto*> produtolist;
     static void novoProduto(Produto* novo);
