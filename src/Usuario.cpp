@@ -1,28 +1,40 @@
 #include "../include/Usuario.h";
 
-Usuario::Usuario(){
+Usuario::Usuario()
+{
     email = "";
     senha = "";
 }
-Usuario::Usuario(string email, string senha){
+Usuario::Usuario(string email, string senha)
+{
     this->email = email;
     this->senha = senha;
 }
-Usuario::~Usuario(){
+Usuario::~Usuario()
+{
 }
-string Usuario::getEmail(){
+string Usuario::getEmail()
+{
     return email;
 }
-string Usuario::getSenha(){
+string Usuario::getSenha()
+{
     return senha;
 }
-void Usuario::setEmail(string email){
+bool Usuario::getPermissoes(string valFuncoes){
+    for(auto it: this->permissoes){
+        return it == valFuncoes ? true : false;
+    }
+}
+void Usuario::setEmail(string email)
+{
     this->email = email;
 }
-void Usuario::setSenha(string senha){
+void Usuario::setSenha(string senha)
+{
     this->senha = senha;
 }
-void Usuario::setPermissoes(vector <string> permissoes){
+void Usuario::setPermissoes(vector<string> permissoes)
+{
     this->permissoes = permissoes;
 }
-

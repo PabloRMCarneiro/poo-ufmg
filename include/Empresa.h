@@ -17,18 +17,18 @@ class Empresa
   private:
     static Empresa* empresa;
     Usuario* usuarioLogado;
-    vector <Departamento> departamentos;
-    vector <Funcionario> funcionarios;
-    vector <Cliente> clientes;
-    vector <Cargo> cargos;
-    vector <RegistroVendas> registrosVendas;
+    vector <Departamento*> departamentos;
+    vector <Funcionario*> funcionarios;
+    vector <Cliente*> clientes;
+    vector <Cargo*> cargos;
+    vector <RegistroVendas*> registrosVendas;
     Empresa();
 
   public:
-
-  static bool getAcesso(string valFuncoes) ;
-  static Empresa* getEmpresa();
+    static bool getAcesso(string valFuncoes) ;
+    static Empresa* getEmpresa();
     void login(Usuario* valUsuario);
+    
     Usuario* getUsuario();
     Cargo* getCargo();
     Departamento* getDepartamento();

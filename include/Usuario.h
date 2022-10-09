@@ -15,6 +15,8 @@ class Usuario{
         ~Usuario();
         string getEmail();
         string getSenha();
+        bool getPermissoes(string valFuncoes);
+
         void setEmail(string email);
         void setSenha(string senha);
         void setPermissoes(vector <string> permissoes);
