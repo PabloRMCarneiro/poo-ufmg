@@ -30,11 +30,11 @@ class Empresa
     void login(Usuario* valUsuario);
     
     Usuario* getUsuario();
-    Cargo* getCargo();
-    Departamento* getDepartamento();
-    Cliente* getCliente();
-    Funcionario* getFuncionario();
-    RegistroVendas* getRegistroVendas();
+    Cargo* getCargo(string name);
+    Departamento* getDepartamento(string name);
+    Cliente* getCliente(string doc);
+    Funcionario* getFuncionario(string doc);
+    RegistroVendas* getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente);
 
     void setUsuario();
     void setCargo(Cargo* valCargo);

@@ -63,7 +63,7 @@ string Produto::getCategoria(){
 }
 OrdemDeProducao* Produto::getOrdem()
 {
-  return &this->ordem;
+  return this->ordem;
 }
 Lote* Produto::getLote(int nl){
   for(auto it : lotes){
@@ -135,7 +135,7 @@ pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
 
 void Produto::geraOrdem(Data dataQuandoAcabaEstoque)
 { 
-  this->ordem = OrdemDeProducao(dataQuandoAcabaEstoque, this->nome, this->tamanhoDoLoteMinimo);
+  this->ordem = new OrdemDeProducao(dataQuandoAcabaEstoque, this->nome, this->tamanhoDoLoteMinimo);
 }
 
 bool Produto::temEstoque(int q)

@@ -35,29 +35,54 @@ Usuario* Empresa::getUsuario()
   return empresa->usuarioLogado;
 }
 
-Cargo* Empresa::getCargo()
-{
-  return empresa->cargos;
+Cargo* Empresa::getCargo(string name)
+{ 
+  for(auto it : cargos){
+    if(it->getNome() == name){
+      return it;
+    }
+  }
+  return nullptr;
 }
 
-Departamento *Empresa::getDepartamento()
+Departamento *Empresa::getDepartamento(string name)
 {
-  return empresa->departamentos;
+  for(auto it : departamentos){
+    if(it->getNome() == name){
+      return it;
+    }
+  }
+  return nullptr;
 }
 
-Cliente *Empresa::getCliente()
+Cliente *Empresa::getCliente(string doc)
 {
-  return empresa->clientes;
+  for(auto it : clientes){
+    if(it->getDocumento() == doc){
+      return it;
+    }
+  }
+  return nullptr;
 }
 
-Funcionario *Empresa::getFuncionario()
+Funcionario *Empresa::getFuncionario(string doc)
 {
-  return empresa->funcionarios;
+  for(auto it : funcionarios){
+    if( it->getDocumento() == doc){
+      return it;
+    }
+  }
+  return nullptr;
 }
 
-RegistroVendas *Empresa::getRegistroVendas()
+RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente)
 {
-  return empresa->registrosVendas;
+  for(auto it : registrosVendas){
+    if((it->getDataDeVenda() == valData) && (it->getProduto() == valProduto) && (it->getCliente()== valCliente)){
+      return it;
+    }
+  }
+  return nullptr;
 }
 
 void Empresa::setUsuario()
