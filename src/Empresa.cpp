@@ -17,12 +17,24 @@ Empresa::Empresa()
 
 Empresa *Empresa::getEmpresa()
 {
-  return empresa;
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  {
+    throw "Acesso negado";
+  }
+  else
+  {
+    return empresa;
+  }
 }
 
 bool Empresa::getAcesso(string valFuncoes)
 {
-  return empresa->usuarioLogado->getPermissoes(valFuncoes);
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  {
+    throw "Acesso negado";
+  }
+  else
+    return empresa->usuarioLogado->getPermissoes(valFuncoes);
 }
 
 void Empresa::login(Usuario *valUsuario)
@@ -32,57 +44,102 @@ void Empresa::login(Usuario *valUsuario)
 
 Usuario* Empresa::getUsuario()
 {
-  return empresa->usuarioLogado;
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  {
+    throw "Acesso negado";
+  }
+  else
+    return empresa->usuarioLogado;
 }
 
 Cargo* Empresa::getCargo(string name)
 { 
-  for(auto it : cargos){
-    if(it->getNome() == name){
-      return it;
-    }
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  {
+    throw "Acesso negado";
   }
-  return nullptr;
+  else 
+  {
+    for(auto it : cargos){
+      if(it->getNome() == name){
+        return it;
+      } 
+    }
+    return nullptr;
+  }
+
 }
 
 Departamento *Empresa::getDepartamento(string name)
 {
-  for(auto it : departamentos){
-    if(it->getNome() == name){
-      return it;
+
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  {
+    throw "Acesso negado";
+  }
+  else 
+  {
+    for(auto it : departamentos){
+      if(it->getNome() == name){
+        return it;
     }
   }
   return nullptr;
+  }
 }
 
 Cliente *Empresa::getCliente(string doc)
 {
-  for(auto it : clientes){
-    if(it->getDocumento() == doc){
-      return it;
+
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  {
+    throw "Acesso negado";
+  }
+  else 
+  {
+    for(auto it : clientes){
+      if(it->getDocumento() == doc){
+        return it;
     }
   }
   return nullptr;
+  }
 }
 
 Funcionario *Empresa::getFuncionario(string doc)
 {
-  for(auto it : funcionarios){
-    if( it->getDocumento() == doc){
-      return it;
-    }
+
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  {
+    throw "Acesso negado";
   }
-  return nullptr;
+  else 
+  {
+    for(auto it : funcionarios){
+      if( it->getDocumento() == doc){
+        return it;
+      }
+    }
+    return nullptr;
+  }
 }
 
 RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente)
 {
-  for(auto it : registrosVendas){
+
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  {
+    throw "Acesso negado";
+  }
+  else 
+  {
+    for(auto it : registrosVendas){
     if((it->getDataDeVenda() == valData) && (it->getProduto() == valProduto) && (it->getCliente()== valCliente)){
       return it;
     }
   }
   return nullptr;
+  }
 }
 
 void Empresa::setUsuario()

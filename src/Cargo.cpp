@@ -1,4 +1,5 @@
 #include "../include/Cargo.h"
+#include "../include/Empresa.h"
 #include <string>
 
 using namespace std;
@@ -11,7 +12,14 @@ using namespace std;
  */
 Cargo::Cargo()
 {
-  this->nome = "";  
+  if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
+  {
+    throw "Acesso negado";
+  }
+  else
+  {
+    this->nome = "";
+  }
 }
 /**
  * The function `Cargo::Cargo(string valNome)` is a constructor for the class `Cargo`
@@ -20,7 +28,15 @@ Cargo::Cargo()
  */
 Cargo::Cargo(string valNome)
 {
-  this->nome = valNome;
+  if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
+  {
+    throw "Acesso negado";
+  }
+  else 
+  {
+    this->nome = valNome;
+  }
+ 
 }
 /**
  * The destructor is called when the object is destroyed

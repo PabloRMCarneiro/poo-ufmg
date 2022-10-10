@@ -4,6 +4,7 @@
 #include "../include/Salario.h"
 #include "../include/Cargo.h"
 #include "../include/Departamento.h"
+#include "../include/Empresa.h"
 #include <string>
 #include <vector>
 
@@ -17,12 +18,19 @@ using namespace std;
  */
 Funcionario::Funcionario():Pessoa()
 {
-  this->departamento = Departamento();
-  this->dataNascimento = Data();
-  this->salario = Salario();
-  this->registro = vector <Data>();
-  this->cargo = Cargo();
-  this->estadoAtivo = false;
+  if(!Empresa::getEmpresa()->getCargo("Funcionario.Funcionario"))
+  {
+    throw "Acesso negado";
+  }
+  else
+  {
+    this->departamento = Departamento();
+    this->dataNascimento = Data();
+    this->salario = Salario();
+    this->registro = vector <Data>();
+    this->cargo = Cargo();
+    this->estadoAtivo = false;
+  }
 }
 /**
  * Funcionario::Funcionario(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario,
@@ -38,12 +46,19 @@ Funcionario::Funcionario():Pessoa()
 Funcionario::Funcionario(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
 :Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
 {
-  this->departamento = valDepartamento;
-  this->dataNascimento = valDataNascimento;
-  this->salario = valSalario;
-  this->registro = valRegistro;
-  this->cargo = valCargo;
-  this->estadoAtivo = valEstadoAtivo;
+  if(!Empresa::getEmpresa()->getCargo("Funcionario.Funcionario"))
+  {
+    throw "Acesso negado";
+  }
+  else
+  {
+    this->departamento = valDepartamento;
+    this->dataNascimento = valDataNascimento;
+    this->salario = valSalario;
+    this->registro = valRegistro;
+    this->cargo = valCargo;
+    this->estadoAtivo = valEstadoAtivo;
+  }
 }
 /**
  * The destructor is called when the object is destroyed

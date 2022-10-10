@@ -1,24 +1,44 @@
 #include "../include/Lote.h"
+#include "../include/Empresa.h"
 // construtores
 Lote::Lote()
 {
-    numLote = 0;
-    quantidadeProduzida = 0;
-    quantidadeAtual = 0;
-    produto = "";
-    dataProd = Data();
+    if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
+    {
+        throw "Acesso negado";
+    }
+    else
+    {
+        numLote = 0;
+        quantidadeProduzida = 0;
+        quantidadeAtual = 0;
+        produto = "";
+        dataProd = Data();
+    }
 }
 Lote::Lote(int nl)
 {
-    this->setNumLote(nl);
+    if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
+    {
+        throw "Acesso negado";
+    }
+    else
+        this->setNumLote(nl);
 }
 Lote::Lote(Data d, int nl, int qp, string p)
 {
-    this->setNumLote(nl);
-    this->setProduto(p);
-    this->setQuantidadeAtual(qp);
-    this->setQuantidadeProduzida(qp);
-    this->setDataProd(d);
+    if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
+    {
+        throw "Acesso negado";
+    }
+    else
+    {
+        this->setNumLote(nl);
+        this->setProduto(p);
+        this->setQuantidadeAtual(qp);
+        this->setQuantidadeProduzida(qp);
+        this->setDataProd(d);
+    }
 }
 
 // metodos set

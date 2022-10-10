@@ -1,15 +1,30 @@
 #include "../include/Categoria.h"
+#include "../include/Empresa.h"
 
 vector <Categoria*> Categoria::categorialist;
 Categoria::Categoria()
 {
+  if(!Empresa::getEmpresa()->getAcesso("Categoria.Categoria"))
+  {
+    throw "Acesso negado";
+  }
+  else
+  {
     this->novaCategoria(this);
+  }
 }
 
 Categoria::Categoria(string t)
 {
-  this->setTipo(t);
-  this->novaCategoria(this);
+  if(!Empresa::getEmpresa()->getAcesso("Categoria.Categoria"))
+  {
+    throw "Acesso negado";
+  }
+  else
+  {
+    this->setTipo(t);
+    this->novaCategoria(this);
+  }
 }
 
 Categoria::~Categoria()

@@ -1,4 +1,5 @@
 #include "../include/Departamento.h"
+#include "../include/Empresa.h"
 #include <string>
 
 using namespace std;
@@ -8,7 +9,15 @@ using namespace std;
  */
 Departamento::Departamento()
 {
-  this->nome = "";  
+  if(!Empresa::getEmpresa()->getAcesso("Departamento.Departamento"))
+  {
+    throw "Acesso negado";
+  }
+  else
+  {
+    this->nome = "";
+  }
+  
 }
 /**
  * The constructor for the Departamento class
@@ -17,7 +26,14 @@ Departamento::Departamento()
  */
 Departamento::Departamento(string valNome)
 {
-  this->nome = valNome;
+  if(!Empresa::getEmpresa()->getAcesso("Departamento.Departamento"))
+  {
+    throw "Acesso negado";
+  }
+  else
+  {
+    this->nome = valNome;
+  }
 }
 /**
  * The destructor for the Departamento class

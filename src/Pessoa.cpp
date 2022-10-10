@@ -1,4 +1,5 @@
 #include "../include/Pessoa.h"
+#include "../include/Empresa.h"
 #include <string>
 #include <iostream>
 
@@ -144,13 +145,23 @@ Pessoa::~Pessoa()
  */
 string Pessoa::getNome()
 {
-  return this->nome;
+  if(!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa"))
+  {
+    throw "Acesso negado";
+  }
+  else
+    return this->nome;
 }
 
 /* Returning the address of the person. */
 string Pessoa::getEndereco()
 {
-  return this->endereco;
+  if(!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa"))
+  {
+    throw "Acesso negado";
+  }
+  else
+    return this->endereco;
 }
 /**
  * It returns the email of the person.
@@ -159,7 +170,12 @@ string Pessoa::getEndereco()
  */
 string Pessoa::getEmail()
 {
-  return this->email;
+  if(!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa"))
+  {
+    throw "Acesso negado";
+  }
+  else
+    return this->email;
 }
 /**
  * It returns the documento variable.
@@ -168,7 +184,12 @@ string Pessoa::getEmail()
  */
 string Pessoa::getDocumento()
 {
-  return this->documento;
+  if(!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa"))
+  {
+    throw "Acesso negado";
+  }
+  else
+    return this->documento;
 }
 /**
  * It returns the value of the private variable telefone.
@@ -177,7 +198,12 @@ string Pessoa::getDocumento()
  */
 long int Pessoa::getTelefone()
 {
-  return this->telefone;
+  if(!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa"))
+  {
+    throw "Acesso negado";
+  }
+  else
+    return this->telefone;
 }
 /**
  * This function sets the value of the private variable nome to the value of the parameter valNome

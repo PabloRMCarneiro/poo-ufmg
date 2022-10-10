@@ -1,4 +1,5 @@
 #include "../include/Produto.h"
+#include "../include/Empresa.h"
 vector <Produto*> Produto::produtolist;
 Produto::Produto()
 {
