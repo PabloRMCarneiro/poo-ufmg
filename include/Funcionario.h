@@ -37,7 +37,8 @@ class Funcionario : public Pessoa
     void setEstadoAtivo(bool valEstadoAtivo);
     void alteraRegistro(Data valData);
     void demiteFuncionario();
-    void alteraSalario(float valPercentual);  
+    void promocao(float valPercentual); 
+    void reajuste(float valDissidio);
 };
  
 #endif

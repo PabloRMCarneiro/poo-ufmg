@@ -124,6 +124,10 @@ Funcionario *Empresa::getFuncionario(string doc)
   }
 }
 
+vector<Funcionario*> Empresa::getFuncionario(){
+  return this->funcionarios;
+}
+
 RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente)
 {
 

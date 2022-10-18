@@ -1,7 +1,7 @@
-#include "../include/Salario.h"
+//#include "../include/Salario.h"
 #include <string>
 #include <vector>
-
+#include "../include/Empresa.h"
 
 using namespace std;
 /**
@@ -73,6 +73,9 @@ void Salario::setValor(float valValor)
 void Salario::setDissidio(float valDissidio)
 {
   this->dissidio = valDissidio;
+  for(auto it : Empresa::getEmpresa()->getFuncionario()){
+    it->getSalario().reajuste(dissidio);
+  }
 }
 /**
  * This function increases the value of the salary by the percentage of the parameter valPercentual
@@ -82,6 +85,7 @@ void Salario::setDissidio(float valDissidio)
 void Salario::promocao(float valPercentual)
 {
   this->valor = this->valor + (this->valor * valPercentual);
+  
 }
 /**
  * This function increases the value of the salary by the value of the parameter valDissidio

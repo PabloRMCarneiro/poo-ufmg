@@ -1,6 +1,6 @@
 #include "../include/Log.h"
 #include "../include/data.h"
-#include "../include/Usuario.h"
+#include "../include/Empresa.h"
 
 #include <string>
 
@@ -16,7 +16,7 @@ using namespace std;
 
 Log::Log()
 {
-  this->usuario = Usuario();
+  this->usuario = Empresa::getEmpresa()->getUsuario(); //Usuario();
   this->dataAcesso = Data();
   this->entidade = "";
 }

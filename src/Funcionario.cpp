@@ -205,10 +205,13 @@ void Funcionario::demiteFuncionario()
  * 
  * @param valPercentual the percentage of the salary increase
  */
-void Funcionario::alteraSalario(float valPercentual)
+void Funcionario::promocao(float valPercentual)
 {
-  this->salario.setValor(this->salario.getValor() + (this->salario.getValor() * valPercentual));
+  this->salario.promocao(valPercentual);
 }
 
+void Funcionario::reajuste(float valDissidio){
+  this->salario.setDissidio(valDissidio);
+}
 
 

@@ -34,6 +34,7 @@ class Empresa
     Departamento* getDepartamento(string name);
     Cliente* getCliente(string doc);
     Funcionario* getFuncionario(string doc);
+    vector<Funcionario*> getFuncionario();
     RegistroVendas* getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente);
 
     void setUsuario();
