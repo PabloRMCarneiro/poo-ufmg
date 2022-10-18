@@ -178,6 +178,6 @@ bool Data::operator<(Data &d2)
  */
 bool Data::operator==(Data &d2)
 {
-    return ((ano == d2.ano) && (mes == d2.mes) && (dia == d2.dia) && (hora == d2.hora) &&
-            (minuto == d2.minuto) && (segundo == d2.segundo));
+    return ((ano == d2.ano) && (mes == d2.mes) && (dia == d2.dia) /* && (hora == d2.hora) &&
+            (minuto == d2.minuto) && (segundo == d2.segundo) */);
 }
