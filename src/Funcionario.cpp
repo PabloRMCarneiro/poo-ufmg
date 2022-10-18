@@ -150,7 +150,7 @@ void Funcionario::setDataNascimento(Data valDataNascimento)
  * 
  * @param valSalario The value of the salary
  */
-void Funcionario::setSalario(Salario valSalario)
+void Funcionario::setSalario(Data valData, Salario valSalario)
 {
   this->salario = valSalario;
 }
@@ -205,13 +205,13 @@ void Funcionario::demiteFuncionario()
  * 
  * @param valPercentual the percentage of the salary increase
  */
-void Funcionario::promocao(float valPercentual)
+void Funcionario::promocao(Data valData, float valPercentual)
 {
-  this->salario.promocao(valPercentual);
+  this->salario.promocao(valData, valPercentual);
 }
 
-void Funcionario::reajuste(float valDissidio){
-  this->salario.setDissidio(valDissidio);
+void Funcionario::reajuste(Data valData, float valDissidio){
+  this->salario.setDissidio(valData, valDissidio);
 }
 
 

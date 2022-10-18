@@ -31,14 +31,14 @@ class Funcionario : public Pessoa
 
     void setDepartamento(Departamento valDepartamento);
     void setDataNascimento(Data valDataNascimento);
-    void setSalario(Salario valSalario);
+    void setSalario(Data valData, Salario valSalario);
     void setRegistro(vector <Data> valRegistro);
     void setCargo(Cargo valCargo);
     void setEstadoAtivo(bool valEstadoAtivo);
     void alteraRegistro(Data valData);
     void demiteFuncionario();
-    void promocao(float valPercentual); 
-    void reajuste(float valDissidio);
+    void promocao(Data valData, float valPercentual); 
+    void reajuste(Data valData, float valDissidio);
 };
  
 #endif

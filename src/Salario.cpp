@@ -70,11 +70,11 @@ void Salario::setValor(float valValor)
  * 
  * @param valDissidio
  */
-void Salario::setDissidio(float valDissidio)
+void Salario::setDissidio(Data valData, float valDissidio)
 {
   this->dissidio = valDissidio;
   for(auto it : Empresa::getEmpresa()->getFuncionario()){
-    it->getSalario().reajuste(dissidio);
+    it->getSalario().reajuste(valData, dissidio);
   }
 }
 /**
@@ -82,30 +82,28 @@ void Salario::setDissidio(float valDissidio)
  * 
  * @param valPercentual
  */
-void Salario::promocao(float valPercentual)
+void Salario::promocao(Data valData, float valPercentual)
 {
   this->valor = this->valor + (this->valor * valPercentual);
-  
+  this->atualizaRegistro(valData);
+
 }
 /**
  * This function increases the value of the salary by the value of the parameter valDissidio
  * 
  * @param valDissidio
  */
-void Salario::reajuste(float valDissidio)
+void Salario::reajuste(Data valData, float valDissidio)
 {
   this->valor = this->valor + (this->valor * valDissidio);
+  this->atualizaRegistro(valData);
 }
 /**
  * This function sets the value of the private variable registro to the value of the parameter valRegistro
  * 
  * @param valRegistro
  */
-void Salario::alteraRegistro(Data valData, float valValor)
+void Salario::atualizaRegistro(Data valData)
 {
-  for(auto it: registro){
-    if(it.first==valData){
-      it.second=valValor;
-    }
-  }
+  this->registro.push_back(make_pair(valData, this->valor));
 }

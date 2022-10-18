@@ -19,10 +19,10 @@ class Salario {
       vector<pair<Data, float>> getRegistro();
       float getDissidio();
       void setValor(float valValor);
-      void setDissidio(float valDissidio);
-      void promocao(float valPercentual);
-      void reajuste(float valDissidio);
-      void alteraRegistro(Data valData, float valValor);
+      void setDissidio(Data valData, float valDissidio);
+      void promocao(Data valData, float valPercentual);
+      void reajuste(Data valData, float valDissidio);
+      void atualizaRegistro(Data valData);
 }; 
 
 #endif
