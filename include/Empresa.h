@@ -22,6 +22,10 @@ class Empresa
     vector <Cliente*> clientes;
     vector <Cargo*> cargos;
     vector <RegistroVendas*> registrosVendas;
+    vector <Log> logsEscrita;
+    vector <Log> logsLeitura;
+    vector <Log> logsAcessoNegado;
+
     Empresa();
 
   public:
@@ -36,6 +40,9 @@ class Empresa
     Funcionario* getFuncionario(string doc);
     vector<Funcionario*> getFuncionario();
     RegistroVendas* getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente);
+    vector<Log> getLogLeitura();
+    vector<Log> getLogEscrita();
+    vector<Log> getLogAcesso();
 
     void setUsuario();
     void setCargo(Cargo* valCargo);
