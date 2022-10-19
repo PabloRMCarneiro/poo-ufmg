@@ -1,5 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
+/* #include "../third_party/doctest.h"
 #include "../include/Salario.h"
 #include "../include/data.h"
 
@@ -53,3 +52,4 @@ TEST_CASE("Registro da classe Salario")
   CHECK(salario->getRegistro()[0].second == 0.1);
 
 }
+ */

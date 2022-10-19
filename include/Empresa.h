@@ -9,6 +9,7 @@
 #include "./RegistroVendas.h"
 #include "./Usuario.h"
 #include "./data.h"
+#include "./Log.h"
 
 using namespace std;
 

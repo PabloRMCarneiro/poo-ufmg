@@ -12,14 +12,15 @@ using namespace std;
  */
 Cargo::Cargo()
 {
+  
   if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
   {
     throw "Acesso negado";
   }
+  
   else
-  {
-    this->nome = "";
-  }
+    nome = "";
+  
 }
 /**
  * The function `Cargo::Cargo(string valNome)` is a constructor for the class `Cargo`
@@ -31,11 +32,11 @@ Cargo::Cargo(string valNome)
   if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
   {
     throw "Acesso negado";
-  }
-  else 
-  {
+  } 
+  
+  else
     this->nome = valNome;
-  }
+  
  
 }
 /**

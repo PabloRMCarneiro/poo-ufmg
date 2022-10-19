@@ -1,5 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
+#include "../third_party/doctest.h"
 #include "../include/Cliente.h"
 
 using namespace std;

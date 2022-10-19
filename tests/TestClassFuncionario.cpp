@@ -1,5 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
+/* #include "../third_party/doctest.h"
 #include "../include/Funcionario.h"
 #include "../include/Pessoa.h"
 #include "../include/Departamento.h"
@@ -197,4 +196,4 @@ TEST_CASE("Método alteraSalario da classe Funcionario")
   f->setSalario(*s);
   f->alteraSalario(0.1);
   CHECK(f->getSalario().getValor() == 1100.0);
-}
+} */
