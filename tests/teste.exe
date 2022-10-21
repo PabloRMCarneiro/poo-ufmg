@@ -1,0 +1,2 @@
+c++ ./program/main.cpp ./src/Usuario.cpp ./src/Empresa.cpp ./src/Departamento.cpp ./src/Funcionario.cpp ./src/Cliente.cpp ./src/Cargo.cpp ./src/RegistroVendas.cpp  ./src/data.cpp ./src/Log.cpp ./src/Pessoa.cpp ./src/Salario.cpp ./src/Categoria.cpp ./src/Produto.cpp ./src/OrdemDeProducao.cpp -o ./program/main
+

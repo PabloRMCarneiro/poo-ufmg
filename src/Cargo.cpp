@@ -15,7 +15,7 @@ Cargo::Cargo()
   
   if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Cargo.Cargo";
   }
   
   else
@@ -31,13 +31,11 @@ Cargo::Cargo(string valNome)
 {
   if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
   {
-    throw "Acesso negado";
-  } 
+    throw "Acesso negado a Cargo.Cargo";
+  }
   
-  else
-    this->nome = valNome;
+  else nome = valNome;
   
- 
 }
 /**
  * The destructor is called when the object is destroyed
@@ -53,7 +51,12 @@ Cargo::~Cargo()
 
 string Cargo::getNome()
 {
-  return this->nome;
+  if(!Empresa::getEmpresa()->getAcesso("Cargo.getNome"))
+  {
+    throw "Acesso negado a Cargo.getNome";
+  }
+  
+  else return this->nome;
 }
 /**
  * This function sets the value of the private variable nome to the value of the parameter valNome

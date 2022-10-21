@@ -7,7 +7,8 @@ Cliente::Cliente():Pessoa(){
         throw "Acesso negado";
     }
     else
-    {
+    {   
+        this->cliente = Pessoa();
         this->tipoCliente = "";
     }
 
@@ -15,10 +16,11 @@ Cliente::Cliente():Pessoa(){
 Cliente::Cliente(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone):Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone){
     if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
     {
-        throw "Acesso negado";
+        throw "Acesso negado a Cliente.Cliente";
     }
     else
-    {
+    {   
+        this->cliente = Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone);
         this->setTipoCliente(valDocumento);
     }
 }

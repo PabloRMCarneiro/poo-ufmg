@@ -1,8 +1,11 @@
 #ifndef REGISTROVENDAS_H_INCLUDED
 #define REGISTROVENDAS_H_INCLUDED
-#include "../include/Produto.h"
-#include "../include/Cliente.h"
+#include "./Produto.h"
+#include "./Cliente.h"
+#include "./data.h"
 
+#include <vector>
+#include <string>
 class RegistroVendas{
     private:
         Data dataDeVenda;
@@ -12,7 +15,6 @@ class RegistroVendas{
         bool vendido = false;
         Cliente* cliente;
     public:
-        RegistroVendas(Data dv, string p, int q, Cliente* cl);
         RegistroVendas(Data dv, Produto* p, int q, Cliente* cl);
         Data getDataDeVenda();
         vector<int> getNumeroDoLote();

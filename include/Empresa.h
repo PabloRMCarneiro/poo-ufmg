@@ -2,14 +2,16 @@
 #define EMPRESA_H_INCLUDED
 #include <vector>
 #include <string>
+
+#include "./Usuario.h"
 #include "./Departamento.h"
 #include "./Funcionario.h"
 #include "./Cliente.h"
 #include "./Cargo.h"
 #include "./RegistroVendas.h"
-#include "./Usuario.h"
 #include "./data.h"
-#include "./Log.h"
+#include "./Log.h" 
+
 
 using namespace std;
 
@@ -18,14 +20,16 @@ class Empresa
   private:
     static Empresa* empresa;
     Usuario* usuarioLogado;
-    vector <Departamento*> departamentos;
-    vector <Funcionario*> funcionarios;
-    vector <Cliente*> clientes;
     vector <Cargo*> cargos;
+    vector <Departamento*> departamentos;
+    vector <Cliente*> clientes;
+    vector <Funcionario*> funcionarios;
     vector <RegistroVendas*> registrosVendas;
+    /* 
     vector <Log> logsEscrita;
     vector <Log> logsLeitura;
-    vector <Log> logsAcessoNegado;
+    vector <Log> logsAcessoNegado; 
+    */
 
     Empresa();
 
@@ -35,23 +39,25 @@ class Empresa
     void login(Usuario* valUsuario);
     
     Usuario* getUsuario();
-    Cargo* getCargo(string name);
+    Cargo* getCargo(Cargo* valCargo);
     Departamento* getDepartamento(string name);
     Cliente* getCliente(string doc);
     Funcionario* getFuncionario(string doc);
     vector<Funcionario*> getFuncionario();
     RegistroVendas* getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente);
+    
+    /* 
     vector<Log> getLogLeitura();
     vector<Log> getLogEscrita();
-    vector<Log> getLogAcesso();
+    vector<Log> getLogAcesso(); 
+    */
 
-    void setUsuario();
+    void setUsuario(Usuario* valUsuario);
     void setCargo(Cargo* valCargo);
     void setDepartamento(Departamento* valDepartamento);
     void setCliente(Cliente* valCliente);
     void setFuncionario(Funcionario* valFuncionario);
-    void setRegistroVendas(RegistroVendas* valRegistro);
-
+    void setRegistroVendas(RegistroVendas* valRegistro);  
 };
 
 

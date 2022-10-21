@@ -11,7 +11,7 @@ Departamento::Departamento()
 {
   if(!Empresa::getEmpresa()->getAcesso("Departamento.Departamento"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Departamento.Departamento";
   }
   else
   {
@@ -28,7 +28,7 @@ Departamento::Departamento(string valNome)
 {
   if(!Empresa::getEmpresa()->getAcesso("Departamento.Departamento"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Departamento.Departamento";
   }
   else
   {
@@ -48,7 +48,14 @@ Departamento::~Departamento()
  */
 string Departamento::getNome()
 {
-  return this->nome;
+  if(!Empresa::getEmpresa()->getAcesso("Departamento.getNome"))
+  {
+    throw "Acesso negado a Departamento.getNome";
+  }
+  else
+  {
+    return this->nome;
+  }
 }
 /**
  * This function sets the value of the private variable nome to the value of the parameter valNome

@@ -4,6 +4,7 @@
 
 class Cliente:public Pessoa{
     private:
+        Pessoa cliente;
         string tipoCliente;
     public:
         Cliente();

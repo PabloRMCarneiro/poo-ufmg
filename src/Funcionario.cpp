@@ -18,12 +18,12 @@ using namespace std;
  */
 Funcionario::Funcionario():Pessoa()
 {
-  if(!Empresa::getEmpresa()->getCargo("Funcionario.Funcionario"))
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.Funcionario"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Funcionario.Funcionario";
   }
   else
-  {
+  { 
     this->departamento = Departamento();
     this->dataNascimento = Data();
     this->salario = Salario();
@@ -46,12 +46,12 @@ Funcionario::Funcionario():Pessoa()
 Funcionario::Funcionario(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
 :Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
 {
-  if(!Empresa::getEmpresa()->getCargo("Funcionario.Funcionario"))
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.Funcionario"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Funcionario.Funcionario";
   }
   else
-  {
+  { 
     this->departamento = valDepartamento;
     this->dataNascimento = valDataNascimento;
     this->salario = valSalario;
@@ -73,7 +73,14 @@ Funcionario::~Funcionario()
  */
 Departamento Funcionario::getDepartamento()
 {
-  return this->departamento;
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getDepartamento"))
+  {
+    throw "Acesso negado a Funcionario.getDepartamento";
+  }
+  else
+  {
+    return this->departamento;
+  }
 }
 /**
  * It returns the dataNascimento variable.
@@ -82,7 +89,14 @@ Departamento Funcionario::getDepartamento()
  */
 Data Funcionario::getDataNascimento()
 {
-  return this->dataNascimento;
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getDataNascimento"))
+  {
+    throw "Acesso negado a Funcionario.getDataNascimento";
+  }
+  else
+  {
+    return this->dataNascimento;
+  }
 }
 /**
  * It returns the salary of the employee.
@@ -91,7 +105,14 @@ Data Funcionario::getDataNascimento()
  */
 Salario Funcionario::getSalario()
 {
-  return this->salario;
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getSalario"))
+  {
+    throw "Acesso negado a Funcionario.getSalario";
+  }
+  else
+  {
+    return this->salario;
+  }
 }
 /**
  * It returns the vector of Data objects.
@@ -100,7 +121,14 @@ Salario Funcionario::getSalario()
  */
 vector <Data> Funcionario::getRegistro()
 {
-  return this->registro;
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getRegistro"))
+  {
+    throw "Acesso negado a Funcionario.getRegistro";
+  }
+  else
+  {
+    return this->registro;
+  }
 }
 /**
  * It returns the cargo of the employee.
@@ -109,7 +137,14 @@ vector <Data> Funcionario::getRegistro()
  */
 Cargo Funcionario::getCargo()
 {
-  return this->cargo;
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getCargo"))
+  {
+    throw "Acesso negado a Funcionario.getCargo";
+  }
+  else
+  {
+    return this->cargo;
+  }
 }
 /**
  * It returns the value of the variable estadoAtivo.
@@ -118,7 +153,14 @@ Cargo Funcionario::getCargo()
  */
 bool Funcionario::getEstadoAtivo()
 {
-  return this->estadoAtivo;
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getEstadoAtivo"))
+  {
+    throw "Acesso negado a Funcionario.getEstadoAtivo";
+  }
+  else
+  {
+    return this->estadoAtivo;
+  }
 }
 /**
  * The function sets the name of the department of the employee

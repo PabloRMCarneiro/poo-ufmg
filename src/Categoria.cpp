@@ -6,7 +6,7 @@ Categoria::Categoria()
 {
   if(!Empresa::getEmpresa()->getAcesso("Categoria.Categoria"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Categoria";
   }
   else
   {
@@ -18,7 +18,7 @@ Categoria::Categoria(string t)
 {
   if(!Empresa::getEmpresa()->getAcesso("Categoria.Categoria"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Categoria";
   }
   else
   {

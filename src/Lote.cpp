@@ -5,7 +5,7 @@ Lote::Lote()
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
     {
-        throw "Acesso negado";
+        throw "Acesso negado a Lote.Lote";
     }
     else
     {
@@ -20,7 +20,7 @@ Lote::Lote(int nl)
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
     {
-        throw "Acesso negado";
+        throw "Acesso negado a Lote.Lote";
     }
     else
         this->setNumLote(nl);
@@ -29,7 +29,7 @@ Lote::Lote(Data d, int nl, int qp, string p)
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
     {
-        throw "Acesso negado";
+        throw "Acesso negado a ";
     }
     else
     {

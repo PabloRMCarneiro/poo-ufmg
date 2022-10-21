@@ -1,11 +1,5 @@
 #include "../include/Empresa.h"
-#include "../include/Departamento.h"
-#include "../include/Funcionario.h"
-#include "../include/Cliente.h"
-#include "../include/Cargo.h"
-#include "../include/RegistroVendas.h"
-#include "../include/Usuario.h"
-#include "../include/data.h"
+
 
 using namespace std;
 
@@ -17,65 +11,72 @@ Empresa::Empresa()
 
 Empresa *Empresa::getEmpresa()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+/*   if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
   {
     throw "Acesso negado";
   }
   else
-  {
+  { */
     return empresa;
-  }
+  //}
 }
 
 bool Empresa::getAcesso(string valFuncoes)
 {
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
-  {
-    throw "Acesso negado";
-  }
-  else
-    return empresa->usuarioLogado->getPermissoes(valFuncoes);
+  if(empresa->usuarioLogado->getPermissoes(valFuncoes)) return true;
+  else return false;
 }
 
 void Empresa::login(Usuario *valUsuario)
 {
   empresa->usuarioLogado = valUsuario;
 }
-
+ 
 Usuario* Empresa::getUsuario()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.getUsuario"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Empresa->getUsuario";
   }
   else
     return empresa->usuarioLogado;
 }
 
-Cargo* Empresa::getCargo(string name)
-{ 
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+void Empresa::setUsuario(Usuario *valUsuario)
+{
+  empresa->usuarioLogado = valUsuario;
+}
+
+ Cargo * Empresa::getCargo(Cargo *valCargo)
+{
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.getCargo"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Empresa->getCargo";
   }
-  else 
+  else
   {
-    for(auto it : cargos){
-      if(it->getNome() == name){
-        return it;
-      } 
+    for (int i = 0; i < empresa->cargos.size(); i++)
+    {
+      if (empresa->cargos[i]->getNome() == valCargo->getNome())
+      {
+        return empresa->cargos[i];
+      }
     }
     return nullptr;
   }
+}
 
+void Empresa::setCargo(Cargo *valCargo)
+{
+  empresa->cargos.push_back(valCargo);
 }
 
 Departamento *Empresa::getDepartamento(string name)
 {
 
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.getDepartamento"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Empresa->getDepartamento";
   }
   else 
   {
@@ -88,12 +89,17 @@ Departamento *Empresa::getDepartamento(string name)
   }
 }
 
+void Empresa::setDepartamento(Departamento *valDepartamento)
+{
+  empresa->departamentos.push_back(valDepartamento);
+}
+
 Cliente *Empresa::getCliente(string doc)
 {
 
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.getCliente"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Empresa->getCliente";
   }
   else 
   {
@@ -106,12 +112,17 @@ Cliente *Empresa::getCliente(string doc)
   }
 }
 
+void Empresa::setCliente(Cliente *valCliente)
+{
+  empresa->clientes.push_back(valCliente);
+}
+
 Funcionario *Empresa::getFuncionario(string doc)
 {
 
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.getFuncionario"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Empresa->getFuncionario";
   }
   else 
   {
@@ -128,12 +139,17 @@ vector<Funcionario*> Empresa::getFuncionario(){
   return this->funcionarios;
 }
 
+void Empresa::setFuncionario(Funcionario *valFuncionario)
+{
+  empresa->funcionarios.push_back(valFuncionario);
+}
+
 RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente)
 {
 
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
+  if(!Empresa::getEmpresa()->getAcesso("Empresa.getRegistroVendas"))
   {
-    throw "Acesso negado";
+    throw "Acesso negado a Empresa->getRegistroVendas";
   }
   else 
   {
@@ -146,30 +162,6 @@ RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cl
   }
 }
 
-void Empresa::setUsuario()
-{
-  empresa->usuarioLogado = new Usuario();
-}
-
-void Empresa::setCargo(Cargo *valCargo)
-{
-  empresa->cargos.push_back(valCargo);
-}
-
-void Empresa::setDepartamento(Departamento *valDepartamento)
-{
-  empresa->departamentos.push_back(valDepartamento);
-}
-
-void Empresa::setCliente(Cliente *valCliente)
-{
-  empresa->clientes.push_back(valCliente);
-}
-
-void Empresa::setFuncionario(Funcionario *valFuncionario)
-{
-  empresa->funcionarios.push_back(valFuncionario);
-}
 
 void Empresa::setRegistroVendas(RegistroVendas *valRegistro)
 {

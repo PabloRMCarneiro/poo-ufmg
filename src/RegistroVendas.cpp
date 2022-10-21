@@ -1,32 +1,71 @@
 #include "../include/RegistroVendas.h"
+#include "../include/Empresa.h"
 //construtores
-RegistroVendas::RegistroVendas(Data dv, string p, int q, Cliente* cl){
-    this->setDataDeVenda(dv);
-    this->setProduto(p);
-    this->setQuantidadeVenda(q);
-    this->setCliente(cl);
-}
+
 RegistroVendas::RegistroVendas(Data dv, Produto* p, int q, Cliente* cl){
-    this->setDataDeVenda(dv);
-    this->setProduto(p);
-    this->setQuantidadeVenda(q);
-    this->setCliente(cl);
+    if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.RegistroVendas"))
+    {
+      throw "Acesso negado - RegistroVendas";
+    }
+    else 
+    {
+      this->setDataDeVenda(dv);
+      this->setProduto(p);
+      this->setQuantidadeVenda(q);
+      this->setCliente(cl);
+    }
+    
 }
 //metodos get
 Cliente* RegistroVendas::getCliente(){
-    return this->cliente;
+    if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getCliente"))
+    {
+      throw "Acesso negado - getCliente";
+    }
+    else 
+    {
+      return this->cliente;
+    }
 }
 Data RegistroVendas::getDataDeVenda(){
-    return this->dataDeVenda;
+    if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getDataDeVenda"))
+    {
+      throw "Acesso negado - getDataDeVenda";
+    }
+    else 
+    {
+      return this->dataDeVenda;
+    }
 }
 vector<int> RegistroVendas::getNumeroDoLote(){
-    return this->lote;
+    if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getNumeroDoLote"))
+    {
+      throw "Acesso negado - getNumeroDoLote";
+    }
+    else 
+    {
+      return this->lote;
+    }
 }
 Produto* RegistroVendas::getProduto(){
-    return this->produto;
+    if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getProduto"))
+    {
+      throw "Acesso negado - getProduto";
+    }
+    else 
+    {
+      return this->produto;
+    }
 }
 int RegistroVendas::getQuantidadeVenda(){
-    return this->quantidadeVenda;
+    if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getQuantidadeVenda"))
+    {
+      throw "Acesso negado - getQuantidadeVenda";
+    }
+    else 
+    {
+      return this->quantidadeVenda;
+    }
 }
 //metodos set
 void RegistroVendas::setCliente(Cliente* cl){

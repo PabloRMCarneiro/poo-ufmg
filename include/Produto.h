@@ -4,6 +4,7 @@
 #include "../include/Lote.h"
 #include "../include/Categoria.h"
 #include "../include/OrdemDeProducao.h"
+#include "../include/Categoria.h"
 using namespace std;
 
 class Produto {

@@ -1,5 +1,6 @@
 #include "../include/Produto.h"
 #include "../include/Empresa.h"
+
 vector <Produto*> Produto::produtolist;
 Produto::Produto()
 {
@@ -15,15 +16,23 @@ Produto::Produto()
 
 Produto::Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, string categ)
 {
-  this->nome = nome;
-  this->codigo = codigo;
-  this->valorDeVenda = valorDeVenda;
-  this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
-  this->estoqueMinimo = estoqueMinimo;
-  this->qtdEstoque = qtdEstoque;
-  this->setCategoria(categ);
+  if(!Empresa::getEmpresa()->getAcesso("Produto.Produto"))
+  {
+    throw "Acesso negado - Produto";
+  }
+  else
+  {
+    this->nome = nome;
+    this->codigo = codigo;
+    this->valorDeVenda = valorDeVenda;
+    this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
+    this->estoqueMinimo = estoqueMinimo;
+    this->qtdEstoque = qtdEstoque;
+    this->setCategoria(categ);
   //this->ordemDeProducao();
-  this->novoProduto(this);
+    this->novoProduto(this);
+  }
+  
 }
 
 Produto::~Produto()
@@ -32,39 +41,95 @@ Produto::~Produto()
 
 string Produto::getNome()
 {
-  return this->nome;
+  if(!Empresa::getEmpresa()->getAcesso("Produto.getNome"))
+  {
+    throw "Acesso negado - Produto.getNome";
+  }
+  else
+  {
+    return this->nome;
+  }
 }
 
 int Produto::getCodigo()
 {
-  return this->codigo;
+  if(!Empresa::getEmpresa()->getAcesso("Produto.getCodigo"))
+  {
+    throw "Acesso negado - Produto.getCodigo";
+  }
+  else
+  {
+    return this->codigo;
+  }
 }
 
 float Produto::getValorDeVenda()
 {
-  return this->valorDeVenda;
+  if(!Empresa::getEmpresa()->getAcesso("Produto.getValorDeVenda"))
+  {
+    throw "Acesso negado - Produto.getValorDeVenda";
+  }
+  else
+  {
+    return this->valorDeVenda;
+  }
 }
 
 int Produto::getTamanhoDoLoteMinimo()
 {
-  return this->tamanhoDoLoteMinimo;
+  if(!Empresa::getEmpresa()->getAcesso("Produto.getTamanhoDoLoteMinimo"))
+  {
+    throw "Acesso negado - Produto.getTamanhoDoLoteMinimo";
+  }
+  else
+  {
+    return this->tamanhoDoLoteMinimo;
+  }
 }
 
 int Produto::getEstoqueMinimo()
 {
-  return this->estoqueMinimo;
+  if(!Empresa::getEmpresa()->getAcesso("Produto.getEstoqueMinimo"))
+  {
+    throw "Acesso negado - Produto.getEstoqueMinimo";
+  }
+  else
+  {
+    return this->estoqueMinimo;
+  }
 }
 
 int Produto::getQtdEstoque()
 {
-  return this->qtdEstoque;
+  if(!Empresa::getEmpresa()->getAcesso("Produto.getQtdEstoque"))
+  {
+    throw "Acesso negado - Produto.getQtdEstoque";
+  }
+  else
+  {
+    return this->qtdEstoque;
+  }
 }
 string Produto::getCategoria(){
-  return categoria->getTipo();
+  if(!Empresa::getEmpresa()->getAcesso("Produto.getCategoria"))
+  {
+    throw "Acesso negado - Produto.getCategoria";
+  }
+  else
+  {
+    return this->categoria->getTipo();
+  }
 }
 OrdemDeProducao* Produto::getOrdem()
 {
-  return this->ordem;
+  if(!Empresa::getEmpresa()->getAcesso("Produto.getOrdem"))
+  {
+    throw "Acesso negado - Produto.getOrdem";
+  }
+  else
+  {
+    return this->ordem;
+  }
 }
 Lote* Produto::getLote(int nl){
   for(auto it : lotes){
