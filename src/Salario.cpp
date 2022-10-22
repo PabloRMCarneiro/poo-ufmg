@@ -85,7 +85,7 @@ void Salario::setValor(float valValor) { this->valor = valValor; }
 void Salario::setDissidio(Data valData, float valDissidio) {
   this->dissidio = valDissidio;
   for (auto it : Empresa::getEmpresa()->getFuncionario()) {
-    it->getSalario().reajuste(valData, dissidio);
+    it->promocao(valData, valDissidio);
   }
 }
 /**

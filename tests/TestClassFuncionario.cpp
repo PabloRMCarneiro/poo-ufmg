@@ -196,65 +196,6 @@ TEST_CASE("Destrutor da classe Funcionario")
   CHECK(f->getEstadoAtivo() == false);
 }
 
-TEST_CASE("Método getPessoa da classeFuncionario")
-{
-  Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
-  Empresa *empresa = Empresa::getEmpresa();
-  empresa->login(user);
-
-  Pessoa *p1 = new Pessoa("João1", "Rua 1", "teste@gmail.com", "19380512040", 99999999999);
-
-  Departamento d =  Departamento("Departamento 1");
-  Data data =  Data(2000, 1, 1);
- 
-  Salario s1 = Salario(1200.0);
-
-  Cargo c =  Cargo("Cargo 1");
-  vector<Data> registro = {Data(2000, 1, 1)};
-
-  Funcionario *f = new Funcionario(p1->getNome(), p1->getEndereco(), p1->getEmail(), p1->getDocumento(), p1->getTelefone(), d, data, s1, registro, c, true);
-
-  CHECK(f->getNome() == "João1");
-  CHECK(f->getEndereco() == "Rua 1");
-  CHECK(f->getEmail() == "teste@gmail.com");
-  CHECK(f->getDocumento() == "19380512040");
-  CHECK(f->getTelefone() == 99999999999);
-
-}
-
 TEST_CASE("Método getDepartamento da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
@@ -746,12 +687,11 @@ TEST_CASE("Método reajuste da classe Funcionario")
   Pessoa *p2 = new Pessoa("João2", "Rua 1", "teste@gmail.com", "29380512040", 99999999999);
   Pessoa *p3 = new Pessoa("João3", "Rua 1", "teste@gmail.com", "39380512040", 99999999999);
 
-
   Departamento d =  Departamento("Departamento 1");
   Data data =  Data(2000, 1, 1);
  
   Salario s1 = Salario(1200.0);
-  Salario s2 = Salario(1500.0);
+  Salario s2 = Salario(1000.0);
   Salario s3 = Salario(2000.0);
 
   Cargo c =  Cargo("Cargo 1");
@@ -763,19 +703,19 @@ TEST_CASE("Método reajuste da classe Funcionario")
   
   Funcionario *f3 = new Funcionario(p3->getNome(), p3->getEndereco(), p3->getEmail(), p3->getDocumento(), p3->getTelefone(), d, data, s3, registro, c, true);
   
-  
   Data data2 = Data(2015, 1, 1);
-
-  f1->reajuste(data2, 20);
-
 
   empresa->setFuncionario(f1);
   empresa->setFuncionario(f2);
   empresa->setFuncionario(f3);
+  
+  f1->reajuste(data2, 20);
 
-  CHECK(empresa->getFuncionario(f1->getDocumento())->getSalario().getValor() == 1440.0);
-  CHECK(empresa->getFuncionario(f2->getDocumento())->getSalario().getValor() == 1800.0);
-  CHECK(empresa->getFuncionario(f3->getDocumento())->getSalario().getValor() == 2400.0);
+  vector <Funcionario*> funcionarios = empresa->getFuncionario();
+
+  CHECK(funcionarios[0]->getSalario().getValor() == 1440);
+  CHECK(funcionarios[1]->getSalario().getValor() == 1200);  
+  CHECK(funcionarios[2]->getSalario().getValor() == 2400);
 
 
 }
