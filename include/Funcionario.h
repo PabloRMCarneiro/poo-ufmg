@@ -22,6 +22,7 @@ class Funcionario : public Pessoa
     Funcionario();
     Funcionario(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo);
     virtual ~Funcionario();
+    
     Departamento getDepartamento();
     Data getDataNascimento();
     Salario getSalario();
@@ -35,6 +36,7 @@ class Funcionario : public Pessoa
     void setRegistro(vector <Data> valRegistro);
     void setCargo(Cargo valCargo);
     void setEstadoAtivo(bool valEstadoAtivo);
+    
     void alteraRegistro(Data valData);
     void demiteFuncionario();
     void promocao(Data valData, float valPercentual); 

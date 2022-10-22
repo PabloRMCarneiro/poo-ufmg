@@ -233,14 +233,28 @@ void Funcionario::setEstadoAtivo(bool valEstadoAtivo)
  */
 void Funcionario::alteraRegistro(Data valData)
 {
-  this->registro.push_back(valData);
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.alteraRegistro"))
+  {
+    throw "Acesso negado a Funcionario.alteraRegistro";
+  }
+  else
+  {
+    this->registro.push_back(valData);
+  }
 }
 /**
  * It sets the state of the employee to inactive.
  */
 void Funcionario::demiteFuncionario()
 {
-  this->estadoAtivo = false;
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.demiteFuncionario"))
+  {
+    throw "Acesso negado a Funcionario.demiteFuncionario";
+  }
+  else
+  {
+    this->estadoAtivo = false;
+  }
 }
 /**
  * It takes a float value and adds it to the current salary value
@@ -249,11 +263,26 @@ void Funcionario::demiteFuncionario()
  */
 void Funcionario::promocao(Data valData, float valPercentual)
 {
-  this->salario.promocao(valData, valPercentual);
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.promocao"))
+  {
+    throw "Acesso negado a Funcionario.promocao";
+  }
+  else
+  {
+    this->setSalario(valData, this->getSalario().getValor() * (1 + valPercentual/100));
+    this->alteraRegistro(valData);
+  }
 }
 
 void Funcionario::reajuste(Data valData, float valDissidio){
-  this->salario.setDissidio(valData, valDissidio);
+  if(!Empresa::getEmpresa()->getAcesso("Funcionario.reajuste"))
+  {
+    throw "Acesso negado a Funcionario.reajuste";
+  }
+  else
+  {
+    this->salario.setDissidio(valData, valDissidio);
+  }
 }
 
 

@@ -1,10 +1,27 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "../third_party/doctest.h"
 #include "../include/Pessoa.h"
+#include "../include/Empresa.h"
+#include "../include/Usuario.h"
 
 using namespace std;
 
 TEST_CASE("Construtor padrão da classe Pessoa")
 {
+  Usuario *user = new Usuario("admin", "admin");
+  vector<string> permissoes;
+
+  permissoes.push_back("Pessoa.Pessoa");
+  permissoes.push_back("Pessoa.getNome");
+  permissoes.push_back("Pessoa.getDocumento");
+  permissoes.push_back("Pessoa.getTelefone");
+  permissoes.push_back("Pessoa.getEndereco");
+  permissoes.push_back("Pessoa.getEmail");
+  
+  user->setPermissoes(permissoes);
+  Empresa *empresa = Empresa::getEmpresa();
+  empresa->login(user);
+
   Pessoa *p = new Pessoa();
   CHECK(p->getNome() == "");
   CHECK(p->getEndereco() == "");
@@ -15,6 +32,20 @@ TEST_CASE("Construtor padrão da classe Pessoa")
 
 TEST_CASE("Construtor classe Pessoa")
 {
+  Usuario *user = new Usuario("admin", "admin");
+  vector<string> permissoes;
+
+  permissoes.push_back("Pessoa.Pessoa");
+  permissoes.push_back("Pessoa.getNome");
+  permissoes.push_back("Pessoa.getDocumento");
+  permissoes.push_back("Pessoa.getTelefone");
+  permissoes.push_back("Pessoa.getEndereco");
+  permissoes.push_back("Pessoa.getEmail");
+  
+  user->setPermissoes(permissoes);
+  Empresa *empresa = Empresa::getEmpresa();
+  empresa->login(user);
+
   Pessoa *pessoa = new Pessoa("Joao", "Rua 1", "teste@gmail.com", "66862964062", 99999999999);
 
   CHECK(pessoa->getNome() == "Joao");
@@ -26,6 +57,20 @@ TEST_CASE("Construtor classe Pessoa")
 
 TEST_CASE("Getters e Setters da classe Pessoa")
 {
+  Usuario *user = new Usuario("admin", "admin");
+  vector<string> permissoes;
+
+  permissoes.push_back("Pessoa.Pessoa");
+  permissoes.push_back("Pessoa.getNome");
+  permissoes.push_back("Pessoa.getDocumento");
+  permissoes.push_back("Pessoa.getTelefone");
+  permissoes.push_back("Pessoa.getEndereco");
+  permissoes.push_back("Pessoa.getEmail");
+  
+  user->setPermissoes(permissoes);
+  Empresa *empresa = Empresa::getEmpresa();
+  empresa->login(user);
+
   Pessoa *pessoa = new Pessoa();
 
   pessoa->setNome("Joao");
@@ -43,6 +88,20 @@ TEST_CASE("Getters e Setters da classe Pessoa")
 
 TEST_CASE("Validação de CPF da classe Pessoa")
 {
+  Usuario *user = new Usuario("admin", "admin");
+  vector<string> permissoes;
+
+  permissoes.push_back("Pessoa.Pessoa");
+  permissoes.push_back("Pessoa.getNome");
+  permissoes.push_back("Pessoa.getDocumento");
+  permissoes.push_back("Pessoa.getTelefone");
+  permissoes.push_back("Pessoa.getEndereco");
+  permissoes.push_back("Pessoa.getEmail");
+  
+  user->setPermissoes(permissoes);
+  Empresa *empresa = Empresa::getEmpresa();
+  empresa->login(user);
+
   Pessoa *pessoa = new Pessoa();
 
   CHECK(pessoa->validaDocumento("66862964062") == true);
@@ -51,6 +110,20 @@ TEST_CASE("Validação de CPF da classe Pessoa")
 
 TEST_CASE("Validação de CNPJ da classe Pessoa")
 {
+  Usuario *user = new Usuario("admin", "admin");
+  vector<string> permissoes;
+
+  permissoes.push_back("Pessoa.Pessoa");
+  permissoes.push_back("Pessoa.getNome");
+  permissoes.push_back("Pessoa.getDocumento");
+  permissoes.push_back("Pessoa.getTelefone");
+  permissoes.push_back("Pessoa.getEndereco");
+  permissoes.push_back("Pessoa.getEmail");
+  
+  user->setPermissoes(permissoes);
+  Empresa *empresa = Empresa::getEmpresa();
+  empresa->login(user);
+
   Pessoa *pessoa = new Pessoa();
 
   CHECK(pessoa->validaDocumento("03133845000143") == true);
