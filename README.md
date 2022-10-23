@@ -27,7 +27,7 @@ O comando "./main" para executar o arquivo principal permanece igual para ambos 
 
 # Como executar os testes?
 
-### 1 - Rodar o Sript na pasta ./tests/scripts
+### 1 - Rodar o Script na pasta ./tests/scripts
 ### 2 - Rodar o teste gerado na pasta ./tests/executaveis
 
 ### EXEMPLO com a classe Cliente 
@@ -64,22 +64,3 @@ Note que não precisa de permissão para instanciar a empresa, pois não tem coe
 ### 5 - Logar o usuário na Empresa;
 #### empresa->login(user);
 
-
-# CLASS           TESTE
-### Empresa         ok
-### Funcionario	    ok
-### Pessoa		        ok
-### Cargo 		        ok
-### Departamento	   ok
-### Cliente 	       ok
-### Lote 	          ok
-### data 		         ok
-### Usuario 	       ok
-### Salario		       ok
-### Categoria	      ok
-### OrdemDeProducao	ok
-### Produto		       x
-### RegistroVendas	 x	
-### Log		           x
-### LogEscrita	     x
-### LogLeitura	     x
