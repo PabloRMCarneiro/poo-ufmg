@@ -64,3 +64,24 @@ Note que não precisa de permissão para instanciar a empresa, pois não tem coe
 ### 5 - Logar o usuário na Empresa;
 #### empresa->login(user);
 
+
+# Relação de Testes já feitos.
+
+#### |      CLASSES     | TESTES |
+#### | ---------------- | ------ |
+#### |     Empresa      |   ✅   |
+#### |     Pessoa       |   ✅   |
+#### |      Cargo       |   ✅   |
+#### |   Departamento   |   ✅   |
+#### |     Cliente      |   ✅   |
+#### |       Lote       |   ✅   |
+#### |       data       |   ✅   |
+#### |     Usuario      |   ✅   |
+#### |     Salario      |   ✅   |
+#### |    Categoria     |   ✅   |
+#### |  OrdemDeProducao |   ❌   |
+#### |      Produto     |   ❌   |
+#### |  RegistroVendas  |   ❌   |
+#### |       Log        |   ❌   |
+#### |    LogEscrita    |   ❌   |
+#### |    LogLeitura    |   ❌   |
