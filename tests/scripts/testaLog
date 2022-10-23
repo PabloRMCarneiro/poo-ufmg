@@ -1,0 +1,1 @@
+c++ ./tests/TestClassLog.cpp  ./src/Log.cpp ./src/data.cpp ./src/Usuario.cpp -o ./tests/executaveis/TestLog
