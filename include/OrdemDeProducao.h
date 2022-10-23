@@ -12,7 +12,11 @@ class OrdemDeProducao{
         void setDataOrdem(Data dO);
         void setProduto(string p);
         void setQuantidade(int q);
-
+        
+        Data getDataOrdem();
+        string getProduto();
+        int getQuantidade();
+        
         void getOrdem();
 };
 #endif //ORDEMDEPRODUCAO_H_INCLUDED

@@ -1,0 +1,1 @@
+c++ ./tests/TestClassdata.cpp  ./src/data.cpp -o ./tests/executaveis/Testdata

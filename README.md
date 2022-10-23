@@ -23,3 +23,63 @@ As únicas diferenças para o processo de compilação são:
 ### 1 - ao invés do comando "make", de o comando "mingw32-make"
 ### 2 - ao invés do comando "make clean", de o comando "mingw32-make cleanw" no terminal para limpar os arquivos ".d" e ".o" criados
 O comando "./main" para executar o arquivo principal permanece igual para ambos os sistemas operacionais.
+
+
+# Como executar os testes?
+
+### 1 - Rodar o Sript na pasta ./tests/scripts
+### 2 - Rodar o teste gerado na pasta ./tests/executaveis
+
+### EXEMPLO com a classe Cliente 
+Na pasta do projeto execute o seguinte comando no terminal 
+#### ./tests/scripts/testaCliente
+posteriormente, o seguinte comando
+#### ./tests/executaveis/testCliente
+
+
+# Como Instanciar a classe Empresa, logar um Usuário e permitir a usabilidade de funções a esse Usuário?
+
+### 1 - #includes
+#### #include "../include/Empresa.h"
+#### #include "../include/Usuario.h"
+
+### 2 - Criação de Usuário
+##### Usuario *user = new Usuario("emailDoUsuario@gmail.com", "senhaDoUsuario");
+
+### 3 - Setar as permissões disponíveis para tal usuário
+
+####  vector<string> permissoes;
+####  permissoes.push_back("Permissao1");
+####  permissoes.push_back("Permissao2");
+####  permissoes.push_back("Permissao3"); e etc ...
+
+Quando terminar de colocar todas as permissões precisa setar as permissões
+
+#### user->setPermissoes(permissoes);
+
+### 4 - Instanciar a Empresa;
+#### Empresa *empresa = Empresa::getEmpresa();
+Note que não precisa de permissão para instanciar a empresa, pois não tem coerência em permitir ou não acesso sem antes logar com um usuário
+
+### 5 - Logar o usuário na Empresa;
+#### empresa->login(user);
+
+
+# CLASS           TESTE
+### Empresa         ok
+### Funcionario	    ok
+### Pessoa		        ok
+### Cargo 		        ok
+### Departamento	   ok
+### Cliente 	       ok
+### Lote 	          ok
+### data 		         ok
+### Usuario 	       ok
+### Salario		       ok
+### Categoria	      ok
+### OrdemDeProducao	ok
+### Produto		       x
+### RegistroVendas	 x	
+### Log		           x
+### LogEscrita	     x
+### LogLeitura	     x

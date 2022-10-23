@@ -4,7 +4,7 @@
 Cliente::Cliente():Pessoa(){
     if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
     {
-        throw "Acesso negado";
+        throw "Acesso negado a Cliente.Cliente";
     }
     else
     {   
@@ -33,5 +33,12 @@ void Cliente::setTipoCliente(string tc){
     }
 }
 string Cliente::getTipoCliente(){
-    return this->tipoCliente;
+    if(!Empresa::getEmpresa()->getAcesso("Cliente.getTipoCliente"))
+    {
+        throw "Acesso negado a Cliente.getTipoCliente";
+    }
+    else
+    {   
+        return this->tipoCliente;
+    }
 }

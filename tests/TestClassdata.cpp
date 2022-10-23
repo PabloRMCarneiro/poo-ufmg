@@ -1,3 +1,4 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "../third_party/doctest.h"
 #include "../include/data.h"
 
@@ -30,18 +31,3 @@ TEST_CASE("Getters e Setters da classe Data")
   CHECK(data->getAno() == 2019);
 }
 
-/* TEST_CASE("Operadores da classe Data")
-{
-  Data *data1 = new Data(1, 1, 2019);
-  Data *data2 = new Data(1, 1, 2019);
-  Data *data3 = new Data(1, 1, 2020);
-  Data *data4 = new Data(1, 2, 2019);
-  Data *data5 = new Data(2, 1, 2019);
-  Data *data6 = new Data(1, 1, 2018);
-  CHECK(*data1 == *data2);
-  CHECK(*data1 < *data3);
-  CHECK(*data1 < *data4);
-  CHECK(*data1 < *data5);
-  CHECK(*data1 < *data6);
-}
- */

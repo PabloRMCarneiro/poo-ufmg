@@ -4,7 +4,7 @@
 #include "../include/Lote.h"
 #include "../include/Categoria.h"
 #include "../include/OrdemDeProducao.h"
-#include "../include/Categoria.h"
+
 using namespace std;
 
 class Produto {
@@ -22,6 +22,7 @@ class Produto {
     Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, string categ);
     Produto();
     ~Produto();
+
     string getNome();
     int getCodigo();
     float getValorDeVenda();
@@ -31,6 +32,7 @@ class Produto {
     string getCategoria();
     OrdemDeProducao* getOrdem();
     Lote* getLote(int nl);
+
     void setNome(string nome);
     void setCodigo(int codigo);
     void setValorDeVenda(float valorDeVenda);
@@ -38,10 +40,12 @@ class Produto {
     void setEstoqueMinimo(int estoqueMinimo);
     void setQtdEstoque(int qtdEstoque);
     void setCategoria(string categ);
+
     void registraLote(int numeroLote, Data dataDeProducao);
     pair<int, int> realizaVenda(int quantidade, Data venda);
     void geraOrdem(Data dataQuandoAcabaEstoque);
     bool temEstoque(int q);
+    
     static vector <Produto*> produtolist;
     static void novoProduto(Produto* novo);
     static Produto* getProduto(string n);

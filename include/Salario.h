@@ -15,11 +15,14 @@ class Salario {
       Salario();
       Salario(float valValor);
       virtual ~Salario();
+
       float getValor();
       vector<pair<Data, float>> getRegistro();
       float getDissidio();
+
       void setValor(float valValor);
       void setDissidio(Data valData, float valDissidio);
+      
       void promocao(Data valData, float valPercentual);
       void reajuste(Data valData, float valDissidio);
       void atualizaRegistro(Data valData);

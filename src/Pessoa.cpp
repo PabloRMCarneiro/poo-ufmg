@@ -94,7 +94,7 @@ bool validaCNPJ(string Cnpj) {
  */
 Pessoa::Pessoa() {
   if (!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa")) {
-    throw "Acesso negado";
+    throw "Acesso negado Pessoa.Pessoa";
   } else {
     this->nome = "";
     this->endereco = "";
@@ -115,7 +115,7 @@ Pessoa::Pessoa() {
 Pessoa::Pessoa(string valNome, string valEndereco, string valEmail,
                string valDocumento, long int valTelefone) {
   if (!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa")) {
-    throw "Acesso negado";
+    throw "Acesso negado Pessoa.Pessoa";
   } else {
     this->nome = valNome;
     this->endereco = valEndereco;

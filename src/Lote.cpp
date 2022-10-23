@@ -29,7 +29,7 @@ Lote::Lote(Data d, int nl, int qp, string p)
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
     {
-        throw "Acesso negado a ";
+        throw "Acesso negado a Lote.Lote ";
     }
     else
     {
@@ -66,43 +66,84 @@ void Lote::setQuantidadeProduzida(int qp)
 // metodos set
 Data Lote::getDataProd()
 {
-    return this->dataProd;
+    if(!Empresa::getEmpresa()->getAcesso("Lote.getDataProd"))
+    {
+        throw "Acesso negado a Lote.getDataProd";
+    }
+    else
+        return this->dataProd;
 }
 int Lote::getNumLote()
 {
-    return this->numLote;
+    if(!Empresa::getEmpresa()->getAcesso("Lote.getNumLote"))
+    {
+        throw "Acesso negado a Lote.getNumLote";
+    }
+    else
+        return this->numLote;
 }
 string Lote::getProduto()
 {
-    return this->produto;
+    if(!Empresa::getEmpresa()->getAcesso("Lote.getProduto"))
+    {
+        throw "Acesso negado a Lote.getProduto";
+    }
+    else
+        return this->produto;
 }
 int Lote::getQuantidadeAtual()
 {
-    return this->quantidadeAtual;
+    if(!Empresa::getEmpresa()->getAcesso("Lote.getQuantidadeAtual"))
+    {
+        throw "Acesso negado a Lote.getQuantidadeAtual";
+    }
+    else
+        return this->quantidadeAtual;
 }
 int Lote::getQuantidadeProduzida()
 {
-    return this->quantidadeProduzida;
+    if(!Empresa::getEmpresa()->getAcesso("Lote.getQuantidadeProduzida"))
+    {
+        throw "Acesso negado a Lote.getQuantidadeProduzida";
+    }
+    else
+        return this->quantidadeProduzida;
 }
 // para imprimir registro de producao
 void Lote::imprimeRegistro()
-{
-    cout << "Registro de producao de/o/a " << this->getProduto() << ":" << endl;
-    cout << "Produziu-se " << this->getQuantidadeProduzida() << " unidades em ";
-    cout << this->getDataProd().getData() << endl;
+{  
+    if(!Empresa::getEmpresa()->getAcesso("Lote.imprimeRegistro"))
+    {
+        throw "Acesso negado a Lote.imprimeRegistro";
+    }
+    else
+    {
+        cout << "Lote: " << this->getNumLote() << endl;
+        cout << "Produto: " << this->getProduto() << endl;
+        cout << "Data de producao: " << this->getDataProd().getDia() << "/" << this->getDataProd().getMes() << "/" << this->getDataProd().getAno() << endl;
+        cout << "Quantidade produzida: " << this->getQuantidadeProduzida() << endl;
+        cout << "Quantidade atual: " << this->getQuantidadeAtual() << endl;
+    }
 }
 // para realizar venda -> retorna quantidade que não foi possivel vender neste lote
 int Lote::vende(int q)
 {
-    if (q <= this->getQuantidadeAtual())
+    if(!Empresa::getEmpresa()->getAcesso("Lote.vende"))
     {
-        this->setQuantidadeAtual(this->quantidadeAtual - q);
-        return 0;
+        throw "Acesso negado a Lote.vende";
     }
     else
     {
-        int falta = q - this->getQuantidadeAtual();
-        this->setQuantidadeAtual(0);
-        return (falta);
+        if (q <= this->getQuantidadeAtual())
+        {
+            this->setQuantidadeAtual(this->quantidadeAtual - q);
+            return this->getQuantidadeAtual();
+        }
+        else
+        {
+            this->setQuantidadeAtual(0);
+            return q - this->getQuantidadeAtual();
+        }
     }
+    
 }

@@ -1,0 +1,1 @@
+c++ ./tests/TestClassUsuario.cpp  ./src/Usuario.cpp -o ./tests/executaveis/TestUsuario
