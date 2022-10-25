@@ -10,8 +10,8 @@
 #include "./Cargo.h"
 #include "./RegistroVendas.h"
 #include "./data.h"
-#include "./Log.h" 
-
+#include "./LogEscrita.h" 
+#include "./LogLeitura.h"
 
 using namespace std;
 
@@ -25,11 +25,9 @@ class Empresa
     vector <Cliente*> clientes;
     vector <Funcionario*> funcionarios;
     vector <RegistroVendas*> registrosVendas;
-    /* 
-    vector <Log> logsEscrita;
-    vector <Log> logsLeitura;
-    vector <Log> logsAcessoNegado; 
-    */
+    vector <LogEscrita*> logsEscrita;
+    vector <LogLeitura*> logsLeitura;
+    //vector <AcessoNegado*> logsAcessoNegado; 
 
     Empresa();
 
@@ -45,13 +43,15 @@ class Empresa
     Funcionario* getFuncionario(string doc);
     vector<Funcionario*> getFuncionario();
     RegistroVendas* getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente);
-    
+    vector <LogEscrita*> getlogsEscrita();
+    vector <LogLeitura*> getlogsLeitura();
     /* 
     vector<Log> getLogLeitura();
     vector<Log> getLogEscrita();
     vector<Log> getLogAcesso(); 
     */
-
+    void setlogEscrita(map<string, string>, map<string, string>, Data, string);
+    void setlogLeitura(string, Data, string);
     void setUsuario(Usuario* valUsuario);
     void setCargo(Cargo* valCargo);
     void setDepartamento(Departamento* valDepartamento);
