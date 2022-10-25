@@ -11,14 +11,7 @@ Empresa::Empresa()
 
 Empresa *Empresa::getEmpresa()
 {
-/*   if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
-  {
-    throw "Acesso negado";
-  }
-  else
-  { */
-    return empresa;
-  //}
+  return empresa;
 }
 
 vector <LogEscrita*> Empresa::getlogsEscrita(){
