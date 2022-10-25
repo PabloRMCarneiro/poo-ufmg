@@ -1,5 +1,7 @@
 #include "../include/Cargo.h"
 #include "../include/Empresa.h"
+#include "../include/LogLeitura.h"
+#include "../include/data.h"
 #include <string>
 
 using namespace std;
@@ -12,7 +14,7 @@ using namespace std;
  */
 Cargo::Cargo()
 {
-  
+
   if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
   {
     throw "Acesso negado a Cargo.Cargo";
