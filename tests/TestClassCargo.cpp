@@ -2,19 +2,23 @@
 #include "../include/Cargo.h"
 #include "../include/Empresa.h"
 #include "../include/Usuario.h"
+#include "../include/Permissao.h"
 #include "../third_party/doctest.h"
 
 using namespace std;
 
+vector<Permissao*> permissoes() {
+  vector<Permissao*> permissoes;
+  permissoes.push_back(new Permissao("Cargo.Cargo"));
+  permissoes.push_back(new Permissao("Cargo.getNome"));
+
+  return permissoes;
+}
 TEST_CASE("Construtor padrão da classe Cargo") {
 
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Cargo.Cargo");
-  permissoes.push_back("Cargo.getNome");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -25,12 +29,8 @@ TEST_CASE("Construtor padrão da classe Cargo") {
 TEST_CASE("Construtor classe Cargo") {
 
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Cargo.Cargo");
-  permissoes.push_back("Cargo.getNome");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -41,12 +41,8 @@ TEST_CASE("Construtor classe Cargo") {
 TEST_CASE("Getters e Setters da classe Cargo") {
 
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Cargo.Cargo");
-  permissoes.push_back("Cargo.getNome");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
   

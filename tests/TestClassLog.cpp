@@ -4,11 +4,12 @@
 #include "../include/data.h"
 #include "../include/Usuario.h"
 #include "../include/Empresa.h"
+#include "../include/Permissao.h"
 #include <vector>
 
-vector<string> permissoes() {
-  vector<string> permissoes;
-  permissoes.push_back("Empresa.getUsuario");
+vector<Permissao*> permissoes() {
+  vector<Permissao*> permissoes;
+  permissoes.push_back( new Permissao("Empresa.getUsuario"));
 
   return permissoes;
 }
@@ -26,7 +27,6 @@ TEST_CASE("Construtor padrão da classe Log")
   CHECK(log->getUsuario() == user);
   CHECK(log->getUsuario() == user);
 
-
   SUBCASE("Construtor com parâmetros da classe log") {
 
     Data data(1, 1, 1);
@@ -35,7 +35,6 @@ TEST_CASE("Construtor padrão da classe Log")
     CHECK(log->getData().getDia() == 1);
     CHECK(log->getEntidade() == "entidade");
     CHECK(log->getUsuario() == user);
-
   }
 }
 

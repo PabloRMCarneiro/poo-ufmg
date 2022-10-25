@@ -1,4 +1,6 @@
 #include "../include/Empresa.h"
+#include "../include/LogEscrita.h"
+#include "../include/LogLeitura.h"
 
 
 using namespace std;
