@@ -16,7 +16,8 @@ using namespace std;
 
 Log::Log()
 {
-  //this->usuario = Empresa::getEmpresa()->getUsuario(); //Usuario();
+
+  this->usuario = Empresa::getEmpresa()->getUsuario(); //Usuario();
   this->dataAcesso = Data();
   this->entidade = "";
 }

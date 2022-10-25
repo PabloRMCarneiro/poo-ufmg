@@ -1,10 +1,11 @@
 #include "../include/Cliente.h"
 #include "../include/Empresa.h"
+#include "../include/PermissaoNegada.h"
 
 Cliente::Cliente():Pessoa(){
     if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
     {
-        throw "Acesso negado a Cliente.Cliente";
+        throw acessoNegadoCliente();
     }
     else
     {   
@@ -16,7 +17,7 @@ Cliente::Cliente():Pessoa(){
 Cliente::Cliente(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone):Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone){
     if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
     {
-        throw "Acesso negado a Cliente.Cliente";
+        throw acessoNegadoCliente();
     }
     else
     {   
@@ -35,7 +36,7 @@ void Cliente::setTipoCliente(string tc){
 string Cliente::getTipoCliente(){
     if(!Empresa::getEmpresa()->getAcesso("Cliente.getTipoCliente"))
     {
-        throw "Acesso negado a Cliente.getTipoCliente";
+        throw acessoNegadoGetCliente();
     }
     else
     {   

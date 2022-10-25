@@ -1,5 +1,6 @@
 #include "../include/Cargo.h"
 #include "../include/Empresa.h"
+#include "../include/PermissaoNegada.h"
 #include <string>
 
 using namespace std;
@@ -15,7 +16,7 @@ Cargo::Cargo()
   
   if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
   {
-    throw "Acesso negado a Cargo.Cargo";
+    throw acessoNegadoCargo();
   }
   
   else
@@ -31,7 +32,7 @@ Cargo::Cargo(string valNome)
 {
   if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
   {
-    throw "Acesso negado a Cargo.Cargo";
+    throw acessoNegadoCargo();
   }
   
   else nome = valNome;
@@ -53,7 +54,7 @@ string Cargo::getNome()
 {
   if(!Empresa::getEmpresa()->getAcesso("Cargo.getNome"))
   {
-    throw "Acesso negado a Cargo.getNome";
+    throw acessoNegadoNomeCargo();
   }
   
   else return this->nome;
