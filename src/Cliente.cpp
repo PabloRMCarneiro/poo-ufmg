@@ -1,6 +1,8 @@
 #include "../include/Cliente.h"
 #include "../include/Empresa.h"
 
+using namespace std;
+
 Cliente::Cliente():Pessoa(){
     if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
     {

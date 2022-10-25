@@ -7,14 +7,13 @@
 #include "../include/Cargo.h"
 #include "../include/Salario.h"
 #include "../include/Empresa.h"
+#include <vector>
+#include <string>
 
 using namespace std;
 
-TEST_CASE("Construtor padrão da classe Funcionario")
-{
-  Usuario *user = new Usuario("admin", "admin");
+vector<string> permissoes(){
   vector<string> permissoes;
-
   permissoes.push_back("Empresa.getFuncionario");
 
   permissoes.push_back("Funcionario.Funcionario");
@@ -43,9 +42,16 @@ TEST_CASE("Construtor padrão da classe Funcionario")
   permissoes.push_back("Cargo.getNome");                 
 
   permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
+  permissoes.push_back("Salario.getValor");
 
-  user->setPermissoes(permissoes);
+  return permissoes;
+};
+
+TEST_CASE("Construtor padrão da classe Funcionario")
+{
+  Usuario *user = new Usuario("admin", "admin");
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -69,39 +75,8 @@ TEST_CASE("Construtor padrão da classe Funcionario")
 TEST_CASE("Construtor da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -147,39 +122,8 @@ TEST_CASE("Construtor da classe Funcionario")
 TEST_CASE("Destrutor da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -199,39 +143,8 @@ TEST_CASE("Destrutor da classe Funcionario")
 TEST_CASE("Método getDepartamento da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -244,39 +157,8 @@ TEST_CASE("Método getDepartamento da classe Funcionario")
 TEST_CASE("Método getDataNascimento da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -291,39 +173,8 @@ TEST_CASE("Método getDataNascimento da classe Funcionario")
 TEST_CASE("Método getSalario da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -338,39 +189,8 @@ TEST_CASE("Método getSalario da classe Funcionario")
 TEST_CASE("Método getRegistro da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -395,39 +215,8 @@ TEST_CASE("Método getRegistro da classe Funcionario")
 TEST_CASE("Método getCargo da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -440,39 +229,8 @@ TEST_CASE("Método getCargo da classe Funcionario")
 TEST_CASE("Método getEstadoAtivo da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -484,39 +242,8 @@ TEST_CASE("Método getEstadoAtivo da classe Funcionario")
 TEST_CASE("Método demiteFuncionario da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -528,39 +255,8 @@ TEST_CASE("Método demiteFuncionario da classe Funcionario")
 TEST_CASE("Método alteraRegistro da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -594,39 +290,8 @@ TEST_CASE("Método alteraRegistro da classe Funcionario")
 TEST_CASE("Método promocao da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -647,39 +312,8 @@ TEST_CASE("Método promocao da classe Funcionario")
 TEST_CASE("Método reajuste da classe Funcionario")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Empresa.getFuncionario");
-
-  permissoes.push_back("Funcionario.Funcionario");
-  permissoes.push_back("Funcionario.getDepartamento");
-  permissoes.push_back("Funcionario.getDataNascimento");
-  permissoes.push_back("Funcionario.getSalario");
-  permissoes.push_back("Funcionario.getRegistro");
-  permissoes.push_back("Funcionario.getCargo");
-  permissoes.push_back("Funcionario.getEstadoAtivo");
-  permissoes.push_back("Funcionario.alteraRegistro");
-  permissoes.push_back("Funcionario.demiteFuncionario");
-  permissoes.push_back("Funcionario.promocao");
-  permissoes.push_back("Funcionario.reajuste");
-
-  permissoes.push_back("Pessoa.Pessoa");              
-  permissoes.push_back("Pessoa.getNome");             
-  permissoes.push_back("Pessoa.getEndereco");         
-  permissoes.push_back("Pessoa.getEmail");             
-  permissoes.push_back("Pessoa.getDocumento");         
-  permissoes.push_back("Pessoa.getTelefone"); 
-
-  permissoes.push_back("Departamento.Departamento");     
-  permissoes.push_back("Departamento.getNome");         
-
-  permissoes.push_back("Cargo.Cargo");                   
-  permissoes.push_back("Cargo.getNome");                 
-
-  permissoes.push_back("Salario.Salario");               
-  permissoes.push_back("Salario.getValor");  
-
-  user->setPermissoes(permissoes);
+  
+  user->setPermissoes(permissoes());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -716,6 +350,4 @@ TEST_CASE("Método reajuste da classe Funcionario")
   CHECK(funcionarios[0]->getSalario().getValor() == 1440);
   CHECK(funcionarios[1]->getSalario().getValor() == 1200);  
   CHECK(funcionarios[2]->getSalario().getValor() == 2400);
-
-
 }
