@@ -11,14 +11,15 @@ Empresa::Empresa()
 
 Empresa *Empresa::getEmpresa()
 {
-/*   if(!Empresa::getEmpresa()->getAcesso("Empresa.Empresa"))
-  {
-    throw "Acesso negado";
-  }
-  else
-  { */
-    return empresa;
-  //}
+  return empresa;
+}
+
+vector <LogEscrita*> Empresa::getlogsEscrita(){
+  return this->logsEscrita;
+}
+
+vector <LogLeitura*> Empresa::getlogsLeitura(){
+  return this->logsLeitura;
 }
 
 bool Empresa::getAcesso(string valFuncoes)
@@ -64,6 +65,16 @@ void Empresa::setUsuario(Usuario *valUsuario)
     }
     return nullptr;
   }
+}
+
+void Empresa::setlogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, Data valDataAcesso, string valEntidade){
+  LogEscrita *novologEscrita= new LogEscrita(valAtributosAntes, valAtributosDepois, this->usuarioLogado, valDataAcesso, valEntidade);
+  this->logsEscrita.push_back(novologEscrita);
+}
+
+void Empresa::setlogLeitura(string valAtributo, Data valDataAcesso, string valEntidade){
+  LogLeitura *novologLeitura = new LogLeitura(valAtributo, this->usuarioLogado, valDataAcesso, valEntidade);
+  this->logsLeitura.push_back(novologLeitura);
 }
 
 void Empresa::setCargo(Cargo *valCargo)

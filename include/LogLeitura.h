@@ -8,7 +8,6 @@ class LogLeitura : public Log
 {
   private:
     string atributo;
-
   public:
     LogLeitura(string, Usuario*, Data, string);
     string getAtributo();

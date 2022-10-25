@@ -2,13 +2,14 @@
 #define USUARIO_H_INCLUDED
 #include <string>
 #include <vector>
+#include "../include/Permissao.h"
 using namespace std;
 
 class Usuario{
     private:
         string email;
         string senha;
-        vector <string> permissoes;
+        vector <Permissao*> permissoes;
     public:
         Usuario();
         Usuario(string email, string senha);
@@ -19,7 +20,7 @@ class Usuario{
 
         void setEmail(string email);
         void setSenha(string senha);
-        void setPermissoes(vector <string> permissoes);
+        void setPermissoes(vector <Permissao*> permissoes);
 };
 
 #endif 

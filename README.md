@@ -68,7 +68,6 @@ Note que não precisa de permissão para instanciar a empresa, pois não tem coe
 # Relação de Testes já feitos.
 
 #### |      CLASSES     | TESTES |
-#### | ---------------- | ------ |
 #### |     Empresa      |   ✅   |
 #### |     Pessoa       |   ✅   |
 #### |      Cargo       |   ✅   |

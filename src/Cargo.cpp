@@ -13,7 +13,7 @@ using namespace std;
  */
 Cargo::Cargo()
 {
-  
+
   if(!Empresa::getEmpresa()->getAcesso("Cargo.Cargo"))
   {
     throw acessoNegadoCargo();
