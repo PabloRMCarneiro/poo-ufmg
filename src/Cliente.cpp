@@ -2,6 +2,8 @@
 #include "../include/Empresa.h"
 #include "../include/PermissaoNegada.h"
 
+using namespace std;
+
 Cliente::Cliente():Pessoa(){
     if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
     {
