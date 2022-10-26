@@ -9,7 +9,7 @@
 
 vector<Permissao*> permissoes() {
   vector<Permissao*> permissoes;
-  permissoes.push_back( new Permissao("Empresa.getUsuario"));
+  permissoes.push_back(new Permissao("Empresa.getUsuario"));
 
   return permissoes;
 }
