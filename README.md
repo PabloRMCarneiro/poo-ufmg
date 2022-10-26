@@ -81,6 +81,6 @@ Note que não precisa de permissão para instanciar a empresa, pois não tem coe
 #### |  OrdemDeProducao |   ❌   |
 #### |      Produto     |   ❌   |
 #### |  RegistroVendas  |   ❌   |
-#### |       Log        |   ❌   |
+#### |       Log        |   ✅   |
 #### |    LogEscrita    |   ❌   |
 #### |    LogLeitura    |   ❌   |
