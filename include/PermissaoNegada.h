@@ -69,5 +69,18 @@ class acessoNegadoGetCliente : public acessoNegadoException {
             return "Acesso negado a Cliente.getTipoCliente";
         }
 };
+class acessoNegadoBoleto : public acessoNegadoException {
+    public:
+        virtual const char *what() const noexcept {
+            return "Acesso negado a Boleto.Boleto";
+        }
+};
+
+class acessoNegadoCodigoDeBarras : public acessoNegadoException {
+    public:
+        virtual const char *what() const noexcept {
+            return "Acesso negado a Boleto.setCodigoDeBarras";
+        }
+};
 
 #endif
