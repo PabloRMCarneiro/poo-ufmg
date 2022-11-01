@@ -9,7 +9,7 @@ class Usuario{
     private:
         string email;
         string senha;
-        vector <Permissao*> permissoes;
+        vector <string> permissoes;
     public:
         Usuario();
         Usuario(string email, string senha);
@@ -20,7 +20,7 @@ class Usuario{
 
         void setEmail(string email);
         void setSenha(string senha);
-        void setPermissoes(vector <Permissao*> permissoes);
+        void setPermissoes(vector <string> permissoes);
 };
 
 #endif 

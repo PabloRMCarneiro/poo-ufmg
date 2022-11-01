@@ -6,6 +6,7 @@
 #include "../include/Orcamento.h"
 #include "../include/Produto.h"
 #include "../include/data.h"
+#include "../include/Permissao.h"
 
 using namespace std;
 
@@ -89,12 +90,12 @@ TEST_CASE("realizaOrcamento da Classe Orcamento") {
   Orcamento *orcamento = new Orcamento();
 
   Produto *produto1 = new Produto("Coca-Cola 1L", 1001, 4.53, 15, 10, 100, "Bebidas");
+  Produto *produto2 = new Produto("Coca-Cola 2L", 1002, .53, 15, 10, 100, "Bebidas");
 
-
   orcamento->setProduto(produto1);
+  orcamento->setProduto(produto2);
   orcamento->setProduto(produto1);
-  orcamento->setProduto(produto1);
-  orcamento->setProduto(produto1);
+  orcamento->setProduto(produto2);
 
   cout << "----------------------------------------" << endl << endl << endl << endl;
   orcamento->realizaOrcamento();
