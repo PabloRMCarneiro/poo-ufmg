@@ -10,17 +10,23 @@
 
 using namespace std;
 
-TEST_CASE("Constutor padrão da classe Salario") {
-
-  Usuario *user = new Usuario("admin", "admin");
+vector<string> permissao() {
   vector<string> permissoes;
-
   permissoes.push_back("Salario.Salario");
   permissoes.push_back("Salario.getValor");
   permissoes.push_back("Salario.getDissidio");
   permissoes.push_back("Salario.getRegistro");
+  permissoes.push_back("Salario.atualizaRegistro");
+  permissoes.push_back("Salario.promocao");
 
-  user->setPermissoes(permissoes);
+  return permissoes;
+
+}
+TEST_CASE("Constutor padrão da classe Salario") {
+
+  Usuario *user = new Usuario("admin", "admin");
+
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -39,14 +45,8 @@ TEST_CASE("Constutor padrão da classe Salario") {
 TEST_CASE("Constutor da classe Salario") {
 
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Salario.Salario");
-  permissoes.push_back("Salario.getValor");
-  permissoes.push_back("Salario.getDissidio");
-  permissoes.push_back("Salario.getRegistro");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -59,16 +59,8 @@ TEST_CASE("Constutor da classe Salario") {
 
 TEST_CASE("promocao da classe Salario"){
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Salario.Salario");
-  permissoes.push_back("Salario.getValor");
-  permissoes.push_back("Salario.getDissidio");
-  permissoes.push_back("Salario.getRegistro");
-  permissoes.push_back("Salario.atualizaRegistro");
-  permissoes.push_back("Salario.promocao");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
