@@ -10,8 +10,7 @@
 
 using namespace std;
 
-vector<string> permissoes() {
-
+vector<string> permissao() {
   vector<string> permissoes;
 
   permissoes.push_back("Orcamento.Orcamento");
@@ -66,7 +65,7 @@ vector<string> permissoes() {
 TEST_CASE("Construtor Padrão da Classe Orcamento") {
 
   Usuario *usuario = new Usuario("admin", "admin");
-  usuario->setPermissoes(permissoes());
+  usuario->setPermissoes(permissao());
 
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(usuario);
@@ -79,26 +78,27 @@ TEST_CASE("Construtor Padrão da Classe Orcamento") {
   CHECK(orcamento->getCliente().getNome() == "");
 }
 
-TEST_CASE("realizaOrcamento da Classe Orcamento") {
+ TEST_CASE("realizaOrcamento da Classe Orcamento") {
 
   Usuario *usuario = new Usuario("admin", "admin");
-  usuario->setPermissoes(permissoes());
+  usuario->setPermissoes(permissao());
 
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(usuario);
 
-  Orcamento *orcamento = new Orcamento();
+  Cliente cliente = Cliente("João", "Rua 1", "joao@gmail.com", "123456789", 999999999);
+  Data data = Data(1, 1, 2020);
 
-  Produto *produto1 = new Produto("Coca-Cola 1L", 1001, 4.53, 15, 10, 100, "Bebidas");
-  Produto *produto2 = new Produto("Coca-Cola 2L", 1002, .53, 15, 10, 100, "Bebidas");
+  Orcamento *orcamento = new Orcamento(cliente, data);
 
-  orcamento->setProduto(produto1);
-  orcamento->setProduto(produto2);
+  Produto *produto1 = new Produto("Pinga", 123, 15.4, 10, 10, 10, "bebidas");
+  Produto *produto2 = new Produto("Pizzinha", 456, 18.6, 10, 10, 10, "comida");
+
   orcamento->setProduto(produto1);
   orcamento->setProduto(produto2);
 
   cout << "----------------------------------------" << endl << endl << endl << endl;
   orcamento->realizaOrcamento();
   cout << endl << endl << endl << endl;
-  cout << "----------------------------------------" << endl;
-}
+  cout << "----------------------------------------" << endl; 
+} 

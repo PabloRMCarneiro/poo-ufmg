@@ -4,16 +4,20 @@
 #include "../include/Usuario.h"
 #include "../third_party/doctest.h"
 
-TEST_CASE("Construtor padrão da classe OrdemDeProducao") {
-  Usuario *user = new Usuario("admin", "admin");
+vector<string> permissao() {
   vector<string> permissoes;
-
   permissoes.push_back("OrdemDeProducao.OrdemDeProducao");
   permissoes.push_back("OrdemDeProducao.getDataOrdem");
   permissoes.push_back("OrdemDeProducao.getProduto");
   permissoes.push_back("OrdemDeProducao.getQuantidade");
 
-  user->setPermissoes(permissoes);
+  return permissoes;
+
+}
+TEST_CASE("Construtor padrão da classe OrdemDeProducao") {
+  Usuario *user = new Usuario("admin", "admin");
+
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -27,19 +31,12 @@ TEST_CASE("Construtor padrão da classe OrdemDeProducao") {
 
 TEST_CASE("Construtor classe OrdemDeProducao") {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("OrdemDeProducao.OrdemDeProducao");
-  permissoes.push_back("OrdemDeProducao.getDataOrdem");
-  permissoes.push_back("OrdemDeProducao.getProduto");
-  permissoes.push_back("OrdemDeProducao.getQuantidade");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
-  OrdemDeProducao *ordem =
-      new OrdemDeProducao(Data(2022, 1, 1), "Produto 1", 10);
+  OrdemDeProducao *ordem = new OrdemDeProducao(Data(2022, 1, 1), "Produto 1", 10);
 
   CHECK(ordem->getQuantidade() == 10);
   CHECK(ordem->getProduto() == "Produto 1");
@@ -50,19 +47,12 @@ TEST_CASE("Construtor classe OrdemDeProducao") {
 
 TEST_CASE("getOrdem da classe OrdemDeProducao") {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("OrdemDeProducao.OrdemDeProducao");
-  permissoes.push_back("OrdemDeProducao.getDataOrdem");
-  permissoes.push_back("OrdemDeProducao.getProduto");
-  permissoes.push_back("OrdemDeProducao.getQuantidade");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
-  OrdemDeProducao *ordem =
-      new OrdemDeProducao(Data(2022, 1, 1), "Produto 1", 10);
+  OrdemDeProducao *ordem = new OrdemDeProducao(Data(2022, 1, 1), "Produto 1", 10);
 
   ordem->getOrdem();
 }

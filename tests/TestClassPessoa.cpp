@@ -6,19 +6,23 @@
 
 using namespace std;
 
-TEST_CASE("Construtor padrão da classe Pessoa")
-{
-  Usuario *user = new Usuario("admin", "admin");
+vector<string> permissao() {
   vector<string> permissoes;
-
   permissoes.push_back("Pessoa.Pessoa");
   permissoes.push_back("Pessoa.getNome");
   permissoes.push_back("Pessoa.getDocumento");
   permissoes.push_back("Pessoa.getTelefone");
   permissoes.push_back("Pessoa.getEndereco");
   permissoes.push_back("Pessoa.getEmail");
+
+  return permissoes;
+}
+
+TEST_CASE("Construtor padrão da classe Pessoa")
+{
+  Usuario *user = new Usuario("admin", "admin");
   
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -33,16 +37,8 @@ TEST_CASE("Construtor padrão da classe Pessoa")
 TEST_CASE("Construtor classe Pessoa")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Pessoa.Pessoa");
-  permissoes.push_back("Pessoa.getNome");
-  permissoes.push_back("Pessoa.getDocumento");
-  permissoes.push_back("Pessoa.getTelefone");
-  permissoes.push_back("Pessoa.getEndereco");
-  permissoes.push_back("Pessoa.getEmail");
   
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -58,16 +54,8 @@ TEST_CASE("Construtor classe Pessoa")
 TEST_CASE("Getters e Setters da classe Pessoa")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Pessoa.Pessoa");
-  permissoes.push_back("Pessoa.getNome");
-  permissoes.push_back("Pessoa.getDocumento");
-  permissoes.push_back("Pessoa.getTelefone");
-  permissoes.push_back("Pessoa.getEndereco");
-  permissoes.push_back("Pessoa.getEmail");
   
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -89,16 +77,8 @@ TEST_CASE("Getters e Setters da classe Pessoa")
 TEST_CASE("Validação de CPF da classe Pessoa")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Pessoa.Pessoa");
-  permissoes.push_back("Pessoa.getNome");
-  permissoes.push_back("Pessoa.getDocumento");
-  permissoes.push_back("Pessoa.getTelefone");
-  permissoes.push_back("Pessoa.getEndereco");
-  permissoes.push_back("Pessoa.getEmail");
   
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -111,16 +91,8 @@ TEST_CASE("Validação de CPF da classe Pessoa")
 TEST_CASE("Validação de CNPJ da classe Pessoa")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
-
-  permissoes.push_back("Pessoa.Pessoa");
-  permissoes.push_back("Pessoa.getNome");
-  permissoes.push_back("Pessoa.getDocumento");
-  permissoes.push_back("Pessoa.getTelefone");
-  permissoes.push_back("Pessoa.getEndereco");
-  permissoes.push_back("Pessoa.getEmail");
   
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
