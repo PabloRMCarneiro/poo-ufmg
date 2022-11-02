@@ -1,2 +1,2 @@
-c++ ./tests/TestClassCategoria.cpp ./src/Usuario.cpp ./src/Cargo.cpp ./src/Departamento.cpp ./src/Cliente.cpp ./src/Pessoa.cpp ./src/Funcionario.cpp ./src/Salario.cpp ./src/data.cpp ./src/Produto.cpp ./src/RegistroVendas.cpp ./src/Lote.cpp ./src/OrdemDeProducao.cpp ./src/Categoria.cpp ./src/Empresa.cpp -o ./tests/executaveis/TestCategoria
+c++ ./tests/TestClassCategoria.cpp ./src/Usuario.cpp ./src/Cargo.cpp ./src/LogEscrita.cpp ./src/LogLeitura.cpp ./src/Log.cpp ./src/Departamento.cpp ./src/Cliente.cpp ./src/Pessoa.cpp ./src/Funcionario.cpp ./src/Salario.cpp ./src/data.cpp ./src/Produto.cpp ./src/RegistroVendas.cpp ./src/Lote.cpp ./src/OrdemDeProducao.cpp ./src/Categoria.cpp ./src/Empresa.cpp -o ./tests/executaveis/TestCategoria
 

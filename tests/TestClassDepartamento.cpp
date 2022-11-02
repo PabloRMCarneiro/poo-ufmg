@@ -6,15 +6,19 @@
 
 using namespace std;
 
-TEST_CASE("Construtor padrão da classe Departamento")
-{
-  Usuario *user = new Usuario("admin", "admin");
+vector<string> permissao() {
   vector<string> permissoes;
-
   permissoes.push_back("Departamento.Departamento");
   permissoes.push_back("Departamento.getNome");
 
-  user->setPermissoes(permissoes);
+  return permissoes;
+}
+
+TEST_CASE("Construtor padrão da classe Departamento")
+{
+  Usuario *user = new Usuario("admin", "admin");
+
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -26,12 +30,8 @@ TEST_CASE("Construtor padrão da classe Departamento")
 TEST_CASE("Construtor classe Departamento")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Departamento.Departamento");
-  permissoes.push_back("Departamento.getNome");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -42,12 +42,8 @@ TEST_CASE("Construtor classe Departamento")
 TEST_CASE("Getters e Setters da classe Departamento")
 {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Departamento.Departamento");
-  permissoes.push_back("Departamento.getNome");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 

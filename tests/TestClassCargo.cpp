@@ -7,10 +7,10 @@
 
 using namespace std;
 
-vector<Permissao*> permissoes() {
-  vector<Permissao*> permissoes;
-  permissoes.push_back(new Permissao("Cargo.Cargo"));
-  permissoes.push_back(new Permissao("Cargo.getNome"));
+vector<string> permissao() {
+  vector<string> permissoes;
+  permissoes.push_back("Cargo.Cargo");
+  permissoes.push_back("Cargo.getNome");
 
   return permissoes;
 }
@@ -18,7 +18,7 @@ TEST_CASE("Construtor padrão da classe Cargo") {
 
   Usuario *user = new Usuario("admin", "admin");
 
-  user->setPermissoes(permissoes());
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -30,7 +30,7 @@ TEST_CASE("Construtor classe Cargo") {
 
   Usuario *user = new Usuario("admin", "admin");
 
-  user->setPermissoes(permissoes());
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -42,7 +42,7 @@ TEST_CASE("Getters e Setters da classe Cargo") {
 
   Usuario *user = new Usuario("admin", "admin");
 
-  user->setPermissoes(permissoes());
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
   
