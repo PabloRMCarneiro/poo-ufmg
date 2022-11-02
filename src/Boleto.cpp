@@ -1,6 +1,6 @@
-#include "./Boleto.h"
-#include "./Empresa.h"
-#include "./PermissaoNegada.h"
+#include "../include/Boleto.h"
+#include "../include/Empresa.h"
+#include "../include/PermissaoNegada.h"
 #include <string>
 
 using namespace std;
@@ -18,7 +18,7 @@ Boleto::Boleto()
        valor = 0; 
     }
 }
-Boleto::Boleto(string valCodigoDeBarras, Data valDataDeVencimento, float valValor)
+Boleto::Boleto(string valCodigoDeBarras, Data valDataDeVencimento, float valValor) 
 {
     if(!Empresa::getEmpresa()->getAcesso("Boleto.Boleto"))
     {

@@ -8,7 +8,7 @@
 #include <vector>
 using namespace std;
 
-class Boleto : public MetodoDePagamento {
+class Boleto {
 private:
   string codigoDeBarras;
   Data dataDeVencimento;
