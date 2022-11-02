@@ -7,22 +7,27 @@
 #include "../include/Empresa.h"
 #include "../include/Usuario.h"
 
-
-using namespace std;
-
-TEST_CASE("Construtor padrão da classe Lote") {
-
-  Usuario *user = new Usuario("admin", "admin");
+vector<string> permissao() {
   vector<string> permissoes;
-
   permissoes.push_back("Lote.Lote");
   permissoes.push_back("Lote.getNumLote");
   permissoes.push_back("Lote.getQuantidadeProduzida");
   permissoes.push_back("Lote.getQuantidadeAtual");
   permissoes.push_back("Lote.getProduto");
   permissoes.push_back("Lote.getDataProd");
+  permissoes.push_back("Lote.imprimeRegistro");
+  permissoes.push_back("Lote.vende");
 
-  user->setPermissoes(permissoes);
+  return permissoes;
+}
+
+using namespace std;
+
+TEST_CASE("Construtor padrão da classe Lote") {
+
+  Usuario *user = new Usuario("admin", "admin");
+
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -39,16 +44,8 @@ TEST_CASE("Construtor padrão da classe Lote") {
 TEST_CASE("Construtor classe Lote") {
 
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Lote.Lote");
-  permissoes.push_back("Lote.getNumLote");
-  permissoes.push_back("Lote.getQuantidadeProduzida");
-  permissoes.push_back("Lote.getQuantidadeAtual");
-  permissoes.push_back("Lote.getProduto");
-  permissoes.push_back("Lote.getDataProd");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -65,17 +62,8 @@ TEST_CASE("Construtor classe Lote") {
 
 TEST_CASE("ImprimeRegistro da class Lote"){
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Lote.Lote");
-  permissoes.push_back("Lote.getNumLote");
-  permissoes.push_back("Lote.getQuantidadeProduzida");
-  permissoes.push_back("Lote.getQuantidadeAtual");
-  permissoes.push_back("Lote.getProduto");
-  permissoes.push_back("Lote.getDataProd");
-  permissoes.push_back("Lote.imprimeRegistro");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -87,17 +75,8 @@ TEST_CASE("ImprimeRegistro da class Lote"){
 
 TEST_CASE("Vende da class Lote"){
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Lote.Lote");
-  permissoes.push_back("Lote.getNumLote");
-  permissoes.push_back("Lote.getQuantidadeProduzida");
-  permissoes.push_back("Lote.getQuantidadeAtual");
-  permissoes.push_back("Lote.getProduto");
-  permissoes.push_back("Lote.getDataProd");
-  permissoes.push_back("Lote.vende");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
