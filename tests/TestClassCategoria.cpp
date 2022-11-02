@@ -9,17 +9,21 @@
 
 using namespace std;
 
-TEST_CASE("Construtor padrão da classe Categoria") {
-
-  Usuario *user = new Usuario("admin", "admin");
+vector<string> permissao() {
   vector<string> permissoes;
-
   permissoes.push_back("Categoria.Categoria");
   permissoes.push_back("Categoria.getTipo");
   permissoes.push_back("Categoria.novaCategoria");
+  permissoes.push_back("Categoria.getCategoria");
 
+  return permissoes;
+}
 
-  user->setPermissoes(permissoes);
+TEST_CASE("Construtor padrão da classe Categoria") {
+
+  Usuario *user = new Usuario("admin", "admin");
+
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -29,14 +33,8 @@ TEST_CASE("Construtor padrão da classe Categoria") {
 
 TEST_CASE("Construtor da classe Categoria") {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Categoria.Categoria");
-  permissoes.push_back("Categoria.getTipo");
-  permissoes.push_back("Categoria.novaCategoria");
-
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -44,17 +42,10 @@ TEST_CASE("Construtor da classe Categoria") {
   CHECK(c->getTipo() == "Categoria 1");
 }
 
-
 TEST_CASE("Teste de novaCategoria e getCategoria") {
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Categoria.Categoria");
-  permissoes.push_back("Categoria.getTipo");
-  permissoes.push_back("Categoria.novaCategoria");
-  permissoes.push_back("Categoria.getCategoria");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 

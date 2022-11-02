@@ -6,11 +6,8 @@
 
 using namespace std;
 
-TEST_CASE("Construtor padrão da classe Cliente") {
-
-  Usuario *user = new Usuario("admin", "admin");
+vector<string> permissao() {
   vector<string> permissoes;
-
   permissoes.push_back("Cliente.Cliente");
   permissoes.push_back("Cliente.getTipoCliente");
 
@@ -22,7 +19,14 @@ TEST_CASE("Construtor padrão da classe Cliente") {
   permissoes.push_back("Pessoa.getDocumento");
   permissoes.push_back("Pessoa.getEmail");
 
-  user->setPermissoes(permissoes);
+  return permissoes;
+}
+
+TEST_CASE("Construtor padrão da classe Cliente") {
+
+  Usuario *user = new Usuario("admin", "admin");
+
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 
@@ -33,19 +37,8 @@ TEST_CASE("Construtor padrão da classe Cliente") {
 TEST_CASE("Construtor classe Cliente") {
 
   Usuario *user = new Usuario("admin", "admin");
-  vector<string> permissoes;
 
-  permissoes.push_back("Cliente.Cliente");
-  permissoes.push_back("Cliente.getTipoCliente"); 
-
-  permissoes.push_back("Pessoa.Pessoa");
-  permissoes.push_back("Pessoa.getNome");
-  permissoes.push_back("Pessoa.getEndereco");
-  permissoes.push_back("Pessoa.getTelefone");
-  permissoes.push_back("Pessoa.getDocumento");
-  permissoes.push_back("Pessoa.getEmail");
-
-  user->setPermissoes(permissoes);
+  user->setPermissoes(permissao());
   Empresa *empresa = Empresa::getEmpresa();
   empresa->login(user);
 

@@ -25,7 +25,7 @@ bool Usuario::getPermissoes(string valFuncoes)
 {
     for (auto it : this->permissoes)
     {
-        if (it->getMetodo() == valFuncoes) return true;
+        if (it == valFuncoes) return true;
     }
     return false;
 }
@@ -37,7 +37,7 @@ void Usuario::setSenha(string senha)
 {
     this->senha = senha;
 }
-void Usuario::setPermissoes(vector<Permissao*> permissoes)
+void Usuario::setPermissoes(vector<string> permissoes)
 {
     this->permissoes = permissoes;
 }
