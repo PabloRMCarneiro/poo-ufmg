@@ -1,6 +1,5 @@
 #include "./include/CartaoDeCredito.h"
 #include "./MetodoDePagamento.h"
-#include "./CartaoDeCredito.h"
 
 using namespace std;
 
