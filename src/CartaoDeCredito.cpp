@@ -10,9 +10,10 @@ CartaoDeCredito::CartaoDeCredito() : MetodoDePagamento() {
   this->dataDeValidade = Data();
 }
 
-CartaoDeCredito::CartaoDeCredito(string numeroDoCartao, string nomeDoTitular,
+CartaoDeCredito::CartaoDeCredito(string tipoDePagamento, int quantidadeDeParcelas,
+                                 Data data, string numeroDoCartao, string nomeDoTitular,
                                  string codigoDeSeguranca, Data dataDeValidade)
-    : MetodoDePagamento() {
+    : MetodoDePagamento(tipoDePagamento, quantidadeDeParcelas, data) {
   this->numeroDoCartao = numeroDoCartao;
   this->nomeDoTitular = nomeDoTitular;
   this->codigoDeSeguranca = codigoDeSeguranca;
