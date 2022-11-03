@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #include "./include/CartaoDeCredito.h"
-
-
-=======
 #include "./MetodoDePagamento.h"
 #include "./CartaoDeCredito.h"
 
@@ -51,4 +47,3 @@ void CartaoDeCredito::setCodigoDeSeguranca(string codigoDeSeguranca) {
 void CartaoDeCredito::setDataDeValidade(Data dataDeValidade) {
   this->dataDeValidade = dataDeValidade;
 }
->>>>>>> 22ffdfa0e3605c6e98324276f31995a4ab58a8f6
