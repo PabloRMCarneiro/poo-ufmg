@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Boleto::Boleto()
+Boleto::Boleto():MetodoDePagamento() 
 {
   if(!Empresa::getEmpresa()->getAcesso("Boleto.Boleto"))
   {
@@ -18,7 +18,8 @@ Boleto::Boleto()
        valor = 0; 
     }
 }
-Boleto::Boleto(string valCodigoDeBarras, Data valDataDeVencimento, float valValor) 
+Boleto::Boleto(string tipoDePagamento, Data data, string codigoDeBarras, Data dataDeVencimento, float valor)
+:MetodoDePagamento(tipoDePagamento, quantidadeDeParcelas, data)
 {
     if(!Empresa::getEmpresa()->getAcesso("Boleto.Boleto"))
     {

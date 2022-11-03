@@ -84,3 +84,7 @@ Note que não precisa de permissão para instanciar a empresa, pois não tem coe
 #### |       Log        |   ✅   |
 #### |    LogEscrita    |   ❌   |
 #### |    LogLeitura    |   ❌   |
+
+# Link para o UML
+
+https://lucid.app/lucidspark/644ed113-c0ac-4b7a-b117-c59e523f0f19/edit?beaconFlowId=A80BDD8C84EAD321&invitationId=inv_385cb980-e430-4cf0-8917-3605c53333be#

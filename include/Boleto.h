@@ -8,7 +8,7 @@
 #include <vector>
 using namespace std;
 
-class Boleto {
+class Boleto : public MetodoDePagamento {
 private:
   string codigoDeBarras;
   Data dataDeVencimento;
@@ -16,7 +16,7 @@ private:
 
 public:
   Boleto();
-  Boleto(string codigoDeBarras, Data dataDeVencimento, float valor);
+  Boleto(string tipoDePagamento, Data data, string codigoDeBarras, Data dataDeVencimento, float valor);
   virtual ~Boleto();
 
   string getCodigoDeBarras();
