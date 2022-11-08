@@ -3,6 +3,7 @@
 #include "Pessoa.h"
 #include "Salario.h"
 #include "Departamento.h"
+#include "Turno.h"
 #include "Cargo.h"
 #include <string>
 #include <vector>
