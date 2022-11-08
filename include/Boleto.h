@@ -16,7 +16,7 @@ private:
 
 public:
   Boleto();
-  Boleto(string tipoDePagamento, int quantidadeDeParcelas, Data data, string valcodigoDeBarras, Data valDataDeVencimento, float valValor);
+  Boleto(string tipoDePagamento, int quantidadeDeParcelas, Data data, vector<float>parcelamento, string valcodigoDeBarras, Data valDataDeVencimento, float valValor);
   virtual ~Boleto();
 
   string getCodigoDeBarras();

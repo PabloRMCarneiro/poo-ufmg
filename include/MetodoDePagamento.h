@@ -16,7 +16,7 @@ private:
   
 public:
   MetodoDePagamento();
-  MetodoDePagamento(string tipoDePagamento, int quantidadeDeParcelas, Data data);
+  MetodoDePagamento(string valTipoDePagamento, int valQuantidadeDeParcelas, vector<float> valParcelamento, Data valData);
   virtual ~MetodoDePagamento();
 
   string getTipoDePagamento();
