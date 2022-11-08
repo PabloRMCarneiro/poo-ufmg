@@ -161,7 +161,7 @@ void Data::setSeg(int valSeg)
 string Data::getData()
 {
 
-    return (to_string(dia) + "/" + to_string(mes) + "/" + to_string(ano) + "-" + to_string(hora) + ":" + to_string(minuto) + ":" + to_string(segundo) + "\n");
+    return (to_string(dia) + "/" + to_string(mes) + "/" + to_string(ano) + "-" /*+ to_string(hora) + ":" + to_string(minuto) + ":" + to_string(segundo) + */ + "\n");
 }
 bool Data::operator<(Data &d2)
 /* Comparing the values of the variables ano, mes, dia, hora, minuto, and segundo. */
