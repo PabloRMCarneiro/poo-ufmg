@@ -31,12 +31,14 @@ TEST_CASE("Construtor padrão da classe Boleto") {
     SUBCASE("Testando o construtor da classe") {
 
         Data data = Data(2022, 01, 30);
+        Data dataVencimento = Data(2022, 02, 30);
         
-        Boleto *b = new Boleto("123456789", data, 68.5);
+        Boleto *b = new Boleto("cartão de credito", 10, data, {1.2, 4.5, 6.0}, "987502918", dataVencimento, 1000.75);
 
-        CHECK(b->getCodigoDeBarras() == "123456789");
-        CHECK(b->getValor() == 68.5);
+        CHECK(b->getCodigoDeBarras() == "987502918");
+        CHECK(b->getValor() == 1000.75);
         CHECK(b->getDataDeVencimento().getAno() == 2022);
+        CHECK(b->getTipoDePagamento() == "cartão de credito");
     }
 }
 
@@ -49,13 +51,17 @@ TEST_CASE("Metodos set da classe Boleto") {
     empresa->login(user);
 
     Data data = Data(2022, 05, 25);
-    Boleto *b = new Boleto("123456789", data, 55.2);
+    Data dataVencimento = Data(2022, 06, 25);
+    
+    Boleto *b = new Boleto("cartão de credito", 10, data, {1.2, 1.5, 3.2}, "987502918", dataVencimento, 1000.75);
 
     b->setDataDeVencimento(data);
     b->setValor(100);
     b->setCodigoDeBarras("0987654321");
+    b->setParcelamento({1.2, 3.5, 10});
 
     CHECK(b->getDataDeVencimento().getMes() == 05);
     CHECK(b->getValor() == 100);
     CHECK(b->getCodigoDeBarras() == "0987654321");
+    CHECK(b->getParcelamento() == vector<float> {1.2, 3.5, 10});
 }
