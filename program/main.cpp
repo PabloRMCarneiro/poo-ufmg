@@ -1,8 +1,4 @@
-
 #include <iostream>
-//#include "../include/Empresa.h"
-//#include "../include/Permissao.h"
-//#include "../include/Turno.h"
 #include "../include/data.h"
 #include "../include/Endereco.h"
 using namespace std;

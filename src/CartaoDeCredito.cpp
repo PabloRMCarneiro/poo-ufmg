@@ -1,5 +1,5 @@
-#include "./include/CartaoDeCredito.h"
-#include "./MetodoDePagamento.h"
+#include "../include/CartaoDeCredito.h"
+#include "../include/MetodoDePagamento.h"
 
 using namespace std;
 
@@ -22,9 +22,13 @@ CartaoDeCredito::CartaoDeCredito(string tipoDePagamento, int quantidadeDeParcela
 
 CartaoDeCredito::~CartaoDeCredito() {}
 
-string CartaoDeCredito::getNumeroDoCartao() { return this->numeroDoCartao; }
+string CartaoDeCredito::getNumeroDoCartao() {
+   return this->numeroDoCartao; 
+}
 
-string CartaoDeCredito::getNomeDoTitular() { return this->nomeDoTitular; }
+string CartaoDeCredito::getNomeDoTitular() {
+   return this->nomeDoTitular; 
+}
 
 string CartaoDeCredito::getCodigoDeSeguranca() {
   return this->codigoDeSeguranca;
