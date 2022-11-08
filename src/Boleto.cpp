@@ -18,8 +18,8 @@ Boleto::Boleto():MetodoDePagamento()
        valor = 0; 
     }
 }
-Boleto::Boleto(string tipoDePagamento, int quantidadeDeParcelas, Data data, string valcodigoDeBarras, Data valDataDeVencimento, float valValor)
-:MetodoDePagamento(tipoDePagamento, quantidadeDeParcelas, data)
+Boleto::Boleto(string tipoDePagamento, int quantidadeDeParcelas, Data data, vector<float>parcelamento, string valcodigoDeBarras, Data valDataDeVencimento, float valValor)
+:MetodoDePagamento(tipoDePagamento, quantidadeDeParcelas, parcelamento, data)
 {
     if(!Empresa::getEmpresa()->getAcesso("Boleto.Boleto"))
     {
