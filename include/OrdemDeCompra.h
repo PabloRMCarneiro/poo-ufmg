@@ -1,9 +1,9 @@
 #ifndef ORDEMDECOMPRA_H_INCLUDED
 #define ORDEMDECOMPRA_H_INCLUDED
-#include "./include/Orcamento.h"
-#include "./include/Fornecedor.h"
-#include "./include/MateriaPrima.h"
-#include "./include/data.h"
+#include "../include/Orcamento.h"
+#include "../include/Fornecedor.h"
+#include "../include/MateriaPrima.h"
+#include "../include/data.h"
 #include <string>
 #include <vector>
 #include <utility>

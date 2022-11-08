@@ -13,6 +13,7 @@ private:
   int quantidadeDeParcelas;
   vector <float> parcelamento;
   Data data;
+  
 public:
   MetodoDePagamento();
   MetodoDePagamento(string tipoDePagamento, int quantidadeDeParcelas, Data data);

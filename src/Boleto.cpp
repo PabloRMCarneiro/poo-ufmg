@@ -18,7 +18,7 @@ Boleto::Boleto():MetodoDePagamento()
        valor = 0; 
     }
 }
-Boleto::Boleto(string tipoDePagamento, Data data, string codigoDeBarras, Data dataDeVencimento, float valor)
+Boleto::Boleto(string tipoDePagamento, int quantidadeDeParcelas, Data data, string valcodigoDeBarras, Data valDataDeVencimento, float valValor)
 :MetodoDePagamento(tipoDePagamento, quantidadeDeParcelas, data)
 {
     if(!Empresa::getEmpresa()->getAcesso("Boleto.Boleto"))
@@ -26,11 +26,11 @@ Boleto::Boleto(string tipoDePagamento, Data data, string codigoDeBarras, Data da
         throw acessoNegadoBoleto();
     }
     else
-        {
-         codigoDeBarras = valCodigoDeBarras;
-         dataDeVencimento = valDataDeVencimento;
-         valor = valValor; 
-        }
+    {
+        codigoDeBarras = valcodigoDeBarras;
+        dataDeVencimento = valDataDeVencimento;
+        valor = valValor; 
+    }
 }
 Boleto::~Boleto()
 {
