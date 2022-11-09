@@ -1,7 +1,6 @@
 #include "../include/Boleto.h"
 #include "../include/Empresa.h"
 #include "../include/PermissaoNegada.h"
-#include <string>
 
 using namespace std;
 
