@@ -37,5 +37,8 @@ class Veiculo{
         Data getHoraPosicao(Funcionario* valPassageiro);
         vector<Funcionario*> getPassageiros();
         Funcionario* getPassageiro(string valEndereco);
+        void calculaRota(Endereco valEndereco);
+        double calculaTempo(double valDistancia);
+        Data horaSaida(double valTempo);
 };
 #endif //VEICULO_H_INCLUDED

@@ -97,7 +97,7 @@ Pessoa::Pessoa() {
     throw "Acesso negado Pessoa.Pessoa";
   } else {
     this->nome = "";
-    this->endereco = "";
+    this->endereco = Endereco();
     this->email = "";
     this->documento = "";
     this->telefone = 0;
@@ -112,7 +112,7 @@ Pessoa::Pessoa() {
  * @param valDocumento CPF
  * @param valTelefone
  */
-Pessoa::Pessoa(string valNome, string valEndereco, string valEmail,
+Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
                string valDocumento, long int valTelefone) {
   if (!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa")) {
     throw "Acesso negado Pessoa.Pessoa";
@@ -141,7 +141,7 @@ string Pessoa::getNome() {
 }
 
 /* Returning the address of the person. */
-string Pessoa::getEndereco() {
+Endereco Pessoa::getEndereco() {
   if (!Empresa::getEmpresa()->getAcesso("Pessoa.getEndereco")) {
     throw "Acesso negado - getEndereco";
   } else
@@ -192,7 +192,7 @@ void Pessoa::setNome(string valNome) { this->nome = valNome; }
  *
  * @param valEndereco The value of the address
  */
-void Pessoa::setEndereco(string valEndereco) { this->endereco = valEndereco; }
+void Pessoa::setEndereco(Endereco valEndereco) { this->endereco = valEndereco; }
 /**
  * It sets the value of the email variable.
  *

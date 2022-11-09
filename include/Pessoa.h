@@ -1,26 +1,27 @@
 #ifndef PESSOA_H_INCLUDED
 #define PESSOA_H_INCLUDED
 #include <string>
+#include "Endereco.h"
 using namespace std;
 
 class Pessoa{
     private:
         string nome;
-        string endereco;
+        Endereco endereco;
         string email;
         string documento;
         long int telefone;
     public:
         Pessoa();
-        Pessoa(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone);
+        Pessoa(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone);
         virtual ~Pessoa();
         string getNome();
-        string getEndereco();
+        Endereco getEndereco();
         string getEmail();
         string getDocumento();
         long int getTelefone();
         void setNome(string valNome);
-        void setEndereco(string valEndereco);
+        void setEndereco(Endereco valEndereco);
         void setEmail(string valEmail);
         void setDocumento(string valDocumento);
         void setTelefone(long int valTelefone);
