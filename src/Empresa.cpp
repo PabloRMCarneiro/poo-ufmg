@@ -23,7 +23,23 @@ vector <LogEscrita*> Empresa::getlogsEscrita(){
 vector <LogLeitura*> Empresa::getlogsLeitura(){
   return this->logsLeitura;
 }
-
+MateriaPrima* Empresa::getMateriaPrima(string valMateriaPrima){
+  for(auto it : this->materiaPrimaLista){
+    if(it->getNome() == valMateriaPrima){
+      return it;
+    }
+  }
+  return nullptr;
+}
+vector<MateriaPrima*> Empresa::getMateriaPrimaLista(){
+  return this->materiaPrimaLista;
+}
+void Empresa::setMateriaPrima(MateriaPrima* valMateriaPrima){
+  this->materiaPrimaLista.push_back(valMateriaPrima);
+}
+void Empresa::setMateriaPrimaLista(vector<MateriaPrima*> valMateriaPrima){
+  this->materiaPrimaLista = valMateriaPrima;
+}
 bool Empresa::getAcesso(string valFuncoes)
 {
   if(empresa->usuarioLogado->getPermissoes(valFuncoes)) return true;

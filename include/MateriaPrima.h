@@ -18,6 +18,7 @@ class MateriaPrima {
         double getEstoque();
         string getUnidadeMedida();
         double getEstoqueMinimo();
+        string getNome();
 
         void setEstoqueMin(double valEstoqueMinimo);
         void setEstoque(double valEstoque);

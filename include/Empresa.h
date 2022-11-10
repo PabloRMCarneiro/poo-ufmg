@@ -14,6 +14,7 @@
 #include "./LogLeitura.h"
 #include "./Turno.h"
 #include "./Veiculo.h"
+#include "./MateriaPrima.h"
 
 using namespace std;
 
@@ -32,6 +33,7 @@ class Empresa
     vector <LogLeitura*> logsLeitura;
     vector <Turno*> turnos;
     vector <Veiculo*> veiculos; 
+    vector <MateriaPrima*> materiaPrimaLista;
     //vector <AcessoNegado*> logsAcessoNegado; 
 
     Empresa();
@@ -41,6 +43,8 @@ class Empresa
     static Empresa* getEmpresa();
     void login(Usuario* valUsuario);
     
+    MateriaPrima* getMateriaPrima(string valMateriaPrima);
+    vector<MateriaPrima*> getMateriaPrimaLista();
     Turno* getTurno(string valTurno);
     vector<Turno*> getTurnos();
     Veiculo* getVeiculo(Turno* valTurno);
@@ -60,6 +64,8 @@ class Empresa
     vector<Log> getLogEscrita();
     vector<Log> getLogAcesso(); 
     */
+    void setMateriaPrima(MateriaPrima* valMateriaPrima);
+    void setMateriaPrimaLista(vector<MateriaPrima*> valMateriaPrima);
     void setEndereco(Endereco valEndereco);
     void setTurno(Turno* valTurno);
     void setTurnos(vector<Turno*> valTurnos);
