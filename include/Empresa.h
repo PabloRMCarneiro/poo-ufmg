@@ -12,6 +12,8 @@
 #include "./data.h"
 #include "./LogEscrita.h" 
 #include "./LogLeitura.h"
+#include "./Turno.h"
+#include "./Veiculo.h"
 
 using namespace std;
 
@@ -27,6 +29,8 @@ class Empresa
     vector <RegistroVendas*> registrosVendas;
     vector <LogEscrita*> logsEscrita;
     vector <LogLeitura*> logsLeitura;
+    vector <Turno*> turnos;
+    vector <Veiculo*> veiculos; 
     //vector <AcessoNegado*> logsAcessoNegado; 
 
     Empresa();
@@ -36,8 +40,12 @@ class Empresa
     static Empresa* getEmpresa();
     void login(Usuario* valUsuario);
     
+    Turno* getTurno(string valTurno);
+    vector<Turno*> getTurnos();
+    Veiculo* getVeiculo(Turno* valTurno);
+    vector<Veiculo*> getVeiculos();
     Usuario* getUsuario();
-    Cargo* getCargo(Cargo* valCargo);
+    Cargo* getCargo(string valCargo);
     Departamento* getDepartamento(string name);
     Cliente* getCliente(string doc);
     Funcionario* getFuncionario(string doc);
@@ -50,6 +58,10 @@ class Empresa
     vector<Log> getLogEscrita();
     vector<Log> getLogAcesso(); 
     */
+    void setTurno(Turno* valTurno);
+    void setTurnos(vector<Turno*> valTurnos);
+    void setVeiculo(Veiculo* valVeiculo);
+    void setVeiculos(vector<Veiculo*> valVeiculos);
     void setlogEscrita(map<string, string>, map<string, string>, Data, string);
     void setlogLeitura(string, Data, string);
     void setUsuario(Usuario* valUsuario);

@@ -50,7 +50,7 @@ void Empresa::setUsuario(Usuario *valUsuario)
   empresa->usuarioLogado = valUsuario;
 }
 
- Cargo * Empresa::getCargo(Cargo *valCargo)
+ Cargo * Empresa::getCargo(string valCargo)
 {
   if(!Empresa::getEmpresa()->getAcesso("Empresa.getCargo"))
   {
@@ -60,7 +60,7 @@ void Empresa::setUsuario(Usuario *valUsuario)
   {
     for (int i = 0; i < empresa->cargos.size(); i++)
     {
-      if (empresa->cargos[i]->getNome() == valCargo->getNome())
+      if (empresa->cargos[i]->getNome() == valCargo)
       {
         return empresa->cargos[i];
       }
@@ -101,7 +101,40 @@ Departamento *Empresa::getDepartamento(string name)
   return nullptr;
   }
 }
-
+Turno* Empresa::getTurno(string valTurno){
+  for(auto it : this->turnos){
+    if(it->getPeriodo() == valTurno){
+      return it;
+    }
+  }
+  return nullptr;
+}
+vector<Turno*> Empresa::getTurnos(){
+  return this->turnos;
+}
+Veiculo* Empresa::getVeiculo(Turno* valTurno){
+  for(auto it : this->veiculos){
+    if(it->getTurno() == valTurno){
+      return it;
+    }
+  }
+  return nullptr;
+}
+vector<Veiculo*> Empresa::getVeiculos(){
+  return this->veiculos;
+}
+void Empresa::setTurno(Turno* valTurno){
+  this->turnos.push_back(valTurno);
+}
+void Empresa::setTurnos(vector<Turno*> valTurnos){
+  this->turnos = valTurnos;
+}
+void Empresa::setVeiculo(Veiculo* valVeiculo){
+  this->veiculos.push_back(valVeiculo);
+}
+void Empresa::setVeiculos(vector<Veiculo*> valVeiculos){
+  this->veiculos = valVeiculos;
+}
 void Empresa::setDepartamento(Departamento *valDepartamento)
 {
   empresa->departamentos.push_back(valDepartamento);
