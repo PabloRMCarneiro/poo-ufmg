@@ -4,9 +4,9 @@ OrdemDeCompra::OrdemDeCompra(){
     this->setData(Data());
     this->valorTotal = 0.0;
 }
-OrdemDeCompra::OrdemDeCompra(Data valData, vector<MateriaPrima*> valMateriaPrima){
+OrdemDeCompra::OrdemDeCompra(Data valData, MateriaPrima* valMateriaPrima){
     this->setData(valData);
-    this->setMateriaPrimaLista(valMateriaPrima);
+    this->setMateriaPrima(valMateriaPrima);
     this->valorTotal = 0.0;
 }
 void OrdemDeCompra::setMateriaPrimaLista(vector<MateriaPrima*> valMateriaPrima){
@@ -26,9 +26,9 @@ void OrdemDeCompra::setValorTotal(double valValorTotal){
 void OrdemDeCompra::setOrcamento(){
     // gerar orçamento depois de atualizá-lo
 }
-void OrdemDeCompra::gerarPedidos(){
+void OrdemDeCompra::gerarPedidos(Data valData){
     for(auto it : melhoresPrecos){
-        this->setCompra(it.first->vende(it.second, it.second->getEstoqueMinimo()));
+        this->setCompra(it.first->vende(it.second, it.second->getEstoqueMinimo(), valData));
     }
 }
 void OrdemDeCompra::setMelhoresPrecos(){

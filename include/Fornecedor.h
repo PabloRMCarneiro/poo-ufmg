@@ -9,14 +9,24 @@
 
 using namespace std;
 
-class Fornecedor{
+class Fornecedor : public Pessoa{
     private:
+        string tipoFornecedor;
         vector <pair<MateriaPrima*, double>> precos;
     public:
+    //construtor
         Fornecedor();
-        double getPreco(MateriaPrima*);
-        bool vende(MateriaPrima*, double);
-        void setPreco(vector<pair<MateriaPrima*, double>>);
+        Fornecedor(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone);
+    //metodos set
+        void setPrecos(vector<pair<MateriaPrima*, double>> valPrecos);
+        void setPreco(pair<MateriaPrima*, double> valMateriaPrima);
+        void setTipoFornecedor(string valTipoFornecedor);
+    //metodos get
+        string getTipoFornecedor(string valTipoFornecedor);
+        double getPreco(MateriaPrima* valMateriaPrima);
+        vector <pair<MateriaPrima*, double>> getPrecos();
+
+        bool vende(MateriaPrima* valMateriaPrima, double valQuantidade, Data valData);
 };
 
 #endif

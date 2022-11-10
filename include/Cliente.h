@@ -4,11 +4,10 @@
 
 class Cliente:public Pessoa{
     private:
-        Pessoa cliente;
         string tipoCliente;
     public:
         Cliente();
-        Cliente(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone);
+        Cliente(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone);
         void setTipoCliente(string tc);
         string getTipoCliente();
 };

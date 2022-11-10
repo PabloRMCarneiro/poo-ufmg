@@ -11,19 +11,18 @@ Cliente::Cliente():Pessoa(){
     }
     else
     {   
-        this->cliente = Pessoa();
         this->tipoCliente = "";
     }
 
 }
-Cliente::Cliente(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone):Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone){
+Cliente::Cliente(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone):Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone){
     if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
     {
         throw acessoNegadoCliente();
     }
     else
     {   
-        this->cliente = Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone);
+        //this->cliente = Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone);
         this->setTipoCliente(valDocumento);
     }
 }

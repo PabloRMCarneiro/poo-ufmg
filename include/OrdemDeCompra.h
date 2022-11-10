@@ -20,8 +20,8 @@ class OrdemDeCompra{
         bool compra;
     public:
         OrdemDeCompra();
-        OrdemDeCompra(Data valData, vector<MateriaPrima*> valMateriaPrima);
-        void gerarPedidos();
+        OrdemDeCompra(Data valData, MateriaPrima* valMateriaPrima);
+        void gerarPedidos(Data valData);
         void setData(Data valData);
         void setMateriaPrima(MateriaPrima* valMateriaPrima);
         void setMateriaPrimaLista(vector<MateriaPrima*> valMateriaPrima);
