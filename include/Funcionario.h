@@ -18,6 +18,9 @@ class Funcionario : public Pessoa
     vector <Data> registro;
     Cargo cargo;
     bool estadoAtivo;
+    Turno* jornada;
+    int idVeiculo;
+
 
   public:
     Funcionario();
@@ -30,7 +33,11 @@ class Funcionario : public Pessoa
     vector <Data> getRegistro();
     Cargo getCargo();
     bool getEstadoAtivo();
+    Turno* getJornada();
+    int getIdVeiculo();
 
+    void setJornada(Turno* valJornada);
+    void setIdVeiculo(int valIdVeiculo);
     void setDepartamento(Departamento valDepartamento);
     void setDataNascimento(Data valDataNascimento);
     void setSalario(Data valData, Salario valSalario);

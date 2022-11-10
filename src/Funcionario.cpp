@@ -30,6 +30,8 @@ Funcionario::Funcionario():Pessoa()
     this->registro = vector <Data>();
     this->cargo = Cargo();
     this->estadoAtivo = false;
+    this->jornada = nullptr;
+    this->idVeiculo = 0;
   }
 }
 /**
@@ -58,6 +60,8 @@ Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, 
     this->registro = valRegistro;
     this->cargo = valCargo;
     this->estadoAtivo = valEstadoAtivo;
+    this->idVeiculo = 0;
+    this->jornada = nullptr; // turno será inicializado com setJornada
   }
 }
 /**
@@ -138,7 +142,18 @@ bool Funcionario::getEstadoAtivo()
     return this->estadoAtivo;
   }
 }
-
+Turno* Funcionario::getJornada(){
+  return this->jornada;
+}
+int Funcionario::getIdVeiculo(){
+  return this->idVeiculo;
+}
+void Funcionario::setJornada(Turno* valJornada){
+  this->jornada = valJornada;
+}
+void Funcionario::setIdVeiculo(int valIdVeiculo){
+  this->idVeiculo = valIdVeiculo;
+}
 void Funcionario::setDepartamento(Departamento valDepartamento)
 {
   this->departamento.setNome(valDepartamento.getNome());
