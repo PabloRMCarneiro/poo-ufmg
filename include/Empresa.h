@@ -22,6 +22,7 @@ class Empresa
   private:
     static Empresa* empresa;
     Usuario* usuarioLogado;
+    Endereco endereco;
     vector <Cargo*> cargos;
     vector <Departamento*> departamentos;
     vector <Cliente*> clientes;
@@ -53,11 +54,13 @@ class Empresa
     RegistroVendas* getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente);
     vector <LogEscrita*> getlogsEscrita();
     vector <LogLeitura*> getlogsLeitura();
+    Endereco getEndereco();
     /* 
     vector<Log> getLogLeitura();
     vector<Log> getLogEscrita();
     vector<Log> getLogAcesso(); 
     */
+    void setEndereco(Endereco valEndereco);
     void setTurno(Turno* valTurno);
     void setTurnos(vector<Turno*> valTurnos);
     void setVeiculo(Veiculo* valVeiculo);

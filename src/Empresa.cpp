@@ -83,7 +83,12 @@ void Empresa::setCargo(Cargo *valCargo)
 {
   empresa->cargos.push_back(valCargo);
 }
-
+void Empresa::setEndereco(Endereco valEndereco){
+  this->endereco = valEndereco;
+}
+Endereco Empresa::getEndereco(){
+  return this->endereco;
+}
 Departamento *Empresa::getDepartamento(string name)
 {
 
