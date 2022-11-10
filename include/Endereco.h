@@ -1,5 +1,5 @@
-#ifndef TURNO_H_INCLUDED
-#define TURNO_H_INCLUDED
+#ifndef ENDERECO_H_INCLUDED
+#define ENDERECO_H_INCLUDED
 #include <string>
 
 using namespace std;
@@ -22,4 +22,4 @@ class Endereco{
         double getY();
         double getDistancia(double x2, double y2);
 };
-#endif //TURNO_H_INCLUDED
+#endif //ENDERECO_H_INCLUDED

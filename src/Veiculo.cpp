@@ -23,7 +23,7 @@ void Veiculo::setCapacidade(int valCapacidade){
 void Veiculo::setAtual(int valAtual){
     this->atual = valAtual;
 }
-void Veiculo::setTempoDeRota(double valTempoDeRota){
+void Veiculo::setTempoDeRota(int valTempoDeRota){
     this->tempoDeRota = this->tempoDeRota + valTempoDeRota;
 }
 void Veiculo::setTurno(Turno* valTurno){
@@ -36,29 +36,35 @@ void Veiculo::setPosicaoRota(string valEndereco, Data valHora){
     this->rota[valEndereco] = valHora;
 }
 double Veiculo::calculaTempo(double valDistancia){
-    return (valDistancia/VELOCIDADE)*60;
+    return (valDistancia/VELOCIDADE)*3600;
 }
-Data Veiculo::horaSaida(double valTempo){
-    valTempo = valTempo*60; // em segundos
+void Veiculo::setHoraSaida(){
+    int tempoTotal, horaDoBusaoSair, horaturno, hora, minuto, segundo;
+    Data valInicioTurno = this->turno->getEntradaHora();
+    horaturno = valInicioTurno.getHora()*3600+ valInicioTurno.getMin()*60 + valInicioTurno.getSeg();
+    horaDoBusaoSair = horaturno -600 - this->tempoDeRota; //hora do turno -10 min -tempodeRota
+    hora = int(horaDoBusaoSair/3600);
+    minuto = int((horaDoBusaoSair%3600)/60);
+    segundo = horaDoBusaoSair-(hora*3600 + minuto*60);
+    this->horaSaida =  Data(0,0,0, hora, minuto, segundo);
+}
+Data tempoEmpresaCasa(int valTempo, Data valLocal){
     int tempoTotal, horaEntrada, horaturno, hora, minuto, segundo;
-    Data a;// = this->turno->getEntradaHora();
-    horaturno = a.getHora()*3600+ a.getMin()*60 + a.getSeg();
-    horaEntrada = horaturno -600 - valTempo;
-    hora = int(horaEntrada/3600);
-    minuto = int((horaEntrada%3600)/60);
-    segundo = horaEntrada-(hora*3600 + minuto*60);
-    return Data(0,0,0, hora, minuto, segundo);
+    hora = valLocal.getHora()*3600+ valLocal.getMin()*60 + valLocal.getSeg();
 }
 void Veiculo::calculaRota(Endereco valEndereco){
-    // double distancia, distanciaTotal = 0, tempoTot = 0;
-    // if(this->rota.empty()){
-    //     distancia = valEndereco.getDistancia(0, 0);
-    //     distanciaTotal = distancia*2;
-    //     tempoTot = this->calculaTempo(distanciaTotal);
-    //     Data a = horaSaida(tempoTot);
-    //     this->setTempoDeRota(tempoTot);
-
-    // }
+    double distanciaDaEmpresa = 0.0, distanciaTotal = 0.0;
+    int tempoAteEmpresa = 0, tempoTot = 0;
+    if(this->rota.empty()){
+        distanciaDaEmpresa = valEndereco.getDistancia(0, 0); // em km
+        distanciaTotal = distanciaDaEmpresa*2; // em km
+        tempoTot = int(this->calculaTempo(distanciaTotal)); // em segundos
+        this->setTempoDeRota(tempoTot);
+        this->setHoraSaida();
+        tempoAteEmpresa = int(this->calculaTempo(distanciaDaEmpresa));
+        Data horaCasa1 = tempoEmpresaCasa(tempoAteEmpresa, this->horaSaida);
+        rota[valEndereco.getEndereco()] = horaCasa1;
+    }
     // Funcionario* anterior = new Funcionario;
     // for(auto it = passageiros.begin(); it!= passageiros.end(); ){
     //     anterior = *it;
@@ -91,7 +97,7 @@ int Veiculo::getCapacidade(){
 int Veiculo::getAtual(){
     return this->atual;
 }
-double Veiculo::getTempoDeRota(){
+int Veiculo::getTempoDeRota(){
     return this->tempoDeRota;
 }
 Turno* Veiculo::getTurno(){

@@ -9,7 +9,8 @@ class Veiculo{
         int id;
         int capacidade;
         int atual;
-        double tempoDeRota;
+        int tempoDeRota; //segundos
+        Data horaSaida;
         Turno* turno;
         map<string, Data> rota;
         vector<Funcionario*> passageiros;
@@ -21,17 +22,19 @@ class Veiculo{
         void setId(int valId);
         void setCapacidade(int valCapacidade);
         void setAtual(int valAtual);
-        void setTempoDeRota(double valTempoDeRota);
+        void setTempoDeRota(int valTempoDeRota);
         void setTurno(Turno* valTurno);
         void setRota(map<string, Data> valRota);
         void setPosicaoRota(string valEndereco, Data valHora);
         void setPassageiros(vector<Funcionario*> valPassageiros);
         void setPassageiro(Funcionario* valPassageiro);
+        void setHoraSaida();
     //metodos get
         int getId();
         int getCapacidade();
         int getAtual();
-        double getTempoDeRota();
+        int getTempoDeRota();
+        Data getHoraSaida();
         Turno* getTurno();
         map<string, Data> getRota();
         Data getHoraPosicao(Funcionario* valPassageiro);
@@ -39,6 +42,6 @@ class Veiculo{
         Funcionario* getPassageiro(string valEndereco);
         void calculaRota(Endereco valEndereco);
         double calculaTempo(double valDistancia);
-        Data horaSaida(double valTempo);
+        
 };
 #endif //VEICULO_H_INCLUDED
