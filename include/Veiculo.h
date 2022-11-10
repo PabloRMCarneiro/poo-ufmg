@@ -12,7 +12,7 @@ class Veiculo{
         int tempoDeRota; //segundos
         Data horaSaida;
         Turno* turno;
-        map<string, Data> rota;
+        map<int, Endereco> rota; //int -> hora em segundos, string -> endereço
         vector<Funcionario*> passageiros;
     public:
     //construtor
@@ -21,13 +21,13 @@ class Veiculo{
     //metodos set
         void setId(int valId);
         void setCapacidade(int valCapacidade);
-        void setAtual(int valAtual);
+        bool setAtual(int valAtual);
         void setTempoDeRota(int valTempoDeRota);
         void setTurno(Turno* valTurno);
-        void setRota(map<string, Data> valRota);
-        void setPosicaoRota(string valEndereco, Data valHora);
-        void setPassageiros(vector<Funcionario*> valPassageiros);
-        void setPassageiro(Funcionario* valPassageiro);
+        void setRota(map<int, Endereco> valRota);
+        void setPosicaoRota(Endereco valEndereco, Data valHora);
+        bool setPassageiros(vector<Funcionario*> valPassageiros);
+        bool setPassageiro(Funcionario* valPassageiro);
         void setHoraSaida();
     //metodos get
         int getId();
@@ -36,12 +36,15 @@ class Veiculo{
         int getTempoDeRota();
         Data getHoraSaida();
         Turno* getTurno();
-        map<string, Data> getRota();
+        map<int, Endereco> getRota();
         Data getHoraPosicao(Funcionario* valPassageiro);
         vector<Funcionario*> getPassageiros();
-        Funcionario* getPassageiro(string valEndereco);
+        Funcionario* getPassageiro(Endereco valEndereco);
         void calculaRota(Endereco valEndereco);
         double calculaTempo(double valDistancia);
-        
+        int tempoEmpresaCasa(int valTempo);
+        int auxiliarTempoSegundos(Data valHora); //retorna hora em segundos
+        Data auxiliarTempoHora(int valHora); //retorna hora em Data
+        void excluiPassageiro(Funcionario* valPassageiro);
 };
 #endif //VEICULO_H_INCLUDED
