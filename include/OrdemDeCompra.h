@@ -12,23 +12,30 @@ using namespace std;
 
 class OrdemDeCompra{
     private:
-        vector<MateriaPrima*> materiaPrima;
+        vector<MateriaPrima*> materiaPrimaLista;
         Data dataOrdem;
         double valorTotal;
         vector <pair<Fornecedor*, MateriaPrima*>> melhoresPrecos;
         vector <Orcamento*> orcamento;
         bool compra;
     public:
-        OrdemDeCompra(Data valData, MateriaPrima*);
-        void gerarPedidos(MateriaPrima*, double);
+        OrdemDeCompra();
+        OrdemDeCompra(Data valData, vector<MateriaPrima*> valMateriaPrima);
+        void gerarPedidos();
         void setData(Data valData);
-        void setMelhoresPrecos(vector <pair<Fornecedor*, MateriaPrima*>> valMelhoresPrecos);
+        void setMateriaPrima(MateriaPrima* valMateriaPrima);
+        void setMateriaPrimaLista(vector<MateriaPrima*> valMateriaPrima);
+        void setMelhoresPrecos();
         void setValorTotal(double valValorTotal);
         void setCompra(bool valCompra);
+        void setOrcamento();
 
         Data getDatOrdem();
         double getValorTotal();
         vector <Orcamento*> getOrcamento();
+        vector<MateriaPrima*> getMateriaPrimaLista();
+        vector <pair<Fornecedor*, MateriaPrima*>> getMelhoresPreços();
+        bool getComprou();
 };
 
 #endif
