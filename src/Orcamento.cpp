@@ -91,19 +91,6 @@ void Orcamento::setCliente(Cliente cliente) {
   }
 }
 
-/* void Orcamento::listagemDeProdutos(){
-    if(!Empresa::getEmpresa()->getAcesso("Orcamento.listagemDeProdutos"))
-    {
-        throw "Acesso negado a Orcamento.listagemDeProdutos";
-    }
-    else
-    {
-        for(int i = 0; i < this->produtos.size(); i++){
-            cout << this->produtos[i].getNome() << endl;
-        }
-    }
-} */
-
 void Orcamento::listagemDeProdutos() {
   if (!Empresa::getEmpresa()->getAcesso("Orcamento.listagemDeProdutos")) {
     throw "Acesso negado a Orcamento.listagemDeProdutos";

@@ -1,6 +1,6 @@
 #include "../include/Lote.h"
 #include "../include/Empresa.h"
-// construtores
+
 Lote::Lote()
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
@@ -16,6 +16,7 @@ Lote::Lote()
         dataProd = Data();
     }
 }
+
 Lote::Lote(int nl)
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
@@ -25,6 +26,7 @@ Lote::Lote(int nl)
     else
         this->setNumLote(nl);
 }
+
 Lote::Lote(Data d, int nl, int qp, string p)
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
@@ -41,29 +43,31 @@ Lote::Lote(Data d, int nl, int qp, string p)
     }
 }
 
-// metodos set
 void Lote::setDataProd(Data d)
 {
     this->dataProd = d;
 }
+
 void Lote::setNumLote(int nl)
 {
     this->numLote = nl;
 }
+
 void Lote::setProduto(string p)
 {
     this->produto = p;
 }
+
 void Lote::setQuantidadeAtual(int qa)
 {
     this->quantidadeAtual = qa;
 }
+
 void Lote::setQuantidadeProduzida(int qp)
 {
     this->quantidadeProduzida = qp;
 }
 
-// metodos set
 Data Lote::getDataProd()
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.getDataProd"))
@@ -109,7 +113,7 @@ int Lote::getQuantidadeProduzida()
     else
         return this->quantidadeProduzida;
 }
-// para imprimir registro de producao
+
 void Lote::imprimeRegistro()
 {  
     if(!Empresa::getEmpresa()->getAcesso("Lote.imprimeRegistro"))
@@ -125,7 +129,7 @@ void Lote::imprimeRegistro()
         cout << "Quantidade atual: " << this->getQuantidadeAtual() << endl;
     }
 }
-// para realizar venda -> retorna quantidade que não foi possivel vender neste lote
+
 int Lote::vende(int q)
 {
     if(!Empresa::getEmpresa()->getAcesso("Lote.vende"))

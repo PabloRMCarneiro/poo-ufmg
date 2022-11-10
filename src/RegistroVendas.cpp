@@ -1,6 +1,5 @@
 #include "../include/RegistroVendas.h"
 #include "../include/Empresa.h"
-//construtores
 
 RegistroVendas::RegistroVendas(Data dv, Produto* p, int q, Cliente* cl){
     if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.RegistroVendas"))
@@ -16,7 +15,7 @@ RegistroVendas::RegistroVendas(Data dv, Produto* p, int q, Cliente* cl){
     }
     
 }
-//metodos get
+
 Cliente* RegistroVendas::getCliente(){
     if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getCliente"))
     {
@@ -27,6 +26,7 @@ Cliente* RegistroVendas::getCliente(){
       return this->cliente;
     }
 }
+
 Data RegistroVendas::getDataDeVenda(){
     if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getDataDeVenda"))
     {
@@ -37,6 +37,7 @@ Data RegistroVendas::getDataDeVenda(){
       return this->dataDeVenda;
     }
 }
+
 vector<int> RegistroVendas::getNumeroDoLote(){
     if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getNumeroDoLote"))
     {
@@ -47,6 +48,7 @@ vector<int> RegistroVendas::getNumeroDoLote(){
       return this->lote;
     }
 }
+
 Produto* RegistroVendas::getProduto(){
     if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getProduto"))
     {
@@ -57,6 +59,7 @@ Produto* RegistroVendas::getProduto(){
       return this->produto;
     }
 }
+
 int RegistroVendas::getQuantidadeVenda(){
     if(!Empresa::getEmpresa()->getAcesso("RegistroVendas.getQuantidadeVenda"))
     {
@@ -67,22 +70,27 @@ int RegistroVendas::getQuantidadeVenda(){
       return this->quantidadeVenda;
     }
 }
-//metodos set
+
 void RegistroVendas::setCliente(Cliente* cl){
     this->cliente = cl;
 }
+
 void RegistroVendas::setDataDeVenda(Data v){
     this->dataDeVenda = v;
 }
+
 void RegistroVendas::setNumeroDoLote(int nl){
     this->lote.push_back(nl);
 }
+
 void RegistroVendas::setProduto(string p){
     this->produto = Produto::getProduto(p);
 }
+
 void RegistroVendas::setProduto(Produto* p){
     this->produto = p;
 }
+
 void RegistroVendas::setQuantidadeVenda(int qvenda){
     this->quantidadeVenda = qvenda;
     if(this->validaVenda(qvenda)){
@@ -94,6 +102,7 @@ void RegistroVendas::setQuantidadeVenda(int qvenda){
         }
     }
 }
+
 bool RegistroVendas::validaVenda(int q){
     this->vendido = this->produto->temEstoque(q);
     return this->vendido;

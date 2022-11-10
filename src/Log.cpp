@@ -37,77 +37,35 @@ Log::Log(Usuario* valUsuario, Data valDataAcesso, string valEntidade)
   this->entidade = valEntidade;
 }
 
-/**
- * Log::~Log()
- * 
- * This is a destructor for the class Log. It does nothing.
- */
-
 Log::~Log()
 {
 
 }
-
-/**
- * Log::setUsuario(Usuario* valUsuario)
- * 
- * @param valUsuario
- */
 
 void Log::setUsuario(Usuario* valUsuario)
 {
   this->usuario = valUsuario;
 }
 
-/**
- * Log::setDataAcesso(Data valDataAcesso)
- * 
- * @param valDataAcesso
- */
-
 void Log::setDataAcesso(Data valDataAcesso)
 {
   this->dataAcesso = valDataAcesso;
 }
-
-/**
- * Log::setEntidade(string valEntidade)
- * 
- * @param valEntidade
- */
 
 void Log::setEntidade(string valEntidade)
 {
   this->entidade = valEntidade;
 }
 
-/**
- * Log::getUsuario()
- * 
- * @return Usuario*
- */
-
 Usuario* Log::getUsuario()
 {
   return this->usuario;
 }
 
-/**
- * Log::getData()
- * 
- * @return Data
- */
-
 Data Log::getData()
 {
   return this->dataAcesso;
 }
-
-/**
- * Log::getEntidade()
- * 
- * @return string
- */
 
 string Log::getEntidade()
 {

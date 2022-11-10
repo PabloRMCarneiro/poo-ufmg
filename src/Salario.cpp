@@ -4,9 +4,7 @@
 #include <vector>
 
 using namespace std;
-/**
- * A constructor for the class Salario.
- */
+
 Salario::Salario() {
   if (!Empresa::getEmpresa()->getAcesso("Salario.Salario")) {
     throw "Acesso negado a Salario.Salario";
@@ -16,11 +14,7 @@ Salario::Salario() {
     this->registro.push_back(make_pair(Data(), 0.0));
   }
 }
-/**
- * The constructor for the Salario class
- *
- * @param valValor
- */
+
 Salario::Salario(float valValor) {
   if (!Empresa::getEmpresa()->getAcesso("Salario.Salario")) {
     throw "Acesso negado a Salario.Salario ";
@@ -29,15 +23,9 @@ Salario::Salario(float valValor) {
     this->dissidio = 0.0;
   }
 }
-/**
- * The destructor for the Salario class
- */
+
 Salario::~Salario() {}
-/**
- * It returns the value of the salary.
- *
- * @return The value of the salary.
- */
+
 float Salario::getValor() {
   if (!Empresa::getEmpresa()->getAcesso("Salario.getValor")) {
     throw "Acesso negado a Salario.getValor";
@@ -45,11 +33,7 @@ float Salario::getValor() {
     return this->valor;
   }
 }
-/**
- * It returns the value of the dissidio.
- *
- * @return The value of the dissidio.
- */
+
 vector<pair<Data, float>> Salario::getRegistro() {
   if (!Empresa::getEmpresa()->getAcesso("Salario.getRegistro")) {
     throw "Acesso negado a Salario.getRegistro";
@@ -57,11 +41,7 @@ vector<pair<Data, float>> Salario::getRegistro() {
     return this->registro;
   }
 }
-/**
- * It returns the value of the dissidio.
- *
- * @return The value of the dissidio.
- */
+
 float Salario::getDissidio() {
   if (!Empresa::getEmpresa()->getAcesso("Salario.getDissidio")) {
     throw "Acesso negado a Salario.getDissidio";
@@ -69,31 +49,16 @@ float Salario::getDissidio() {
     return this->dissidio;
   }
 }
-/**
- * This function sets the value of the private variable valor to the value of
- * the parameter valValor
- *
- * @param valValor
- */
+
 void Salario::setValor(float valValor) { this->valor = valValor; }
-/**
- * This function sets the value of the private variable dissidio to the value of
- * the parameter valDissidio
- *
- * @param valDissidio
- */
+
 void Salario::setDissidio(Data valData, float valDissidio) {
   this->dissidio = valDissidio;
   for (auto it : Empresa::getEmpresa()->getFuncionario()) {
     it->promocao(valData, valDissidio);
   }
 }
-/**
- * This function increases the value of the salary by the percentage of the
- * parameter valPercentual
- *
- * @param valPercentual
- */
+
 void Salario::promocao(Data valData, float valPercentual) {
   if (!Empresa::getEmpresa()->getAcesso("Salario.promocao")) {
     throw "Acesso negado a Salario.promocao";
@@ -102,12 +67,7 @@ void Salario::promocao(Data valData, float valPercentual) {
     this->atualizaRegistro(valData);
   }
 }
-/**
- * This function increases the value of the salary by the value of the parameter
- * valDissidio
- *
- * @param valDissidio
- */
+
 void Salario::reajuste(Data valData, float valDissidio) {
   if (!Empresa::getEmpresa()->getAcesso("Salario.reajuste")) {
     throw "Acesso negado a Salario.reajuste";
@@ -116,12 +76,7 @@ void Salario::reajuste(Data valData, float valDissidio) {
     this->atualizaRegistro(valData);
   }
 }
-/**
- * This function sets the value of the private variable registro to the value of
- * the parameter valRegistro
- *
- * @param valRegistro
- */
+
 void Salario::atualizaRegistro(Data valData) {
   if (!Empresa::getEmpresa()->getAcesso("Salario.atualizaRegistro")) {
     throw "Acesso negado a Salario.atualizaRegistro";

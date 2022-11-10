@@ -156,8 +156,6 @@ Lote* Produto::getLote(int nl){
   
 }
 
-
-
 void Produto::setNome(string nome)
 {
   this->nome = nome;
@@ -187,6 +185,7 @@ void Produto::setQtdEstoque(int qtdEstoque)
 {
   this->qtdEstoque = qtdEstoque;
 }
+
 void Produto::setCategoria(string categ){
   if(Categoria::getCategoria(categ) != nullptr){
     this->setCategoria(categ);
@@ -194,6 +193,7 @@ void Produto::setCategoria(string categ){
     this->categoria = new Categoria(categ);
   }
 }
+
 void Produto::registraLote(int numeroLote, Data dataDeProducao){
   if(!Empresa::getEmpresa()->getAcesso("Produto.registraLote"))
   {
@@ -205,6 +205,7 @@ void Produto::registraLote(int numeroLote, Data dataDeProducao){
     this->qtdEstoque += this->tamanhoDoLoteMinimo;
   }
 }
+
 pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
 {
   if(!Empresa::getEmpresa()->getAcesso("Produto.realizaVenda"))
