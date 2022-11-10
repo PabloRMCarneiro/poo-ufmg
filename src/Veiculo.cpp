@@ -100,15 +100,26 @@ void Veiculo::calculaRota(Endereco valEndereco){
     }
 }
 void Veiculo::excluiPassageiro(Funcionario* valPassageiro){
-
-   // for(auto it : ) fazer exclui passageiro
+    vector<Funcionario*> listaSubstituta;
+    for(auto it : this->passageiros){
+        if(it != valPassageiro){
+            listaSubstituta.push_back(it);
+        }
+    }
+    this->setPassageiros(listaSubstituta);
 }
 bool Veiculo::setPassageiros(vector<Funcionario*> valPassageiros){
     bool adicionar = false;
-    for(auto it : valPassageiros){
-        adicionar = this->setPassageiro(it);
+    if(valPassageiros.size()<=this->capacidade){
+        rota.clear();
+        for(auto it : valPassageiros){
+            adicionar = this->setPassageiro(it);
+        }
+    }else{
+        adicionar = false;
     }
     return adicionar;
+    /////// tem que fazer try catch
 }
 bool Veiculo::setPassageiro(Funcionario* valPassageiro){
     bool adicionar = false;  
