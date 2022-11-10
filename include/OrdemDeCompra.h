@@ -19,7 +19,7 @@ class OrdemDeCompra{
         vector <Orcamento*> orcamento;
         bool compra;
     public:
-        OrdemDeCompra();
+        OrdemDeCompra(Data valData, MateriaPrima*);
         void gerarPedidos(MateriaPrima*, double);
         void setData(Data valData);
         void setMelhoresPrecos(vector <pair<Fornecedor*, MateriaPrima*>> valMelhoresPrecos);

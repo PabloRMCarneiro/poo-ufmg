@@ -40,6 +40,18 @@ void Empresa::setMateriaPrima(MateriaPrima* valMateriaPrima){
 void Empresa::setMateriaPrimaLista(vector<MateriaPrima*> valMateriaPrima){
   this->materiaPrimaLista = valMateriaPrima;
 }
+void Empresa::setOrdemDeCompra(OrdemDeCompra* valOrdemDeCompra){
+  this->ordemDeCompraLista.push_back(valOrdemDeCompra);
+}
+void Empresa::setOrdemDeProducao(OrdemDeProducao* valOrdemDeProducao){
+  this->ordemDeProducaoLista.push_back(valOrdemDeProducao);
+}
+vector<OrdemDeCompra*> Empresa::getOrdemDeCompraLista(){
+  return this->ordemDeCompraLista;
+}
+vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
+  return this->ordemDeProducaoLista;
+}
 bool Empresa::getAcesso(string valFuncoes)
 {
   if(empresa->usuarioLogado->getPermissoes(valFuncoes)) return true;

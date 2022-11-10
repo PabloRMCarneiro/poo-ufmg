@@ -15,6 +15,8 @@
 #include "./Turno.h"
 #include "./Veiculo.h"
 #include "./MateriaPrima.h"
+#include "./OrdemDeCompra.h"
+#include "./OrdemDeProducao.h"
 
 using namespace std;
 
@@ -34,6 +36,8 @@ class Empresa
     vector <Turno*> turnos;
     vector <Veiculo*> veiculos; 
     vector <MateriaPrima*> materiaPrimaLista;
+    vector <OrdemDeCompra*> ordemDeCompraLista;
+    vector <OrdemDeProducao*> ordemDeProducaoLista;
     //vector <AcessoNegado*> logsAcessoNegado; 
 
     Empresa();
@@ -59,11 +63,15 @@ class Empresa
     vector <LogEscrita*> getlogsEscrita();
     vector <LogLeitura*> getlogsLeitura();
     Endereco getEndereco();
+    vector<OrdemDeCompra*> getOrdemDeCompraLista();
+    vector<OrdemDeProducao*> getOrdemDeProducaoLista();
     /* 
     vector<Log> getLogLeitura();
     vector<Log> getLogEscrita();
     vector<Log> getLogAcesso(); 
     */
+    void setOrdemDeCompra(OrdemDeCompra* valOrdemDeCompra);
+    void setOrdemDeProducao(OrdemDeProducao* valOrdemDeProducao);
     void setMateriaPrima(MateriaPrima* valMateriaPrima);
     void setMateriaPrimaLista(vector<MateriaPrima*> valMateriaPrima);
     void setEndereco(Endereco valEndereco);

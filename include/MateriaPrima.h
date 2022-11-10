@@ -13,7 +13,9 @@ class MateriaPrima {
         string unidadeDeMedida;
         double estoqueMinimo;
     public:
-        void geraOrdemDeCompra(); 
+        MateriaPrima();
+        MateriaPrima(string valNome, string valUnidadeDeMedida, double valEstoqueMinimo);
+        void geraOrdemDeCompra(Data valData); 
         
         double getEstoque();
         string getUnidadeMedida();
@@ -21,11 +23,9 @@ class MateriaPrima {
         string getNome();
 
         void setEstoqueMin(double valEstoqueMinimo);
-        void setEstoque(double valEstoque);
+        void setEstoque(double valEstoque, Data valData);
         void setNome(string valNome);
         void setUnidadeDeMedida(string valUnidadeDeMedida);
-
-        MateriaPrima();
 };
 
 #endif
