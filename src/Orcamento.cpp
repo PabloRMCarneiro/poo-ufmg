@@ -67,6 +67,46 @@ float Orcamento::getValorTotal() {
   }
 }
 
+vector<MateriaPrima*> Orcamento::getMateriaPrimaLista(){
+  if (!Empresa::getEmpresa()->getAcesso("Orcamento.getMateriaPrimaLista")) {
+    throw "Acesso negado a Orcamento.getMateriaPrimaLista";
+  } else {
+    return this->materiaPrimaLista;
+  }
+}
+
+vector<pair<MateriaPrima*, double>> Orcamento::getHistoricoMateriaPrima(){
+  if (!Empresa::getEmpresa()->getAcesso("Orcamento.getHistoricoMateriaPrima")) {
+    throw "Acesso negado a Orcamento.getHistoricoMateriaPrima";
+  } else {
+    return this->historicoMateriaPrimaLista;
+  }
+}
+
+Fornecedor *Orcamento::getFornecedor(){
+  if (!Empresa::getEmpresa()->getAcesso("Orcamento.getFornecedor")) {
+    throw "Acesso negado a Orcamento.getFornecedor";
+  } else {
+    return this->fornecedor;
+  }
+}
+
+void Orcamento::setFornecedor(Fornecedor *fornecedor){
+  if (!Empresa::getEmpresa()->getAcesso("Orcamento.setFornecedor")) {
+    throw "Acesso negado a Orcamento.setFornecedor";
+  } else {
+    this->fornecedor = fornecedor;
+  }
+}
+
+void Orcamento::setMateriaPrimaLista(vector<MateriaPrima*> materiaPrimaLista){
+  if (!Empresa::getEmpresa()->getAcesso("Orcamento.setMateriaPrimaLista")) {
+    throw "Acesso negado a Orcamento.setMateriaPrimaLista";
+  } else {
+    this->materiaPrimaLista = materiaPrimaLista;
+  }
+}
+
 void Orcamento::setProduto(Produto* produto) {
   if (!Empresa::getEmpresa()->getAcesso("Orcamento.setProduto")) {
     throw "Acesso negado a Orcamento.setProduto";

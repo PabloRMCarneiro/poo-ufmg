@@ -29,12 +29,12 @@ public:
   Data getData();
   Cliente getCliente();
   float getValorTotal();
-  vector<MateriaPrima*> getMateriaPrimaLista(); // falta implementar
-  vector<pair<MateriaPrima*, double>> getHistoricoMateriaPrima(); // falta implementar
-  Fornecedor *getFornecedor(); // falta implementar
+  vector<MateriaPrima*> getMateriaPrimaLista();
+  vector<pair<MateriaPrima*, double>> getHistoricoMateriaPrima();
+  Fornecedor *getFornecedor();
 
-  void setFornecedor(Fornecedor* valFornecedor); // falta implementar
-  void setMateriaPrimaLista(vector<MateriaPrima*>); // falta implementar
+  void setFornecedor(Fornecedor* valFornecedor);
+  void setMateriaPrimaLista(vector<MateriaPrima*>);
   void setProduto(Produto* produto);
   void setData(Data data);
   void setCliente(Cliente cliente);
