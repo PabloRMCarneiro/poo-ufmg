@@ -1,4 +1,3 @@
-// #include "../include/Salario.h"
 #include "../include/Empresa.h"
 #include <string>
 #include <vector>

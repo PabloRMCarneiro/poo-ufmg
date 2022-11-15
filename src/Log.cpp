@@ -1,18 +1,9 @@
 #include "../include/Log.h"
 #include "../include/data.h"
 #include "../include/Empresa.h"
-
 #include <string>
 
 using namespace std;
-
-/**
- * Log::Log()
- * 
- * @param valUsuario
- * @param valDataAcesso
- * @param valEntidade
- */
 
 Log::Log()
 {
@@ -21,14 +12,6 @@ Log::Log()
   this->dataAcesso = Data();
   this->entidade = "";
 }
-
-/**
- * Log::Log(Usuario* valUsuario, Data valDataAcesso, string valEntidade)
- * 
- * @param valUsuario
- * @param valDataAcesso
- * @param valEntidade
- */
 
 Log::Log(Usuario* valUsuario, Data valDataAcesso, string valEntidade)
 {

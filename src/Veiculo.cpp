@@ -1,5 +1,5 @@
 #include "../include/Veiculo.h"
-//construtor
+
 Veiculo::Veiculo(){
     this->setId(0);
     this->setCapacidade(0);
@@ -7,6 +7,7 @@ Veiculo::Veiculo(){
     this->tempoDeRota = 0;
     this->setTurno(nullptr);
 }
+
 Veiculo::Veiculo(int valId, int valCapacidade, Turno* valTurno){
     this->setId(valId);
     this->setCapacidade(valCapacidade);
@@ -14,13 +15,15 @@ Veiculo::Veiculo(int valId, int valCapacidade, Turno* valTurno){
     this->atual = 0;
     this->tempoDeRota = 0;
 }
-//metodos set
+
 void Veiculo::setId(int valId){
     this->id = valId;
 }
+
 void Veiculo::setCapacidade(int valCapacidade){
     this->capacidade = valCapacidade;
 }
+
 bool Veiculo::setAtual(int valAtual){
     bool adicionar;
     if(this->atual = this->capacidade){
@@ -31,23 +34,29 @@ bool Veiculo::setAtual(int valAtual){
     }
     return adicionar;
 }
+
 void Veiculo::setTempoDeRota(int valTempoDeRota){
     this->tempoDeRota = this->tempoDeRota + valTempoDeRota;
     this->setHoraSaida();
 }
+
 void Veiculo::setTurno(Turno* valTurno){
     this->turno = valTurno;
 }
+
 void Veiculo::setRota(map<int, Endereco> valRota){
     this->rota = valRota;
 }
+
 void Veiculo::setPosicaoRota(Endereco valEndereco, Data valHora){
     int tempo = this->auxiliarTempoSegundos(valHora);
     this->rota[tempo] = valEndereco;
 }
+
 double Veiculo::calculaTempo(double valDistancia){
     return (valDistancia/VELOCIDADE)*3600;
 }
+
 void Veiculo::setHoraSaida(){
     int tempoTotal, horaDoBusaoSair, horaturno, hora, minuto, segundo;
     Data valInicioTurno = this->turno->getEntradaHora();
@@ -55,11 +64,13 @@ void Veiculo::setHoraSaida(){
     horaDoBusaoSair = horaturno -600 - this->tempoDeRota; //hora do turno -10 min -tempodeRota
     this->horaSaida = this->auxiliarTempoHora(horaDoBusaoSair);
 }
+
 int Veiculo::auxiliarTempoSegundos(Data valHora){
     int tempo;
     tempo = valHora.getHora()*3600+ valHora.getMin()*60 + valHora.getSeg(); // em segundos
     return tempo;
 }
+
 Data Veiculo::auxiliarTempoHora(int valHora){
     int hora, minuto, segundo;
     hora = int(valHora/3600);
@@ -67,6 +78,7 @@ Data Veiculo::auxiliarTempoHora(int valHora){
     segundo = valHora-(hora*3600 + minuto*60);
     return  Data(0,0,0, hora, minuto, segundo);
 }
+
 int Veiculo::tempoEmpresaCasa(int valTempo){
     int tempoTotal, horaSaida, horaturno, hora, minuto, segundo;
     Data valLocal = this->horaSaida;
@@ -74,6 +86,7 @@ int Veiculo::tempoEmpresaCasa(int valTempo){
     tempoTotal = horaSaida + valTempo;
     return tempoTotal;
 }
+
 void Veiculo::calculaRota(Endereco valEndereco){
     double distanciaDaEmpresa = 0.0, distanciaTotal = 0.0, distanciaAteEndereco1 = 0.0;
     int tempoAteEmpresa = 0, tempoTot = 0, horaCasa1 = 0;
@@ -99,6 +112,7 @@ void Veiculo::calculaRota(Endereco valEndereco){
         }
     }
 }
+
 void Veiculo::excluiPassageiro(Funcionario* valPassageiro){
     vector<Funcionario*> listaSubstituta;
     for(auto it : this->passageiros){
@@ -108,6 +122,7 @@ void Veiculo::excluiPassageiro(Funcionario* valPassageiro){
     }
     this->setPassageiros(listaSubstituta);
 }
+
 bool Veiculo::setPassageiros(vector<Funcionario*> valPassageiros){
     bool adicionar = false;
     if(valPassageiros.size()<=this->capacidade){
@@ -118,9 +133,23 @@ bool Veiculo::setPassageiros(vector<Funcionario*> valPassageiros){
     }else{
         adicionar = false;
     }
-    return adicionar;
     /////// tem que fazer try catch
+    try{
+        if(valPassageiros.size()<=this->capacidade){
+            rota.clear();
+            for(auto it : valPassageiros){
+                adicionar = this->setPassageiro(it);
+            }
+        }else{
+            throw 1;
+        }
+    }catch(int e){
+        cout << "Erro: " << e << " - A capacidade do veiculo e menor que a quantidade de passageiros" << endl;
+    }
+    return adicionar;
+
 }
+
 bool Veiculo::setPassageiro(Funcionario* valPassageiro){
     bool adicionar = false;  
     if(this->setAtual(1)){
@@ -130,25 +159,31 @@ bool Veiculo::setPassageiro(Funcionario* valPassageiro){
     }
     return adicionar;
 }
-//metodos get
+
 int Veiculo::getId(){
     return this->id;
 }
+
 int Veiculo::getCapacidade(){
     return this->capacidade;
 }
+
 int Veiculo::getAtual(){
     return this->atual;
 }
+
 int Veiculo::getTempoDeRota(){
     return this->tempoDeRota;
 }
+
 Turno* Veiculo::getTurno(){
     return this->turno;
 }
+
 map<int, Endereco> Veiculo::getRota(){
     return this->rota;
 }
+
 Data Veiculo::getHoraPosicao(Funcionario* valPassageiro){
     int hora; //em segundos;
     for(auto it : rota){
@@ -158,9 +193,11 @@ Data Veiculo::getHoraPosicao(Funcionario* valPassageiro){
     }
     return this->auxiliarTempoHora(hora);
 }
+
 vector<Funcionario*> Veiculo::getPassageiros(){
     return this->passageiros;
 }
+
 Funcionario* Veiculo::getPassageiro(Endereco valEndereco){
     Funcionario* encontrado = new Funcionario;
     for(auto it : passageiros){

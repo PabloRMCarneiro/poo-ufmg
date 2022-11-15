@@ -10,12 +10,6 @@
 
 using namespace std;
 
-/**
- * Funcionario::Funcionario()
- * 
- * This is a constructor for the class Funcionario. It initializes the class attributes to default
- * values
- */
 Funcionario::Funcionario():Pessoa()
 {
   if(!Empresa::getEmpresa()->getAcesso("Funcionario.Funcionario"))
@@ -34,17 +28,7 @@ Funcionario::Funcionario():Pessoa()
     this->idVeiculo = 0;
   }
 }
-/**
- * Funcionario::Funcionario(string valNome, string valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario,
- * vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
- * 
- * @param valDepartamento
- * @param valDataNascimento
- * @param valSalario
- * @param valRegistro
- * @param valCargo enum
- * @param valEstadoAtivo
- */
+
 Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
 :Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
 {
@@ -61,12 +45,10 @@ Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, 
     this->cargo = valCargo;
     this->estadoAtivo = valEstadoAtivo;
     this->idVeiculo = 0;
-    this->jornada = nullptr; // turno será inicializado com setJornada
+    this->jornada = nullptr; 
   }
 }
-/**
- * The destructor is called when the object is destroyed
- */
+
 Funcionario::~Funcionario()
 {
 }
