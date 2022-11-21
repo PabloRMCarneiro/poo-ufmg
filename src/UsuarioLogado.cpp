@@ -1,0 +1,19 @@
+#include "../include/UsuarioLogado.h"
+
+UsuarioLogado* UsuarioLogado::usuarioLogado = nullptr;
+UsuarioLogado::UsuarioLogado(){
+
+}
+
+UsuarioLogado* UsuarioLogado::getUsuarioLogado(){
+    if(usuarioLogado == nullptr){
+        usuarioLogado = new UsuarioLogado;
+    }
+    return usuarioLogado;
+}
+void UsuarioLogado::setUsuario(Usuario* valUsuario){
+    this->usuario = valUsuario;
+}
+Usuario* UsuarioLogado::getUsuario(){
+    return this->usuario;
+}

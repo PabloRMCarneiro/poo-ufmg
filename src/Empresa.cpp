@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Empresa *Empresa::empresa = new Empresa();
+Empresa *Empresa::empresa = nullptr;
 
 Empresa::Empresa()
 {
@@ -13,6 +13,9 @@ Empresa::Empresa()
 
 Empresa *Empresa::getEmpresa()
 {
+  if(empresa ==nullptr){
+    empresa = new Empresa;
+  }
   return empresa;
 }
 
