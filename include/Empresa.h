@@ -43,7 +43,6 @@ class Empresa
     Empresa();
 
   public:
-    static bool getAcesso(string valFuncoes) ;
     static Empresa* getEmpresa();
     void login(UsuarioLogado* valUsuario);
     
