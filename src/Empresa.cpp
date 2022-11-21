@@ -55,31 +55,6 @@ vector<OrdemDeCompra*> Empresa::getOrdemDeCompraLista(){
 vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
   return this->ordemDeProducaoLista;
 }
-bool Empresa::getAcesso(string valFuncoes)
-{
-  if(empresa->usuarioLogado->getPermissoes(valFuncoes)) return true;
-  else return false;
-}
-
-void Empresa::login(Usuario *valUsuario)
-{
-  empresa->usuarioLogado = valUsuario;
-}
- 
-Usuario* Empresa::getUsuario()
-{
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.getUsuario"))
-  {
-    throw "Acesso negado a Empresa->getUsuario";
-  }
-  else
-    return empresa->usuarioLogado;
-}
-
-void Empresa::setUsuario(Usuario *valUsuario)
-{
-  empresa->usuarioLogado = valUsuario;
-}
 
  Cargo * Empresa::getCargo(string valCargo)
 {
@@ -99,14 +74,19 @@ void Empresa::setUsuario(Usuario *valUsuario)
     return nullptr;
   }
 }
-
+UsuarioLogado* Empresa::getUsuario(){
+  return this->usuarioLogado;
+}
+void Empresa::login(UsuarioLogado* valUsuario){
+  this->usuarioLogado = valUsuario;
+}
 void Empresa::setlogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, Data valDataAcesso, string valEntidade){
-  LogEscrita *novologEscrita= new LogEscrita(valAtributosAntes, valAtributosDepois, this->usuarioLogado, valDataAcesso, valEntidade);
+  LogEscrita *novologEscrita= new LogEscrita(valAtributosAntes, valAtributosDepois, this->usuarioLogado->getUsuario(), valDataAcesso, valEntidade);
   this->logsEscrita.push_back(novologEscrita);
 }
 
 void Empresa::setlogLeitura(string valAtributo, Data valDataAcesso, string valEntidade){
-  LogLeitura *novologLeitura = new LogLeitura(valAtributo, this->usuarioLogado, valDataAcesso, valEntidade);
+  LogLeitura *novologLeitura = new LogLeitura(valAtributo, this->usuarioLogado->getUsuario(), valDataAcesso, valEntidade);
   this->logsLeitura.push_back(novologLeitura);
 }
 

@@ -11,5 +11,6 @@ class UsuarioLogado{
         static UsuarioLogado* getUsuarioLogado();
         void setUsuario(Usuario* valUsuario);
         Usuario* getUsuario();
+        bool getAcesso(string valFuncoes);
 };
 #endif //USUARIOLOGADO_H_INCLUDED

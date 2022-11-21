@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-#include "./Usuario.h"
+#include "./UsuarioLogado.h"
 #include "./Departamento.h"
 #include "./Funcionario.h"
 #include "./Cliente.h"
@@ -24,7 +24,7 @@ class Empresa
 {
   private:
     static Empresa* empresa;
-    Usuario* usuarioLogado;
+    UsuarioLogado* usuarioLogado;
     Endereco endereco;
     vector <Cargo*> cargos;
     vector <Departamento*> departamentos;
@@ -45,7 +45,7 @@ class Empresa
   public:
     static bool getAcesso(string valFuncoes) ;
     static Empresa* getEmpresa();
-    void login(Usuario* valUsuario);
+    void login(UsuarioLogado* valUsuario);
     
     MateriaPrima* getMateriaPrima(string valMateriaPrima);
     vector<MateriaPrima*> getMateriaPrimaLista();
@@ -53,7 +53,7 @@ class Empresa
     vector<Turno*> getTurnos();
     Veiculo* getVeiculo(Turno* valTurno);
     vector<Veiculo*> getVeiculos();
-    Usuario* getUsuario();
+    UsuarioLogado* getUsuario();
     Cargo* getCargo(string valCargo);
     Departamento* getDepartamento(string name);
     Cliente* getCliente(string doc);
@@ -81,7 +81,6 @@ class Empresa
     void setVeiculos(vector<Veiculo*> valVeiculos);
     void setlogEscrita(map<string, string>, map<string, string>, Data, string);
     void setlogLeitura(string, Data, string);
-    void setUsuario(Usuario* valUsuario);
     void setCargo(Cargo* valCargo);
     void setDepartamento(Departamento* valDepartamento);
     void setCliente(Cliente* valCliente);

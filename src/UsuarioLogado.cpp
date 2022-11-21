@@ -17,3 +17,7 @@ void UsuarioLogado::setUsuario(Usuario* valUsuario){
 Usuario* UsuarioLogado::getUsuario(){
     return this->usuario;
 }
+bool UsuarioLogado::getAcesso(string valFuncoes)
+{
+  return this->usuario->getPermissoes(valFuncoes);
+}
