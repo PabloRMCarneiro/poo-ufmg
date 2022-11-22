@@ -6,27 +6,12 @@ using namespace std;
 
 Departamento::Departamento()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Departamento.Departamento"))
-  {
-    throw "Acesso negado a Departamento.Departamento";
-  }
-  else
-  {
-    this->nome = "";
-  }
-  
+  this->nome = "";
 }
 
 Departamento::Departamento(string valNome)
 {
-  if(!Empresa::getEmpresa()->getAcesso("Departamento.Departamento"))
-  {
-    throw "Acesso negado a Departamento.Departamento";
-  }
-  else
-  {
-    this->nome = valNome;
-  }
+  this->nome = valNome;
 }
 
 Departamento::~Departamento()
@@ -35,14 +20,7 @@ Departamento::~Departamento()
 
 string Departamento::getNome()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Departamento.getNome"))
-  {
-    throw "Acesso negado a Departamento.getNome";
-  }
-  else
-  {
-    return this->nome;
-  }
+  return this->nome;
 }
 
 void Departamento::setNome(string valNome)

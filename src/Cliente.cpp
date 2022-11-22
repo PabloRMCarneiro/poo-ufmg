@@ -5,26 +5,10 @@
 using namespace std;
 
 Cliente::Cliente():Pessoa(){
-    if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
-    {
-        throw acessoNegadoCliente();
-    }
-    else
-    {   
-        this->tipoCliente = "";
-    }
-
+    this->tipoCliente = "";
 }
 Cliente::Cliente(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone):Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone){
-    if(!Empresa::getEmpresa()->getAcesso("Cliente.Cliente"))
-    {
-        throw acessoNegadoCliente();
-    }
-    else
-    {   
-        //this->cliente = Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone);
-        this->setTipoCliente(valDocumento);
-    }
+    this->setTipoCliente(valDocumento);
 }
 void Cliente::setTipoCliente(string tc){
     if(tc.length() == 11){
@@ -35,12 +19,5 @@ void Cliente::setTipoCliente(string tc){
     }
 }
 string Cliente::getTipoCliente(){
-    if(!Empresa::getEmpresa()->getAcesso("Cliente.getTipoCliente"))
-    {
-        throw acessoNegadoGetCliente();
-    }
-    else
-    {   
-        return this->tipoCliente;
-    }
+    return this->tipoCliente;
 }

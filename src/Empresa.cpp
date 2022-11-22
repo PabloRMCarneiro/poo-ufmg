@@ -58,21 +58,14 @@ vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
 
  Cargo * Empresa::getCargo(string valCargo)
 {
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.getCargo"))
+  for (int i = 0; i < empresa->cargos.size(); i++)
   {
-    throw "Acesso negado a Empresa->getCargo";
-  }
-  else
-  {
-    for (int i = 0; i < empresa->cargos.size(); i++)
+    if (empresa->cargos[i]->getNome() == valCargo)
     {
-      if (empresa->cargos[i]->getNome() == valCargo)
-      {
-        return empresa->cargos[i];
-      }
+      return empresa->cargos[i];
     }
-    return nullptr;
   }
+  return nullptr;
 }
 UsuarioLogado* Empresa::getUsuario(){
   return this->usuarioLogado;
@@ -102,20 +95,12 @@ Endereco Empresa::getEndereco(){
 }
 Departamento *Empresa::getDepartamento(string name)
 {
-
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.getDepartamento"))
-  {
-    throw "Acesso negado a Empresa->getDepartamento";
-  }
-  else 
-  {
-    for(auto it : departamentos){
-      if(it->getNome() == name){
-        return it;
+  for(auto it : departamentos){
+    if(it->getNome() == name){
+      return it;
     }
   }
   return nullptr;
-  }
 }
 Turno* Empresa::getTurno(string valTurno){
   for(auto it : this->turnos){
@@ -158,20 +143,12 @@ void Empresa::setDepartamento(Departamento *valDepartamento)
 
 Cliente *Empresa::getCliente(string doc)
 {
-
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.getCliente"))
-  {
-    throw "Acesso negado a Empresa->getCliente";
-  }
-  else 
-  {
-    for(auto it : clientes){
-      if(it->getDocumento() == doc){
-        return it;
+  for(auto it : clientes){
+    if(it->getDocumento() == doc){
+      return it;
     }
   }
   return nullptr;
-  }
 }
 
 void Empresa::setCliente(Cliente *valCliente)
@@ -181,20 +158,12 @@ void Empresa::setCliente(Cliente *valCliente)
 
 Funcionario *Empresa::getFuncionario(string doc)
 {
-
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.getFuncionario"))
-  {
-    throw "Acesso negado a Empresa->getFuncionario";
-  }
-  else 
-  {
-    for(auto it : funcionarios){
-      if( it->getDocumento() == doc){
-        return it;
-      }
+  for(auto it : funcionarios){
+    if( it->getDocumento() == doc){
+      return it;
     }
-    return nullptr;
   }
+  return nullptr;
 }
 
 vector<Funcionario*> Empresa::getFuncionario(){
@@ -208,20 +177,12 @@ void Empresa::setFuncionario(Funcionario *valFuncionario)
 
 RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente)
 {
-
-  if(!Empresa::getEmpresa()->getAcesso("Empresa.getRegistroVendas"))
-  {
-    throw "Acesso negado a Empresa->getRegistroVendas";
-  }
-  else 
-  {
-    for(auto it : registrosVendas){
+  for(auto it : registrosVendas){
     if((it->getDataDeVenda() == valData) && (it->getProduto() == valProduto) && (it->getCliente()== valCliente)){
       return it;
     }
   }
   return nullptr;
-  }
 }
 
 
