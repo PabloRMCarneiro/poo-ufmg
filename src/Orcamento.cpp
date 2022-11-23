@@ -15,6 +15,7 @@ void Orcamento::auxiliarMateriaPrima(){
     }
   }
 }
+
 void Orcamento::auxiliarProduto(){
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.auxiliarProduto")) {
     throw "Acesso negado a Orcamento.auxiliarProduto";
@@ -30,6 +31,7 @@ void Orcamento::auxiliarProduto(){
     }
   }
 }
+
 Orcamento::Orcamento() {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
     throw "Acesso negado a Orcamento.Orcamento";
@@ -70,6 +72,7 @@ Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valIte
     this->auxiliarMateriaPrima();
   }
 }
+
 void Orcamento::setTotal(){
     if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setTotal")) {
     throw "Acesso negado a Orcamento.setTotal";
@@ -82,6 +85,7 @@ void Orcamento::setTotal(){
   }
     
 }
+
 vector<pair<string, double>> Orcamento::getPrecos() {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getPrecos")) {
     throw "Acesso negado a Orcamento.getPrecos";
@@ -89,6 +93,7 @@ vector<pair<string, double>> Orcamento::getPrecos() {
     return this->precos;
   }
 }
+
 void Orcamento::setCompraDeProduto(bool compraDeProduto){
     if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setCompraDeProduto")) {
     throw "Acesso negado a Orcamento.setCompraDeProduto";
@@ -96,6 +101,7 @@ void Orcamento::setCompraDeProduto(bool compraDeProduto){
     this->compraDeProduto = compraDeProduto;
   }
 }
+
 bool Orcamento::isCompraDeProduto() {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.isCompraDeProduto")) {
     throw "Acesso negado a Orcamento.isCompraDeProduto";
@@ -184,6 +190,7 @@ void Orcamento::setFornecedor(Fornecedor * valFornecedor){
     this->fornecedor = fornecedor;
   }
 }
+
 void Orcamento::setItens(vector<pair<string, double>> valItens){
     if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setItens")) {
     throw "Acesso negado a Orcamento.setItens";

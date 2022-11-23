@@ -13,6 +13,7 @@ OrdemDeProducao::OrdemDeProducao(){
         this->quantidade = 0;
     }    
 }
+
 OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q){
 
     if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.OrdemDeProducao"))
@@ -31,9 +32,11 @@ OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q){
 void OrdemDeProducao::setDataOrdem(Data dO){
     this->dataOrdem = dO;
 }
+
 void OrdemDeProducao::setProduto(string p){
     this->produto = p;
 }
+
 void OrdemDeProducao::setQuantidade(int q){
     this->quantidade = q;
 }
@@ -48,6 +51,7 @@ Data OrdemDeProducao::getDataOrdem(){
         return this->dataOrdem;
     }
 }
+
 string OrdemDeProducao::getProduto(){
     if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.getProduto"))
     {
@@ -58,6 +62,7 @@ string OrdemDeProducao::getProduto(){
         return this->produto;
     }
 }
+
 int OrdemDeProducao::getQuantidade(){
     if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.getQuantidade"))
     {

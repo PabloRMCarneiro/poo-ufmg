@@ -103,7 +103,9 @@ Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
   }
 }
 
-Pessoa::~Pessoa() {}
+Pessoa::~Pessoa() {
+  
+}
 
 string Pessoa::getNome() {
   if (!Empresa::getEmpresa()->getAcesso("Pessoa.getNome")) {
@@ -118,6 +120,7 @@ Endereco Pessoa::getEndereco() {
   } else
     return this->endereco;
 }
+
 string Pessoa::getEmail() {
   if (!Empresa::getEmpresa()->getAcesso("Pessoa.getEmail")) {
     throw "Acesso negado - getEmail";
@@ -139,11 +142,17 @@ long int Pessoa::getTelefone() {
     return this->telefone;
 }
 
-void Pessoa::setNome(string valNome) { this->nome = valNome; }
+void Pessoa::setNome(string valNome) {
+  this->nome = valNome; 
+}
 
-void Pessoa::setEndereco(Endereco valEndereco) { this->endereco = valEndereco; }
+void Pessoa::setEndereco(Endereco valEndereco) {
+  this->endereco = valEndereco;
+}
 
-void Pessoa::setEmail(string valEmail) { this->email = valEmail; }
+void Pessoa::setEmail(string valEmail) { 
+  this->email = valEmail;
+}
 
 void Pessoa::setDocumento(string valDocumento) {
   if (this->validaDocumento(valDocumento)) {
@@ -152,7 +161,9 @@ void Pessoa::setDocumento(string valDocumento) {
     cout << "Documento inválido." << endl;
 }
 
-void Pessoa::setTelefone(long int valTelefone) { this->telefone = valTelefone; }
+void Pessoa::setTelefone(long int valTelefone) { 
+  this->telefone = valTelefone; 
+}
 
 bool Pessoa::validaDocumento(string valDocumento) {
   if (valDocumento.length() == 11) {

@@ -20,7 +20,9 @@ CartaoDeCredito::CartaoDeCredito(string tipoDePagamento, int quantidadeDeParcela
   this->dataDeValidade = dataDeValidade;
 }
 
-CartaoDeCredito::~CartaoDeCredito() {}
+CartaoDeCredito::~CartaoDeCredito() {
+  
+}
 
 string CartaoDeCredito::getNumeroDoCartao() {
    return this->numeroDoCartao; 

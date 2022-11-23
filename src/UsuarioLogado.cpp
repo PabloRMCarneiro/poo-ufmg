@@ -1,6 +1,7 @@
 #include "../include/UsuarioLogado.h"
 
 UsuarioLogado* UsuarioLogado::usuarioLogado = nullptr;
+
 UsuarioLogado::UsuarioLogado(){
 
 }
@@ -11,12 +12,15 @@ UsuarioLogado* UsuarioLogado::getUsuarioLogado(){
     }
     return usuarioLogado;
 }
+
 void UsuarioLogado::setUsuario(Usuario* valUsuario){
     this->usuario = valUsuario;
 }
+
 Usuario* UsuarioLogado::getUsuario(){
     return this->usuario;
 }
+
 bool UsuarioLogado::getAcesso(string valFuncoes)
 {
   return this->usuario->getPermissoes(valFuncoes);

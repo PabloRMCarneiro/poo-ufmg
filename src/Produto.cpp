@@ -2,6 +2,7 @@
 #include "../include/Empresa.h"
 
 vector <Produto*> Produto::produtolist;
+
 Produto::Produto()
 {
   if(!Empresa::getEmpresa()->getAcesso("Produto.Produto"))
@@ -36,7 +37,6 @@ Produto::Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteM
     this->estoqueMinimo = estoqueMinimo;
     this->qtdEstoque = qtdEstoque;
     this->setCategoria(categ);
-  //this->ordemDeProducao();
     this->novoProduto(this);
   }
   
