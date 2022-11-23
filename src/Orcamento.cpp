@@ -1,172 +1,193 @@
-// #include "../include/Orcamento.h"
+#include "../include/Orcamento.h"
 
-// Orcamento::Orcamento() {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.Orcamento")) {
-//     throw "Acesso negado a Orcamento.Orcamento";
-//   } else {
-//     this->data = Data();
-//     this->cliente = new Cliente;
-//     this->historico = vector<pair<Produto*, float>>();
-//   }
-// }
+void Orcamento::auxiliarMateriaPrima(){
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.auxiliarMateriaPrima")) {
+    throw "Acesso negado a Orcamento.auxiliarMateriaPrima";
+  } else {
+    double preco = 0.0;
+    for(auto itItens : this->itens){
+        for(auto itMateriaPrima : this->fornecedor->getPrecos()){
+            if(itMateriaPrima.first->getNome() == itItens.first){
+                preco = itMateriaPrima.second*itItens.second;
+                this->precos.push_back(make_pair(itItens.first, preco));
+            }
+        }
+    }
+  }
+}
+void Orcamento::auxiliarProduto(){
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.auxiliarProduto")) {
+    throw "Acesso negado a Orcamento.auxiliarProduto";
+  } else {
+    double preco = 0.0;
+    for(auto itItens : this->itens){
+        for(auto itProduto : Produto::produtolist){
+            if(itProduto->getNome() == itItens.first){
+                preco = itProduto->getValorDeVenda()*itItens.second;
+                this->precos.push_back(make_pair(itItens.first, preco));
+            }
+        }
+    }
+  }
+}
+Orcamento::Orcamento() {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
+    throw "Acesso negado a Orcamento.Orcamento";
+  } else {
+    this->dataOrcamento = Data();
+    this->cliente = nullptr;
+    this->fornecedor = nullptr;
+    this->compraDeProduto = false;
+    this->valorTotal = 0.0;
+  }
+}
 
-// Orcamento::Orcamento(Cliente cliente, Data data){
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.Orcamento")) {
-//     throw "Acesso negado a Orcamento.Orcamento";
-//   } else {
-//     this->data = data;
-//     this->cliente = cliente;
-//     this->valorTotal = 0;
-//   }
-// }
+Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Cliente* valCliente){
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
+    throw "Acesso negado a Orcamento.Orcamento";
+  } else {
+    this->dataOrcamento = valData;
+    this->itens = valItens;
+    this->cliente = valCliente;
+    this->fornecedor = nullptr;
+    this->compraDeProduto = isCompraDeProduto;
+    this->valorTotal = 0.0;
+    this->auxiliarProduto();
+  }
+}
 
-// vector<Produto*> Orcamento::getProduto() {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.getProduto")) {
-//     throw "Acesso negado a Orcamento.getProduto";
-//   } else {
-//     return this->produtos;
-//   }
-// }
 
-// int Orcamento::getQuantidade(string nomeDoProduto) {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.getQuantidade")) {
-//     throw "Acesso negado a Orcamento.getQuantidade";
-//   } else {
-//     this->listagemDeProdutos();
-//     for (int i = 0; i < this->historico.size(); i++) {
-//       if (this->historico[i].first->getNome() == nomeDoProduto) {
-//         return this->historico[i].second;
-//       }
-//     }
-//     return 0;
-//   }
-// }
+Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Fornecedor* valFornecedor){
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
+    throw "Acesso negado a Orcamento.Orcamento";
+  } else {
+    this->dataOrcamento = valData;
+    this->itens = valItens;
+    this->cliente = nullptr;
+    this->fornecedor = valFornecedor;
+    this->compraDeProduto = isCompraDeProduto;
+    this->valorTotal = 0.0;
+    this->auxiliarMateriaPrima();
+  }
+}
+void Orcamento::setTotal(){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setTotal")) {
+    throw "Acesso negado a Orcamento.setTotal";
+  } else {
+    double valor = 0.0;
+    for (auto it : this->precos){
+        valor = valor + it.second;
+    }
+    this->valorTotal = valor;
+  }
+    
+}
+vector<pair<string, double>> Orcamento::getPrecos() {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getPrecos")) {
+    throw "Acesso negado a Orcamento.getPrecos";
+  } else {
+    return this->precos;
+  }
+}
+void Orcamento::setCompraDeProduto(bool compraDeProduto){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setCompraDeProduto")) {
+    throw "Acesso negado a Orcamento.setCompraDeProduto";
+  } else {
+    this->compraDeProduto = compraDeProduto;
+  }
+}
+bool Orcamento::isCompraDeProduto() {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.isCompraDeProduto")) {
+    throw "Acesso negado a Orcamento.isCompraDeProduto";
+  } else {
+    return this->compraDeProduto;
+  }
+}
 
-// Data Orcamento::getData() {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.getData")) {
-//     throw "Acesso negado a Orcamento.getData";
-//   } else {
-//     return this->data;
-//   }
-// }
+double Orcamento::getPreco(string valItem) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getPreco")) {
+    throw "Acesso negado a Orcamento.getPreco";
+  } else {
+    int a =0;
+    for(auto it : precos){
+        if(it.first == valItem){
+            a = 1;
+            return it.second;
+        }
+    }
+    if(a != 1){
+        throw "Item nao encontrado.";
+    }
+  }
+}
 
-// Cliente Orcamento::getCliente() {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.getCliente")) {
-//     throw "Acesso negado a Orcamento.getCliente";
-//   } else {
-//     return this->cliente;
-//   }
-// }
+void Orcamento::setDataOrcamento(Data valData) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setDataOrcamento")) {
+    throw "Acesso negado a Orcamento.setDataOrcamento";
+  } else {
+    this->dataOrcamento = valData;
+  }
+}
 
-// float Orcamento::getValorTotal() {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.getValorTotal")) {
-//     throw "Acesso negado a Orcamento.getValorTotal";
-//   } else {
-//     return this->valorTotal;
-//   }
-// }
+Data Orcamento::getDataOrcamento() {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getDataOrcamento")) {
+    throw "Acesso negado a Orcamento.getDataOrcamento";
+  } else {
+    return this->dataOrcamento;
+  }
+}
 
-// vector<MateriaPrima*> Orcamento::getMateriaPrimaLista(){
-//   if(true){//!Empresa::getEmpresa()->getAcesso("Orcamento.getMateriaPrimaLista")) {
-//     throw "Acesso negado a Orcamento.getMateriaPrimaLista";
-//   } else {
-//     return this->materiaPrimaLista;
-//   }
-// }
+Fornecedor* Orcamento::getFornecedor() {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getFornecedor")) {
+    throw "Acesso negado a Orcamento.getFornecedor";
+  } else {
+    return this->fornecedor;
+  }
+}
 
-// vector<pair<MateriaPrima*, double>> Orcamento::getHistoricoMateriaPrima(){
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.getHistoricoMateriaPrima")) {
-//     throw "Acesso negado a Orcamento.getHistoricoMateriaPrima";
-//   } else {
-//     return this->historicoMateriaPrimaLista;
-//   }
-// }
+void Orcamento::setCliente(Cliente* valCliente) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setCliente")) {
+    throw "Acesso negado a Orcamento.setCliente";
+  } else {
+    this->cliente = valCliente;
+  }
+}
 
-// Fornecedor *Orcamento::getFornecedor(){
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.getFornecedor")) {
-//     throw "Acesso negado a Orcamento.getFornecedor";
-//   } else {
-//     return this->fornecedor;
-//   }
-// }
+Cliente* Orcamento::getCliente() {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getCliente")) {
+    throw "Acesso negado a Orcamento.getCliente";
+  } else {
+    return this->cliente;
+  }
+}
 
-// void Orcamento::setFornecedor(Fornecedor *fornecedor){
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.setFornecedor")) {
-//     throw "Acesso negado a Orcamento.setFornecedor";
-//   } else {
-//     this->fornecedor = fornecedor;
-//   }
-// }
+double Orcamento::getValorTotal() {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getValorTotal")) {
+    throw "Acesso negado a Orcamento.getValorTotal";
+  } else {
+    return this->valorTotal;
+  }
+}
 
-// void Orcamento::setMateriaPrimaLista(vector<MateriaPrima*> materiaPrimaLista){
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.setMateriaPrimaLista")) {
-//     throw "Acesso negado a Orcamento.setMateriaPrimaLista";
-//   } else {
-//     this->materiaPrimaLista = materiaPrimaLista;
-//   }
-// }
+vector<pair<string, double>> Orcamento::getItens(){
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getItens")) {
+    throw "Acesso negado a Orcamento.getItens";
+  } else {
+    return this->itens;
+  }
+}
 
-// void Orcamento::setProduto(Produto* produto) {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.setProduto")) {
-//     throw "Acesso negado a Orcamento.setProduto";
-//   } else {
-//     this->produtos.push_back(produto);
-//   }
-// }
-
-// void Orcamento::setData(Data data) {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.setData")) {
-//     throw "Acesso negado a Orcamento.setData";
-//   } else {
-//     this->data = data;
-//   }
-// }
-
-// void Orcamento::setCliente(Cliente cliente) {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.setCliente")) {
-//     throw "Acesso negado a Orcamento.setCliente";
-//   } else {
-//     this->cliente = cliente;
-//   }
-// }
-
-// void Orcamento::listagemDeProdutos() {
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.listagemDeProdutos")) {
-//     throw "Acesso negado a Orcamento.listagemDeProdutos";
-//   } else {
-//     for (int i = 0; i < this->produtos.size(); i++) {
-//       int cont = 0;
-//       for (int j = 0; j < this->produtos.size(); j++) {
-//         if (this->produtos[i]->getNome() == this->produtos[j]->getNome()) {
-//           cont++;
-//         }
-//       }
-//       for (int k = 0; k < this->historico.size(); k++) {
-//         if (this->produtos[i]->getNome() == this->historico[k].first->getNome()) {
-//           cont = 0;
-//         }
-//       }
-//       if (cont != 0) {
-//         this->historico.push_back(make_pair(this->produtos[i], cont));
-//       }
-//     }
-//   }
-// }
-
-// void Orcamento::realizaOrcamento(){
-//   if (true){//!Empresa::getEmpresa()->getAcesso("Orcamento.realizaOrcamento")) {
-//     throw "Acesso negado a Orcamento.realizaOrcamento";
-//   } else {
-//     this->listagemDeProdutos();
-//     this->valorTotal = 0;
-//     cout <<"Produto - Quantidade - Valor Unitário" << endl;
-//     for (int i = 0; i < this->historico.size(); i++) {
-//       this->valorTotal += this->historico[i].first->getValorDeVenda() * this->historico[i].second;
-//     }
-//     for(int i = 0; i < this->historico.size(); i++) {
-//       cout << this->historico[i].first->getNome() << " - " << this->historico[i].second << " - R$ " << this->historico[i].first->getValorDeVenda() << endl;
-//     }
-//     cout << "Valor total: R$ " << this->valorTotal << endl;
-//   }
-  
-// }
+void Orcamento::setFornecedor(Fornecedor * valFornecedor){
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setFornecedor")) {
+    throw "Acesso negado a Orcamento.setFornecedor";
+  } else {
+    this->fornecedor = fornecedor;
+  }
+}
+void Orcamento::setItens(vector<pair<string, double>> valItens){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setItens")) {
+    throw "Acesso negado a Orcamento.setItens";
+  } else {
+    this->itens = valItens;
+  }
+}

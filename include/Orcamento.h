@@ -3,64 +3,47 @@
 
 #include "Cliente.h"
 #include "Produto.h"
+#include "MateriaPrima.h"
 #include "Fornecedor.h"
-
+#include "UsuarioLogado.h"
 #include "data.h"
 #include <utility>
 #include <vector>
 #include <iostream>
-// + setOrçamento() : void
-// + auxiliarMateriaPrima() : void
-// + auxiliarProduto() : void
-// + setItens(vector <string>) : void
-// + setTotal(double) : void
-// + setCliente(Cliente*) : void
-// + setCompraDeProduto(bool) : void
 
-// + getPreços() : vector<pair<string, double>>
-// + getTotal() : double
-// + getCliente() : Cliente*
-// + getFornecedor() : Fornecedor*
-// + getItens() : vector<string>
-// + isCompraDeProduto() : bool
-// + getData() : Data
-// + getPreço(string) : double
-
-// + Orçamento()
 class Orcamento {
 private:
   bool compraDeProduto;
-  vector<string> itens;
-  Data dataOrçamento;
+  vector<pair<string, double>> itens;
+  Data dataOrcamento;
   Cliente* cliente;
   Fornecedor* fornecedor;
-  double valorvalor;
-  vector<pair<string, float>> preços;
+  double valorTotal;
+  int quantidadeProduto;
+  vector<pair<string, double>> precos;
   
 public:
   Orcamento();
-  Orcamento(bool isCompraDeProduto, vector<string> valItens, Data valData);
+  Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Fornecedor* valFornecedor);
+  Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Cliente* valCliente);
   //
-  vector<pair<string, double>> getPreços();
+  vector<pair<string, double>> getPrecos();
   double getValorTotal();
   Cliente* getCliente();
   Fornecedor* getFornecedor();
-  vector<string> getItens();
+  vector<pair<string, double>> getItens();
   bool isCompraDeProduto();
   Data getDataOrcamento();
-  double getPreço(string valItem);
+  double getPreco(string valItem);
 
-  void setOrcamento();
-  void setItens(vector <string> valItens);
-  void setTotal(double valTotal);
+  void setItens(vector<pair<string, double>> valItens);
+  void setTotal();
   void setCliente(Cliente* valCliente);
   void setCompraDeProduto(bool compraDeProduto);
   void auxiliarMateriaPrima();
   void auxiliarProduto();
   void setFornecedor(Fornecedor* valFornecedor);
-  void setData(Data valData);
-  void setCliente(Cliente valCliente);
-
+  void setDataOrcamento(Data valData);
 };
 
 #endif

@@ -1,5 +1,5 @@
 #include "../include/Fornecedor.h"
-
+vector <Fornecedor*> Fornecedor::fornecedorList;
 Fornecedor::Fornecedor():Pessoa(){
     this->tipoFornecedor = "";
 }
