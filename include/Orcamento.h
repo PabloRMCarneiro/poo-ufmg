@@ -9,38 +9,58 @@
 #include <utility>
 #include <vector>
 #include <iostream>
+// + setOrçamento() : void
+// + auxiliarMateriaPrima() : void
+// + auxiliarProduto() : void
+// + setItens(vector <string>) : void
+// + setTotal(double) : void
+// + setCliente(Cliente*) : void
+// + setCompraDeProduto(bool) : void
 
+// + getPreços() : vector<pair<string, double>>
+// + getTotal() : double
+// + getCliente() : Cliente*
+// + getFornecedor() : Fornecedor*
+// + getItens() : vector<string>
+// + isCompraDeProduto() : bool
+// + getData() : Data
+// + getPreço(string) : double
+
+// + Orçamento()
 class Orcamento {
 private:
-  vector<Produto*> produtos;
-  Data data;
+  bool compraDeProduto;
+  vector<string> itens;
+  Data dataOrçamento;
   Cliente* cliente;
   Fornecedor* fornecedor;
-  float valorTotal;
-  vector<pair<Produto*, float>> historicoProduto;
-  vector<MateriaPrima*> materiaPrimaLista;
-  vector<pair<MateriaPrima*, double>> historicoMateriaPrimaLista;
-
+  double valorvalor;
+  vector<pair<string, float>> preços;
+  
 public:
   Orcamento();
-  Orcamento(Cliente cliente, Data data);
-  vector <Produto*> getProduto();
-  int getQuantidade(string nomeDoProduto);
-  Data getData();
-  Cliente getCliente();
-  float getValorTotal();
-  vector<MateriaPrima*> getMateriaPrimaLista();
-  vector<pair<MateriaPrima*, double>> getHistoricoMateriaPrima();
-  Fornecedor *getFornecedor();
+  Orcamento(bool isCompraDeProduto, vector<string> valItens, Data valData);
+  //
+  vector<pair<string, double>> getPreços();
+  double getValorTotal();
+  Cliente* getCliente();
+  Fornecedor* getFornecedor();
+  vector<string> getItens();
+  bool isCompraDeProduto();
+  Data getDataOrcamento();
+  double getPreço(string valItem);
 
+  void setOrcamento();
+  void setItens(vector <string> valItens);
+  void setTotal(double valTotal);
+  void setCliente(Cliente* valCliente);
+  void setCompraDeProduto(bool compraDeProduto);
+  void auxiliarMateriaPrima();
+  void auxiliarProduto();
   void setFornecedor(Fornecedor* valFornecedor);
-  void setMateriaPrimaLista(vector<MateriaPrima*>);
-  void setProduto(Produto* produto);
-  void setData(Data data);
-  void setCliente(Cliente cliente);
+  void setData(Data valData);
+  void setCliente(Cliente valCliente);
 
-  void listagemDeProdutos();
-  void realizaOrcamento();
 };
 
 #endif
