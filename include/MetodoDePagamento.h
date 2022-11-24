@@ -11,12 +11,12 @@ class MetodoDePagamento {
 private:
   string tipoDePagamento;
   int quantidadeDeParcelas;
-  vector <float> parcelamento;
+  float quantiaPorParcelas;
   Data data;
   
 public:
   MetodoDePagamento();
-  MetodoDePagamento(string valTipoDePagamento, int valQuantidadeDeParcelas, vector<float> valParcelamento, Data valData);
+  MetodoDePagamento(string valTipoDePagamento, int valQuantidadeDeParcelas, float valQuantiaPorParcela, Data valData);
   virtual ~MetodoDePagamento();
 
   string getTipoDePagamento();
