@@ -13,7 +13,8 @@ CartaoDeCredito::CartaoDeCredito() : MetodoDePagamento() {
 CartaoDeCredito::CartaoDeCredito(string tipoDePagamento, int quantidadeDeParcelas,
                                  Data data, string numeroDoCartao, string nomeDoTitular,
                                  string codigoDeSeguranca, Data dataDeValidade)
-    : MetodoDePagamento(tipoDePagamento, quantidadeDeParcelas, data) {
+  : MetodoDePagamento(tipoDePagamento, quantidadeDeParcelas, quantidadeDeParcelas, data) {
+
   this->numeroDoCartao = numeroDoCartao;
   this->nomeDoTitular = nomeDoTitular;
   this->codigoDeSeguranca = codigoDeSeguranca;

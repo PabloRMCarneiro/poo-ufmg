@@ -15,7 +15,8 @@ class Data{
         int segundo;
     public:
         Data();
-        Data(int valAno, int valMes, int valDia , int valHora, int valMin, int valSeg );
+        Data(int valDia, int valMes, int valAna);
+        Data(int valDia, int valMes, int valAno , int valHora, int valMin, int valSeg );
         int getAno();
         int getMes();
         int getDia();

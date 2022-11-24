@@ -9,8 +9,12 @@ Data::Data()
     minuto = 0;
     segundo = 0;
 }
-
-Data::Data(int valAno, int valMes, int valDia, int valHora, int valMin, int valSeg )
+Data::Data(int valDia, int valMes, int valAno){
+    ano = valAno;
+    mes = valMes;
+    dia = valDia;
+}
+Data::Data(int valDia, int valMes, int valAno, int valHora, int valMin, int valSeg )
 {
     ano = valAno;
     mes = valMes;

@@ -12,7 +12,7 @@ using namespace std;
 
 Funcionario::Funcionario():Pessoa()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.Funcionario"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.Funcioanrio"))
   {
     throw "Acesso negado a Funcionario.Funcionario";
   }
