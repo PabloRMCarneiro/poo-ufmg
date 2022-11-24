@@ -10,9 +10,10 @@
 
 using namespace std;
 
+
 Funcionario::Funcionario():Pessoa()
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.Funcioanrio"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.Funcionario"))
   {
     throw "Acesso negado a Funcionario.Funcionario";
   }
@@ -32,7 +33,7 @@ Funcionario::Funcionario():Pessoa()
 Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
 :Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.Funcionario"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.Funcionario"))
   {
     throw "Acesso negado a Funcionario.Funcionario";
   }
@@ -55,7 +56,7 @@ Funcionario::~Funcionario()
 
 Departamento Funcionario::getDepartamento()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getDepartamento"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getDepartamento"))
   {
     throw "Acesso negado a Funcionario.getDepartamento";
   }
@@ -67,7 +68,7 @@ Departamento Funcionario::getDepartamento()
 
 Data Funcionario::getDataNascimento()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getDataNascimento"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getDataNascimento"))
   {
     throw "Acesso negado a Funcionario.getDataNascimento";
   }
@@ -79,7 +80,7 @@ Data Funcionario::getDataNascimento()
 
 Salario Funcionario::getSalario()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getSalario"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getSalario"))
   {
     throw "Acesso negado a Funcionario.getSalario";
   }
@@ -91,7 +92,7 @@ Salario Funcionario::getSalario()
 
 vector <Data> Funcionario::getRegistro()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getRegistro"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getRegistro"))
   {
     throw "Acesso negado a Funcionario.getRegistro";
   }
@@ -103,7 +104,7 @@ vector <Data> Funcionario::getRegistro()
 
 Cargo Funcionario::getCargo()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getCargo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getCargo"))
   {
     throw "Acesso negado a Funcionario.getCargo";
   }
@@ -115,7 +116,7 @@ Cargo Funcionario::getCargo()
 
 bool Funcionario::getEstadoAtivo()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.getEstadoAtivo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getEstadoAtivo"))
   {
     throw "Acesso negado a Funcionario.getEstadoAtivo";
   }
@@ -127,12 +128,26 @@ bool Funcionario::getEstadoAtivo()
 
 Turno* Funcionario::getJornada()
 {
-  return this->jornada;
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getJornada"))
+  {
+    throw "Acesso negado a Funcionario.getJornada";
+  }
+  else
+  {
+    return this->jornada;
+  }
 }
 
 int Funcionario::getIdVeiculo()
 {
-  return this->idVeiculo;
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  {
+    throw "Acesso negado a Funcionario.getIdVeiculo";
+  }
+  else
+  {
+    return this->idVeiculo;
+  }
 }
 
 void Funcionario::setJornada(Turno* valJornada)
@@ -177,7 +192,7 @@ void Funcionario::setEstadoAtivo(bool valEstadoAtivo)
 
 void Funcionario::alteraRegistro(Data valData)
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.alteraRegistro"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.alteraRegistro"))
   {
     throw "Acesso negado a Funcionario.alteraRegistro";
   }
@@ -189,7 +204,7 @@ void Funcionario::alteraRegistro(Data valData)
 
 void Funcionario::demiteFuncionario()
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.demiteFuncionario"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.demiteFuncionario"))
   {
     throw "Acesso negado a Funcionario.demiteFuncionario";
   }
@@ -201,7 +216,7 @@ void Funcionario::demiteFuncionario()
 
 void Funcionario::promocao(Data valData, float valPercentual)
 {
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.promocao"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.promocao"))
   {
     throw "Acesso negado a Funcionario.promocao";
   }
@@ -213,7 +228,7 @@ void Funcionario::promocao(Data valData, float valPercentual)
 }
 
 void Funcionario::reajuste(Data valData, float valDissidio){
-  if(!Empresa::getEmpresa()->getAcesso("Funcionario.reajuste"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.reajuste"))
   {
     throw "Acesso negado a Funcionario.reajuste";
   }

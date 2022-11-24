@@ -1,17 +1,32 @@
 #include "../include/Categoria.h"
 #include "../include/Empresa.h"
 #include "../include/PermissaoNegada.h"
+#include "../include/UsuarioLogado.h"
 
 vector<Categoria *> Categoria::categorialist;
 Categoria::Categoria()
 {
-  this->novaCategoria(this);
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.Categoria"))
+  {
+    throw "Acesso negado a Categoria.Categoria";
+  }
+  else
+  {
+    this->novaCategoria(this);
+  }
 }
 
 Categoria::Categoria(string t)
 {
-  this->setTipo(t);
-  this->novaCategoria(this);
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.Categoria"))
+  {
+    throw "Acesso negado a Categoria.Categoria";
+  }
+  else
+  {
+    this->setTipo(t);
+    this->novaCategoria(this);
+  }
 }
 
 Categoria::~Categoria()
@@ -20,7 +35,14 @@ Categoria::~Categoria()
 
 string Categoria::getTipo()
 {
-  return this->tipo;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getTipo"))
+  {
+    throw "Acesso negado a Categoria.getTipo";
+  }
+  else
+  {
+    return this->tipo;
+  }
 }
 
 void Categoria::setTipo(string t)
@@ -30,17 +52,31 @@ void Categoria::setTipo(string t)
 
 void Categoria::novaCategoria(Categoria *nova)
 {
-  categorialist.push_back(nova);
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.novaCategoria"))
+  {
+    throw "Acesso negado a Categoria.novaCategoria";
+  }
+  else
+  {
+    categorialist.push_back(nova);
+  }
 }
 
 Categoria *Categoria::getCategoria(string t)
 {
-  for (auto it : categorialist)
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getCategoria"))
   {
-    if (it->getTipo() == t)
-    {
-      return it;
-    }
+    throw "Acesso negado a Categoria.getCategoria";
   }
-  return nullptr;
+  else
+  {
+    for (auto it : categorialist)
+    {
+      if (it->getTipo() == t)
+      {
+        return it;
+      }
+    }
+    return nullptr;
+  }
 }

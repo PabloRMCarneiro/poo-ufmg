@@ -1,53 +1,100 @@
 #include "../include/MetodoDePagamento.h"
+#include "../include/UsuarioLogado.h"
 
-MetodoDePagamento::MetodoDePagamento() {
-    
-    this->tipoDePagamento = "";
-    this->quantidadeDeParcelas = 0;
-    this->parcelamento = {0};
-    this->data = Data();
+MetodoDePagamento::MetodoDePagamento()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.MetodoDePagamento"))
+    {
+        throw "Acesso negado a MetodoDePagamento.MetodoDePagamento";
+    }
+    else
+    {
+        this->tipoDePagamento = "";
+        this->quantidadeDeParcelas = 0;
+        this->quantiaPorParcelas = 0.0;
+        this->data = Data();
+    }
 }
 
-MetodoDePagamento::~MetodoDePagamento() {
-    
+MetodoDePagamento::MetodoDePagamento(string valTipoDePagamento, int valQuantidadeDeParcelas, float valQuantiaPorParcela, Data valData)
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.MetodoDePagamento"))
+    {
+        throw "Acesso negado a MetodoDePagamento.MetodoDePagamento";
+    }
+    else
+    {
+        this->tipoDePagamento = valTipoDePagamento;
+        this->quantidadeDeParcelas = valQuantidadeDeParcelas;
+        this->quantiaPorParcelas = valQuantiaPorParcela;
+        this->data = valData;
+    }
 }
 
-MetodoDePagamento::MetodoDePagamento(string valTipoDePagamento, int valQuantidadeDeParcelas, vector<float> valParcelamento, Data valData) {
+string MetodoDePagamento::getTipoDePagamento()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.getTipoDePagamento"))
+    {
+        throw "Acesso negado a MetodoDePagamento.getTipoDePagamento";
+    }
+    else
+    {
+        return tipoDePagamento;
+    }
+}
 
+int MetodoDePagamento::getQuantidadeDeParcelas()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.getQuantidadeDeParcelas"))
+    {
+        throw "Acesso negado a MetodoDePagamento.getQuantidadeDeParcelas";
+    }
+    else
+    {
+        return quantidadeDeParcelas;
+    }
+}
+
+float MetodoDePagamento::getQuantiaPorParcelas()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.getQuantiaPorParcelas"))
+    {
+        throw "Acesso negado a MetodoDePagamento.getQuantiaPorParcelas";
+    }
+    else
+    {
+        return quantiaPorParcelas;
+    }
+}
+
+Data MetodoDePagamento::getData()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.getData"))
+    {
+        throw "Acesso negado a MetodoDePagamento.getData";
+    }
+    else
+    {
+        return data;
+    }
+}
+
+void MetodoDePagamento::setTipoDePagamento(string valTipoDePagamento)
+{
     this->tipoDePagamento = valTipoDePagamento;
-    this->quantidadeDeParcelas = valQuantidadeDeParcelas;
-    this->parcelamento = valParcelamento;
-    this->data = valData;
 }
 
-string MetodoDePagamento::getTipoDePagamento() {
-    return tipoDePagamento;
-}
-
-int MetodoDePagamento::getQuantidadeDeParcelas() {
-    return quantidadeDeParcelas;
-}
-
-vector<float> MetodoDePagamento::getParcelamento() {
-    return parcelamento;
-}
-
-Data MetodoDePagamento::getData() {
-    return data;
-}
-
-void MetodoDePagamento::setTipoDePagamento(string valTipoDePagamento) {
-    this->tipoDePagamento = valTipoDePagamento;
-}
-
-void MetodoDePagamento::setQuantidadeDeParcelas(int valQuantidadeDeParcelas) {
+void MetodoDePagamento::setQuantidadeDeParcelas(int valQuantidadeDeParcelas)
+{
     this->quantidadeDeParcelas = valQuantidadeDeParcelas;
 }
 
-void MetodoDePagamento::setParcelamento(vector<float> valParcelamento) {
-    this->parcelamento = valParcelamento;
+void MetodoDePagamento::setQuantiaPorParcelas(float valParcelamento)
+{
+    this->quantiaPorParcelas = valParcelamento;
 }
 
-void MetodoDePagamento::setData(Data valData) {
+void MetodoDePagamento::setData(Data valData)
+{
     this->data = valData;
 }

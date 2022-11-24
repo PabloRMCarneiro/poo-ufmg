@@ -3,9 +3,9 @@
 
 RegistroVendas::RegistroVendas(Data dv, Produto *p, int q, Cliente *cl)
 {
-  if (!Empresa::getEmpresa()->getAcesso("RegistroVendas.RegistroVendas"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.RegistroVendas"))
   {
-    throw "Acesso negado - RegistroVendas";
+    throw "Acesso negado a RegistroVendas.RegistroVendas";
   }
   else
   {
@@ -18,9 +18,9 @@ RegistroVendas::RegistroVendas(Data dv, Produto *p, int q, Cliente *cl)
 
 Cliente *RegistroVendas::getCliente()
 {
-  if (!Empresa::getEmpresa()->getAcesso("RegistroVendas.getCliente"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getCliente"))
   {
-    throw "Acesso negado - getCliente";
+    throw "Acesso negado a RegistroVendas.getCliente";
   }
   else
   {
@@ -30,9 +30,9 @@ Cliente *RegistroVendas::getCliente()
 
 Data RegistroVendas::getDataDeVenda()
 {
-  if (!Empresa::getEmpresa()->getAcesso("RegistroVendas.getDataDeVenda"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getDataDeVenda"))
   {
-    throw "Acesso negado - getDataDeVenda";
+    throw "Acesso negado a RegistroVendas.getDataDeVenda";
   }
   else
   {
@@ -42,9 +42,9 @@ Data RegistroVendas::getDataDeVenda()
 
 vector<int> RegistroVendas::getNumeroDoLote()
 {
-  if (!Empresa::getEmpresa()->getAcesso("RegistroVendas.getNumeroDoLote"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getNumeroDoLote"))
   {
-    throw "Acesso negado - getNumeroDoLote";
+    throw "Acesso negado a RegistroVendas.getNumeroDoLote";
   }
   else
   {
@@ -54,9 +54,9 @@ vector<int> RegistroVendas::getNumeroDoLote()
 
 Produto *RegistroVendas::getProduto()
 {
-  if (!Empresa::getEmpresa()->getAcesso("RegistroVendas.getProduto"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getProduto"))
   {
-    throw "Acesso negado - getProduto";
+    throw "Acesso negado a RegistroVendas.getProduto";
   }
   else
   {
@@ -66,9 +66,9 @@ Produto *RegistroVendas::getProduto()
 
 int RegistroVendas::getQuantidadeVenda()
 {
-  if (!Empresa::getEmpresa()->getAcesso("RegistroVendas.getQuantidadeVenda"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getQuantidadeVenda"))
   {
-    throw "Acesso negado - getQuantidadeVenda";
+    throw "Acesso negado a RegistroVendas.getQuantidadeVenda";
   }
   else
   {
@@ -118,6 +118,13 @@ void RegistroVendas::setQuantidadeVenda(int qvenda)
 
 bool RegistroVendas::validaVenda(int q)
 {
-  this->vendido = this->produto->temEstoque(q);
-  return this->vendido;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.validaVenda"))
+  {
+    throw "Acesso negado a RegistroVendas.validaVenda";
+  }
+  else
+  {
+    this->vendido = this->produto->temEstoque(q);
+    return this->vendido;
+  }
 }

@@ -1,8 +1,10 @@
 #include "../include/OrdemDeProducao.h"
 #include "../include/Empresa.h"
+#include "../include/UsuarioLogado.h"
 
-OrdemDeProducao::OrdemDeProducao(){
-    if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.OrdemDeProducao"))
+OrdemDeProducao::OrdemDeProducao()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.OrdemDeProducao"))
     {
         throw "Acesso negado a OrdemDeProducao.OrdemDeProducao";
     }
@@ -11,12 +13,12 @@ OrdemDeProducao::OrdemDeProducao(){
         this->dataOrdem = Data();
         this->produto = "";
         this->quantidade = 0;
-    }    
+    }
 }
 
-OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q){
-
-    if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.OrdemDeProducao"))
+OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q)
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.OrdemDeProducao"))
     {
         throw "Acesso negado a OrdemDeProducao.OrdemDeProducao";
     }
@@ -26,23 +28,26 @@ OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q){
         this->setProduto(p);
         this->setQuantidade(q);
     }
-    
 }
 
-void OrdemDeProducao::setDataOrdem(Data dO){
+void OrdemDeProducao::setDataOrdem(Data dO)
+{
     this->dataOrdem = dO;
 }
 
-void OrdemDeProducao::setProduto(string p){
+void OrdemDeProducao::setProduto(string p)
+{
     this->produto = p;
 }
 
-void OrdemDeProducao::setQuantidade(int q){
+void OrdemDeProducao::setQuantidade(int q)
+{
     this->quantidade = q;
 }
 
-Data OrdemDeProducao::getDataOrdem(){
-    if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.getDataOrdem"))
+Data OrdemDeProducao::getDataOrdem()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getDataOrdem"))
     {
         throw "Acesso negado a OrdemDeProducao.getDataOrdem";
     }
@@ -52,8 +57,9 @@ Data OrdemDeProducao::getDataOrdem(){
     }
 }
 
-string OrdemDeProducao::getProduto(){
-    if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.getProduto"))
+string OrdemDeProducao::getProduto()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getProduto"))
     {
         throw "Acesso negado a OrdemDeProducao.getProduto";
     }
@@ -63,8 +69,9 @@ string OrdemDeProducao::getProduto(){
     }
 }
 
-int OrdemDeProducao::getQuantidade(){
-    if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.getQuantidade"))
+int OrdemDeProducao::getQuantidade()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getQuantidade"))
     {
         throw "Acesso negado a OrdemDeProducao.getQuantidade";
     }
@@ -74,13 +81,13 @@ int OrdemDeProducao::getQuantidade(){
     }
 }
 
-void OrdemDeProducao::getOrdem(){
-
-    if(!Empresa::getEmpresa()->getAcesso("OrdemDeProducao.OrdemDeProducao"))
+void OrdemDeProducao::getOrdem()
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getOrdem"))
     {
-        throw "Acesso negado a OrdemDeProducao.OrdemDeProducao";
+        throw "Acesso negado a OrdemDeProducao.getOrdem";
     }
-    else 
+    else
     {
         cout << "Data da Ordem: " << this->getDataOrdem().getDia() << "/" << this->getDataOrdem().getMes() << "/" << this->getDataOrdem().getAno() << endl;
         cout << "Produto: " << this->getProduto() << endl;

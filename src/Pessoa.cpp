@@ -1,11 +1,13 @@
 #include "../include/Pessoa.h"
 #include "../include/Empresa.h"
+#include "../include/UsuarioLogado.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-bool validaCPF(string Cpf) {
+bool validaCPF(string Cpf)
+{
   if (Cpf == "00000000000" || Cpf == "11111111111" || Cpf == "22222222222" ||
       Cpf == "33333333333" || Cpf == "44444444444" || Cpf == "55555555555" ||
       Cpf == "66666666666" || Cpf == "77777777777" || Cpf == "88888888888" ||
@@ -38,7 +40,8 @@ bool validaCPF(string Cpf) {
     return false;
 }
 
-bool validaCNPJ(string Cnpj) {
+bool validaCNPJ(string Cnpj)
+{
   if (Cnpj == "00000000000000" || Cnpj == "11111111111111" ||
       Cnpj == "22222222222222" || Cnpj == "33333333333333" ||
       Cnpj == "44444444444444" || Cnpj == "55555555555555" ||
@@ -52,7 +55,8 @@ bool validaCNPJ(string Cnpj) {
   int soma = 0;
   int pos = tamanho - 7;
 
-  for (int i = tamanho; i >= 1; i--) {
+  for (int i = tamanho; i >= 1; i--)
+  {
     soma += stoi(numeros.substr(tamanho - i, 1)) * pos--;
     if (pos < 2)
       pos = 9;
@@ -66,7 +70,8 @@ bool validaCNPJ(string Cnpj) {
   numeros = Cnpj.substr(0, tamanho);
   soma = 0;
   pos = tamanho - 7;
-  for (int i = tamanho; i >= 1; i--) {
+  for (int i = tamanho; i >= 1; i--)
+  {
     soma += stoi(numeros.substr(tamanho - i, 1)) * pos--;
     if (pos < 2)
       pos = 9;
@@ -78,10 +83,14 @@ bool validaCNPJ(string Cnpj) {
   return true;
 }
 
-Pessoa::Pessoa() {
-  if (!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa")) {
-    throw "Acesso negado Pessoa.Pessoa";
-  } else {
+Pessoa::Pessoa()
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
+  {
+    throw "Acesso negado a Pessoa.Pessoa";
+  }
+  else
+  {
     this->nome = "";
     this->endereco = Endereco();
     this->email = "";
@@ -91,10 +100,14 @@ Pessoa::Pessoa() {
 }
 
 Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
-               string valDocumento, long int valTelefone) {
-  if (!Empresa::getEmpresa()->getAcesso("Pessoa.Pessoa")) {
-    throw "Acesso negado Pessoa.Pessoa";
-  } else {
+               string valDocumento, long int valTelefone)
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
+  {
+    throw "Acesso negado a Pessoa.Pessoa";
+  }
+  else
+  {
     this->nome = valNome;
     this->endereco = valEndereco;
     this->email = valEmail;
@@ -103,74 +116,110 @@ Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
   }
 }
 
-Pessoa::~Pessoa() {
-  
+Pessoa::~Pessoa()
+{
 }
 
-string Pessoa::getNome() {
-  if (!Empresa::getEmpresa()->getAcesso("Pessoa.getNome")) {
-    throw "Acesso negado - getNome";
-  } else
+string Pessoa::getNome()
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getNome"))
+  {
+    throw "Acesso negado a Pessoa.getNome";
+  }
+  else
+  {
     return this->nome;
+  }
 }
 
-Endereco Pessoa::getEndereco() {
-  if (!Empresa::getEmpresa()->getAcesso("Pessoa.getEndereco")) {
-    throw "Acesso negado - getEndereco";
-  } else
+Endereco Pessoa::getEndereco()
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEndereco"))
+  {
+    throw "Acesso negado a Pessoa.getEndereco";
+  }
+  else
+  {
     return this->endereco;
+  }
 }
 
-string Pessoa::getEmail() {
-  if (!Empresa::getEmpresa()->getAcesso("Pessoa.getEmail")) {
-    throw "Acesso negado - getEmail";
-  } else
+string Pessoa::getEmail()
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEmail"))
+  {
+    throw "Acesso negado a getEPessoamail.getEmail";
+  }
+  else
+  {
     return this->email;
+  }
 }
 
-string Pessoa::getDocumento() {
-  if (!Empresa::getEmpresa()->getAcesso("Pessoa.getDocumento")) {
-    throw "Acesso negado - getDocumento";
-  } else
+string Pessoa::getDocumento()
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getDocumento"))
+  {
+    throw "Acesso negado a Pessoa.getDocumento";
+  }
+  else
+  {
     return this->documento;
+  }
 }
 
-long int Pessoa::getTelefone() {
-  if (!Empresa::getEmpresa()->getAcesso("Pessoa.getTelefone")) {
-    throw "Acesso negado - getTelefone";
-  } else
+long int Pessoa::getTelefone()
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getTelefone"))
+  {
+    throw "Acesso negado a Pessoa.getTelefone";
+  }
+  else
+  {
     return this->telefone;
+  }
 }
 
-void Pessoa::setNome(string valNome) {
-  this->nome = valNome; 
+void Pessoa::setNome(string valNome)
+{
+  this->nome = valNome;
 }
 
-void Pessoa::setEndereco(Endereco valEndereco) {
+void Pessoa::setEndereco(Endereco valEndereco)
+{
   this->endereco = valEndereco;
 }
 
-void Pessoa::setEmail(string valEmail) { 
+void Pessoa::setEmail(string valEmail)
+{
   this->email = valEmail;
 }
 
-void Pessoa::setDocumento(string valDocumento) {
-  if (this->validaDocumento(valDocumento)) {
+void Pessoa::setDocumento(string valDocumento)
+{
+  if (this->validaDocumento(valDocumento))
+  {
     this->documento = valDocumento;
-  } else
+  }
+  else
     cout << "Documento inválido." << endl;
 }
 
-void Pessoa::setTelefone(long int valTelefone) { 
-  this->telefone = valTelefone; 
+void Pessoa::setTelefone(long int valTelefone)
+{
+  this->telefone = valTelefone;
 }
 
-bool Pessoa::validaDocumento(string valDocumento) {
-  if (valDocumento.length() == 11) {
+bool Pessoa::validaDocumento(string valDocumento)
+{
+  if (valDocumento.length() == 11)
+  {
     return validaCPF(valDocumento);
   }
-  if (valDocumento.length() == 14) {
+  if (valDocumento.length() == 14)
+  {
     return validaCNPJ(valDocumento);
-  } else
+  }
+  else
     return false;
 }

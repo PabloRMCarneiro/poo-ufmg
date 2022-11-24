@@ -104,7 +104,6 @@ int main() {
   Funcionario *funcionario3 = new Funcionario("João da Silva", Endereco("Avenida Carlos Prastes, 6783", 2, 2), "joaoDaSilva@gmail.com", "29380512040", 77988487960, Departamento("TI"), Data(15, 11, 2000), Salario(15000), registroFuncionario1, Cargo("DevOps Senior"), true);
   
 
-=======
   // int a = 1, b = 2, c = 3, d = 4, e = 5, f = 6;
   // int *um = &a, *dois = &b, *tres = &c, *quatro = &d, *cinco = &e, *seis = &f;
   // vector<int*> numeros;
@@ -126,6 +125,5 @@ int main() {
   // }
   Data a;
   cout << a.getAno() << endl;
->>>>>>> 2502daf2fa69b8e70d5fad601d8ec030aaea22f6
   return 0;
 }

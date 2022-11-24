@@ -21,12 +21,12 @@ public:
 
   string getTipoDePagamento();
   int getQuantidadeDeParcelas();
-  vector <float> getParcelamento();
+  float getQuantiaPorParcelas();
   Data getData();
 
   void setTipoDePagamento(string tipoDePagamento);
   void setQuantidadeDeParcelas(int quantidadeDeParcelas);
-  void setParcelamento(vector <float> parcelamento);
+  void setQuantiaPorParcelas(float quantiaPorParcelas);
   void setData(Data data);
 };
  

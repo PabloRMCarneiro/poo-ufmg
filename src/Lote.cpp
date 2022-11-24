@@ -1,9 +1,9 @@
 #include "../include/Lote.h"
-#include "../include/Empresa.h"
+#include "../include/UsuarioLogado.h"
 
 Lote::Lote()
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
     {
         throw "Acesso negado a Lote.Lote";
     }
@@ -19,19 +19,21 @@ Lote::Lote()
 
 Lote::Lote(int nl)
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
     {
         throw "Acesso negado a Lote.Lote";
     }
     else
+    {
         this->setNumLote(nl);
+    }
 }
 
 Lote::Lote(Data d, int nl, int qp, string p)
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.Lote"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
     {
-        throw "Acesso negado a Lote.Lote ";
+        throw "Acesso negado a Lote.Lote";
     }
     else
     {
@@ -70,53 +72,63 @@ void Lote::setQuantidadeProduzida(int qp)
 
 Data Lote::getDataProd()
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.getDataProd"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getDataProd"))
     {
         throw "Acesso negado a Lote.getDataProd";
     }
     else
+    {
         return this->dataProd;
+    }
 }
 int Lote::getNumLote()
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.getNumLote"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getNumLote"))
     {
         throw "Acesso negado a Lote.getNumLote";
     }
     else
+    {
         return this->numLote;
+    }
 }
 string Lote::getProduto()
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.getProduto"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getProduto"))
     {
         throw "Acesso negado a Lote.getProduto";
     }
     else
+    {
         return this->produto;
+    }
 }
 int Lote::getQuantidadeAtual()
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.getQuantidadeAtual"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getQuantidadeAtual"))
     {
         throw "Acesso negado a Lote.getQuantidadeAtual";
     }
     else
+    {
         return this->quantidadeAtual;
+    }
 }
 int Lote::getQuantidadeProduzida()
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.getQuantidadeProduzida"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getQuantidadeProduzida"))
     {
         throw "Acesso negado a Lote.getQuantidadeProduzida";
     }
     else
+    {
         return this->quantidadeProduzida;
+    }
 }
 
 void Lote::imprimeRegistro()
-{  
-    if(!Empresa::getEmpresa()->getAcesso("Lote.imprimeRegistro"))
+{
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.imprimeRegistro"))
     {
         throw "Acesso negado a Lote.imprimeRegistro";
     }
@@ -132,7 +144,7 @@ void Lote::imprimeRegistro()
 
 int Lote::vende(int q)
 {
-    if(!Empresa::getEmpresa()->getAcesso("Lote.vende"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.vende"))
     {
         throw "Acesso negado a Lote.vende";
     }
@@ -149,5 +161,4 @@ int Lote::vende(int q)
             return q - this->getQuantidadeAtual();
         }
     }
-    
 }

@@ -1,13 +1,17 @@
 #include "../include/Empresa.h"
+#include "../include/UsuarioLogado.h"
 #include <string>
 #include <vector>
 
 using namespace std;
 
 Salario::Salario() {
-  if (!Empresa::getEmpresa()->getAcesso("Salario.Salario")) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.Salario"))
+  {
     throw "Acesso negado a Salario.Salario";
-  } else {
+  }
+  else
+  {
     this->valor = 0;
     this->dissidio = 0.0;
     this->registro.push_back(make_pair(Data(), 0.0));
@@ -15,9 +19,12 @@ Salario::Salario() {
 }
 
 Salario::Salario(float valValor) {
-  if (!Empresa::getEmpresa()->getAcesso("Salario.Salario")) {
-    throw "Acesso negado a Salario.Salario ";
-  } else {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.Salario"))
+  {
+    throw "Acesso negado a Salario.Salario";
+  }
+  else
+  {
     this->valor = valValor;
     this->dissidio = 0.0;
   }
@@ -26,25 +33,34 @@ Salario::Salario(float valValor) {
 Salario::~Salario() {}
 
 float Salario::getValor() {
-  if (!Empresa::getEmpresa()->getAcesso("Salario.getValor")) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getValor"))
+  {
     throw "Acesso negado a Salario.getValor";
-  } else {
+  }
+  else
+  {
     return this->valor;
   }
 }
 
 vector<pair<Data, float>> Salario::getRegistro() {
-  if (!Empresa::getEmpresa()->getAcesso("Salario.getRegistro")) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getRegistro"))
+  {
     throw "Acesso negado a Salario.getRegistro";
-  } else {
+  }
+  else
+  {
     return this->registro;
   }
 }
 
 float Salario::getDissidio() {
-  if (!Empresa::getEmpresa()->getAcesso("Salario.getDissidio")) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getDissidio"))
+  {
     throw "Acesso negado a Salario.getDissidio";
-  } else {
+  }
+  else
+  {
     return this->dissidio;
   }
 }
@@ -59,26 +75,34 @@ void Salario::setDissidio(Data valData, float valDissidio) {
 }
 
 void Salario::promocao(Data valData, float valPercentual) {
-  if (!Empresa::getEmpresa()->getAcesso("Salario.promocao")) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.promocao"))
+  {
     throw "Acesso negado a Salario.promocao";
-  } else {
+  }
+  else
+  {
     this->valor = this->valor + (this->valor * valPercentual/100);
     this->atualizaRegistro(valData);
   }
 }
 
 void Salario::reajuste(Data valData, float valDissidio) {
-  if (!Empresa::getEmpresa()->getAcesso("Salario.reajuste")) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.reajuste"))
+  {
     throw "Acesso negado a Salario.reajuste";
-  } else {
+  }
+  else
+  {
     this->valor = this->valor + (this->valor * valDissidio/100);
     this->atualizaRegistro(valData);
   }
 }
 
 void Salario::atualizaRegistro(Data valData) {
-  if (!Empresa::getEmpresa()->getAcesso("Salario.atualizaRegistro")) {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.atualizaRegistro"))
+  {
     throw "Acesso negado a Salario.atualizaRegistro";
-  } else
-    this->registro.push_back(make_pair(valData, this->valor));
+  }
+  else
+  {   this->registro.push_back(make_pair(valData, this->valor));
 }
