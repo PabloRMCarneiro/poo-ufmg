@@ -104,5 +104,5 @@ void Salario::atualizaRegistro(Data valData) {
     throw "Acesso negado a Salario.atualizaRegistro";
   }
   else
-  {   this->registro.push_back(make_pair(valData, this->valor));
+    this->registro.push_back(make_pair(valData, this->valor));
 }

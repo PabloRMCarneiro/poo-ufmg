@@ -34,7 +34,7 @@ class OrdemDeCompra{
         double getValorTotal();
         vector <Orcamento*> getOrcamento();
         vector<MateriaPrima*> getMateriaPrimaLista();
-        vector <pair<Fornecedor*, MateriaPrima*>> getMelhoresPreços();
+        vector <pair<Fornecedor*, MateriaPrima*>> getMelhoresPrecos();
         bool getComprou();
 };
 
