@@ -8,7 +8,7 @@ using namespace std;
 Log::Log()
 {
 
-  this->usuario = Empresa::getEmpresa()->getUsuario(); //Usuario();
+  this->usuario = NULL;
   this->dataAcesso = Data();
   this->entidade = "";
 }
