@@ -8,6 +8,7 @@ using namespace std;
 
 Log::Log()
 {
+<<<<<<< HEAD
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.Log"))
   {
     throw "Acesso negado a Log.Log";
@@ -19,6 +20,12 @@ Log::Log()
     this->entidade = "";
   }
   
+=======
+
+  this->usuario = NULL;
+  this->dataAcesso = Data();
+  this->entidade = "";
+>>>>>>> b3150e7d92f392263958c6a7e18fd61ff5c0bf05
 }
 
 Log::Log(Usuario* valUsuario, Data valDataAcesso, string valEntidade)
