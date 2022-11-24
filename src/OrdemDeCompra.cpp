@@ -53,7 +53,7 @@ void OrdemDeCompra::setValorTotal(double valValorTotal)
 
 void OrdemDeCompra::setOrcamento()
 {
-    this->valorTotal = this->valorTotal - this->dataOrdem;
+    this->valorTotal = this->valorTotal - this->;
 }
 
 void OrdemDeCompra::gerarPedidos(Data valData)
