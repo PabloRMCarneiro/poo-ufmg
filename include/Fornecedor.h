@@ -25,7 +25,7 @@ class Fornecedor : public Pessoa{
         string getTipoFornecedor(string valTipoFornecedor);
         double getPreco(MateriaPrima* valMateriaPrima);
         vector <pair<MateriaPrima*, double>> getPrecos();
-
+        static vector <Fornecedor*> fornecedorList;
         bool vende(MateriaPrima* valMateriaPrima, double valQuantidade, Data valData);
 };
 

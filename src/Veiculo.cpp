@@ -133,7 +133,6 @@ bool Veiculo::setPassageiros(vector<Funcionario*> valPassageiros){
     }else{
         adicionar = false;
     }
-    /////// tem que fazer try catch
     try{
         if(valPassageiros.size()<=this->capacidade){
             rota.clear();

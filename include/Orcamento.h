@@ -3,8 +3,9 @@
 
 #include "Cliente.h"
 #include "Produto.h"
+#include "MateriaPrima.h"
 #include "Fornecedor.h"
-
+#include "UsuarioLogado.h"
 #include "data.h"
 #include <utility>
 #include <vector>
@@ -12,35 +13,37 @@
 
 class Orcamento {
 private:
-  vector<Produto*> produtos;
-  Data data;
+  bool compraDeProduto;
+  vector<pair<string, double>> itens;
+  Data dataOrcamento;
   Cliente* cliente;
   Fornecedor* fornecedor;
-  float valorTotal;
-  vector<pair<Produto*, float>> historicoProduto;
-  vector<MateriaPrima*> materiaPrimaLista;
-  vector<pair<MateriaPrima*, double>> historicoMateriaPrimaLista;
-
+  double valorTotal;
+  int quantidadeProduto;
+  vector<pair<string, double>> precos;
+  
 public:
   Orcamento();
-  Orcamento(Cliente cliente, Data data);
-  vector <Produto*> getProduto();
-  int getQuantidade(string nomeDoProduto);
-  Data getData();
-  Cliente getCliente();
-  float getValorTotal();
-  vector<MateriaPrima*> getMateriaPrimaLista();
-  vector<pair<MateriaPrima*, double>> getHistoricoMateriaPrima();
-  Fornecedor *getFornecedor();
+  Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Fornecedor* valFornecedor);
+  Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Cliente* valCliente);
+  //
+  vector<pair<string, double>> getPrecos();
+  double getValorTotal();
+  Cliente* getCliente();
+  Fornecedor* getFornecedor();
+  vector<pair<string, double>> getItens();
+  bool isCompraDeProduto();
+  Data getDataOrcamento();
+  double getPreco(string valItem);
 
+  void setItens(vector<pair<string, double>> valItens);
+  void setTotal();
+  void setCliente(Cliente* valCliente);
+  void setCompraDeProduto(bool compraDeProduto);
+  void auxiliarMateriaPrima();
+  void auxiliarProduto();
   void setFornecedor(Fornecedor* valFornecedor);
-  void setMateriaPrimaLista(vector<MateriaPrima*>);
-  void setProduto(Produto* produto);
-  void setData(Data data);
-  void setCliente(Cliente cliente);
-
-  void listagemDeProdutos();
-  void realizaOrcamento();
+  void setDataOrcamento(Data valData);
 };
 
 #endif

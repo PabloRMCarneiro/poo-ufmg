@@ -2,7 +2,7 @@
 #include "../include/Empresa.h"
 #include "../include/PermissaoNegada.h"
 
-vector <Categoria*> Categoria::categorialist;
+vector<Categoria *> Categoria::categorialist;
 Categoria::Categoria()
 {
   this->novaCategoria(this);
@@ -27,12 +27,18 @@ void Categoria::setTipo(string t)
 {
   this->tipo = t;
 }
-void Categoria::novaCategoria(Categoria* nova){
+
+void Categoria::novaCategoria(Categoria *nova)
+{
   categorialist.push_back(nova);
 }
-Categoria* Categoria::getCategoria(string t){
-  for(auto it : categorialist){
-    if(it->getTipo() == t){
+
+Categoria *Categoria::getCategoria(string t)
+{
+  for (auto it : categorialist)
+  {
+    if (it->getTipo() == t)
+    {
       return it;
     }
   }

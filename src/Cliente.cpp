@@ -4,13 +4,18 @@
 
 using namespace std;
 
-Cliente::Cliente():Pessoa(){
+Cliente::Cliente():Pessoa()
+{
     this->tipoCliente = "";
 }
-Cliente::Cliente(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone):Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone){
+
+Cliente::Cliente(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone):Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
+{
     this->setTipoCliente(valDocumento);
 }
-void Cliente::setTipoCliente(string tc){
+
+void Cliente::setTipoCliente(string tc)
+{
     if(tc.length() == 11){
         this->tipoCliente = "Pessoa física";
     }
@@ -18,6 +23,7 @@ void Cliente::setTipoCliente(string tc){
         this->tipoCliente = "Pessoa jurídica";
     }
 }
-string Cliente::getTipoCliente(){
+string Cliente::getTipoCliente()
+{
     return this->tipoCliente;
 }

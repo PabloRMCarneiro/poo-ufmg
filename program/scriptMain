@@ -1,1 +1,1 @@
-g++ main.cpp ../src/data.cpp ../src/Endereco.cpp -o e-commerce
+g++ main.cpp ../src/data.cpp -o e-commerce
