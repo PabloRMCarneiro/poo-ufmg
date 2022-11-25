@@ -80,6 +80,7 @@ double Fornecedor::getPreco(MateriaPrima *valMateriaPrima)
                 break;
             }
         }
+        return 0.0;
     }
 }
 
@@ -103,24 +104,7 @@ bool Fornecedor::vende(MateriaPrima *valMateriaPrima, double valQuantidade, Data
     }
     else
     {
-        /* for (auto it : precos)
-        {
-            if (it.first == valMateriaPrima)
-            {
-                if (it.second * valQuantidade <= Empresa::getEmpresa()->getCaixa())
-                {
-                    Empresa::getEmpresa()->setCaixa(Empresa::getEmpresa()->getCaixa() - (it.second * valQuantidade));
-                    Empresa::getEmpresa()->getEstoque()->adicionar(valMateriaPrima, valQuantidade, valData);
-                    return true;
-                    break;
-                }
-                else
-                {
-                    return false;
-                    break;
-                }
-            }
-        } */
         valMateriaPrima->setEstoque(valQuantidade, valData);
+        return true;
     }
 }

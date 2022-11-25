@@ -13,6 +13,7 @@
 #include "../include/Cargo.h"
 #include "../include/Endereco.h"
 #include "../include/Salario.h"
+#include "../src/Pessoa.cpp"
 
 using namespace std;
 

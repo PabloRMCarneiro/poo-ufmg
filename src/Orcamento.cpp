@@ -124,6 +124,7 @@ double Orcamento::getPreco(string valItem) {
     if(a != 1){
         throw "Item nao encontrado.";
     }
+    return 0.0;
   }
 }
 

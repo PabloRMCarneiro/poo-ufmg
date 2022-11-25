@@ -98,3 +98,6 @@ void MetodoDePagamento::setData(Data valData)
 {
     this->data = valData;
 }
+MetodoDePagamento::~MetodoDePagamento(){
+    
+}
