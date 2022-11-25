@@ -3,20 +3,20 @@
 #include <vector>
 #include <string>
 
-#include "./UsuarioLogado.h"
-#include "./Departamento.h"
-#include "./Funcionario.h"
-#include "./Cliente.h"
-#include "./Cargo.h"
-#include "./RegistroVendas.h"
-#include "./data.h"
-#include "./LogEscrita.h" 
-#include "./LogLeitura.h"
-#include "./Turno.h"
-#include "./Veiculo.h"
-#include "./MateriaPrima.h"
-#include "./OrdemDeCompra.h"
-#include "./OrdemDeProducao.h"
+#include "UsuarioLogado.h"
+#include "Departamento.h"
+#include "Funcionario.h"
+#include "Cliente.h"
+#include "Cargo.h"
+#include "RegistroVendas.h"
+#include "data.h"
+#include "LogEscrita.h" 
+#include "LogLeitura.h"
+#include "Turno.h"
+#include "Veiculo.h"
+#include "MateriaPrima.h"
+#include "OrdemDeCompra.h"
+#include "OrdemDeProducao.h"
 
 using namespace std;
 

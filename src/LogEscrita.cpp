@@ -6,7 +6,7 @@
 
 using namespace std;
 
-LogEscrita::LogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, Usuario* valUsuario, Data valDataAcesso, string valEntidade) : Log(valUsuario, valDataAcesso, valEntidade)
+LogEscrita::LogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, string valEntidade) : Log(valEntidade)
 {
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("LogEscrita.LogEscrita"))
   {

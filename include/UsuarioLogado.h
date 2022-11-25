@@ -1,8 +1,8 @@
 #ifndef USUARIOLOGADO_H_INCLUDED
 #define USUARIOLOGADO_H_INCLUDED
-#include "../include/Usuario.h"
+#include "Usuario.h"
 
-class UsuarioLogado{
+class UsuarioLogado {
     private:
         static UsuarioLogado* usuarioLogado;
         UsuarioLogado();

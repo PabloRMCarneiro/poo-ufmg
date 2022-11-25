@@ -1,6 +1,6 @@
 #ifndef MATERIAPRIMA_H_INCLUDED
 #define MATERIAPRIMA_H_INCLUDED
-#include "../include/Produto.h"
+#include "Produto.h"
 #include <string>
 
 using namespace std;

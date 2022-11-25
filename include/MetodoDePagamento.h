@@ -1,6 +1,6 @@
 #ifndef METODODEPAGAMENTO_H_INCLUDED
 #define METODODEPAGAMENTO_H_INCLUDED
-#include "./data.h"
+#include "data.h"
 #include <iostream>
 #include <string>
 #include <vector>

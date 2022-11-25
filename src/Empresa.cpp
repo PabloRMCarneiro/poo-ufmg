@@ -83,12 +83,12 @@ void Empresa::login(UsuarioLogado* valUsuario){
 }
 
 void Empresa::setlogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, Data valDataAcesso, string valEntidade){
-  LogEscrita *novologEscrita= new LogEscrita(valAtributosAntes, valAtributosDepois, this->usuarioLogado->getUsuario(), valDataAcesso, valEntidade);
+  LogEscrita *novologEscrita= new LogEscrita(valAtributosAntes, valAtributosDepois, valEntidade);
   this->logsEscrita.push_back(novologEscrita);
 }
 
 void Empresa::setlogLeitura(string valAtributo, Data valDataAcesso, string valEntidade){
-  LogLeitura *novologLeitura = new LogLeitura(valAtributo, this->usuarioLogado->getUsuario(), valDataAcesso, valEntidade);
+  LogLeitura *novologLeitura = new LogLeitura(valAtributo, valEntidade);
   this->logsLeitura.push_back(novologLeitura);
 }
 
