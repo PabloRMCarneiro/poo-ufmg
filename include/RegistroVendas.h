@@ -1,8 +1,8 @@
 #ifndef REGISTROVENDAS_H_INCLUDED
 #define REGISTROVENDAS_H_INCLUDED
-#include "./Produto.h"
-#include "./Cliente.h"
-#include "./data.h"
+#include "Produto.h"
+#include "Cliente.h"
+#include "data.h"
 
 #include <vector>
 #include <string>

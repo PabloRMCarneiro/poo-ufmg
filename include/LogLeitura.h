@@ -9,7 +9,7 @@ class LogLeitura : public Log
   private:
     string atributo;
   public:
-    LogLeitura(string, Usuario*, Data, string);
+    LogLeitura(string valAtributo, string valEntidade);
     string getAtributo();
     void setAtributo(string);
 };

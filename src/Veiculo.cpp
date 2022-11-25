@@ -47,7 +47,7 @@ void Veiculo::setCapacidade(int valCapacidade)
 bool Veiculo::setAtual(int valAtual)
 {
     bool adicionar;
-    if (this->atual = this->capacidade)
+    if (this->atual == this->capacidade)
     {
         adicionar = false;
     }

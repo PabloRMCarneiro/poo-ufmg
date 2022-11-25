@@ -1,9 +1,9 @@
 #ifndef PRODUTO_H_INCLUDED
 #define PRODUTO_H_INCLUDED
 #include <vector>
-#include "../include/Lote.h"
-#include "../include/Categoria.h"
-#include "../include/OrdemDeProducao.h"
+#include "Lote.h"
+#include "Categoria.h"
+#include "OrdemDeProducao.h"
 
 using namespace std;
 

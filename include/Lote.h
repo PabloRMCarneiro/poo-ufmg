@@ -2,7 +2,7 @@
 #define LOTE_H_INCLUDED
 #include <iostream>
 #include <string>
-#include "../include/data.h"
+#include "data.h"
 using namespace std;
 
 class Lote{

@@ -1,8 +1,8 @@
 #ifndef FORNECEDOR_H_INCLUDED
 #define FORNECEDOR_H_INCLUDED
-#include "../include/Produto.h"
-#include "../include/MateriaPrima.h"
-#include "../include/Pessoa.h"
+#include "Produto.h"
+#include "MateriaPrima.h"
+#include "Pessoa.h"
 #include <string>
 #include <utility>
 #include <vector>

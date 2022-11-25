@@ -15,7 +15,7 @@ class LogEscrita : public Log
 
   public:
     //<atributo, valAntes> <atributo, valDepois>
-    LogEscrita(map<string, string>, map<string, string>, Usuario*, Data, string);
+    LogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, string valEntidade);
     map<string, string> getAtributosAntes();
     map<string, string> getAtributosDepois();
     void setAtributosAntes(string, string);

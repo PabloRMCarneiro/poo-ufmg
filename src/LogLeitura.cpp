@@ -6,7 +6,7 @@
 using namespace std;
 
 
-LogLeitura::LogLeitura(string valAtributo, Usuario* valUsuario, Data valDataAcesso, string valEntidade) : Log(valUsuario, valDataAcesso, valEntidade)
+LogLeitura::LogLeitura(string valAtributo, string valEntidade) : Log(valEntidade)
 {
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("LogLeitura.LogLeitura"))
   {
