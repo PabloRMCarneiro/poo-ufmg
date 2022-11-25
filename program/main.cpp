@@ -125,5 +125,6 @@ int main() {
   // }
   Data a;
   cout << a.getAno() << endl;
+  
   return 0;
 }

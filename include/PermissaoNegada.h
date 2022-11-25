@@ -1,86 +1,21 @@
-#ifndef PERMISSAO_NEGADA_H  
-#define PERMISSAO_NEGADA_H
-
-#include <exception>
+#ifndef PERMISSAO_H_INCLUDED
+#define PERMISSAO_H_INCLUDED
+#include <iostream>
 #include <string>
-#include "Categoria.h"
+#include "Log.h"
 
 using namespace std;
 
-class acessoNegadoException : public exception {
+class PermissaoNegada : public Log {
+    private:
+        string metodo;
+        
     public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado!";
-        }
+        PermissaoNegada();
+        PermissaoNegada(string valMetodo, string entidade);
+        void setMetodo(string valMetodo);
+        string getMetodo();
+      
+        
 };
-
-class acessoNegadoCargo : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Cargo.Cargo";
-        }
-};
-
-class acessoNegadoNomeCargo : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Cargo.getNome";
-        }
-};
-
-class acessoNegadoCategoria : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Categoria.Categoria";
-        }
-};
-
-class acessoNegadoTipoCategoria : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Categoria.getTipo";
-        }
-};
-
-class acessoNegadoNovaCategoria : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Categoria.novaCategoria";
-        }
-};
-
-class acessoNegadoGetCategoria : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Categoria.getCategoria";
-        }
-};
-
-class acessoNegadoCliente : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Cliente.Cliente";
-        }
-};
-
-class acessoNegadoGetCliente : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Cliente.getTipoCliente";
-        }
-};
-class acessoNegadoBoleto : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Boleto.Boleto";
-        }
-};
-
-class acessoNegadoCodigoDeBarras : public acessoNegadoException {
-    public:
-        virtual const char *what() const noexcept {
-            return "Acesso negado a Boleto.setCodigoDeBarras";
-        }
-};
-
-#endif
+#endif 
