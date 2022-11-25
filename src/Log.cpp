@@ -15,14 +15,14 @@ Log::Log()
   }
   else
   {
-    this->usuario = UsuarioLogado::getUsuarioLogado()->getUsuario();
+    this->usuario = nullptr;
     this->dataAcesso = Data();
     this->entidade = "";
   }
 
 }
 
-Log::Log(Usuario* valUsuario, Data valDataAcesso, string valEntidade)
+Log::Log(string valEntidade)
 {
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.Log"))
   {
@@ -30,8 +30,8 @@ Log::Log(Usuario* valUsuario, Data valDataAcesso, string valEntidade)
   }
   else
   {
-  this->usuario = valUsuario;
-  this->dataAcesso = valDataAcesso;
+  this->usuario = UsuarioLogado::getUsuarioLogado()->getUsuario();
+  this->dataAcesso = Data::dataDeHoje;
   this->entidade = valEntidade;
   }
 }

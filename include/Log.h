@@ -15,7 +15,7 @@ class Log
 
   public:
     Log();
-    Log(Usuario*, Data, string);
+    Log(string valEntidade);
     virtual ~Log();
     void setUsuario(Usuario*);
     void setDataAcesso(Data);
