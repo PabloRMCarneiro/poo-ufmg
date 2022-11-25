@@ -1,16 +1,16 @@
 #include "../include/PermissaoNegada.h"
 
-PermissaoNegada::PermissaoNegada() {
-    this->metodo = "";
+PermissaoNegada::PermissaoNegada() : Log(){
+    this->setMetodo("");
 }
 
 PermissaoNegada::PermissaoNegada(string valMetodo, string valEntidade) : Log(valEntidade){
     this->metodo = valMetodo;
 }
-void PermissaoNegada::setMetodo(string valMetodo) {
+void PermissaoNegada::setMetodo(string valMetodo){
     this->metodo = valMetodo;
 }
 
-string PermissaoNegada::getMetodo() { 
+string PermissaoNegada::getMetodo(){
     return this->metodo;
 }

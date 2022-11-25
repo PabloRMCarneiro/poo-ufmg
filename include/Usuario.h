@@ -2,7 +2,6 @@
 #define USUARIO_H_INCLUDED
 #include <string>
 #include <vector>
-#include "../include/Permissao.h"
 using namespace std;
 
 class Usuario{

@@ -1,21 +1,17 @@
-#ifndef PERMISSAO_NEGADA_H
-#define PERMISSAO_NEGADA_H
+#ifndef PERMISSAONEGADA_H_INCLUDED
+#define PERMISSAONEGADA_H_INCLUDED
 #include <iostream>
-#include <string>
 #include "Log.h"
+#include <string>
 
 using namespace std;
-
-class PermissaoNegada : public Log {
+class PermissaoNegada : public Log{
     private:
         string metodo;
-        
     public:
         PermissaoNegada();
-        PermissaoNegada(string valMetodo, string entidade);
+        PermissaoNegada(string valMetodo, string valEntidade);
         void setMetodo(string valMetodo);
         string getMetodo();
-      
-        
 };
-#endif PERMISSAO_NEGADA_H
+#endif //PERMISSAONEGADA_H_INCLUDED
