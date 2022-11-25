@@ -1,5 +1,5 @@
-#ifndef PERMISSAO_H_INCLUDED
-#define PERMISSAO_H_INCLUDED
+#ifndef PERMISSAO_NEGADA_H
+#define PERMISSAO_NEGADA_H
 #include <iostream>
 #include <string>
 #include "Log.h"
@@ -18,4 +18,4 @@ class PermissaoNegada : public Log {
       
         
 };
-#endif 
+#endif PERMISSAO_NEGADA_H

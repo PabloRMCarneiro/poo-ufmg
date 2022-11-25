@@ -4,9 +4,8 @@ PermissaoNegada::PermissaoNegada() {
     this->metodo = "";
 }
 
-PermissaoNegada::PermissaoNegada(string valMetodo, string entidade) {
+PermissaoNegada::PermissaoNegada(string valMetodo, string valEntidade) : Log(valEntidade){
     this->metodo = valMetodo;
-    this->setEntidade(entidade);
 }
 void PermissaoNegada::setMetodo(string valMetodo) {
     this->metodo = valMetodo;
