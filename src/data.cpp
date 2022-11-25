@@ -1,5 +1,7 @@
 #include "../include/data.h"
 
+Data Data::dataDeHoje;
+
 Data::Data()
 {
     ano = 0;
@@ -13,15 +15,18 @@ Data::Data(int valDia, int valMes, int valAno){
     ano = valAno;
     mes = valMes;
     dia = valDia;
+    hora = 0;
+    minuto = 0;
+    segundo = 0;
 }
 Data::Data(int valDia, int valMes, int valAno, int valHora, int valMin, int valSeg )
 {
     ano = valAno;
     mes = valMes;
     dia = valDia;
-    /* hora= valHora;
+    hora= valHora;
     minuto= valMin;
-    segundo= valSeg; */
+    segundo= valSeg;
 }
 
 int Data::getAno()

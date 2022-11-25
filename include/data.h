@@ -14,6 +14,7 @@ class Data{
         int minuto;
         int segundo;
     public:
+        static Data dataDeHoje;
         Data();
         Data(int valDia, int valMes, int valAna);
         Data(int valDia, int valMes, int valAno , int valHora, int valMin, int valSeg );
@@ -33,4 +34,4 @@ class Data{
         bool operator==(Data &d2);      
         string getData(); 
 };
-#endif 
+#endif //DATA_H_INCLUDED

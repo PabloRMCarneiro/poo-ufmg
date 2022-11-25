@@ -14,7 +14,7 @@ OrdemDeCompra::OrdemDeCompra()
     }
 }
 
-OrdemDeCompra::OrdemDeCompra(Data valData, MateriaPrima *valMateriaPrima)
+OrdemDeCompra::OrdemDeCompra(MateriaPrima *valMateriaPrima)
 {
     if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.OrdemDeCompra"))
     {
@@ -22,7 +22,7 @@ OrdemDeCompra::OrdemDeCompra(Data valData, MateriaPrima *valMateriaPrima)
     }
     else
     {
-        this->setData(valData);
+        this->setData(Data::dataDeHoje);
         this->setMateriaPrima(valMateriaPrima);
         this->valorTotal = 0.0;
     }
@@ -52,11 +52,18 @@ void OrdemDeCompra::setValorTotal(double valValorTotal)
 }
 
 void OrdemDeCompra::setOrcamento()
-{
-    this->valorTotal = this->valorTotal - this->;
+{    
+    vector<pair<string, double>> valItens;
+    for(auto it : materiaPrimaLista){
+        valItens.push_back(make_pair(it->getNome(), it->getEstoqueMinimo()));
+    }
+    for(auto it : Fornecedor::fornecedorList){
+        Orcamento * novo = new Orcamento(false, valItens, Data::dataDeHoje, it);
+        this->orcamentos.push_back(novo);
+    }
 }
 
-void OrdemDeCompra::gerarPedidos(Data valData)
+void OrdemDeCompra::gerarPedidos()
 {
     if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.gerarPedidos"))
     {
@@ -66,7 +73,7 @@ void OrdemDeCompra::gerarPedidos(Data valData)
     {
         for (auto it : melhoresPrecos)
         {
-            this->setCompra(it.first->vende(it.second, it.second->getEstoqueMinimo(), valData));
+            this->setCompra(it.first->vende(it.second, it.second->getEstoqueMinimo(), Data::dataDeHoje));
         }
     }
 }
@@ -77,11 +84,11 @@ void OrdemDeCompra::setMelhoresPrecos()
     Fornecedor *forneceMenorPreco;
     for (auto it : materiaPrimaLista)
     {
-        for (auto it2 : this->orcamento)
+        for (auto it2 : this->orcamentos)
         {
-            for (auto it3 : it2->getHistoricoMateriaPrima())
+            for (auto it3 : it2->getPrecos())
             {
-                if (it3.first == it)
+                if (it3.first == it->getNome())
                 {
                     if (menorPreco = 0.0)
                     {
@@ -96,6 +103,7 @@ void OrdemDeCompra::setMelhoresPrecos()
             }
         }
         this->melhoresPrecos.push_back(make_pair(forneceMenorPreco, it));
+        this->setValorTotal(menorPreco);
     }
 }
 

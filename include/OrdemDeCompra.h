@@ -16,12 +16,12 @@ class OrdemDeCompra{
         Data dataOrdem;
         double valorTotal;
         vector <pair<Fornecedor*, MateriaPrima*>> melhoresPrecos;
-        vector <Orcamento*> orcamento;
+        vector <Orcamento*> orcamentos;
         bool compra;
     public:
         OrdemDeCompra();
-        OrdemDeCompra(Data valData, MateriaPrima* valMateriaPrima);
-        void gerarPedidos(Data valData);
+        OrdemDeCompra(MateriaPrima* valMateriaPrima);
+        void gerarPedidos();
         void setData(Data valData);
         void setMateriaPrima(MateriaPrima* valMateriaPrima);
         void setMateriaPrimaLista(vector<MateriaPrima*> valMateriaPrima);
@@ -32,7 +32,7 @@ class OrdemDeCompra{
 
         Data getDatOrdem();
         double getValorTotal();
-        vector <Orcamento*> getOrcamento();
+        vector <Orcamento*> getOrcamentos();
         vector<MateriaPrima*> getMateriaPrimaLista();
         vector <pair<Fornecedor*, MateriaPrima*>> getMelhoresPrecos();
         bool getComprou();

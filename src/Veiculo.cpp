@@ -1,5 +1,6 @@
 #include "../include/Veiculo.h"
 #include "../include/UsuarioLogado.h"
+#include "../include/Empresa.h"
 
 Veiculo::Veiculo()
 {
@@ -67,6 +68,7 @@ void Veiculo::setTempoDeRota(int valTempoDeRota)
 void Veiculo::setTurno(Turno *valTurno)
 {
     this->turno = valTurno;
+    this->setHoraSaida();
 }
 
 void Veiculo::setRota(map<int, Endereco> valRota)
@@ -125,7 +127,7 @@ void Veiculo::calculaRota(Endereco valEndereco)
     int tempoAteEmpresa = 0, tempoTot = 0, horaCasa1 = 0;
     if (this->rota.empty())
     {
-        distanciaDaEmpresa = valEndereco.getDistancia(0, 0); // em km
+        distanciaDaEmpresa = valEndereco.getDistancia(Empresa::getEmpresa()->getEndereco().getX(), Empresa::getEmpresa()->getEndereco().getY()); // em km
         distanciaTotal = distanciaDaEmpresa * 2;             // em km
         tempoTot = int(this->calculaTempo(distanciaTotal));  // em segundos
         this->setTempoDeRota(tempoTot);
@@ -137,7 +139,7 @@ void Veiculo::calculaRota(Endereco valEndereco)
     {
         for (auto it : rota)
         {
-            distanciaDaEmpresa = valEndereco.getDistancia(0, 0);
+            distanciaDaEmpresa = valEndereco.getDistancia(Empresa::getEmpresa()->getEndereco().getX(), Empresa::getEmpresa()->getEndereco().getY());
             distanciaAteEndereco1 = valEndereco.getDistancia(it.second.getX(), it.second.getY());
             distanciaTotal = distanciaDaEmpresa + distanciaAteEndereco1;
             tempoTot = int(this->calculaTempo(distanciaTotal));
