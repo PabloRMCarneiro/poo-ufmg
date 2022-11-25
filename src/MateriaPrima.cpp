@@ -40,7 +40,7 @@ void MateriaPrima::geraOrdemDeCompra(Data valData)
     }
     else
     {
-        OrdemDeCompra *nova = new OrdemDeCompra(valData, this);
+        OrdemDeCompra *nova = new OrdemDeCompra(this);
         Empresa::getEmpresa()->setOrdemDeCompra(nova);
     }
 }
