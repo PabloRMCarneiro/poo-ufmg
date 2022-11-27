@@ -6,8 +6,8 @@ void Orcamento::auxiliarMateriaPrima(){
     throw "Acesso negado a Orcamento.auxiliarMateriaPrima";
   } else {
     double preco = 0.0;
-    for(auto itItens : this->itens){
-        for(auto itMateriaPrima : this->fornecedor->getPrecos()){
+    for(auto itItens : this->getItens()){
+        for(auto itMateriaPrima : this->getFornecedor()->getPrecos()){
             if(itMateriaPrima.first->getNome() == itItens.first){
                 preco = itMateriaPrima.second*itItens.second;
                 this->precos.push_back(make_pair(itItens.first, preco));
@@ -23,7 +23,7 @@ void Orcamento::auxiliarProduto(){
     throw "Acesso negado a Orcamento.auxiliarProduto";
   } else {
     double preco = 0.0;
-    for(auto itItens : this->itens){
+    for(auto itItens : this->getItens()){
         for(auto itProduto : Produto::produtolist){
             if(itProduto->getNome() == itItens.first){
                 preco = itProduto->getValorDeVenda()*itItens.second;
@@ -32,6 +32,7 @@ void Orcamento::auxiliarProduto(){
         }
     }
   }
+  LogLeitura *a = new LogLeitura("produtolist", "Produto");
   this->setTotal();
 }
 
@@ -44,6 +45,7 @@ Orcamento::Orcamento() {
     this->fornecedor = nullptr;
     this->compraDeProduto = false;
     this->valorTotal = 0.0;
+    LogEscrita *a = new LogEscrita("valorTotal", "indefinido", to_string(valorTotal), "Orcamento");
   }
 }
 
@@ -52,11 +54,15 @@ Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valIte
     throw "Acesso negado a Orcamento.Orcamento";
   } else {
     this->dataOrcamento = valData;
+    LogEscrita *a = new LogEscrita("dataOrcamento", "indefinido", valData.getData(), "Orcamento");
     this->itens = valItens;
     this->cliente = valCliente;
+    LogEscrita *b = new LogEscrita("cliente", "indefinido", cliente->getNome(), "Orcamento");
     this->fornecedor = nullptr;
     this->compraDeProduto = isCompraDeProduto;
+    LogEscrita *c = new LogEscrita("compraDeProduto", "indefinido", to_string(isCompraDeProduto), "Orcamento");
     this->valorTotal = 0.0;
+    LogEscrita *d = new LogEscrita("valorTotal", "indefinido", to_string(valorTotal), "Orcamento");
     this->auxiliarProduto();
   }
 }
@@ -67,11 +73,15 @@ Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valIte
     throw "Acesso negado a Orcamento.Orcamento";
   } else {
     this->dataOrcamento = valData;
+    LogEscrita *a = new LogEscrita("dataOrcamento", "indefinido", valData.getData(), "Orcamento");
     this->itens = valItens;
     this->cliente = nullptr;
     this->fornecedor = valFornecedor;
+    LogEscrita *b = new LogEscrita("fornecedor", "indefinido", fornecedor->getNome(), "Orcamento");
     this->compraDeProduto = isCompraDeProduto;
+    LogEscrita *c = new LogEscrita("compraDeProduto", "indefinido", to_string(isCompraDeProduto), "Orcamento");
     this->valorTotal = 0.0;
+    LogEscrita *d = new LogEscrita("valorTotal", "indefinido", to_string(valorTotal), "Orcamento");
     this->auxiliarMateriaPrima();
   }
 }
@@ -85,6 +95,7 @@ void Orcamento::setTotal(){
         valor = valor + it.second;
     }
     this->valorTotal = valor;
+    LogEscrita *c = new LogEscrita("valorTotal", "indefinido", to_string(valorTotal), "Orcamento");
   } 
 }
 
@@ -101,6 +112,7 @@ void Orcamento::setCompraDeProduto(bool compraDeProduto){
     throw "Acesso negado a Orcamento.setCompraDeProduto";
   } else {
     this->compraDeProduto = compraDeProduto;
+    LogEscrita *c = new LogEscrita("compraDeProduto", "indefinido", to_string(compraDeProduto), "Orcamento");
   }
 }
 
@@ -117,7 +129,7 @@ double Orcamento::getPreco(string valItem) {
     throw "Acesso negado a Orcamento.getPreco";
   } else {
     int a =0;
-    for(auto it : precos){
+    for(auto it : this->getPrecos()){
         if(it.first == valItem){
             a = 1;
             return it.second;
@@ -126,7 +138,7 @@ double Orcamento::getPreco(string valItem) {
     if(a != 1){
         throw "Item nao encontrado.";
     }
-    return false;
+    return 0.0;
   }
 }
 
@@ -134,6 +146,7 @@ void Orcamento::setDataOrcamento(Data valData) {
   if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setDataOrcamento")) {
     throw "Acesso negado a Orcamento.setDataOrcamento";
   } else {
+    LogEscrita *c = new LogEscrita("dataOrcamento", "indefinido", valData.getData(), "Orcamento");
     this->dataOrcamento = valData;
   }
 }
@@ -159,6 +172,7 @@ void Orcamento::setCliente(Cliente* valCliente) {
     throw "Acesso negado a Orcamento.setCliente";
   } else {
     this->cliente = valCliente;
+    LogEscrita *c = new LogEscrita("cliente", "indefinido", valCliente->getNome(), "Orcamento");
   }
 }
 
@@ -191,6 +205,7 @@ void Orcamento::setFornecedor(Fornecedor * valFornecedor){
     throw "Acesso negado a Orcamento.setFornecedor";
   } else {
     this->fornecedor = fornecedor;
+    LogEscrita *c = new LogEscrita("fornecedor", "indefinido", fornecedor->getNome(), "Orcamento");
   }
 }
 
