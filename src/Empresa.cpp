@@ -21,6 +21,7 @@ Empresa *Empresa::getEmpresa(){
     if(empresa ==nullptr){
       empresa = new Empresa;
     }
+    LogLeitura *a = new LogLeitura("empresa", "Empresa");
     return empresa;
   }
 }
@@ -33,14 +34,11 @@ vector <LogEscrita*> Empresa::getlogsEscrita(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("logsEscrita", "Empresa");
     return this->logsEscrita;
   }
 }
 vector<RegistroVendas*> Empresa::getRegistrosVendas(){
-<<<<<<< HEAD
-  LogLeitura *a = new LogLeitura("registrosVendas", "Empresa");
-  return this->registrosVendas;
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getRegistrosVendas"))
   {
     PermissaoNegada *a = new PermissaoNegada("getRegistrosVendas", "Empresa");
@@ -48,9 +46,9 @@ vector<RegistroVendas*> Empresa::getRegistrosVendas(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("registrosVendas", "Empresa");
     return this->registrosVendas;
   }
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
 }
 vector <LogLeitura*> Empresa::getlogsLeitura(){
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getlogsLeitura"))
@@ -60,6 +58,7 @@ vector <LogLeitura*> Empresa::getlogsLeitura(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("logsLeitura", "Empresa");
     return this->logsLeitura;
   }
 }
@@ -82,27 +81,21 @@ vector<PermissaoNegada*> Empresa::getLogAcesso(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("logsAcessoNegado", "Empresa");
     return this->logsAcessoNegado;
   }
 }
 MateriaPrima* Empresa::getMateriaPrima(string valMateriaPrima){
-<<<<<<< HEAD
-  for(auto it : this->materiaPrimaLista){
-    if(it->getNome() == valMateriaPrima){
-      LogLeitura *a = new LogLeitura("MateriaPrima", "Empresa");
-      return it;
-    }
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getMateriaPrima"))
   {
     PermissaoNegada *a = new PermissaoNegada("getMateriaPrima", "Empresa");
     string mensagem = "Acesso negado a Empresa.getMateriaPrima";
     throw mensagem;
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
   }
   else{
     for(auto it : this->materiaPrimaLista){
     if(it->getNome() == valMateriaPrima){
+        LogLeitura *a = new LogLeitura("materiaPrima", "Empresa");
         return it;
       }
     }
@@ -112,10 +105,6 @@ MateriaPrima* Empresa::getMateriaPrima(string valMateriaPrima){
 }
 
 vector<MateriaPrima*> Empresa::getMateriaPrimaLista(){
-<<<<<<< HEAD
-  LogLeitura *a = new LogLeitura("materiaPrimaLista", "Empresa");
-  return this->materiaPrimaLista;
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getMateriaPrimaLista"))
   {
     PermissaoNegada *a = new PermissaoNegada("getMateriaPrimaLista", "Empresa");
@@ -123,9 +112,9 @@ vector<MateriaPrima*> Empresa::getMateriaPrimaLista(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("materiaPrimaLista", "Empresa");
     return this->materiaPrimaLista;
   }
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
 }
 
 void Empresa::setMateriaPrima(MateriaPrima* valMateriaPrima){
@@ -177,15 +166,6 @@ void Empresa::setOrdemDeProducao(OrdemDeProducao* valOrdemDeProducao){
 }
 
 vector<OrdemDeCompra*> Empresa::getOrdemDeCompraLista(){
-<<<<<<< HEAD
-  LogLeitura *a = new LogLeitura("ordemDeCompraLista", "Empresa");
-  return this->ordemDeCompraLista;
-}
-
-vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
-  LogLeitura *a = new LogLeitura("ordemDeProduçãoLista", "Empresa");
-  return this->ordemDeProducaoLista;
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getOrdemDeCompraLista"))
   {
     PermissaoNegada *a = new PermissaoNegada("getOrdemDeCompraLista", "Empresa");
@@ -193,43 +173,37 @@ vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("ordemDeCompraLista", "Empresa");
     return this->ordemDeCompraLista;
   }
 }
 
 vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getOrdemDeProducaoLista"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getOrdemDeCompraLista"))
   {
-    PermissaoNegada *a = new PermissaoNegada("getOrdemDeProducaoLista", "Empresa");
-    string mensagem = "Acesso negado a Empresa.getOrdemDeProducaoLista";
+    PermissaoNegada *a = new PermissaoNegada("getOrdemDeCompraLista", "Empresa");
+    string mensagem = "Acesso negado a Empresa.getOrdemDeCompraLista";
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("ordemDeProducaoLista", "Empresa");
     return this->ordemDeProducaoLista;
   }
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
 }
 
  Cargo * Empresa::getCargo(string valCargo){
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getCargo"))
   {
-<<<<<<< HEAD
-    if (empresa->cargos[i]->getNome() == valCargo)
-    {
-      LogLeitura *a = new LogLeitura("cargos", "Empresa");
-      return empresa->cargos[i];
-    }
-=======
     PermissaoNegada *a = new PermissaoNegada("getCargo", "Empresa");
     string mensagem = "Acesso negado a Empresa.getCargo";
     throw mensagem;
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
   }
   else{
     for (int i = 0; i < empresa->cargos.size(); i++)
     {
     if (empresa->cargos[i]->getNome() == valCargo)
       {
+      LogLeitura *a = new LogLeitura("cargo", "Empresa");
       return empresa->cargos[i];
       }
     }
@@ -239,8 +213,6 @@ vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
 }
 
 UsuarioLogado* Empresa::getUsuario(){
-  LogLeitura *a = new LogLeitura("usuarioLogado", "Empresa");
-  return this->usuarioLogado;
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getUsuario"))
   {
     PermissaoNegada *a = new PermissaoNegada("getUsuario", "Empresa");
@@ -248,6 +220,7 @@ UsuarioLogado* Empresa::getUsuario(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("usuarioLogado", "Empresa");
     return this->usuarioLogado;
   }
 }
@@ -288,8 +261,7 @@ void Empresa::setlogLeitura(LogLeitura* valLogLeitura){
   }
 }
 
-void Empresa::setCargo(Cargo *valCargo)
-{
+void Empresa::setCargo(Cargo *valCargo){
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.setCargo"))
   {
     PermissaoNegada *a = new PermissaoNegada("setCargo", "Empresa");
@@ -314,18 +286,6 @@ void Empresa::setEndereco(Endereco valEndereco){
 }
 
 Endereco Empresa::getEndereco(){
-<<<<<<< HEAD
-  LogLeitura *a = new LogLeitura("endereco", "Empresa");
-  return this->endereco;
-}
-
-Departamento *Empresa::getDepartamento(string name){
-  for(auto it : departamentos){
-    if(it->getNome() == name){
-      LogLeitura *a = new LogLeitura("departamento", "Empresa");
-      return it;
-    }
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getEndereco"))
   {
     PermissaoNegada *a = new PermissaoNegada("getEndereco", "Empresa");
@@ -333,6 +293,7 @@ Departamento *Empresa::getDepartamento(string name){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("endereco", "Empresa");
     return this->endereco;
   }
 }
@@ -347,22 +308,15 @@ Departamento *Empresa::getDepartamento(string name){
   else{ 
     for(auto it : departamentos){
       if(it->getNome() == name){
+        LogLeitura *a = new LogLeitura("departamento", "Empresa");
         return it;
       }
     }
     return nullptr;
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
   }
 }
 
 Categoria* Empresa::getCategoria(string valCategoria){
-<<<<<<< HEAD
-  for(auto it : categorias){
-    if(it->getTipo()==valCategoria){
-      LogLeitura *a = new LogLeitura("categoria", "Empresa");
-      return it;
-    }
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getCategoria"))
   {
     PermissaoNegada *a = new PermissaoNegada("getCategoria", "Empresa");
@@ -372,11 +326,11 @@ Categoria* Empresa::getCategoria(string valCategoria){
   else{
     for(auto it : categorias){
       if(it->getTipo()==valCategoria){
+        LogLeitura *a = new LogLeitura("categoria", "Empresa");
         return it;
       }
     }
     return nullptr;
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
   }
 }
 
@@ -387,18 +341,9 @@ void Empresa::setCategoria(Categoria* valCategoria){
     string mensagem = "Acesso negado a Empresa.setCategoria";
     throw mensagem;
   }
-<<<<<<< HEAD
-}
-Turno* Empresa::getTurno(string valTurno){
-  for(auto it : this->turnos){
-    if(it->getPeriodo() == valTurno){
-      LogLeitura *a = new LogLeitura("turno", "Empresa");
-      return it;
-=======
   else{
     if(getCategoria(valCategoria->getTipo())==nullptr){
       this->categorias.push_back(valCategoria);
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
     }
   }
 }
@@ -413,6 +358,7 @@ Turno* Empresa::getTurno(string valTurno){
   else{
     for(auto it : this->turnos){
       if(it->getPeriodo() == valTurno){
+        LogLeitura *a = new LogLeitura("turno", "Empresa");
         return it;
       }
     }
@@ -421,10 +367,6 @@ Turno* Empresa::getTurno(string valTurno){
 }
 
 vector<Turno*> Empresa::getTurnos(){
-<<<<<<< HEAD
-  LogLeitura *a = new LogLeitura("turnos", "Empresa");
-  return this->turnos;
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getTurnos"))
   {
     PermissaoNegada *a = new PermissaoNegada("getTurnos", "Empresa");
@@ -432,9 +374,9 @@ vector<Turno*> Empresa::getTurnos(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("turnos", "Empresa");
     return this->turnos;
   }
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
 }
 void Empresa::excluiFuncionario(Funcionario *valFuncionario){
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.excluiFuncionario"))
@@ -455,13 +397,6 @@ void Empresa::excluiFuncionario(Funcionario *valFuncionario){
 }
 
 Veiculo* Empresa::getVeiculo(Turno* valTurno){
-<<<<<<< HEAD
-  for(auto it : this->veiculos){
-    if(it->getTurno() == valTurno){
-      LogLeitura *a = new LogLeitura("veiculo", "Empresa");
-      return it;
-    }
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getVeiculo"))
   {
     PermissaoNegada *a = new PermissaoNegada("getVeiculo", "Empresa");
@@ -471,19 +406,15 @@ Veiculo* Empresa::getVeiculo(Turno* valTurno){
   else{
     for(auto it : this->veiculos){
       if(it->getTurno() == valTurno){
+        LogLeitura *a = new LogLeitura("veiculo", "Empresa");
         return it;
       }
     }
     return nullptr;
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
   }
 }
 
 vector<Veiculo*> Empresa::getVeiculos(){
-<<<<<<< HEAD
-  LogLeitura *a = new LogLeitura("veiculos", "Empresa");
-  return this->veiculos;
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getVeiculos"))
   {
     PermissaoNegada *a = new PermissaoNegada("getVeiculos", "Empresa");
@@ -491,9 +422,9 @@ vector<Veiculo*> Empresa::getVeiculos(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("veiculos", "Empresa");
     return this->veiculos;
   }
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
 }
 
 void Empresa::setTurno(Turno* valTurno){
@@ -557,14 +488,6 @@ void Empresa::setDepartamento(Departamento *valDepartamento){
 }
 
 Cliente *Empresa::getCliente(string doc){
-<<<<<<< HEAD
-
-  for(auto it : clientes){
-    if(it->getDocumento() == doc){
-      LogLeitura *a = new LogLeitura("cliente", "Empresa");
-      return it;
-    }
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getCliente"))
   {
     PermissaoNegada *a = new PermissaoNegada("getCliente", "Empresa");
@@ -574,11 +497,11 @@ Cliente *Empresa::getCliente(string doc){
   else{
     for(auto it : clientes){
       if(it->getDocumento() == doc){
+        LogLeitura *a = new LogLeitura("cliente", "Empresa");
         return it;
       }
     }
     return nullptr;
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
   }
 }
 
@@ -614,10 +537,6 @@ Funcionario *Empresa::getFuncionario(string doc){
 }
 
 vector<Funcionario*> Empresa::getFuncionarios(){
-<<<<<<< HEAD
-  LogLeitura *a = new LogLeitura("funcionarios", "Empresa");
-  return this->funcionarios;
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getFuncionarios"))
   {
     PermissaoNegada *a = new PermissaoNegada("getFuncionarios", "Empresa");
@@ -625,9 +544,9 @@ vector<Funcionario*> Empresa::getFuncionarios(){
     throw mensagem;
   }
   else{
+    LogLeitura *a = new LogLeitura("funcionarios", "Empresa");
     return this->funcionarios;
   }
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
 }
 
 void Empresa::setFuncionario(Funcionario *valFuncionario){
@@ -643,13 +562,6 @@ void Empresa::setFuncionario(Funcionario *valFuncionario){
 }
 
 RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente){
-<<<<<<< HEAD
-  for(auto it : registrosVendas){
-    if((it->getDataDeVenda() == valData) && (it->getProduto() == valProduto) && (it->getCliente()== valCliente)){
-      LogLeitura *a = new LogLeitura("registroVendas", "Empresa");
-      return it;
-    }
-=======
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.getRegistroVendas"))
   {
     PermissaoNegada *a = new PermissaoNegada("getRegistroVendas", "Empresa");
@@ -659,11 +571,11 @@ RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cl
   else{
     for(auto it : registrosVendas){
       if((it->getDataDeVenda() == valData) && (it->getProduto() == valProduto) && (it->getCliente()== valCliente)){
+        LogLeitura *a = new LogLeitura("registroVendas", "Empresa");
         return it;
       }
     }
     return nullptr;
->>>>>>> 09f5dc79f06d0b6251bb6cb22d30c047bc80e30b
   }
 }
 
