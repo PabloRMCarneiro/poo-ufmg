@@ -9,7 +9,8 @@ Cargo::Cargo()
   if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cargo.Cargo"))
   { 
     PermissaoNegada *a = new PermissaoNegada("Cargo", "Cargo");
-    throw "Acesso negado a Cargo.Cargo";
+    string messagem = "Acesso negado a Cargo.Cargo";
+    throw messagem;
   }
   else
   {
@@ -22,7 +23,8 @@ Cargo::Cargo(string valNome)
   if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cargo.Cargo"))
   {
     PermissaoNegada *a = new PermissaoNegada("Cargo", "Cargo");
-    throw "Acesso negado a Cargo.Cargo";
+    string messagem = "Acesso negado a Cargo.Cargo";
+    throw messagem;
   }
   else
   {
@@ -40,7 +42,8 @@ string Cargo::getNome()
   if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cargo.getNome"))
   {
     PermissaoNegada *a = new PermissaoNegada("getNome", "Cargo");
-    throw "Acesso negado a Cargo.getNome";
+    string messagem = "Acessa negado a Cargo.getNome";
+    throw messagem;
   }
   else
   {
@@ -54,7 +57,8 @@ void Cargo::setNome(string valNome)
   if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cargo.getNome"))
   {
     PermissaoNegada *a = new PermissaoNegada("setNome", "Cargo");
-    throw "Acesso negado a Cargo.setNome";
+    string messagem = "Acessa negado a Cargo.setNome";
+    throw messagem;
   }
   else
   {
