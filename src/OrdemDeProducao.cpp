@@ -57,6 +57,7 @@ Data OrdemDeProducao::getDataOrdem()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("dataOrdem", "OrdemDeProdução");
         return this->dataOrdem;
     }
 }
@@ -69,6 +70,7 @@ string OrdemDeProducao::getProduto()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("produto", "OrdemDeProdução");
         return this->produto;
     }
 }
@@ -81,6 +83,7 @@ int OrdemDeProducao::getQuantidade()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("quantidade", "OrdemDeProdução");
         return this->quantidade;
     }
 }
