@@ -34,5 +34,6 @@ class Data{
         bool operator==(Data &d2);      
         string getData(); 
         string getHorario();
+        string help(int num);
 };
 #endif //DATA_H_INCLUDED

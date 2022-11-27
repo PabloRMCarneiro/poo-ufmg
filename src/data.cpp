@@ -40,7 +40,12 @@ Data::Data(int valDia, int valMes, int valAno)
         hora = 0;
         minuto = 0;
         segundo = 0;
-        //LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Cliente");
+        LogEscrita *a = new LogEscrita("ano", "indefinido", to_string(ano), "data");
+        LogEscrita *b = new LogEscrita("mes", "indefinido", to_string(mes), "data");
+        LogEscrita *c = new LogEscrita("dia", "indefinido", to_string(dia), "data");
+        LogEscrita *d = new LogEscrita("hora", "indefinido", "0", "data");
+        LogEscrita *e = new LogEscrita("minuto", "indefinido", "0", "data");
+        LogEscrita *f = new LogEscrita("segundo", "indefinido", "0 ", "data");
     }
 }
 Data::Data(int valDia, int valMes, int valAno, int valHora, int valMin, int valSeg)
@@ -59,6 +64,12 @@ Data::Data(int valDia, int valMes, int valAno, int valHora, int valMin, int valS
         hora = valHora;
         minuto = valMin;
         segundo = valSeg;
+        LogEscrita *a = new LogEscrita("dia", "indefinido", to_string(ano), "data");
+        LogEscrita *b = new LogEscrita("dia", "indefinido", to_string(mes), "data");
+        LogEscrita *c = new LogEscrita("dia", "indefinido", to_string(dia), "data");
+        LogEscrita *d = new LogEscrita("dia", "indefinido", to_string(hora), "data");
+        LogEscrita *e = new LogEscrita("dia", "indefinido", to_string(minuto), "data");
+        LogEscrita *f = new LogEscrita("dia", "indefinido", to_string(segundo), "data");
     }
 }
 
@@ -157,6 +168,7 @@ void Data::setAno(int valAno)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("dia", to_string(ano), to_string(valAno), "data");
         ano = valAno;
     }
 }
@@ -171,6 +183,7 @@ void Data::setMes(int valMes)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("dia", to_string(mes), to_string(valMes), "data");
         mes = valMes;
     }
 }
@@ -185,6 +198,7 @@ void Data::setDia(int valDia)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("dia", to_string(dia), to_string(valDia), "data");
         dia = valDia;
     }
 }
@@ -199,6 +213,7 @@ void Data::setHora(int valHora)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("dia", to_string(hora), to_string(valHora), "data");
         hora = valHora;
     }
 }
@@ -213,6 +228,7 @@ void Data::setMin(int valMin)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("dia", to_string(minuto), to_string(valMin), "data");
         minuto = valMin;
     }
 }
@@ -227,10 +243,11 @@ void Data::setSeg(int valSeg)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("dia", to_string(segundo), to_string(valSeg), "data");
         segundo = valSeg;
     }
 }
-string help(int num)
+string Data::help(int num)
 {
     if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Data.help"))
     {
