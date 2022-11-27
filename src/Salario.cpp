@@ -2,17 +2,21 @@
 #include "../include/UsuarioLogado.h"
 #include "../include/Funcionario.h"
 #include "../include/Salario.h"
+#include "../include/PermissaoNegada.h"
+
 #include <string>
 #include <vector>
 
 using namespace std;
 
-Salario::Salario() {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.Salario"))
-  {
-    throw "Acesso negado a Salario.Salario";
-  }
-  else
+Salario::Salario() 
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.Salario")) {
+      PermissaoNegada *a = new PermissaoNegada("Salario", "Salario");
+      string mensagem = "Acesso negado a Salario.Salario";
+      throw mensagem;
+  } 
+  else 
   {
     this->valor = 0;
     this->dissidio = 0.0;
@@ -20,12 +24,14 @@ Salario::Salario() {
   }
 }
 
-Salario::Salario(float valValor) {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.Salario"))
-  {
-    throw "Acesso negado a Salario.Salario";
-  }
-  else
+Salario::Salario(float valValor) 
+{
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.Salario")) {
+      PermissaoNegada *a = new PermissaoNegada("Salario", "Salario");
+      string mensagem = "Acesso negado a Salario.Salario";
+      throw mensagem;
+  } 
+  else 
   {
     this->valor = valValor;
     this->dissidio = 0.0;
@@ -34,54 +40,81 @@ Salario::Salario(float valValor) {
 
 Salario::~Salario() {}
 
-float Salario::getValor() {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getValor"))
-  {
-    throw "Acesso negado a Salario.getValor";
-  }
-  else
+float Salario::getValor() 
+{
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getValor")) {
+      PermissaoNegada *a = new PermissaoNegada("getValor", "Salario");
+      string mensagem = "Acesso negado a Salario.getValor";
+      throw mensagem;
+  } 
+  else 
   {
     return this->valor;
   }
 }
 
-vector<pair<Data, float>> Salario::getRegistro() {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getRegistro"))
-  {
-    throw "Acesso negado a Salario.getRegistro";
-  }
-  else
+vector<pair<Data, float>> Salario::getRegistro() 
+{
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getRegistro")) {
+      PermissaoNegada *a = new PermissaoNegada("getRegistro", "Salario");
+      string mensagem = "Acesso negado a Salario.getRegistro";
+      throw mensagem;
+  } 
+  else 
   {
     return this->registro;
   }
 }
 
-float Salario::getDissidio() {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getDissidio"))
-  {
-    throw "Acesso negado a Salario.getDissidio";
-  }
-  else
+float Salario::getDissidio() 
+{
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.getDissidio")) {
+      PermissaoNegada *a = new PermissaoNegada("getDissidio", "Salario");
+      string mensagem = "Acesso negado a Salario.getDissidio";
+      throw mensagem;
+  } 
+  else 
   {
     return this->dissidio;
   }
 }
 
-void Salario::setValor(float valValor) { this->valor = valValor; }
+void Salario::setValor(float valValor) 
+{ 
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.setValor")) {
+      PermissaoNegada *a = new PermissaoNegada("setValor", "Salario");
+      string mensagem = "Acesso negado a Salario.setValor";
+      throw mensagem;
+  } 
+  else 
+  {
+    this->valor = valValor;
+  }
+}
 
-void Salario::setDissidio(Data valData, float valDissidio) {
-  this->dissidio = valDissidio;
-  for (auto it : Empresa::getEmpresa()->getFuncionarios()) {
-    it->promocao(valData, valDissidio);
+void Salario::setDissidio(Data valData, float valDissidio) 
+{
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.setDissidio")) {
+      PermissaoNegada *a = new PermissaoNegada("setDissidio", "Salario");
+      string mensagem = "Acesso negado a Salario.setDissidio";
+      throw mensagem;
+  } 
+  else 
+  {
+    this->dissidio = valDissidio;
+    for (auto it : Empresa::getEmpresa()->getFuncionarios()) {
+      it->promocao(valData, valDissidio);
+    }
   }
 }
 
 void Salario::promocao(Data valData, float valPercentual) {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.promocao"))
-  {
-    throw "Acesso negado a Salario.promocao";
-  }
-  else
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.promocao")) {
+      PermissaoNegada *a = new PermissaoNegada("promocao", "Salario");
+      string mensagem = "Acesso negado a Salario.promocao";
+      throw mensagem;
+  } 
+  else 
   {
     this->valor = this->valor + (this->valor * valPercentual/100);
     this->atualizaRegistro(valData);
@@ -89,10 +122,11 @@ void Salario::promocao(Data valData, float valPercentual) {
 }
 
 void Salario::reajuste(Data valData, float valDissidio) {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.reajuste"))
-  {
-    throw "Acesso negado a Salario.reajuste";
-  }
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.reajuste")) {
+      PermissaoNegada *a = new PermissaoNegada("reajuste", "Salario");
+      string mensagem = "Acesso negado a Salario.reajuste";
+      throw mensagem;
+  } 
   else
   {
     this->valor = this->valor + (this->valor * valDissidio/100);
@@ -101,10 +135,13 @@ void Salario::reajuste(Data valData, float valDissidio) {
 }
 
 void Salario::atualizaRegistro(Data valData) {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.atualizaRegistro"))
-  {
-    throw "Acesso negado a Salario.atualizaRegistro";
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Salario.atualizaRegistro")) {
+      PermissaoNegada *a = new PermissaoNegada("atualizaRegistro", "Salario");
+      string mensagem = "Acesso negado a Salario.atualizaRegistro";
+      throw mensagem;
   }
   else
+  {
     this->registro.push_back(make_pair(valData, this->valor));
+  }
 }
