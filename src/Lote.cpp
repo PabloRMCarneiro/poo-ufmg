@@ -78,6 +78,7 @@ Data Lote::getDataProd()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("DataProd", "Lote")
         return this->dataProd;
     }
 }
@@ -89,6 +90,7 @@ int Lote::getNumLote()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("NumLote", "Lote")
         return this->numLote;
     }
 }
@@ -100,6 +102,7 @@ string Lote::getProduto()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("Produto", "Lote")
         return this->produto;
     }
 }
@@ -111,6 +114,7 @@ int Lote::getQuantidadeAtual()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("QuantidadeAtual", "Lote")
         return this->quantidadeAtual;
     }
 }
@@ -122,6 +126,7 @@ int Lote::getQuantidadeProduzida()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("QuantidadeProduzida", "Lote")
         return this->quantidadeProduzida;
     }
 }
