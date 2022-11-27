@@ -332,6 +332,8 @@ void Funcionario::reajuste(Data valData, float valDissidio){
   }
   else
   {
+    string salarioAntes = to_string(salario.getValor());
     this->salario.setDissidio(valData, valDissidio);
+    LogEscrita *a = new LogEscrita("salario", salarioAntes, to_string(salario.getValor()), "Funcionario");
   }
 }
