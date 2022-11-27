@@ -152,7 +152,7 @@ void OrdemDeCompra::setMelhoresPrecos()
                 {
                     if (it3.first == it->getNome())
                     {
-                        if (menorPreco = 0.0)
+                        if (menorPreco == 0.0)
                         {
                             menorPreco = it3.second;
                         }

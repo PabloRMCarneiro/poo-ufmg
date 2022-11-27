@@ -1,5 +1,6 @@
 #include "../include/Pessoa.h"
 #include "../include/UsuarioLogado.h"
+#include "../include/PermissaoNegada.h"
 #include <iostream>
 #include <string>
 
@@ -84,9 +85,11 @@ bool validaCNPJ(string Cnpj)
 
 Pessoa::Pessoa()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
   {
-    throw "Acesso negado a Pessoa.Pessoa";
+        PermissaoNegada *a = new PermissaoNegada("Pessoa", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.Pessoa";
+        throw mensagem;
   }
   else
   {
@@ -101,10 +104,12 @@ Pessoa::Pessoa()
 Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
                string valDocumento, long int valTelefone)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
   {
-    throw "Acesso negado a Pessoa.Pessoa";
-  }
+        PermissaoNegada *a = new PermissaoNegada("Pessoa", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.Pessoa";
+        throw mensagem;
+  }  
   else
   {
     this->nome = valNome;
@@ -121,9 +126,11 @@ Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
 
 string Pessoa::getNome()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getNome"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getNome"))
   {
-    throw "Acesso negado a Pessoa.getNome";
+        PermissaoNegada *a = new PermissaoNegada("getNome", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.getNome";
+        throw mensagem;
   }
   else
   {
@@ -133,9 +140,11 @@ string Pessoa::getNome()
 
 Endereco Pessoa::getEndereco()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEndereco"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEndereco"))
   {
-    throw "Acesso negado a Pessoa.getEndereco";
+        PermissaoNegada *a = new PermissaoNegada("getEndereco", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.getEndereco";
+        throw mensagem;
   }
   else
   {
@@ -145,9 +154,11 @@ Endereco Pessoa::getEndereco()
 
 string Pessoa::getEmail()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEmail"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEmail"))
   {
-    throw "Acesso negado a getEPessoamail.getEmail";
+        PermissaoNegada *a = new PermissaoNegada("getEmail", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.getEmail";
+        throw mensagem;
   }
   else
   {
@@ -157,9 +168,11 @@ string Pessoa::getEmail()
 
 string Pessoa::getDocumento()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getDocumento"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getDocumento"))
   {
-    throw "Acesso negado a Pessoa.getDocumento";
+        PermissaoNegada *a = new PermissaoNegada("getDocumento", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.getDocumento";
+        throw mensagem;
   }
   else
   {
@@ -169,9 +182,11 @@ string Pessoa::getDocumento()
 
 long int Pessoa::getTelefone()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getTelefone"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getTelefone"))
   {
-    throw "Acesso negado a Pessoa.getTelefone";
+        PermissaoNegada *a = new PermissaoNegada("getTelefone", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.getTelefone";
+        throw mensagem;
   }
   else
   {
@@ -181,32 +196,78 @@ long int Pessoa::getTelefone()
 
 void Pessoa::setNome(string valNome)
 {
-  this->nome = valNome;
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.setNome"))
+  {
+        PermissaoNegada *a = new PermissaoNegada("setNome", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.setNome";
+        throw mensagem;
+  }
+  else
+  {
+    this->nome = valNome;
+  }
 }
 
 void Pessoa::setEndereco(Endereco valEndereco)
 {
-  this->endereco = valEndereco;
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.setEndereco"))
+  {
+        PermissaoNegada *a = new PermissaoNegada("setEndereco", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.setEndereco";
+        throw mensagem;
+  }
+  else
+  {
+    this->endereco = valEndereco;
+  }
 }
 
 void Pessoa::setEmail(string valEmail)
 {
-  this->email = valEmail;
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.setEmail"))
+  {
+        PermissaoNegada *a = new PermissaoNegada("setEmail", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.setEmail";
+        throw mensagem;
+  }
+  else
+  {
+    this->email = valEmail;
+  }
 }
 
 void Pessoa::setDocumento(string valDocumento)
 {
-  if (this->validaDocumento(valDocumento))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.setDocumento"))
   {
-    this->documento = valDocumento;
+        PermissaoNegada *a = new PermissaoNegada("setDocumento", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.setDocumento";
+        throw mensagem;
   }
   else
-    cout << "Documento inválido." << endl;
+  {
+      if (this->validaDocumento(valDocumento))
+      {
+        this->documento = valDocumento;
+      }
+      else
+        cout << "Documento inválido." << endl;
+  }
+  
 }
 
 void Pessoa::setTelefone(long int valTelefone)
 {
-  this->telefone = valTelefone;
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.setTelefone"))
+  {
+        PermissaoNegada *a = new PermissaoNegada("setTelefone", "Pessoa");
+        string mensagem = "Acesso negado a Pessoa.setTelefone";
+        throw mensagem;
+  }
+  else
+  {
+    this->telefone = valTelefone;
+  }
 }
 
 bool Pessoa::validaDocumento(string valDocumento)
