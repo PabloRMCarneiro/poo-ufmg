@@ -5,9 +5,11 @@
 // LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
 OrdemDeProducao::OrdemDeProducao()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.OrdemDeProducao"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.OrdemDeProducao"))
     {
-        throw "Acesso negado a OrdemDeProducao.OrdemDeProducao";
+    PermissaoNegada *a = new PermissaoNegada("OrdemDeProducao", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.OrdemDeProducao";
+    throw menssagem;
     }
     else
     {
@@ -19,9 +21,11 @@ OrdemDeProducao::OrdemDeProducao()
 
 OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.OrdemDeProducao"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.OrdemDeProducao"))
     {
-        throw "Acesso negado a OrdemDeProducao.OrdemDeProducao";
+    PermissaoNegada *a = new PermissaoNegada("OrdemDeProducao", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.OrdemDeProducao";
+    throw menssagem;
     }
     else
     {
@@ -32,40 +36,67 @@ OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q)
 }
 
 void OrdemDeProducao::setDataOrdem(Data dO)
-{
+{   
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.setDataOrdem"))
+    {
+    PermissaoNegada *a = new PermissaoNegada("setDataOrdem", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.setDataOrdem";
+    throw menssagem;
+    }
+    else{
     this->dataOrdem = dO;
     LogEscrita *a = new LogEscrita("dataOrdem", "indefinido", dataOrdem.getData(), "OrdemDeProducao");
+    }
 }
 
 void OrdemDeProducao::setProduto(string p)
-{
+{   
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.setProduto"))
+    {
+    PermissaoNegada *a = new PermissaoNegada("setProduto", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.setProduto";
+    throw menssagem;
+    }
+    else{
     this->produto = p;
     LogEscrita *a = new LogEscrita("produto", "indefinido", p, "OrdemDeProducao");
+    }
 }
 
 void OrdemDeProducao::setQuantidade(int q)
 {
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.setQuantidade"))
+    {
+    PermissaoNegada *a = new PermissaoNegada("setQuantidade", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.setQuantidade";
+    throw menssagem;
+    }
+    else{
     LogEscrita *a = new LogEscrita("quantidade", "indefinido", to_string(q), "OrdemDeProducao");
     this->quantidade = q;
+    }
 }
 
 Data OrdemDeProducao::getDataOrdem()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getDataOrdem"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getDataOrdem"))
     {
-        throw "Acesso negado a OrdemDeProducao.getDataOrdem";
+    PermissaoNegada *a = new PermissaoNegada("getDataOrdem", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.getDataOrdem";
+    throw menssagem;
     }
-    else
-    {
+    else{
         return this->dataOrdem;
     }
 }
 
 string OrdemDeProducao::getProduto()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getProduto"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getProduto"))
     {
-        throw "Acesso negado a OrdemDeProducao.getProduto";
+    PermissaoNegada *a = new PermissaoNegada("getProduto", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.getProduto";
+    throw menssagem;
     }
     else
     {
@@ -75,9 +106,11 @@ string OrdemDeProducao::getProduto()
 
 int OrdemDeProducao::getQuantidade()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getQuantidade"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getQuantidade"))
     {
-        throw "Acesso negado a OrdemDeProducao.getQuantidade";
+    PermissaoNegada *a = new PermissaoNegada("getQuantidade", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.getQuantidade";
+    throw menssagem;
     }
     else
     {
@@ -87,9 +120,11 @@ int OrdemDeProducao::getQuantidade()
 
 void OrdemDeProducao::getOrdem()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getOrdem"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("getOrdem.getQuantidade"))
     {
-        throw "Acesso negado a OrdemDeProducao.getOrdem";
+    PermissaoNegada *a = new PermissaoNegada("getOrdem", "OrdemDeProducao");
+    string menssagem = "Acessa negado a OrdemDeProducao.getOrdem";
+    throw menssagem;
     }
     else
     {
