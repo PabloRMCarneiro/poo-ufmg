@@ -32,6 +32,7 @@ Cliente *RegistroVendas::getCliente()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("cliente", "RegistroVendas");
     return this->cliente;
   }
 }
@@ -59,6 +60,7 @@ int RegistroVendas::getCodigoPedido()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("codigoPedido", "RegistroVendas");
     return this->codigoPedido;
   }
 }
@@ -71,8 +73,8 @@ Data RegistroVendas::getDataDeVenda()
       throw mensagem;
   }
   else
-  
   {
+    LogLeitura *logLeitura = new LogLeitura("dataDeVenda", "RegistroVendas");
     return this->dataDeVenda;
   }
 }
@@ -87,6 +89,7 @@ vector<int> RegistroVendas::getNumeroDoLote()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("lote", "RegistroVendas");
     return this->lote;
   }
 }
@@ -101,6 +104,7 @@ Produto *RegistroVendas::getProduto()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("produto", "RegistroVendas");
     return this->produto;
   }
 }
@@ -115,6 +119,7 @@ int RegistroVendas::getQuantidadeVenda()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("quantidadeVenda", "RegistroVendas");
     return this->quantidadeVenda;
   }
 }

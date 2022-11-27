@@ -49,6 +49,7 @@ float Salario::getValor()
   } 
   else 
   {
+    LogLeitura *logLeitura = new LogLeitura("valor", "Salario");
     return this->valor;
   }
 }
@@ -62,6 +63,7 @@ vector<pair<Data, float>> Salario::getRegistro()
   } 
   else 
   {
+    LogLeitura *logLeitura = new LogLeitura("registro", "Salario");
     return this->registro;
   }
 }
@@ -75,6 +77,7 @@ float Salario::getDissidio()
   } 
   else 
   {
+    LogLeitura *logLeitura = new LogLeitura("dissidio", "Salario");
     return this->dissidio;
   }
 }
