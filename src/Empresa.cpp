@@ -2,7 +2,6 @@
 #include "../include/LogEscrita.h"
 #include "../include/LogLeitura.h"
 
-
 using namespace std;
 
 Empresa *Empresa::empresa = nullptr;

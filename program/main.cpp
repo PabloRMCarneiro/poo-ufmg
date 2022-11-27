@@ -102,19 +102,182 @@ vector<string> permissoes(){
   permissoes.push_back("Funcionario.promocao");
   permissoes.push_back("Funcionario.reajuste");
 
+  permissoes.push_back("Lote.Lote");
+  permissoes.push_back("Lote.setDataProd");
+  permissoes.push_back("Lote.setNumLote");
+  permissoes.push_back("Lote.setProduto");
+  permissoes.push_back("Lote.setQuantidadeAtual");
+  permissoes.push_back("Lote.setQuantidadeProduzida");
+  permissoes.push_back("Lote.getDataProd");
+  permissoes.push_back("Lote.getNumLote");
+  permissoes.push_back("Lote.getProduto");
+  permissoes.push_back("Lote.getQuantidadeAtual");
+  permissoes.push_back("Lote.getQuantidadeProduzida");
+  permissoes.push_back("Lote.imprimeRegistro");
+  permissoes.push_back("Lote.vende");
+
+  permissoes.push_back("MateriaPrima.MateriaPrima");
+  permissoes.push_back("MateriaPrima.geraOrdemDeCompra");
+  permissoes.push_back("MateriaPrima.getUnidadeMedida");
+  permissoes.push_back("MateriaPrima.getEstoqueMinimo");
+  permissoes.push_back("MateriaPrima.getNome");
+  permissoes.push_back("MateriaPrima.setEstoqueMin");
+  permissoes.push_back("MateriaPrima.setEstoque");
+  permissoes.push_back("MateriaPrima.setNome");
+  permissoes.push_back("MateriaPrima.setUnidadeDeMedida");
+
+  permissoes.push_back("MetodoDePagamento.MetodoDePagamento");
+  permissoes.push_back("MetodoDePagamento.getQuantidadeDeParcelas");
+  permissoes.push_back("MetodoDePagamento.getQuantiaPorParcelas");
+  permissoes.push_back("MetodoDePagamento.setQuantidadeDeParcelas");
+  permissoes.push_back("MetodoDePagamento.setQuantiaPorParcelas");
+
+  permissoes.push_back("Orcamento.auxiliarMateriaPrima");
+  permissoes.push_back("Orcamento.auxiliarProduto");
+  permissoes.push_back("Orcamento.Orcamento");
+  permissoes.push_back("Orcamento.setTotal");
+  permissoes.push_back("Orcamento.getPrecos");
+  permissoes.push_back("Orcamento.setCompraDeProduto");
+  permissoes.push_back("Orcamento.isCompraDeProduto");
+  permissoes.push_back("Orcamento.getPreco");
+  permissoes.push_back("Orcamento.setDataOrcamento");
+  permissoes.push_back("Orcamento.getDataOrcamento");
+  permissoes.push_back("Orcamento.getFornecedor");
+  permissoes.push_back("Orcamento.setCliente");
+  permissoes.push_back("Orcamento.getCliente");
+  permissoes.push_back("Orcamento.getValorTotal");
+  permissoes.push_back("Orcamento.getItens");
+  permissoes.push_back("Orcamento.setFornecedor");
+  permissoes.push_back("Orcamento.setItens");
+
+  permissoes.push_back("OrdemDeCompra.OrdemDeCompra");
+  permissoes.push_back("OrdemDeCompra.setMateriaPrimaLista");
+  permissoes.push_back("OrdemDeCompra.setMateriaPrima");
+  permissoes.push_back("OrdemDeCompra.setData");
+  permissoes.push_back("OrdemDeCompra.setValorTotal");
+  permissoes.push_back("OrdemDeCompra.setOrcamento");
+  permissoes.push_back("OrdemDeCompra.gerarPedidos");
+  permissoes.push_back("OrdemDeCompra.setMelhoresPrecos");
+  permissoes.push_back("OrdemDeCompra.setCompra");
+  permissoes.push_back("OrdemDeCompra.getDatOrdem");
+  permissoes.push_back("OrdemDeCompra.setCompra");
+  permissoes.push_back("OrdemDeCompra.getOrcamentos");
+  permissoes.push_back("OrdemDeCompra.getMateriaPrimaLista");
+  permissoes.push_back("OrdemDeCompra.getMelhoresPrecos");
+  permissoes.push_back("OrdemDeCompra.getComprou");
+
+  permissoes.push_back("PedidoDeCompra.PedidoDeCompra");
+  permissoes.push_back("PedidoDeCompra.getCodigo");
+  permissoes.push_back("PedidoDeCompra.setOrcamento");
+  permissoes.push_back("PedidoDeCompra.setBoleto");
+  permissoes.push_back("PedidoDeCompra.setCartaoDeCredito");
+  permissoes.push_back("PedidoDeCompra.getOrcamento");
+  permissoes.push_back("PedidoDeCompra.getBoleto");
+  permissoes.push_back("PedidoDeCompra.getCartaoDeCredito");
+  permissoes.push_back("PedidoDeCompra.setVenda");
+
+  permissoes.push_back("Pessoa.Pessoa");
+  permissoes.push_back("Pessoa.getNome");
+  permissoes.push_back("Pessoa.getEndereco");
+  permissoes.push_back("Pessoa.getEmail");
+  permissoes.push_back("Pessoa.getDocumento");
+  permissoes.push_back("Pessoa.getTelefone");
+  permissoes.push_back("Pessoa.setNome");
+  permissoes.push_back("Pessoa.setEndereco");
+  permissoes.push_back("Pessoa.setEmail");
+  permissoes.push_back("Pessoa.setDocumento");
+  permissoes.push_back("Pessoa.setTelefone");
+
+  permissoes.push_back("Produto.Produto");
+  permissoes.push_back("Produto.getNome");
+  permissoes.push_back("Produto.getCodigo");
+  permissoes.push_back("Produto.getMateriaPrimaList");
+  permissoes.push_back("Produto.setMateriaPrimaList");
+  permissoes.push_back("Produto.getValorDeVenda");
+  permissoes.push_back("Produto.getTamanhoDoLoteMinimo");
+  permissoes.push_back("Produto.getEstoqueMinimo");
+  permissoes.push_back("Produto.getQtdEstoque");
+  permissoes.push_back("Produto.getCategoria");
+  permissoes.push_back("Produto.getOrdem");
+  permissoes.push_back("Produto.getLote");
+  permissoes.push_back("Produto.setNome");
+  permissoes.push_back("Produto.setCodigo");
+  permissoes.push_back("Produto.setValorDeVenda");
+  permissoes.push_back("Produto.setTamanhoDoLoteMinimo");
+  permissoes.push_back("Produto.setEstoqueMinimo");
+  permissoes.push_back("Produto.setQtdEstoque");
+  permissoes.push_back("Produto.setCategoria");
+  permissoes.push_back("Produto.registraLote");
+  permissoes.push_back("Produto.realizaVenda");
+  permissoes.push_back("Produto.geraOrdem");
+  permissoes.push_back("Produto.temEstoque");
+  permissoes.push_back("Produto.novoProduto");
+  permissoes.push_back("Produto.getProduto");
+
+  permissoes.push_back("RegistroVendas.RegistroVendas");
+  permissoes.push_back("RegistroVendas.getCliente");
+  permissoes.push_back("RegistroVendas.setCodigoPedido");
+  permissoes.push_back("RegistroVendas.getCodigoPedido");
+  permissoes.push_back("RegistroVendas.getDataDeVenda");
+  permissoes.push_back("RegistroVendas.getNumeroDoLote");
+  permissoes.push_back("RegistroVendas.getProduto");
+  permissoes.push_back("RegistroVendas.getQuantidadeVenda");
+  permissoes.push_back("RegistroVendas.setCliente");
+  permissoes.push_back("RegistroVendas.setDataDeVenda");
+  permissoes.push_back("RegistroVendas.setNumeroDoLote");
+  permissoes.push_back("RegistroVendas.setProduto");
+  permissoes.push_back("RegistroVendas.setQuantidadeVenda");
+  permissoes.push_back("RegistroVendas.validaVenda");
+  permissoes.push_back("RegistroVendas.imprime");
+
+  permissoes.push_back("Salario.Salario");
+  permissoes.push_back("Salario.getValor");
+  permissoes.push_back("Salario.getRegistro");
+  permissoes.push_back("Salario.getDissidio");
+  permissoes.push_back("Salario.setValor");
+  permissoes.push_back("Salario.setDissidio");
+  permissoes.push_back("Salario.promocao");
+  permissoes.push_back("Salario.reajuste");
+  permissoes.push_back("Salario.atualizaRegistro");
+
+  permissoes.push_back("Turno.Turno");
+  permissoes.push_back("Turno.setEntradaHora");
+  permissoes.push_back("Turno.setSaidaHora");
+  permissoes.push_back("Turno.setPeriodo");
+  permissoes.push_back("Turno.setJornada");
+  permissoes.push_back("Turno.getPeriodo");
+  permissoes.push_back("Turno.getEntradaHora");
+  permissoes.push_back("Turno.getSaidaHora");
+  permissoes.push_back("Turno.getJornada");
   
+  permissoes.push_back("Veiculo.Veiculo");
+  permissoes.push_back("Veiculo.setId");
+  permissoes.push_back("Veiculo.setCapacidade");
+  permissoes.push_back("Veiculo.setAtual");
+  permissoes.push_back("Veiculo.setTempoDeRota");
+  permissoes.push_back("Veiculo.setTurno");
+  permissoes.push_back("Veiculo.setRota");
+  permissoes.push_back("Veiculo.setPosicaoRota");
+  permissoes.push_back("Veiculo.calculaTempo");
+  permissoes.push_back("Veiculo.setHoraSaida");
+  permissoes.push_back("Veiculo.auxiliarTempoSegundos");
+  permissoes.push_back("Veiculo.auxiliarTempoHora");
+  permissoes.push_back("Veiculo.tempoEmpresaCasa");
+  permissoes.push_back("Veiculo.calculaRota");
+  permissoes.push_back("Veiculo.excluiPassageiro");
+  permissoes.push_back("Veiculo.setPassageiros");
+  permissoes.push_back("Veiculo.getId");
+  permissoes.push_back("Veiculo.getCapacidade");
+  permissoes.push_back("Veiculo.getAtual");
+  permissoes.push_back("Veiculo.getTempoDeRota");
+  permissoes.push_back("Veiculo.getTurno");
+  permissoes.push_back("Veiculo.getRota");
+  permissoes.push_back("Veiculo.getHoraPosicao");
+  permissoes.push_back("Veiculo.getPassageiros");
+  permissoes.push_back("Veiculo.getHoraSaida");
 
-
-
-
-
-
-
-
-
-
-
-  permissoes.push_back(("Empresa.getUsuario"));
+  //  PERMISSOES HABILITADAS ANTERIORMENTE
+  /* permissoes.push_back(("Empresa.getUsuario"));
   permissoes.push_back(("Empresa.getCargo"));
   permissoes.push_back(("Cargo.Cargo"));
   permissoes.push_back(("Cargo.getNome"));
@@ -123,7 +286,7 @@ vector<string> permissoes(){
   permissoes.push_back(("Departamento.getNome"));       // Acesso ao método getNome
   permissoes.push_back(("Empresa.getCliente"));  // Acesso ao método getCiente
   permissoes.push_back(("Cliente.Cliente"));     // Acesso ao construtor Cliente
-  permissoes.push_back(("Cliente.getTipoCliente"));  
+  permissoes.push_back(("Cliente.getTipoCliente"));   */
 
   // adicionar os restantes das permissoes
 
