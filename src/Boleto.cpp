@@ -1,7 +1,8 @@
 #include "../include/Boleto.h"
 #include "../include/PermissaoNegada.h"
 #include "../include/UsuarioLogado.h"
-
+#include "../include/Empresa.h"
+//LogEscrita *a = new LogEscrita("nome", "indefinido", valNome, "Cargo");
 using namespace std;
 
 Boleto::Boleto():MetodoDePagamento() 
@@ -28,6 +29,7 @@ Boleto::Boleto(int quantidadeDeParcelas, Data valDataDeVencimento, double valVal
     else
     {
         this->dataDeVencimento = valDataDeVencimento;
+        //LogEscrita *a = new LogEscrita("nome", "indefinido", valNome, "Cargo");
     }
 }
 
