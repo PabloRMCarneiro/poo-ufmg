@@ -2,7 +2,6 @@
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
-#include "LogLeitura.h"
 vector<Produto *> Produto::produtolist;
 
 Produto::Produto()
