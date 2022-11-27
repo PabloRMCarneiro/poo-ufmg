@@ -2,7 +2,10 @@
 #include "../include/PermissaoNegada.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/Empresa.h"
+#include "../include/LogLeitura.h"
+
 //LogEscrita *a = new LogEscrita("nome", "indefinido", valNome, "Cargo");
+//LogLeitura *a = new LogLeitura("nome", "Cargo");
 using namespace std;
 
 Boleto::Boleto():MetodoDePagamento() 
@@ -48,6 +51,7 @@ Data Boleto::getDataDeVencimento()
     else
     {
         return this->dataDeVencimento;
+        LogLeitura *a = new LogLeitura("dataDeVencimento", "Boleto");
     }
 }
 
