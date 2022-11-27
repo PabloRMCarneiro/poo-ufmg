@@ -4,9 +4,11 @@
 
 MetodoDePagamento::MetodoDePagamento()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.MetodoDePagamento"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.MetodoDePagamento"))
     {
-        throw "Acesso negado a MetodoDePagamento.MetodoDePagamento";
+        PermissaoNegada *a = new PermissaoNegada("MetodoDePagamento", "MetodoDePagamento");
+        string mensagem = "Acesso negado a MetodoDePagamento.MetodoDePagamento";
+        throw mensagem;
     }
     else
     {
@@ -17,9 +19,11 @@ MetodoDePagamento::MetodoDePagamento()
 
 MetodoDePagamento::MetodoDePagamento(int valQuantidadeDeParcelas, float valQuantiaPorParcela)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.MetodoDePagamento"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.MetodoDePagamento"))
     {
-        throw "Acesso negado a MetodoDePagamento.MetodoDePagamento";
+        PermissaoNegada *a = new PermissaoNegada("MetodoDePagamento", "MetodoDePagamento");
+        string mensagem = "Acesso negado a MetodoDePagamento.MetodoDePagamento";    
+        throw mensagem;
     }
     else
     {
@@ -30,9 +34,11 @@ MetodoDePagamento::MetodoDePagamento(int valQuantidadeDeParcelas, float valQuant
 
 int MetodoDePagamento::getQuantidadeDeParcelas()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.getQuantidadeDeParcelas"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.getQuantidadeDeParcelas"))
     {
-        throw "Acesso negado a MetodoDePagamento.getQuantidadeDeParcelas";
+        PermissaoNegada *a = new PermissaoNegada("getQuantidadeDeParcelas", "MetodoDePagamento");
+        string mensagem = "Acesso negado a MetodoDePagamento.getQuantidadeDeParcelas";
+        throw mensagem;
     }
     else
     {
@@ -43,9 +49,11 @@ int MetodoDePagamento::getQuantidadeDeParcelas()
 
 float MetodoDePagamento::getQuantiaPorParcelas()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.getQuantiaPorParcelas"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.getQuantiaPorParcelas"))
     {
-        throw "Acesso negado a MetodoDePagamento.getQuantiaPorParcelas";
+        PermissaoNegada *a = new PermissaoNegada("getQuantiaPorParcelas", "MetodoDePagamento");
+        string mensagem = "Acesso negado a MetodoDePagamento.getQuantiaPorParcelas";
+        throw mensagem;
     }
     else
     {
@@ -56,12 +64,30 @@ float MetodoDePagamento::getQuantiaPorParcelas()
 
 void MetodoDePagamento::setQuantidadeDeParcelas(int valQuantidadeDeParcelas)
 {
-    LogEscrita *a = new LogEscrita("quantidadeDeParcelas", "indefinido", to_string(valQuantidadeDeParcelas), "MetodoDePagamento");
-    this->quantidadeDeParcelas = valQuantidadeDeParcelas;
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.setQuantidadeDeParcelas"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setQuantidadeDeParcelas", "MetodoDePagamento");
+        string mensagem = "Acesso negado a MetodoDePagamento.setQuantidadeDeParcelas";
+        throw mensagem;
+    }
+    else
+    {
+        LogEscrita *a = new LogEscrita("quantidadeDeParcelas", "indefinido", to_string(valQuantidadeDeParcelas), "MetodoDePagamento");
+        this->quantidadeDeParcelas = valQuantidadeDeParcelas;
+    }
 }
 
 void MetodoDePagamento::setQuantiaPorParcelas(float valParcelamento)
 {
-    LogEscrita *a = new LogEscrita("quantiaPorParcelas", "indefinido", to_string(valParcelamento), "MetodoDePagamento");
-    this->quantiaPorParcelas = valParcelamento;
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.setQuantiaPorParcelas"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setQuantiaPorParcelas", "MetodoDePagamento");
+        string mensagem = "Acesso negado a MetodoDePagamento.setQuantiaPorParcelas";
+        throw mensagem;
+    }
+    else
+    {
+        LogEscrita *a = new LogEscrita("quantiaPorParcelas", "indefinido", to_string(valParcelamento), "MetodoDePagamento");
+        this->quantiaPorParcelas = valParcelamento;
+    }
 }
