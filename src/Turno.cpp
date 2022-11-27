@@ -1,6 +1,7 @@
 #include "../include/Turno.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
+#include "../include/Empresa.h"
 
 #include <string>
 
@@ -103,8 +104,8 @@ string Turno::getPeriodo()
         throw mensagem;
     }
     else
-    
     {
+        LogLeitura *logLeitura = new LogLeitura("periodo", "Turno");
         return this->periodo;
     }
 }
@@ -119,6 +120,7 @@ Data Turno::getEntradaHora()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("entradaHora", "Turno");
         return this->entradaHora;
     }
 }
@@ -133,6 +135,7 @@ Data Turno::getSaidaHora()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("saidaHora", "Turno");
         return this->saidaHora;
     }
 }
@@ -147,6 +150,7 @@ double Turno::getJornada()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("jornada", "Turno");
         return this->jornada;
     }
 }
