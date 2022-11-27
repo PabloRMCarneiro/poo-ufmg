@@ -1,17 +1,18 @@
 #include "../include/Produto.h"
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
-
+#include "../include/PermissaoNegada.h"
 vector<Produto *> Produto::produtolist;
 
 Produto::Produto()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.Produto"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.Produto"))
   {
-    throw "Acesso negado a Produto.Produto";
+    PermissaoNegada *a = new PermissaoNegada("Produto", "Produto");
+    string mensagem = "Acesso negado a Produto.Produto";
+    throw mensagem;
   }
   else
-
   {
     this->nome = "";
     this->codigo = 0;
@@ -26,9 +27,11 @@ Produto::Produto()
 
 Produto::Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, string categ)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.Produto"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.Produto"))
   {
-    throw "Acesso negado a Produto.Produto";
+    PermissaoNegada *a = new PermissaoNegada("Produto", "Produto");
+    string mensagem = "Acesso negado a Produto.Produto";
+    throw mensagem;
   }
   else
   {
@@ -49,56 +52,80 @@ Produto::~Produto()
 
 string Produto::getNome()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getNome"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getNome"))
   {
-    throw "Acesso negado a Produto.getNome";
+    PermissaoNegada *a = new PermissaoNegada("getNome", "Produto");
+    string mensagem = "Acesso negado a Produto.getNome";
+    throw mensagem;
   }
   else
-
   {
-    return this->nome;
+    return nome;
   }
 }
 
 int Produto::getCodigo()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getCodigo"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getCodigo"))
   {
-    throw "Acesso negado a Produto.getCodigo";
+    PermissaoNegada *a = new PermissaoNegada("getCodigo", "Produto");
+    string mensagem = "Acesso negado a Produto.getCodigo";
+    throw mensagem;
   }
   else
-
   {
-    return this->codigo;
+    return codigo;
   }
 }
-vector<pair<MateriaPrima*, double>> Produto::getMateriaPrimaList(){
-  return this->materiaPrimaList;
+vector<pair<MateriaPrima*, double>> Produto::getMateriaPrimaList()
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getMateriaPrimaList"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("getMateriaPrimaList", "Produto");
+    string mensagem = "Acesso negado a Produto.getMateriaPrimaList";
+    throw mensagem;
+  }
+  else
+  {
+    return materiaPrimaList;
+  }
 }
-void Produto::setMateriaPrimaList(vector<pair<MateriaPrima*, double>> valMateriaPrimaList){
-  this->materiaPrimaList = valMateriaPrimaList;
+void Produto::setMateriaPrimaList(vector<pair<MateriaPrima*, double>> valMateriaPrimaList)
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setMateriaPrimaList"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setMateriaPrimaList", "Produto");
+    string mensagem = "Acesso negado a Produto.setMateriaPrimaList";
+    throw mensagem;
+  }
+  else
+  {
+    materiaPrimaList = valMateriaPrimaList;
+  }
 }
 float Produto::getValorDeVenda()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getValorDeVenda"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getValorDeVenda"))
   {
-    throw "Acesso negado a Produto.getValorDeVenda";
+    PermissaoNegada *a = new PermissaoNegada("getValorDeVenda", "Produto");
+    string mensagem = "Acesso negado a Produto.getValorDeVenda";
+    throw mensagem;
   }
   else
-
   {
-    return this->valorDeVenda;
+    return valorDeVenda;
   }
 }
 
 int Produto::getTamanhoDoLoteMinimo()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getTamanhoDoLoteMinimo"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getTamanhoDoLoteMinimo"))
   {
-    throw "Acesso negado a Produto.getTamanhoDoLoteMinimo";
+    PermissaoNegada *a = new PermissaoNegada("getTamanhoDoLoteMinimo", "Produto");
+    string mensagem = "Acesso negado a Produto.getTamanhoDoLoteMinimo";
+    throw mensagem;
   }
   else
-
   {
     return this->tamanhoDoLoteMinimo;
   }
@@ -106,12 +133,13 @@ int Produto::getTamanhoDoLoteMinimo()
 
 int Produto::getEstoqueMinimo()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getEstoqueMinimo"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getEstoqueMinimo"))
   {
-    throw "Acesso negado a Produto.getEstoqueMinimo";
+    PermissaoNegada *a = new PermissaoNegada("getEstoqueMinimo", "Produto");
+    string mensagem = "Acesso negado a Produto.getEstoqueMinimo";
+    throw mensagem;
   }
   else
-
   {
     return this->estoqueMinimo;
   }
@@ -119,36 +147,40 @@ int Produto::getEstoqueMinimo()
 
 int Produto::getQtdEstoque()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getQtdEstoque"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getQtdEstoque"))
   {
-    throw "Acesso negado a Produto.getQtdEstoque";
+    PermissaoNegada *a = new PermissaoNegada("getQtdEstoque", "Produto");
+    string mensagem = "Acesso negado a Produto.getQtdEstoque";
+    throw mensagem;
   }
   else
-
   {
     return this->qtdEstoque;
   }
 }
 Categoria* Produto::getCategoria()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getCategoria"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getCategoria"))
   {
-    throw "Acesso negado a Produto.getCategoria";
+    PermissaoNegada *a = new PermissaoNegada("getCategoria", "Produto");
+    string mensagem = "Acesso negado a Produto.getCategoria";
+    throw mensagem;
   }
   else
-
   {
     return this->categoria;
   }
 }
+
 OrdemDeProducao *Produto::getOrdem()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getOrdem"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getOrdem"))
   {
-    throw "Acesso negado a Produto.getOrdem";
+    PermissaoNegada *a = new PermissaoNegada("getOrdem", "Produto");
+    string mensagem = "Acesso negado a Produto.getOrdem";
+    throw mensagem;
   }
   else
-
   {
     return this->ordem;
   }
@@ -156,12 +188,13 @@ OrdemDeProducao *Produto::getOrdem()
 
 Lote *Produto::getLote(int nl)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getLote"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getLote"))
   {
-    throw "Acesso negado a Produto.getLote";
+    PermissaoNegada *a = new PermissaoNegada("getLote", "Produto");
+    string mensagem = "Acesso negado a Produto.getLote";
+    throw mensagem;
   }
   else
-
   {
     for (auto it : lotes)
     {
@@ -176,47 +209,111 @@ Lote *Produto::getLote(int nl)
 
 void Produto::setNome(string nome)
 {
-  this->nome = nome;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setNome"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setNome", "Produto");
+    string mensagem = "Acesso negado a Produto.setNome";
+    throw mensagem;
+  }
+  else
+  {
+    this->nome = nome;
+  }
 }
 
 void Produto::setCodigo(int codigo)
 {
-  this->codigo = codigo;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setCodigo"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setCodigo", "Produto");
+    string mensagem = "Acesso negado a Produto.setCodigo";
+    throw mensagem;
+  }
+  else
+  {
+    this->codigo = codigo;
+  }
 }
 
 void Produto::setValorDeVenda(float valorDeVenda)
 {
-  this->valorDeVenda = valorDeVenda;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setValorDeVenda"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setValorDeVenda", "Produto");
+    string mensagem = "Acesso negado a Produto.setValorDeVenda";
+    throw mensagem;
+  }
+  else
+  {
+    this->valorDeVenda = valorDeVenda;
+  }
 }
 
 void Produto::setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo)
 {
-  this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setTamanhoDoLoteMinimo"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setTamanhoDoLoteMinimo", "Produto");
+    string mensagem = "Acesso negado a Produto.setTamanhoDoLoteMinimo";
+    throw mensagem;
+  }
+  else
+  {
+    this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
+  }
 }
 
 void Produto::setEstoqueMinimo(int estoqueMinimo)
 {
-  this->estoqueMinimo = estoqueMinimo;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setEstoqueMinimo"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setEstoqueMinimo", "Produto");
+    string mensagem = "Acesso negado a Produto.setEstoqueMinimo";
+    throw mensagem;
+  }
+  else
+  {
+    this->estoqueMinimo = estoqueMinimo;
+  }
 }
 
 void Produto::setQtdEstoque(int qtdEstoque)
 {
-  this->qtdEstoque = qtdEstoque;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setQtdEstoque"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setQtdEstoque", "Produto");
+    string mensagem = "Acesso negado a Produto.setQtdEstoque";
+    throw mensagem;
+  }
+  else
+  {
+    this->qtdEstoque = qtdEstoque;
+  }
 }
 
 void Produto::setCategoria(string categ)
 {
-  this->categoria= Empresa::getEmpresa()->getCategoria(categ);
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setCategoria"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setCategoria", "Produto");
+    string mensagem = "Acesso negado a Produto.setCategoria";
+    throw mensagem;
+  }
+  else
+  {
+    this->categoria= Empresa::getEmpresa()->getCategoria(categ);
+  }
 }
 
 void Produto::registraLote(int numeroLote, Data dataDeProducao)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.registraLote"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.registraLote"))
   {
-    throw "Acesso negado a Produto.registraLote";
+    PermissaoNegada *a = new PermissaoNegada("registraLote", "Produto");
+    string mensagem = "Acesso negado a Produto.registraLote";
+    throw mensagem;
   }
   else
-
   {
     int cont =0;
     for(auto it : materiaPrimaList){
@@ -239,9 +336,12 @@ void Produto::registraLote(int numeroLote, Data dataDeProducao)
 
 pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.realizaVenda"))
+  
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.realizaVenda"))
   {
-    throw "Acesso negado a Produto.realizaVenda";
+    PermissaoNegada *a = new PermissaoNegada("realizaVenda", "Produto");
+    string mensagem = "Acesso negado a Produto.realizaVenda";
+    throw mensagem;
   }
   else
   {
@@ -266,12 +366,13 @@ pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
 
 void Produto::geraOrdem(Data dataQuandoAcabaEstoque)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.geraOrdem"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.geraOrdem"))
   {
-    throw "Acesso negado a Produto.geraOrdem";
+    PermissaoNegada *a = new PermissaoNegada("geraOrdem", "Produto");
+    string mensagem = "Acesso negado a Produto.geraOrdem";
+    throw mensagem;
   }
   else
-
   {
     this->ordem = new OrdemDeProducao(dataQuandoAcabaEstoque, this->nome, this->tamanhoDoLoteMinimo);
   }
@@ -279,12 +380,13 @@ void Produto::geraOrdem(Data dataQuandoAcabaEstoque)
 
 bool Produto::temEstoque(int q)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.temEstoque"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.temEstoque"))
   {
-    throw "Acesso negado a Produto.temEstoque";
+    PermissaoNegada *a = new PermissaoNegada("temEstoque", "Produto");
+    string mensagem = "Acesso negado a Produto.temEstoque";
+    throw mensagem;
   }
   else
-
   {
     return this->qtdEstoque >= q;
   }
@@ -292,12 +394,13 @@ bool Produto::temEstoque(int q)
 
 void Produto::novoProduto(Produto *novo)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.novoProduto"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.novoProduto"))
   {
-    throw "Acesso negado a Produto.novoProduto";
+    PermissaoNegada *a = new PermissaoNegada("novoProduto", "Produto");
+    string mensagem = "Acesso negado a Produto.novoProduto";
+    throw mensagem;
   }
   else
-
   {
     produtolist.push_back(novo);
   }
@@ -305,14 +408,16 @@ void Produto::novoProduto(Produto *novo)
 void Produto::alteraPreco(double alteracao){
   this->valorDeVenda = this->valorDeVenda*alteracao;
 }
+
 Produto *Produto::getProduto(string n)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getProduto"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getProduto"))
   {
-    throw "Acesso negado a Produto.getProduto";
+    PermissaoNegada *a = new PermissaoNegada("getProduto", "Produto");
+    string mensagem = "Acesso negado a Produto.getProduto";
+    throw mensagem;
   }
   else
-
   {
     for (auto it : produtolist)
     {
