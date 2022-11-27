@@ -139,6 +139,7 @@ string Pessoa::getNome()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("nome", "Pessoa");
     return this->nome;
   }
 }
@@ -153,6 +154,7 @@ Endereco Pessoa::getEndereco()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("endereco", "Pessoa");
     return this->endereco;
   }
 }
@@ -167,6 +169,7 @@ string Pessoa::getEmail()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("email", "Pessoa");
     return this->email;
   }
 }
@@ -181,6 +184,7 @@ string Pessoa::getDocumento()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("documento", "Pessoa");
     return this->documento;
   }
 }
@@ -195,6 +199,7 @@ long int Pessoa::getTelefone()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("telefone", "Pessoa");
     return this->telefone;
   }
 }
