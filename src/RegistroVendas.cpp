@@ -1,12 +1,15 @@
 #include "../include/RegistroVendas.h"
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
+#include "../include/PermissaoNegada.h"
 
 RegistroVendas::RegistroVendas(Data dv, Produto *p, int q, Cliente *cl)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.RegistroVendas"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.RegistroVendas"))
   {
-    throw "Acesso negado a RegistroVendas.RegistroVendas";
+      PermissaoNegada *a = new PermissaoNegada("RegistroVendas", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.RegistroVendas";
+      throw mensagem;
   }
   else
   {
@@ -20,28 +23,53 @@ RegistroVendas::RegistroVendas(Data dv, Produto *p, int q, Cliente *cl)
 
 Cliente *RegistroVendas::getCliente()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getCliente"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getCliente"))
   {
-    throw "Acesso negado a RegistroVendas.getCliente";
+      PermissaoNegada *a = new PermissaoNegada("getCliente", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.getCliente";
+      throw mensagem;
   }
   else
   {
     return this->cliente;
   }
 }
-void RegistroVendas::setCodigoPedido(int valCodigoPedido){
-  this->codigoPedido = valCodigoPedido;
+void RegistroVendas::setCodigoPedido(int valCodigoPedido)
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.setCodigoPedido"))
+  {
+      PermissaoNegada *a = new PermissaoNegada("setCodigoPedido", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.setCodigoPedido";
+      throw mensagem;
+  }
+  else
+  {
+    this->codigoPedido = valCodigoPedido;
+  }
 }
-int RegistroVendas::getCodigoPedido(){
-  return this->codigoPedido;
+int RegistroVendas::getCodigoPedido()
+{
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getCodigoPedido"))
+  {
+      PermissaoNegada *a = new PermissaoNegada("getCodigoPedido", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.getCodigoPedido";
+      throw mensagem;
+  }
+  else
+  {
+    return this->codigoPedido;
+  }
 }
 Data RegistroVendas::getDataDeVenda()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getDataDeVenda"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getDataDeVenda"))
   {
-    throw "Acesso negado a RegistroVendas.getDataDeVenda";
+      PermissaoNegada *a = new PermissaoNegada("getDataDeVenda", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.getDataDeVenda";
+      throw mensagem;
   }
   else
+  
   {
     return this->dataDeVenda;
   }
@@ -49,9 +77,11 @@ Data RegistroVendas::getDataDeVenda()
 
 vector<int> RegistroVendas::getNumeroDoLote()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getNumeroDoLote"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getNumeroDoLote"))
   {
-    throw "Acesso negado a RegistroVendas.getNumeroDoLote";
+      PermissaoNegada *a = new PermissaoNegada("getNumeroDoLote", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.getNumeroDoLote";
+      throw mensagem;
   }
   else
   {
@@ -61,9 +91,11 @@ vector<int> RegistroVendas::getNumeroDoLote()
 
 Produto *RegistroVendas::getProduto()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getProduto"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getProduto"))
   {
-    throw "Acesso negado a RegistroVendas.getProduto";
+      PermissaoNegada *a = new PermissaoNegada("getProduto", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.getProduto";
+      throw mensagem;
   }
   else
   {
@@ -73,9 +105,11 @@ Produto *RegistroVendas::getProduto()
 
 int RegistroVendas::getQuantidadeVenda()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getQuantidadeVenda"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.getQuantidadeVenda"))
   {
-    throw "Acesso negado a RegistroVendas.getQuantidadeVenda";
+      PermissaoNegada *a = new PermissaoNegada("getQuantidadeVenda", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.getQuantidadeVenda";
+      throw mensagem;
   }
   else
   {
@@ -85,49 +119,105 @@ int RegistroVendas::getQuantidadeVenda()
 
 void RegistroVendas::setCliente(Cliente *cl)
 {
-  this->cliente = cl;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.setCliente"))
+  {
+      PermissaoNegada *a = new PermissaoNegada("setCliente", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.setCliente";
+      throw mensagem;
+  }
+  else
+  {
+    this->cliente = cl;
+  }
 }
 
 void RegistroVendas::setDataDeVenda(Data v)
 {
-  this->dataDeVenda = v;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.setDataDeVenda"))
+  {
+      PermissaoNegada *a = new PermissaoNegada("setDataDeVenda", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.setDataDeVenda";
+      throw mensagem;
+  }
+  else
+  {
+    this->dataDeVenda = v;
+  }
 }
 
 void RegistroVendas::setNumeroDoLote(int nl)
 {
-  this->lote.push_back(nl);
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.setNumeroDoLote"))
+  {
+      PermissaoNegada *a = new PermissaoNegada("setNumeroDoLote", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.setNumeroDoLote";
+      throw mensagem;
+  }
+  else
+  {
+    this->lote.push_back(nl);
+  }
 }
 
 void RegistroVendas::setProduto(string p)
 {
-  this->produto = Produto::getProduto(p);
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.setProduto"))
+  {
+      PermissaoNegada *a = new PermissaoNegada("setProduto", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.setProduto";
+      throw mensagem;
+  }
+  else
+  {
+    this->produto = Produto::getProduto(p);
+  }
 }
 
 void RegistroVendas::setProduto(Produto *p)
 {
-  this->produto = p;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.setProduto"))
+  {
+      PermissaoNegada *a = new PermissaoNegada("setProduto", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.setProduto";
+      throw mensagem;
+  }
+  else
+  {
+    this->produto = p;
+  }
 }
 
 void RegistroVendas::setQuantidadeVenda(int qvenda)
 {
-  this->quantidadeVenda = qvenda;
-  if (this->validaVenda(qvenda))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.setQuantidadeVenda"))
   {
-    pair<int, int> a = this->produto->realizaVenda(qvenda, this->dataDeVenda);
-    this->lote.push_back(a.first);
-    while (a.second > 0)
+      PermissaoNegada *a = new PermissaoNegada("setQuantidadeVenda", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.setQuantidadeVenda";
+      throw mensagem;
+  }
+  else
+  {
+    this->quantidadeVenda = qvenda;
+    if (this->validaVenda(qvenda))
     {
-      a = this->produto->realizaVenda(a.second, this->dataDeVenda);
+      pair<int, int> a = this->produto->realizaVenda(qvenda, this->dataDeVenda);
       this->lote.push_back(a.first);
+      while (a.second > 0)
+      {
+        a = this->produto->realizaVenda(a.second, this->dataDeVenda);
+        this->lote.push_back(a.first);
+      }
     }
   }
 }
 
 bool RegistroVendas::validaVenda(int q)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.validaVenda"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.validaVenda"))
   {
-    throw "Acesso negado a RegistroVendas.validaVenda";
+      PermissaoNegada *a = new PermissaoNegada("validaVenda", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.validaVenda";
+      throw mensagem;
   }
   else
   {
@@ -137,6 +227,15 @@ bool RegistroVendas::validaVenda(int q)
 }
 
 void RegistroVendas::imprime(){
-  cout << "Em " << this->dataDeVenda.getData() << ", foram vendidas " << this->quantidadeVenda << " unidades de ";
-  cout << this->produto->getNome() << " pelo cliente " << this->cliente->getNome() << "." << endl;
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("RegistroVendas.imprime"))
+  {
+      PermissaoNegada *a = new PermissaoNegada("imprime", "RegistroVendas");
+      string mensagem = "Acesso negado a RegistroVendas.imprime";
+      throw mensagem;
+  }
+  else
+  {
+    cout << "Em " << this->dataDeVenda.getData() << ", foram vendidas " << this->quantidadeVenda << " unidades de ";
+    cout << this->produto->getNome() << " pelo cliente " << this->cliente->getNome() << "." << endl;
+  }
 }
