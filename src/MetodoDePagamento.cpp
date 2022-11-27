@@ -22,8 +22,8 @@ MetodoDePagamento::MetodoDePagamento(int valQuantidadeDeParcelas, float valQuant
     }
     else
     {
-        this->quantidadeDeParcelas = valQuantidadeDeParcelas;
-        this->quantiaPorParcelas = valQuantiaPorParcela;
+        this->setQuantidadeDeParcelas(valQuantidadeDeParcelas);
+        this->setQuantiaPorParcelas(valQuantiaPorParcela);
     }
 }
 
@@ -53,10 +53,12 @@ float MetodoDePagamento::getQuantiaPorParcelas()
 
 void MetodoDePagamento::setQuantidadeDeParcelas(int valQuantidadeDeParcelas)
 {
+    LogEscrita *a = new LogEscrita("quantidadeDeParcelas", "indefinido", to_string(valQuantidadeDeParcelas), "MetodoDePagamento");
     this->quantidadeDeParcelas = valQuantidadeDeParcelas;
 }
 
 void MetodoDePagamento::setQuantiaPorParcelas(float valParcelamento)
 {
+    LogEscrita *a = new LogEscrita("quantiaPorParcelas", "indefinido", to_string(valParcelamento), "MetodoDePagamento");
     this->quantiaPorParcelas = valParcelamento;
 }

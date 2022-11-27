@@ -123,7 +123,7 @@ void MateriaPrima::setEstoqueMin(double valEstoqueMinimo)
     }
     else
     {
-        LogEscrita *a = new LogEscrita("estoque", "indefinido", to_string(valEstoqueMinimo), "MateriaPrima");
+        LogEscrita *a = new LogEscrita("estoqueMinimo", "indefinido", to_string(valEstoqueMinimo), "MateriaPrima");
         this->estoqueMinimo = valEstoqueMinimo;
     }
 }
@@ -158,7 +158,7 @@ void MateriaPrima::setNome(string valNome)
     }
     else
     {
-        LogEscrita *a = new LogEscrita("estoque", "indefinido", valNome, "MateriaPrima");
+        LogEscrita *a = new LogEscrita("nome", "indefinido", valNome, "MateriaPrima");
         this->nome = valNome;
     }
 }
@@ -173,7 +173,7 @@ void MateriaPrima::setUnidadeDeMedida(string valUnidadeDeMedida)
     }
     else
     {
-        LogEscrita *a = new LogEscrita("estoque", "indefinido", valUnidadeDeMedida, "MateriaPrima");
+        LogEscrita *a = new LogEscrita("unidadeDeMedida", "indefinido", valUnidadeDeMedida, "MateriaPrima");
         this->unidadeDeMedida = valUnidadeDeMedida;
     }
 }
