@@ -51,5 +51,14 @@ Data Boleto::getDataDeVencimento()
 
 void Boleto::setDataDeVencimento(Data valDataDeVencimento)
 {
-    dataDeVencimento = valDataDeVencimento;
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Boleto.setDataDeVencimento"))
+    {
+        PermissaoNegada *permissaoNegada = new PermissaoNegada("setDataDeVencimento", "Boleto");
+        string mensagem = "Acesso negado a Boleto.setDataDeVencimento";
+        throw mensagem;
+    }
+    else
+    {
+        this->dataDeVencimento = valDataDeVencimento;
+    }
 }
