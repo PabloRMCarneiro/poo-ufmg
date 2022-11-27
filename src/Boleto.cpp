@@ -29,7 +29,7 @@ Boleto::Boleto(int quantidadeDeParcelas, Data valDataDeVencimento, double valVal
     else
     {
         this->dataDeVencimento = valDataDeVencimento;
-        //LogEscrita *a = new LogEscrita("nome", "indefinido", valNome, "Cargo");
+        LogEscrita *a = new LogEscrita("dataDeVencimento", "indefinido", valDataDeVencimento.getData(), "Boleto");
     }
 }
 
@@ -61,6 +61,7 @@ void Boleto::setDataDeVencimento(Data valDataDeVencimento)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("dataDeVencimento", this->dataDeVencimento.getData(), valDataDeVencimento.getData(), "Boleto");
         this->dataDeVencimento = valDataDeVencimento;
     }
 }
