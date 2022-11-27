@@ -45,7 +45,72 @@ vector<string> permissoes(){
   permissoes.push_back("Categoria.setTipo");
 
   permissoes.push_back("Cliente.Cliente");
+  permissoes.push_back("Cliente.setTipoCliente");
+  permissoes.push_back("Cliente.getTipoCliente");
+
+  permissoes.push_back("Data.Data");
+  permissoes.push_back("Data.getAno");
+  permissoes.push_back("Data.getMes");
+  permissoes.push_back("Data.getDia");
+  permissoes.push_back("Data.getHora");
+  permissoes.push_back("Data.getMin");
+  permissoes.push_back("Data.getSeg");
+  permissoes.push_back("Data.setAno");
+  permissoes.push_back("Data.setMes");
+  permissoes.push_back("Data.setDia");
+  permissoes.push_back("Data.setHora");
+  permissoes.push_back("Data.setMin");
+  permissoes.push_back("Data.setSeg");
+  permissoes.push_back("Data.help");
+  permissoes.push_back("Data.getData");
+  permissoes.push_back("Data.getHorario");
+  permissoes.push_back("Data.operator<");
+  permissoes.push_back("Data.operator==");
+
+  permissoes.push_back("Departamento.Departamento");
+  permissoes.push_back("Departamento.getNome");
+  permissoes.push_back("Departamento.setNome");
+
+  permissoes.push_back("Endereco.Endereco");  
+  permissoes.push_back("Endereco.setEndereco");  
+  permissoes.push_back("Endereco.setX");  
+  permissoes.push_back("Endereco.setY");  
+  permissoes.push_back("Endereco.getEndereco");  
+  permissoes.push_back("Endereco.getX");  
+  permissoes.push_back("Endereco.getY");  
+  permissoes.push_back("Endereco.getDistancia");
+
+  permissoes.push_back("Funcionario.Funcionario");
+  permissoes.push_back("Funcionario.getDepartamento");
+  permissoes.push_back("Funcionario.getDataDeNascimento");
+  permissoes.push_back("Funcionario.getSalario");
+  permissoes.push_back("Funcionario.getRegistro");
+  permissoes.push_back("Funcionario.getCargo");
+  permissoes.push_back("Funcionario.getEstadoAtivo");
+  permissoes.push_back("Funcionario.getJornada");
+  permissoes.push_back("Funcionario.getIdVeiculo");
+  permissoes.push_back("Funcionario.setJornada");
+  permissoes.push_back("Funcionario.setIdVeiculo");
+  permissoes.push_back("Funcionario.setDepartamento");
+  permissoes.push_back("Funcionario.setDataDeNascimento");
+  permissoes.push_back("Funcionario.setSalario");
+  permissoes.push_back("Funcionario.setRegistro");
+  permissoes.push_back("Funcionario.setCargo");
+  permissoes.push_back("Funcionario.setEstadoAtivo");
+  permissoes.push_back("Funcionario.alteraRegistro");
+  permissoes.push_back("Funcionario.demiteFuncionario");
+  permissoes.push_back("Funcionario.promocao");
+  permissoes.push_back("Funcionario.reajuste");
+
   
+
+
+
+
+
+
+
+
 
 
 

@@ -278,7 +278,7 @@ void Funcionario::setRegistro(vector <Data> valRegistro)
 
 void Funcionario::setCargo(Cargo valCargo)
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.setCargo"))
   {
     PermissaoNegada *a = new PermissaoNegada("setCargo", "Funcionario");
     string mensagem = "Acesso negado a Funcionario.setCargo";
