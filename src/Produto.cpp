@@ -2,6 +2,7 @@
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
+#include "LogLeitura.h"
 vector<Produto *> Produto::produtolist;
 
 Produto::Produto()
@@ -60,6 +61,7 @@ string Produto::getNome()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("nome", "Produto");
     return nome;
   }
 }
@@ -74,6 +76,7 @@ int Produto::getCodigo()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("codigo", "Produto");
     return codigo;
   }
 }
@@ -87,6 +90,7 @@ vector<pair<MateriaPrima*, double>> Produto::getMateriaPrimaList()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("materiaPrimaList", "Produto");
     return materiaPrimaList;
   }
 }
@@ -113,6 +117,7 @@ float Produto::getValorDeVenda()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("valorDeVenda", "Produto");
     return valorDeVenda;
   }
 }
@@ -127,6 +132,7 @@ int Produto::getTamanhoDoLoteMinimo()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("tamanhoDoLoteMinimo", "Produto");
     return this->tamanhoDoLoteMinimo;
   }
 }
@@ -141,6 +147,7 @@ int Produto::getEstoqueMinimo()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("estoqueMinimo", "Produto");
     return this->estoqueMinimo;
   }
 }
@@ -155,6 +162,7 @@ int Produto::getQtdEstoque()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("qtdEstoque", "Produto");
     return this->qtdEstoque;
   }
 }
@@ -168,6 +176,7 @@ Categoria* Produto::getCategoria()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("categoria", "Produto");
     return this->categoria;
   }
 }
@@ -182,6 +191,7 @@ OrdemDeProducao *Produto::getOrdem()
   }
   else
   {
+    LogLeitura *logLeitura = new LogLeitura("ordem", "Produto");
     return this->ordem;
   }
 }
