@@ -31,7 +31,7 @@
 
 vector<string> permissoes(){
   vector<string> permissoes;
-
+  
   permissoes.push_back(("Empresa.getUsuario"));
   permissoes.push_back(("Empresa.getCargo"));
   permissoes.push_back(("Cargo.Cargo"));
