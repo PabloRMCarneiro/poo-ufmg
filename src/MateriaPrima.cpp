@@ -63,6 +63,7 @@ double MateriaPrima::getEstoque()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("Estoque", "MateriaPrima");
         return this->estoque;
     }
 }
@@ -77,6 +78,7 @@ string MateriaPrima::getUnidadeMedida()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("UnidadeMedida", "MateriaPrima");
         return this->unidadeDeMedida;
     }
 }
@@ -91,6 +93,7 @@ double MateriaPrima::getEstoqueMinimo()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("EstoqueMinimo", "MateriaPrima");
         return this->estoqueMinimo;
     }
 }
@@ -105,6 +108,7 @@ string MateriaPrima::getNome()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("Nome", "MateriaPrima");
         return this->nome;
     }
 }
