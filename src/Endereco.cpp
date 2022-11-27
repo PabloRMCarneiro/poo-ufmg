@@ -1,27 +1,31 @@
 #include "../include/Endereco.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/Empresa.h"
+#include "../include/PermissaoNegada.h"
 #include <math.h>
 
 Endereco::Endereco()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.Endereco"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.Endereco"))
     {
         PermissaoNegada *a = new PermissaoNegada("Endereco", "Endereco");
-        throw "Acesso negado a Endereco.Endereco";
+        string mensagem = "Acesso negado a Endereco.Endereco";
     }
     else
     {
-
+        endereco = "";
+        x = 0.0;
+        y = 0.0;
     }
 }
 
 Endereco::Endereco(string valEndereco, double valX, double valY)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.Endereco"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.Endereco"))
     {   
         PermissaoNegada *a = new PermissaoNegada("Endereco", "Endereco");
-        throw "Acesso negado a Endereco.Endereco";
+        string mensagem = "Acesso negado a Endereco.Endereco";
+        throw mensagem;
     }
     else
     {
@@ -33,10 +37,11 @@ Endereco::Endereco(string valEndereco, double valX, double valY)
 
 void Endereco::setEndereco(string valEndereco)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.Endereco"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.setEndereco"))
     {   
         PermissaoNegada *a = new PermissaoNegada("setEndereco", "Endereco");
-        throw "Acesso negado a Endereco.Endereco";
+        string mensagem = "Acesso negado a Endereco.setEndereco";
+        throw mensagem;
     }
     else
     {
@@ -47,10 +52,11 @@ void Endereco::setEndereco(string valEndereco)
 
 void Endereco::setX(double valX)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.Endereco"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.setX"))
     {   
         PermissaoNegada *a = new PermissaoNegada("setX", "Endereco");
-        throw "Acesso negado a Endereco.Endereco";
+        string mensagem = "Acesso negado a Endereco.setX";
+        throw mensagem;
     }
     else
     {
@@ -61,10 +67,11 @@ void Endereco::setX(double valX)
 
 void Endereco::setY(double valY)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.Endereco"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.setY"))
     {   
         PermissaoNegada *a = new PermissaoNegada("setY", "Endereco");
-        throw "Acesso negado a Endereco.Endereco";
+        string mensagem = "Acesso negado a Endereco.setY";
+        throw mensagem;
     }
     else
     {
@@ -75,10 +82,11 @@ void Endereco::setY(double valY)
 
 string Endereco::getEndereco()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.getEndereco"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.getEndereco"))
     {
         PermissaoNegada *a = new PermissaoNegada("getEndereco", "Endereco");
-        throw "Acesso negado a Endereco.getEndereco";
+        string mensagem = "Acesso negado a Endereco.getEndereco";
+        throw mensagem;
     }
     else
     {
@@ -89,10 +97,11 @@ string Endereco::getEndereco()
 
 double Endereco::getX()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.getX"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.getX"))
     {
         PermissaoNegada *a = new PermissaoNegada("getX", "Endereco");
-        throw "Acesso negado a Endereco.getX";
+        string mensagem = "Acesso negado a Endereco.getX";
+        throw mensagem;
     }
     else
     {
@@ -103,10 +112,12 @@ double Endereco::getX()
 
 double Endereco::getY()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.getY"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.getY"))
     {
+
         PermissaoNegada *a = new PermissaoNegada("getY", "Endereco");
-        throw "Acesso negado a Endereco.getY";
+        string mensagem = "Acesso negado a Endereco.getY";
+        throw mensagem;
     }
     else
     {
@@ -117,10 +128,12 @@ double Endereco::getY()
 
 double Endereco::getDistancia(double x2, double y2)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.getDistancia"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Endereco.getDistancia"))
     {
         PermissaoNegada *a = new PermissaoNegada("getDistancia", "Endereco");
-        throw "Acesso negado a Endereco.getDistancia";
+        string mensagem = "Acesso negado a Endereco.getDistancia";
+        throw mensagem;
+
     }
     else
     {
