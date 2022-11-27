@@ -85,7 +85,13 @@ Data OrdemDeProducao::getDataOrdem()
     string menssagem = "Acessa negado a OrdemDeProducao.getDataOrdem";
     throw menssagem;
     }
+<<<<<<< HEAD
     else{
+=======
+    else
+    {
+        LogLeitura *logLeitura = new LogLeitura("dataOrdem", "OrdemDeProdução");
+>>>>>>> b1f3066a637964ac3651951183d3edbf0c767e5b
         return this->dataOrdem;
     }
 }
@@ -100,6 +106,7 @@ string OrdemDeProducao::getProduto()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("produto", "OrdemDeProdução");
         return this->produto;
     }
 }
@@ -114,6 +121,7 @@ int OrdemDeProducao::getQuantidade()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("quantidade", "OrdemDeProdução");
         return this->quantidade;
     }
 }

@@ -1,10 +1,16 @@
 #include "../include/Turno.h"
 #include "../include/UsuarioLogado.h"
+#include "../include/PermissaoNegada.h"
+
+#include <string>
+
 Turno::Turno(string valPeriodo, Data valEntradaHora, Data valSaidaHora, double valJornada)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.Turno"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.Turno"))
     {
-        throw "Acesso negado a Turno.Turno";
+        PermissaoNegada *a = new PermissaoNegada("Turno", "Turno");
+        string mensagem = "Acesso negado a Turno.Turno";
+        throw mensagem;
     }
     else
     {
@@ -17,9 +23,11 @@ Turno::Turno(string valPeriodo, Data valEntradaHora, Data valSaidaHora, double v
 
 Turno::Turno()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.Turno"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.Turno"))
     {
-        throw "Acesso negado a Turno.Turno";
+        PermissaoNegada *a = new PermissaoNegada("Turno", "Turno");
+        string mensagem = "Acesso negado a Turno.Turno";
+        throw mensagem;
     }
     else
     {
@@ -32,31 +40,70 @@ Turno::Turno()
 
 void Turno::setEntradaHora(Data valEntradaHora)
 {
-    this->entradaHora = valEntradaHora;
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.setEntradaHora"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setEntradaHora", "Turno");
+        string mensagem = "Acesso negado a Turno.setEntradaHora";
+        throw mensagem;
+    }
+    else
+    {
+        this->entradaHora = valEntradaHora;
+    }
 }
 
 void Turno::setSaidaHora(Data valSaidaHora)
 {
-    this->saidaHora = valSaidaHora;
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.setSaidaHora"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setSaidaHora", "Turno");
+        string mensagem = "Acesso negado a Turno.setSaidaHora";
+        throw mensagem;
+    }
+    else
+    {
+        this->saidaHora = valSaidaHora;
+    }
 }
 
 void Turno::setPeriodo(string valPeriodo)
 {
-    this->periodo = valPeriodo;
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.setPeriodo"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setPeriodo", "Turno");
+        string mensagem = "Acesso negado a Turno.setPeriodo";
+        throw mensagem;
+    }
+    else
+    {
+        this->periodo = valPeriodo;
+    }
 }
 
 void Turno::setJornada(double valJornada)
 {
-    this->jornada = valJornada;
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.setJornada"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setJornada", "Turno");
+        string mensagem = "Acesso negado a Turno.setJornada";
+        throw mensagem;
+    }
+    else
+    {
+        this->jornada = valJornada;
+    }
 }
 
 string Turno::getPeriodo()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getPeriodo"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getPeriodo"))
     {
-        throw "Acesso negado a Turno.getPeriodo";
+        PermissaoNegada *a = new PermissaoNegada("getPeriodo", "Turno");
+        string mensagem = "Acesso negado a Turno.getPeriodo";
+        throw mensagem;
     }
     else
+    
     {
         return this->periodo;
     }
@@ -64,9 +111,11 @@ string Turno::getPeriodo()
 
 Data Turno::getEntradaHora()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getEntradaHora"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getEntradaHora"))
     {
-        throw "Acesso negado a Turno.getEntradaHora";
+        PermissaoNegada *a = new PermissaoNegada("getEntradaHora", "Turno");
+        string mensagem = "Acesso negado a Turno.getEntradaHora";
+        throw mensagem;
     }
     else
     {
@@ -76,9 +125,11 @@ Data Turno::getEntradaHora()
 
 Data Turno::getSaidaHora()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getSaidaHora"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getSaidaHora"))
     {
-        throw "Acesso negado a Turno.getSaidaHora";
+        PermissaoNegada *a = new PermissaoNegada("getSaidaHora", "Turno");
+        string mensagem = "Acesso negado a Turno.getSaidaHora";
+        throw mensagem;
     }
     else
     {
@@ -88,9 +139,11 @@ Data Turno::getSaidaHora()
 
 double Turno::getJornada()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getJornada"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getJornada"))
     {
-        throw "Acesso negado a Turno.getJornada";
+        PermissaoNegada *a = new PermissaoNegada("getJornada", "Turno");
+        string mensagem = "Acesso negado a Turno.getJornada";
+        throw mensagem;
     }
     else
     {
