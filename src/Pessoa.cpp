@@ -1,9 +1,11 @@
 #include "../include/Pessoa.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
+#include "../include/Empresa.h"
 #include <iostream>
 #include <string>
-
+// LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
+// LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
 using namespace std;
 
 bool validaCPF(string Cpf)
