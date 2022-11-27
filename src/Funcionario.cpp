@@ -46,11 +46,14 @@ Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, 
     this->dataNascimento = valDataNascimento;
     LogEscrita *a = new LogEscrita("dataNascimento", "indefinido", dataNascimento.getData(), "Funcionario");
     this->salario = valSalario;
+    LogEscrita *b = new LogEscrita("salario", "indefinido", to_string(valSalario.getValor()), "Funcionario");
     this->registro = valRegistro;
     this->cargo = valCargo;
+    LogEscrita *c = new LogEscrita("cargo", "indefinido", valCargo.getNome(), "Funcionario");
     this->estadoAtivo = valEstadoAtivo;
-    LogEscrita *c = new LogEscrita("estadoAtivo", "indefinido", to_string(valEstadoAtivo), "Funcionario");
+    LogEscrita *d = new LogEscrita("estadoAtivo", "indefinido", to_string(valEstadoAtivo), "Funcionario");
     this->idVeiculo = 0;
+    LogEscrita *f = new LogEscrita("idVeiculo", "indefinido", "0", "Funcionario");
     this->jornada = nullptr; 
     Empresa::getEmpresa()->setFuncionario(this);
   }
