@@ -2,6 +2,7 @@
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
+#include <string>
 
 RegistroVendas::RegistroVendas(Data dv, Produto *p, int q, Cliente *cl)
 {
@@ -44,6 +45,7 @@ void RegistroVendas::setCodigoPedido(int valCodigoPedido)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("codigoPedido", "indefinido", to_string(valCodigoPedido), "RegistroVendas");
     this->codigoPedido = valCodigoPedido;
   }
 }
@@ -127,6 +129,7 @@ void RegistroVendas::setCliente(Cliente *cl)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("cliente", "indefinido", cl->getNome(), "RegistroVendas");
     this->cliente = cl;
   }
 }
@@ -141,6 +144,7 @@ void RegistroVendas::setDataDeVenda(Data v)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("dataDeVenda", "indefinido", v.getData(), "RegistroVendas");
     this->dataDeVenda = v;
   }
 }
@@ -169,6 +173,7 @@ void RegistroVendas::setProduto(string p)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("produto", "indefinido", p, "RegistroVendas");
     this->produto = Produto::getProduto(p);
   }
 }
@@ -183,6 +188,7 @@ void RegistroVendas::setProduto(Produto *p)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("produto", "indefinido", p->getNome(), "RegistroVendas");
     this->produto = p;
   }
 }
@@ -197,14 +203,15 @@ void RegistroVendas::setQuantidadeVenda(int qvenda)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("quantidadeVenda", "indefinido", to_string(qvenda), "RegistroVendas");
     this->quantidadeVenda = qvenda;
     if (this->validaVenda(qvenda))
     {
-      pair<int, int> a = this->produto->realizaVenda(qvenda, this->dataDeVenda);
+      pair<int, int> a = this->getProduto()->realizaVenda(qvenda, this->dataDeVenda);
       this->lote.push_back(a.first);
       while (a.second > 0)
       {
-        a = this->produto->realizaVenda(a.second, this->dataDeVenda);
+        a = this->getProduto()->realizaVenda(a.second, this->dataDeVenda);
         this->lote.push_back(a.first);
       }
     }
@@ -221,7 +228,8 @@ bool RegistroVendas::validaVenda(int q)
   }
   else
   {
-    this->vendido = this->produto->temEstoque(q);
+    this->vendido = this->getProduto()->temEstoque(q);
+    LogEscrita *a = new LogEscrita("vendido", "indefinido", to_string(vendido), "RegistroVendas");
     return this->vendido;
   }
 }
@@ -235,7 +243,7 @@ void RegistroVendas::imprime(){
   }
   else
   {
-    cout << "Em " << this->dataDeVenda.getData() << ", foram vendidas " << this->quantidadeVenda << " unidades de ";
-    cout << this->produto->getNome() << " pelo cliente " << this->cliente->getNome() << "." << endl;
+    cout << "Em " << this->getDataDeVenda().getData() << ", foram vendidas " << this->getQuantidadeVenda() << " unidades de ";
+    cout << this->getProduto()->getNome() << " pelo cliente " << this->getCliente()->getNome() << "." << endl;
   }
 }
