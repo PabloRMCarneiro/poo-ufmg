@@ -8,6 +8,7 @@
 #include "../include/UsuarioLogado.h"
 #include <string>
 #include <vector>
+//LogLeitura *a = new LogLeitura("nome", "Cargo");
 
 using namespace std;
 
@@ -46,11 +47,14 @@ Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, 
     this->dataNascimento = valDataNascimento;
     LogEscrita *a = new LogEscrita("dataNascimento", "indefinido", dataNascimento.getData(), "Funcionario");
     this->salario = valSalario;
+    LogEscrita *b = new LogEscrita("salario", "indefinido", to_string(valSalario.getValor()), "Funcionario");
     this->registro = valRegistro;
     this->cargo = valCargo;
+    LogEscrita *c = new LogEscrita("cargo", "indefinido", valCargo.getNome(), "Funcionario");
     this->estadoAtivo = valEstadoAtivo;
-    LogEscrita *c = new LogEscrita("estadoAtivo", "indefinido", to_string(valEstadoAtivo), "Funcionario");
+    LogEscrita *d = new LogEscrita("estadoAtivo", "indefinido", to_string(valEstadoAtivo), "Funcionario");
     this->idVeiculo = 0;
+    LogEscrita *f = new LogEscrita("idVeiculo", "indefinido", "0", "Funcionario");
     this->jornada = nullptr; 
     Empresa::getEmpresa()->setFuncionario(this);
   }
@@ -69,6 +73,7 @@ Departamento Funcionario::getDepartamento()
   }
   else
   {
+    LogLeitura *a = new LogLeitura("departamento", "Funcionario");
     return this->departamento;
   }
 }
@@ -82,6 +87,7 @@ Data Funcionario::getDataNascimento()
   }
   else
   {
+    LogLeitura *a = new LogLeitura("dataNascimento", "Funcionario");
     return this->dataNascimento;
   }
 }
@@ -95,6 +101,7 @@ Salario Funcionario::getSalario()
   }
   else
   {
+    LogLeitura *a = new LogLeitura("salario", "Funcionario");
     return this->salario;
   }
 }
@@ -108,6 +115,7 @@ vector <Data> Funcionario::getRegistro()
   }
   else
   {
+    LogLeitura *a = new LogLeitura("registro", "Funcionario");
     return this->registro;
   }
 }
@@ -121,6 +129,7 @@ Cargo Funcionario::getCargo()
   }
   else
   {
+    LogLeitura *a = new LogLeitura("cargo", "Funcionario");
     return this->cargo;
   }
 }
@@ -134,6 +143,7 @@ bool Funcionario::getEstadoAtivo()
   }
   else
   {
+    LogLeitura *a = new LogLeitura("estadoAtivo", "Funcionario");
     return this->estadoAtivo;
   }
 }
@@ -147,6 +157,7 @@ Turno* Funcionario::getJornada()
   }
   else
   {
+    LogLeitura *a = new LogLeitura("jornada", "Funcionario");
     return this->jornada;
   }
 }
@@ -160,6 +171,7 @@ int Funcionario::getIdVeiculo()
   }
   else
   {
+    LogLeitura *a = new LogLeitura("idVeiculo", "Funcionario");
     return this->idVeiculo;
   }
 }
