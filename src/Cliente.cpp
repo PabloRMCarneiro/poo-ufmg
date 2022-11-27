@@ -63,7 +63,7 @@ string Cliente::getTipoCliente()
     }
     else
     {
-        return this->tipoCliente;
         LogLeitura *a = new LogLeitura("tipoCliente", "Cliente");
+        return this->tipoCliente;
     }
 }
