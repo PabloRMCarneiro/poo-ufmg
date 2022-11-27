@@ -7,10 +7,12 @@ Usuario::Usuario()
     senha = "";
 }
 
-Usuario::Usuario(string email, string senha)
+Usuario::Usuario(string valEmail, string valSenha)
 {
-    this->email = email;
-    this->senha = senha;
+    this->email = valEmail;
+    this->senha = valSenha;
+    LogEscrita *a = new LogEscrita("email", "indefinido", email, "Usuario");
+    LogEscrita *b = new LogEscrita("jornada", senha, senha, "Usuario");
 }
 
 Usuario::~Usuario()
@@ -38,14 +40,16 @@ bool Usuario::getPermissoes(string valFuncoes)
     return false;
 }
 
-void Usuario::setEmail(string email)
+void Usuario::setEmail(string valEmail)
 {
-    this->email = email;
+    LogEscrita *a = new LogEscrita("email", email, valEmail, "Usuario");
+    this->email = valEmail;
 }
 
-void Usuario::setSenha(string senha)
+void Usuario::setSenha(string valSenha)
 {
-    this->senha = senha;
+    LogEscrita *a = new LogEscrita("email", senha, valSenha, "Usuario");
+    this->senha = valSenha;
 }
 
 void Usuario::setPermissoes(vector<string> permissoes)

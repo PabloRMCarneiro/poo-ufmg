@@ -49,6 +49,7 @@ void Turno::setEntradaHora(Data valEntradaHora)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("entradaHora", "indefinido", valEntradaHora.getData(), "Turno");
         this->entradaHora = valEntradaHora;
     }
 }
@@ -63,6 +64,7 @@ void Turno::setSaidaHora(Data valSaidaHora)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("saidaHora", "indefinido", valSaidaHora.getData(), "Turno");
         this->saidaHora = valSaidaHora;
     }
 }
@@ -77,6 +79,7 @@ void Turno::setPeriodo(string valPeriodo)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("periodo", "indefinido", valPeriodo, "Turno");
         this->periodo = valPeriodo;
     }
 }
@@ -91,6 +94,7 @@ void Turno::setJornada(double valJornada)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("jornada", "indefinido", to_string(valJornada), "Turno");
         this->jornada = valJornada;
     }
 }
