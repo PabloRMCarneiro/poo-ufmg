@@ -146,9 +146,9 @@ vector<Turno*> Empresa::getTurnos(){
 void Empresa::excluiFuncionario(Funcionario *valFuncionario){
   if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.excluiFuncionario"))
   {
-    PermissaoNegada * b = new PermissaoNegada("excluiFuncionario", "Empresa");
-    string a = "Acesso negado a Empresa.excluiFuncionario.";
-    throw (a);
+      PermissaoNegada * b = new PermissaoNegada("excluiFuncionario", "Empresa");
+      string a = "Acesso negado a Empresa.excluiFuncionario.";
+      throw (a);
   }
   else
   {

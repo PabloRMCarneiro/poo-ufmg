@@ -6,9 +6,11 @@ using namespace std;
 
 Boleto::Boleto():MetodoDePagamento() 
 {
-    if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Boleto.Boleto"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Boleto.Boleto"))
     {
-        throw "Acesso negado a Boleto.Boleto";
+        PermissaoNegada *permissaoNegada = new PermissaoNegada("Boleto", "Boleto");
+        string mensagem = "Acesso negado a Boleto.Boleto";
+        throw mensagem;
     }
     else
     {
@@ -17,9 +19,11 @@ Boleto::Boleto():MetodoDePagamento()
 }
 
 Boleto::Boleto(int quantidadeDeParcelas, Data valDataDeVencimento, double valValor):MetodoDePagamento(quantidadeDeParcelas, valValor){
-    if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Boleto.Boleto"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Boleto.Boleto"))
     {
-        throw "Acesso negado a Boleto.Boleto";
+        PermissaoNegada *permissaoNegada = new PermissaoNegada("Boleto", "Boleto");
+        string mensagem = "Acesso negado a Boleto.Boleto";
+        throw mensagem;
     }
     else
     {
@@ -33,9 +37,11 @@ Boleto::Boleto(int quantidadeDeParcelas, Data valDataDeVencimento, double valVal
 // }
 Data Boleto::getDataDeVencimento()
 {
-    if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Boleto.getDataDeVencimento"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Boleto.getDataDeVencimento"))
     {
-        throw "Acesso negado a Boleto.getDataDeVencimento";
+        PermissaoNegada *permissaoNegada = new PermissaoNegada("getDataDeVencimento", "Boleto");
+        string mensagem = "Acesso negado a Boleto.getDataDeVencimento";
+        throw mensagem;
     }
     else
     {
