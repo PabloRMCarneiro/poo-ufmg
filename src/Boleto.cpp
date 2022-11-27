@@ -50,8 +50,8 @@ Data Boleto::getDataDeVencimento()
     }
     else
     {
-        return this->dataDeVencimento;
         LogLeitura *a = new LogLeitura("dataDeVencimento", "Boleto");
+        return this->dataDeVencimento;
     }
 }
 
