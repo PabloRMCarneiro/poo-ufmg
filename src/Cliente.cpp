@@ -35,7 +35,7 @@ Cliente::Cliente(string valNome, Endereco valEndereco, string valEmail, string v
 
 void Cliente::setTipoCliente(string tc)
 {   
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.Cliente"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.setTipoCliente"))
     {
         PermissaoNegada *a = new PermissaoNegada("setTipoCliente", "Cliente");
         string mensagem = "Acesso negado a Cliente.setTipoCliente";
