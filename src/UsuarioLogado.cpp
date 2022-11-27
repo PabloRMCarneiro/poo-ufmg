@@ -17,6 +17,7 @@ UsuarioLogado* UsuarioLogado::getUsuarioLogado(){
 }
 
 void UsuarioLogado::setUsuario(Usuario* valUsuario){
+    LogEscrita *a = new LogEscrita("usuario", "indefinido", valUsuario->getEmail(), "UsuarioLogado");
     this->usuario = valUsuario;
 }
 
