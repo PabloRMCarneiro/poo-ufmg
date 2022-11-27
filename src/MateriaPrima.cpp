@@ -5,9 +5,11 @@
 
 MateriaPrima::MateriaPrima()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.MateriaPrima"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.MateriaPrima"))
     {
-        throw "Acesso negado a MateriaPrima.MateriaPrima";
+        PermissaoNegada *a = new PermissaoNegada("MateriaPrima", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.MateriaPrima";
+        throw mensagem;
     }
     else
     {
@@ -20,9 +22,11 @@ MateriaPrima::MateriaPrima()
 
 MateriaPrima::MateriaPrima(string valNome, string valUnidadeDeMedida, double valEstoqueMinimo)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.MateriaPrima"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.MateriaPrima"))
     {
-        throw "Acesso negado a MateriaPrima.MateriaPrima";
+        PermissaoNegada *a = new PermissaoNegada("MateriaPrima", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.MateriaPrima";
+        throw mensagem;
     }
     else
     {
@@ -35,22 +39,26 @@ MateriaPrima::MateriaPrima(string valNome, string valUnidadeDeMedida, double val
 
 void MateriaPrima::geraOrdemDeCompra(Data valData)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.geraOrdemDeCompra"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.geraOrdemDeCompra"))
     {
-        throw "Acesso negado a MateriaPrima.geraOrdemDeCompra";
+        PermissaoNegada *a = new PermissaoNegada("geraOrdemDeCompra", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.geraOrdemDeCompra";
+        throw mensagem;
     }
     else
     {
         OrdemDeCompra *nova = new OrdemDeCompra(this);
-        //Empresa::getEmpresa()->setOrdemDeCompra(nova);
+        // Empresa::getEmpresa()->setOrdemDeCompra(nova);
     }
 }
 
 double MateriaPrima::getEstoque()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.getEstoque"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.getEstoque"))
     {
-        throw "Acesso negado a MateriaPrima.getEstoque";
+        PermissaoNegada *a = new PermissaoNegada("getEstoque", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.getEstoque";
+        throw mensagem;
     }
     else
     {
@@ -60,9 +68,11 @@ double MateriaPrima::getEstoque()
 
 string MateriaPrima::getUnidadeMedida()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.getUnidadeMedida"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.getUnidadeMedida"))
     {
-        throw "Acesso negado a MateriaPrima.getUnidadeMedida";
+        PermissaoNegada *a = new PermissaoNegada("getUnidadeMedida", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.getUnidadeMedida";
+        throw mensagem;
     }
     else
     {
@@ -72,9 +82,11 @@ string MateriaPrima::getUnidadeMedida()
 
 double MateriaPrima::getEstoqueMinimo()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.getEstoqueMinimo"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.getEstoqueMinimo"))
     {
-        throw "Acesso negado a MateriaPrima.getEstoqueMinimo";
+        PermissaoNegada *a = new PermissaoNegada("getEstoqueMinimo", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.getEstoqueMinimo";
+        throw mensagem;
     }
     else
     {
@@ -84,8 +96,10 @@ double MateriaPrima::getEstoqueMinimo()
 
 string MateriaPrima::getNome()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.getNome"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.getNome"))
     {
+        PermissaoNegada *a = new PermissaoNegada("getNome", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.getNome";
         throw "Acesso negado a MateriaPrima.getNome";
     }
     else
@@ -96,24 +110,60 @@ string MateriaPrima::getNome()
 
 void MateriaPrima::setEstoqueMin(double valEstoqueMinimo)
 {
-    this->estoqueMinimo = valEstoqueMinimo;
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.setEstoqueMin"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setEstoqueMin", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.setEstoqueMin";
+        throw mensagem;
+    }
+    else
+    {
+        this->estoqueMinimo = valEstoqueMinimo;
+    }
 }
 
 void MateriaPrima::setEstoque(double valEstoque, Data valData)
 {
-    this->estoque = valEstoque + this->estoque;
-    if (this->estoque < this->estoqueMinimo)
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.setEstoque"))
     {
-        this->geraOrdemDeCompra(valData);
+        PermissaoNegada *a = new PermissaoNegada("setEstoque", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.setEstoque";
+        throw mensagem;
+    }
+    else
+    {
+        this->estoque = valEstoque + this->estoque;
+        if (this->estoque < this->estoqueMinimo)
+        {
+            this->geraOrdemDeCompra(valData);
+        }
     }
 }
 
 void MateriaPrima::setNome(string valNome)
 {
-    this->nome = valNome;
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.setNome"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setNome", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.setNome";
+        throw mensagem;
+    }
+    else
+    {
+        this->nome = valNome;
+    }
 }
 
 void MateriaPrima::setUnidadeDeMedida(string valUnidadeDeMedida)
 {
-    this->unidadeDeMedida = valUnidadeDeMedida;
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MateriaPrima.setUnidadeDeMedida"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setUnidadeDeMedida", "MateriaPrima");
+        string mensagem = "Acesso negado a MateriaPrima.setUnidadeDeMedida";
+        throw mensagem;
+    }
+    else
+    {
+        this->unidadeDeMedida = valUnidadeDeMedida;
+    }
 }
