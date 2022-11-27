@@ -319,7 +319,7 @@ void Orcamento::setFornecedor(Fornecedor * valFornecedor){
   }
   else
   {
-    this->fornecedor = fornecedor;
+    this->fornecedor = valFornecedor;
     LogEscrita *c = new LogEscrita("fornecedor", "indefinido", fornecedor->getNome(), "Orcamento");
   }
 }
