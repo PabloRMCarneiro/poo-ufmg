@@ -46,6 +46,7 @@ PedidoDeCompra::PedidoDeCompra(Orcamento *valOrcamento, CartaoDeCredito *valCart
                 }
                 valorTotal += valorTotal + it.second*precoDoProduto;
         }
+        LogLeitura *logLeitura = new LogLeitura("produtolist", "PedidoDeCompra");
         double valorParcela = valorTotal/parcelas;
         valCartaoDeCredito->setQuantidadeDeParcelas(parcelas);
         valCartaoDeCredito->setQuantiaPorParcelas(valorParcela);
@@ -68,6 +69,7 @@ int PedidoDeCompra::getCodigo(){
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("codigo", "PedidoDeCompra");
         return this->codigo;
     }
 }
@@ -133,6 +135,7 @@ Orcamento* PedidoDeCompra::getOrcamento(){
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("orcamento", "PedidoDeCompra");
         return orcamento;
     }
 }
@@ -146,6 +149,7 @@ Boleto* PedidoDeCompra::getBoleto(){
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("boleto", "PedidoDeCompra");
         return boleto;
     }
 }
@@ -159,6 +163,7 @@ CartaoDeCredito* PedidoDeCompra::getCartaoDeCredito(){
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("cartaoDeCredito", "PedidoDeCompra");
         return cartaoDeCredito;
     }
 }
