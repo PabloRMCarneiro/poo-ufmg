@@ -1,4 +1,5 @@
 #include "../include/Usuario.h"
+#include "../include/Empresa.h"
 
 Usuario::Usuario()
 {
@@ -18,11 +19,13 @@ Usuario::~Usuario()
 
 string Usuario::getEmail()
 {
+    LogLeitura *logLeitura = new LogLeitura("email", "Usuario");
     return email;
 }
 
 string Usuario::getSenha()
 {
+    LogLeitura *logLeitura = new LogLeitura("senha", "Usuario");
     return senha;
 }
 
