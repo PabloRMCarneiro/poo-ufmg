@@ -114,10 +114,13 @@ Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
   }  
   else
   {
-    this->nome = valNome;
+    this->setNome(valNome);
     this->endereco = valEndereco;
     this->email = valEmail;
     this->telefone = valTelefone;
+    LogEscrita *a = new LogEscrita("endereco", "indefinido", valEndereco.getEndereco(), "Pessoa");
+    LogEscrita *b = new LogEscrita("email", "indefinido", valEmail, "Pessoa");
+    LogEscrita *c = new LogEscrita("telefone", "indefinido", to_string(valTelefone), "Pessoa");
     this->setDocumento(valDocumento);
   }
 }
@@ -206,6 +209,7 @@ void Pessoa::setNome(string valNome)
   }
   else
   {
+    LogEscrita *c = new LogEscrita("nome", "indefinido", valNome, "Pessoa");
     this->nome = valNome;
   }
 }
@@ -220,6 +224,7 @@ void Pessoa::setEndereco(Endereco valEndereco)
   }
   else
   {
+    LogEscrita *c = new LogEscrita("endereco", endereco.getEndereco(), valEndereco.getEndereco(), "Pessoa");
     this->endereco = valEndereco;
   }
 }
@@ -234,6 +239,7 @@ void Pessoa::setEmail(string valEmail)
   }
   else
   {
+    LogEscrita *c = new LogEscrita("email", "indefinido", valEmail, "Pessoa");
     this->email = valEmail;
   }
 }
@@ -251,6 +257,7 @@ void Pessoa::setDocumento(string valDocumento)
       if (this->validaDocumento(valDocumento))
       {
         this->documento = valDocumento;
+        LogEscrita *c = new LogEscrita("documento", "indefinido", valDocumento, "Pessoa");
       }
       else
         cout << "Documento inválido." << endl;
@@ -268,6 +275,7 @@ void Pessoa::setTelefone(long int valTelefone)
   }
   else
   {
+    LogEscrita *c = new LogEscrita("telefone", to_string(telefone), to_string(valTelefone), "Pessoa");
     this->telefone = valTelefone;
   }
 }
