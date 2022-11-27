@@ -55,7 +55,7 @@ string Departamento::getNome()
 
 void Departamento::setNome(string valNome)
 { 
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.getNome"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.setNome"))
   {
     PermissaoNegada *a = new PermissaoNegada("setNome", "Departamento");
     string mensagem = "Acesso negado a Departamento.setNome";
