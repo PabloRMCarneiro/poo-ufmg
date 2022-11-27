@@ -5,17 +5,28 @@
 
 Categoria::Categoria()
 {
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.Categoria"))
+  {
+    PermissaoNegada *permissaoNegada = new PermissaoNegada("Categoria", "Categoria");
+    string mensagem = "Acesso negado a Categoria.Categoria";
+    throw mensagem;
+  }
+  else
+  {
+    this->tipo = "";
+  }
 }
 
 Categoria::Categoria(string t)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.Categoria"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.Categoria"))
   {
     PermissaoNegada *a = new PermissaoNegada("Categoria", "Categoria");
-    throw "Acesso negado a Categoria.Categoria";
+    string menssagem = "Acesso negado a Categoria.Categoria";
+    throw menssagem;
   }
   else
-  { 
+  {
     this->tipo = t;
     LogEscrita *a = new LogEscrita("tipo", "indefinido", t, "Categoria");
     Empresa::getEmpresa()->setCategoria(this);
@@ -28,10 +39,11 @@ Categoria::~Categoria()
 
 string Categoria::getTipo()
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getTipo"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getTipo"))
   {
     PermissaoNegada *a = new PermissaoNegada("getTipo", "Categoria");
-    throw "Acesso negado a Categoria.getTipo";
+    string menssagem = "Acesso negado a Categoria.getTipo";
+    throw menssagem;
   }
   else
   {
@@ -42,10 +54,11 @@ string Categoria::getTipo()
 
 void Categoria::setTipo(string t)
 {
-  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getTipo"))
+  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.setTipo"))
   {
     PermissaoNegada *a = new PermissaoNegada("setTipo", "Categoria");
-    throw "Acesso negado a Categoria.setTipo";
+    string messagem = "Acesso negado a Categoria.setTipo";
+    throw messagem;
   }
   else
   {
