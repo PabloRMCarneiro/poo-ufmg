@@ -35,6 +35,8 @@ Salario::Salario(float valValor)
   {
     this->valor = valValor;
     this->dissidio = 0.0;
+    LogEscrita *a = new LogEscrita("valor", "indefinido", to_string(valValor), "Salario");
+    LogEscrita *b = new LogEscrita("dissidio", "indefinido", to_string(0.0), "Salario");
   }
 }
 
@@ -91,6 +93,7 @@ void Salario::setValor(float valValor)
   } 
   else 
   {
+    LogEscrita *a = new LogEscrita("valor", to_string(valor), to_string(valValor), "Salario");
     this->valor = valValor;
   }
 }
@@ -104,6 +107,7 @@ void Salario::setDissidio(Data valData, float valDissidio)
   } 
   else 
   {
+    LogEscrita *a = new LogEscrita("valor", to_string(dissidio), to_string(valDissidio), "Salario");
     this->dissidio = valDissidio;
     for (auto it : Empresa::getEmpresa()->getFuncionarios()) {
       it->promocao(valData, valDissidio);
@@ -119,7 +123,7 @@ void Salario::promocao(Data valData, float valPercentual) {
   } 
   else 
   {
-    this->valor = this->valor + (this->valor * valPercentual/100);
+    this->setValor(this->valor + (this->valor * valPercentual/100));
     this->atualizaRegistro(valData);
   }
 }
@@ -132,7 +136,7 @@ void Salario::reajuste(Data valData, float valDissidio) {
   } 
   else
   {
-    this->valor = this->valor + (this->valor * valDissidio/100);
+    this->setValor(this->valor + (this->valor * valDissidio/100));
     this->atualizaRegistro(valData);
   }
 }
