@@ -31,7 +31,24 @@
 
 vector<string> permissoes(){
   vector<string> permissoes;
+
+  permissoes.push_back("Boleto.Boleto");
+  permissoes.push_back("Boleto.getDataDeVencimento");
+  permissoes.push_back("Boleto.setDataDeVencimento");
+
+  permissoes.push_back("Cargo.Cargo");
+  permissoes.push_back("Cargo.getNome");
+  permissoes.push_back("Cargo.setNome");
+
+  permissoes.push_back("Categoria.Categoria");
+  permissoes.push_back("Categoria.getTipo");
+  permissoes.push_back("Categoria.setTipo");
+
+  permissoes.push_back("Cliente.Cliente");
   
+
+
+
   permissoes.push_back(("Empresa.getUsuario"));
   permissoes.push_back(("Empresa.getCargo"));
   permissoes.push_back(("Cargo.Cargo"));
