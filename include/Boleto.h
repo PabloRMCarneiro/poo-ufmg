@@ -11,7 +11,6 @@ using namespace std;
 class Boleto : public MetodoDePagamento {
 private:
   Data dataDeVencimento;
-
 public:
   Boleto();
   Boleto(int quantidadeDeParcelas, Data valDataDeVencimento, double valValor);

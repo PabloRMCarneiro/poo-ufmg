@@ -52,11 +52,12 @@ PedidoDeCompra::PedidoDeCompra(Orcamento *valOrcamento, CartaoDeCredito *valCart
         valCartaoDeCredito->setQuantiaPorParcelas(valorParcela);
         this->boleto = nullptr;
         setCartaoDeCredito(valCartaoDeCredito);
+        LogEscrita *a = new LogEscrita("contPedidos", to_string(PedidoDeCompra::contPedidos), to_string(PedidoDeCompra::contPedidos+1), "PedidoDeCompra");
         PedidoDeCompra::contPedidos++;
         this->codigo = contPedidos;
+        LogEscrita *a = new LogEscrita("codigo", "indefinido", to_string(codigo), "PedidoDeCompra");
         this->setVenda();
     }
-  
 }
 int PedidoDeCompra::getCodigo(){
 
@@ -98,7 +99,7 @@ void PedidoDeCompra::setBoleto(Data valDataVencimento){
     else
     {
         double valorTotal = 0.0, precoDoProduto = 0.0;
-        for(auto it : this->orcamento->getItens()){
+        for(auto it : this->getOrcamento()->getItens()){
             for(auto it2 : Produto::produtolist){
                 if(it.first == it2->getNome()){
                     precoDoProduto = it2->getValorDeVenda();
@@ -107,6 +108,7 @@ void PedidoDeCompra::setBoleto(Data valDataVencimento){
             }
             valorTotal += valorTotal + it.second*precoDoProduto;
         }
+        LogLeitura *a = new LogLeitura("produtolist", "Produto");
         Boleto *novoBoleto = new Boleto(1, valDataVencimento, valorTotal);
     }
 }
@@ -175,7 +177,7 @@ void PedidoDeCompra::setVenda(){
     }
     else
     {
-        for(auto it : orcamento->getItens()){
+        for(auto it : this->getOrcamento()->getItens()){
             for(auto it2 : Produto::produtolist){
                 if(it.first == it2->getNome()){
                     this->vendaRealizada = it2->temEstoque(int(it.second));
@@ -186,5 +188,6 @@ void PedidoDeCompra::setVenda(){
                 }
             }
         }
+        LogLeitura *a = new LogLeitura("produtolist", "Produto");
     }
 }
