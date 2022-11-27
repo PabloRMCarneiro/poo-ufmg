@@ -10,22 +10,15 @@ using namespace std;
 
 class Boleto : public MetodoDePagamento {
 private:
-  string codigoDeBarras;
   Data dataDeVencimento;
-  float valor;
 
 public:
   Boleto();
-  Boleto(string tipoDePagamento, int quantidadeDeParcelas, Data data, float quantiaPorParcelas, string valcodigoDeBarras, Data valDataDeVencimento, float valValor);
-  virtual ~Boleto();
+  Boleto(int quantidadeDeParcelas, Data valDataDeVencimento, double valValor);
+  //virtual ~Boleto();
 
-  string getCodigoDeBarras();
   Data getDataDeVencimento();
-  float getValor();
-
-  void setCodigoDeBarras(string codigoDeBarras);
-  void setDataDeVencimento(Data dataDeVencimento);
-  void setValor(float valor);
+  void setDataDeVencimento(Data valDataDeVencimento);
 };
 
 #endif

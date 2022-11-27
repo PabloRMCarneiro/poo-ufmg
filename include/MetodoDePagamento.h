@@ -9,25 +9,18 @@ using namespace std;
 
 class MetodoDePagamento {
 private:
-  string tipoDePagamento;
   int quantidadeDeParcelas;
   float quantiaPorParcelas;
-  Data data;
-  
 public:
   MetodoDePagamento();
-  MetodoDePagamento(string valTipoDePagamento, int valQuantidadeDeParcelas, float valQuantiaPorParcela, Data valData);
-  virtual ~MetodoDePagamento();
+  MetodoDePagamento(int valQuantidadeDeParcelas, float valQuantiaPorParcela);
+  //virtual ~MetodoDePagamento();
 
-  string getTipoDePagamento();
   int getQuantidadeDeParcelas();
   float getQuantiaPorParcelas();
-  Data getData();
 
-  void setTipoDePagamento(string tipoDePagamento);
   void setQuantidadeDeParcelas(int quantidadeDeParcelas);
   void setQuantiaPorParcelas(float quantiaPorParcelas);
-  void setData(Data data);
 };
  
 

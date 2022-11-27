@@ -2,7 +2,7 @@
 #include "../include/UsuarioLogado.h"
 Turno::Turno(string valPeriodo, Data valEntradaHora, Data valSaidaHora, double valJornada)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.Turno"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.Turno"))
     {
         throw "Acesso negado a Turno.Turno";
     }
@@ -17,7 +17,7 @@ Turno::Turno(string valPeriodo, Data valEntradaHora, Data valSaidaHora, double v
 
 Turno::Turno()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.Turno"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.Turno"))
     {
         throw "Acesso negado a Turno.Turno";
     }
@@ -52,7 +52,7 @@ void Turno::setJornada(double valJornada)
 
 string Turno::getPeriodo()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getPeriodo"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getPeriodo"))
     {
         throw "Acesso negado a Turno.getPeriodo";
     }
@@ -64,7 +64,7 @@ string Turno::getPeriodo()
 
 Data Turno::getEntradaHora()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getEntradaHora"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getEntradaHora"))
     {
         throw "Acesso negado a Turno.getEntradaHora";
     }
@@ -76,7 +76,7 @@ Data Turno::getEntradaHora()
 
 Data Turno::getSaidaHora()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getSaidaHora"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getSaidaHora"))
     {
         throw "Acesso negado a Turno.getSaidaHora";
     }
@@ -88,7 +88,7 @@ Data Turno::getSaidaHora()
 
 double Turno::getJornada()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getJornada"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Turno.getJornada"))
     {
         throw "Acesso negado a Turno.getJornada";
     }

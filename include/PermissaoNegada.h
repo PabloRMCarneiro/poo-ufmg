@@ -13,5 +13,6 @@ class PermissaoNegada : public Log{
         PermissaoNegada(string valMetodo, string valEntidade);
         void setMetodo(string valMetodo);
         string getMetodo();
+        void imprime();
 };
 #endif //PERMISSAONEGADA_H_INCLUDED

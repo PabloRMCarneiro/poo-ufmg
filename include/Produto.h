@@ -4,6 +4,7 @@
 #include "Lote.h"
 #include "Categoria.h"
 #include "OrdemDeProducao.h"
+#include "MateriaPrima.h"
 
 using namespace std;
 
@@ -18,21 +19,25 @@ class Produto {
     int estoqueMinimo;
     int qtdEstoque;
     OrdemDeProducao* ordem;
+    vector<pair<MateriaPrima*, double>> materiaPrimaList;
   public:
     Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, string categ);
     Produto();
     ~Produto();
 
+    vector<pair<MateriaPrima*, double>> getMateriaPrimaList();
     string getNome();
     int getCodigo();
     float getValorDeVenda();
     int getTamanhoDoLoteMinimo();
     int getEstoqueMinimo();
     int getQtdEstoque();
-    string getCategoria();
+    Categoria* getCategoria();
     OrdemDeProducao* getOrdem();
     Lote* getLote(int nl);
 
+    void alteraPreco(double alteracao);
+    void setMateriaPrimaList(vector<pair<MateriaPrima*, double>> valMateriaPrimaList);
     void setNome(string nome);
     void setCodigo(int codigo);
     void setValorDeVenda(float valorDeVenda);

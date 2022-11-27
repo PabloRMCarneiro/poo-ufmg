@@ -3,9 +3,8 @@
 
 vector<Fornecedor *> Fornecedor::fornecedorList;
 
-Fornecedor::Fornecedor() : Pessoa()
-{
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.Fornecedor"))
+Fornecedor::Fornecedor() : Pessoa(){
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.Fornecedor"))
     {
         throw "Acesso negado a Fornecedor.Fornecedor";
     }
@@ -17,7 +16,7 @@ Fornecedor::Fornecedor() : Pessoa()
 
 Fornecedor::Fornecedor(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone) : Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.Fornecedor"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.Fornecedor"))
     {
         throw "Acesso negado a Fornecedor.Fornecedor";
     }
@@ -54,7 +53,7 @@ void Fornecedor::setTipoFornecedor(string valTipoFornecedor)
 
 string Fornecedor::getTipoFornecedor(string valTipoFornecedor)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.getTipoFornecedor"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.getTipoFornecedor"))
     {
         throw "Acesso negado a Fornecedor.getTipoFornecedor";
     }
@@ -66,7 +65,7 @@ string Fornecedor::getTipoFornecedor(string valTipoFornecedor)
 
 double Fornecedor::getPreco(MateriaPrima *valMateriaPrima)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.getPreco"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.getPreco"))
     {
         throw "Acesso negado a Fornecedor.getPreco";
     }
@@ -86,7 +85,7 @@ double Fornecedor::getPreco(MateriaPrima *valMateriaPrima)
 
 vector<pair<MateriaPrima *, double>> Fornecedor::getPrecos()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.getPrecos"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.getPrecos"))
     {
         throw "Acesso negado a Fornecedor.getPrecos";
     }
@@ -98,7 +97,7 @@ vector<pair<MateriaPrima *, double>> Fornecedor::getPrecos()
 
 bool Fornecedor::vende(MateriaPrima *valMateriaPrima, double valQuantidade, Data valData)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.vende"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Fornecedor.vende"))
     {
         throw "Acesso negado a Fornecedor.vende";
     }

@@ -3,7 +3,7 @@
 
 OrdemDeCompra::OrdemDeCompra()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.OrdemDeCompra"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.OrdemDeCompra"))
     {
         throw "Acesso negado a OrdemDeCompra.OrdemDeCompra";
     }
@@ -16,7 +16,7 @@ OrdemDeCompra::OrdemDeCompra()
 
 OrdemDeCompra::OrdemDeCompra(MateriaPrima *valMateriaPrima)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.OrdemDeCompra"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.OrdemDeCompra"))
     {
         throw "Acesso negado a OrdemDeCompra.OrdemDeCompra";
     }
@@ -65,7 +65,7 @@ void OrdemDeCompra::setOrcamento()
 
 void OrdemDeCompra::gerarPedidos()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.gerarPedidos"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.gerarPedidos"))
     {
         throw "Acesso negado a OrdemDeCompra.gerarPedidos";
     }

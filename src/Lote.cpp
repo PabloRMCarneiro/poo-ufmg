@@ -3,7 +3,7 @@
 
 Lote::Lote()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
     {
         throw "Acesso negado a Lote.Lote";
     }
@@ -19,7 +19,7 @@ Lote::Lote()
 
 Lote::Lote(int nl)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
     {
         throw "Acesso negado a Lote.Lote";
     }
@@ -31,7 +31,7 @@ Lote::Lote(int nl)
 
 Lote::Lote(Data d, int nl, int qp, string p)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
     {
         throw "Acesso negado a Lote.Lote";
     }
@@ -72,7 +72,7 @@ void Lote::setQuantidadeProduzida(int qp)
 
 Data Lote::getDataProd()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getDataProd"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getDataProd"))
     {
         throw "Acesso negado a Lote.getDataProd";
     }
@@ -83,7 +83,7 @@ Data Lote::getDataProd()
 }
 int Lote::getNumLote()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getNumLote"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getNumLote"))
     {
         throw "Acesso negado a Lote.getNumLote";
     }
@@ -94,7 +94,7 @@ int Lote::getNumLote()
 }
 string Lote::getProduto()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getProduto"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getProduto"))
     {
         throw "Acesso negado a Lote.getProduto";
     }
@@ -105,7 +105,7 @@ string Lote::getProduto()
 }
 int Lote::getQuantidadeAtual()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getQuantidadeAtual"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getQuantidadeAtual"))
     {
         throw "Acesso negado a Lote.getQuantidadeAtual";
     }
@@ -116,7 +116,7 @@ int Lote::getQuantidadeAtual()
 }
 int Lote::getQuantidadeProduzida()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getQuantidadeProduzida"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.getQuantidadeProduzida"))
     {
         throw "Acesso negado a Lote.getQuantidadeProduzida";
     }
@@ -128,7 +128,7 @@ int Lote::getQuantidadeProduzida()
 
 void Lote::imprimeRegistro()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.imprimeRegistro"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.imprimeRegistro"))
     {
         throw "Acesso negado a Lote.imprimeRegistro";
     }
@@ -144,7 +144,7 @@ void Lote::imprimeRegistro()
 
 int Lote::vende(int q)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.vende"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.vende"))
     {
         throw "Acesso negado a Lote.vende";
     }
@@ -153,12 +153,13 @@ int Lote::vende(int q)
         if (q <= this->getQuantidadeAtual())
         {
             this->setQuantidadeAtual(this->quantidadeAtual - q);
-            return this->getQuantidadeAtual();
+            return 0;
         }
         else
-        {
+        {   
+            int falta = q - this->getQuantidadeAtual();
             this->setQuantidadeAtual(0);
-            return q - this->getQuantidadeAtual();
+            return falta;
         }
     }
 }

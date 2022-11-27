@@ -10,16 +10,20 @@ using namespace std;
 class LogEscrita : public Log
 {
   private:
-    map<string, string> atributosAntes;
-    map<string, string> atributosDepois;
+    string atributo;
+    string antes;
+    string depois;
 
   public:
-    //<atributo, valAntes> <atributo, valDepois>
-    LogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, string valEntidade);
-    map<string, string> getAtributosAntes();
-    map<string, string> getAtributosDepois();
-    void setAtributosAntes(string, string);
-    void setAtributosDepois(string, string);
+    LogEscrita();
+    LogEscrita(string valAtributo, string valAntes, string valDepois, string valEntidade);
+    string getAtributoAntes();
+    string getAtributoDepois();
+    string getAtributo();
+    void setAtributoAntes(string valAtributoAntes);
+    void setAtributoDepois(string valAtributoDepois);
+    void setAtributo(string valAtributo);
+    void imprime();
 };
 
 #endif

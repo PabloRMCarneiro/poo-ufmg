@@ -1,8 +1,7 @@
 #ifndef MATERIAPRIMA_H_INCLUDED
 #define MATERIAPRIMA_H_INCLUDED
-#include "Produto.h"
 #include <string>
-
+#include "data.h"
 using namespace std;
 
 class MateriaPrima {

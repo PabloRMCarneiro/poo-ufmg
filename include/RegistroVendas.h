@@ -14,6 +14,7 @@ class RegistroVendas{
         int quantidadeVenda;
         bool vendido = false;
         Cliente* cliente;
+        int codigoPedido;
     public:
         RegistroVendas(Data dv, Produto* p, int q, Cliente* cl);
         Data getDataDeVenda();
@@ -27,7 +28,10 @@ class RegistroVendas{
         void setProduto(string p);
         void setProduto(Produto* p);
         void setQuantidadeVenda(int qvenda);
+        void setCodigoPedido(int valCodigoPedido);
+        int getCodigoPedido();
         bool validaVenda(int q);
+        void imprime();
 };
 
 #endif 

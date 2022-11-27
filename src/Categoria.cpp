@@ -3,29 +3,22 @@
 #include "../include/PermissaoNegada.h"
 #include "../include/UsuarioLogado.h"
 
-vector<Categoria *> Categoria::categorialist;
 Categoria::Categoria()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.Categoria"))
-  {
-    throw "Acesso negado a Categoria.Categoria";
-  }
-  else
-  {
-    this->novaCategoria(this);
-  }
 }
 
 Categoria::Categoria(string t)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.Categoria"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.Categoria"))
   {
+    PermissaoNegada *a = new PermissaoNegada("Categoria", "Categoria");
     throw "Acesso negado a Categoria.Categoria";
   }
   else
-  {
-    this->setTipo(t);
-    this->novaCategoria(this);
+  { 
+    this->tipo = t;
+    LogEscrita *a = new LogEscrita("tipo", "indefinido", t, "Categoria");
+    Empresa::getEmpresa()->setCategoria(this);
   }
 }
 
@@ -35,48 +28,28 @@ Categoria::~Categoria()
 
 string Categoria::getTipo()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getTipo"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getTipo"))
   {
+    PermissaoNegada *a = new PermissaoNegada("getTipo", "Categoria");
     throw "Acesso negado a Categoria.getTipo";
   }
   else
   {
     return this->tipo;
+    LogLeitura *a = new LogLeitura("tipo", "Categoria");
   }
 }
 
 void Categoria::setTipo(string t)
 {
-  this->tipo = t;
-}
-
-void Categoria::novaCategoria(Categoria *nova)
-{
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.novaCategoria"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getTipo"))
   {
-    throw "Acesso negado a Categoria.novaCategoria";
+    PermissaoNegada *a = new PermissaoNegada("setTipo", "Categoria");
+    throw "Acesso negado a Categoria.setTipo";
   }
   else
   {
-    categorialist.push_back(nova);
-  }
-}
-
-Categoria *Categoria::getCategoria(string t)
-{
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Categoria.getCategoria"))
-  {
-    throw "Acesso negado a Categoria.getCategoria";
-  }
-  else
-  {
-    for (auto it : categorialist)
-    {
-      if (it->getTipo() == t)
-      {
-        return it;
-      }
-    }
-    return nullptr;
+    LogEscrita *a = new LogEscrita("tipo", this->tipo, t, "Categoria");
+    this->tipo = t;
   }
 }

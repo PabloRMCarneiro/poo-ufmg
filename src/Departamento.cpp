@@ -7,7 +7,7 @@ using namespace std;
 
 Departamento::Departamento()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.Departamento"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.Departamento"))
   {
     throw "Acesso negado a Departamento.Departamento";
   }
@@ -19,8 +19,9 @@ Departamento::Departamento()
 
 Departamento::Departamento(string valNome)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.Departamento"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.Departamento"))
   {
+    PermissaoNegada *a = new PermissaoNegada("Departamento", "Departamento");
     throw "Acesso negado a Departamento.Departamento";
   }
   else
@@ -35,17 +36,28 @@ Departamento::~Departamento()
 
 string Departamento::getNome()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.getNome"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.getNome"))
   {
+    PermissaoNegada *a = new PermissaoNegada("getNome", "Departamento");
     throw "Acesso negado a Departamento.getNome";
   }
   else
-  {
+  { 
     return this->nome;
+    LogLeitura *a = new LogLeitura("nome", "Departamento");
   }
 }
 
 void Departamento::setNome(string valNome)
-{
-  this->nome = valNome;
+{ 
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Departamento.getNome"))
+  {
+    PermissaoNegada *a = new PermissaoNegada("setNome", "Departamento");
+    throw "Acesso negado a Departamento.setNome";
+  }
+  else
+  {
+    this->nome = valNome;
+    LogEscrita *a = new LogEscrita("nome", "indefinido", valNome, "Departamento");
+  }
 }

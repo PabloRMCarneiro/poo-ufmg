@@ -88,11 +88,21 @@ void Data::setSeg(int valSeg)
 {
     segundo = valSeg;
 }
-
+string help(int num){
+    if(num <10){
+        return ("0"+to_string(num));
+    }
+    return to_string(num);
+}
 string Data::getData()
-{
-
-    return (to_string(dia) + "/" + to_string(mes) + "/" + to_string(ano) + "-" + to_string(hora) + ":" + to_string(minuto) + ":" + to_string(segundo) + "\n");
+{   
+    string sDia = help(dia), sMes = help(mes), sAno = help(ano);
+    string sHora = help(hora), sMinuto = help(minuto), sSegundo = help(segundo);
+    return (sDia + "/" + sMes + "/" + sAno + " às " + sHora + ":" + sMinuto + ":" + sSegundo);
+}
+string Data::getHorario(){
+    string sHora = help(hora), sMinuto = help(minuto), sSegundo = help(segundo);
+    return (sHora + ":" + sMinuto + ":" + sSegundo);
 }
 bool Data::operator<(Data &d2)
 

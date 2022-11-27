@@ -1,5 +1,4 @@
 #include "../include/Pessoa.h"
-#include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
 #include <iostream>
 #include <string>
@@ -85,7 +84,7 @@ bool validaCNPJ(string Cnpj)
 
 Pessoa::Pessoa()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
   {
     throw "Acesso negado a Pessoa.Pessoa";
   }
@@ -102,7 +101,7 @@ Pessoa::Pessoa()
 Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
                string valDocumento, long int valTelefone)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.Pessoa"))
   {
     throw "Acesso negado a Pessoa.Pessoa";
   }
@@ -116,13 +115,13 @@ Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
   }
 }
 
-Pessoa::~Pessoa()
-{
-}
+// Pessoa::~Pessoa()
+// {
+// }
 
 string Pessoa::getNome()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getNome"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getNome"))
   {
     throw "Acesso negado a Pessoa.getNome";
   }
@@ -134,7 +133,7 @@ string Pessoa::getNome()
 
 Endereco Pessoa::getEndereco()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEndereco"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEndereco"))
   {
     throw "Acesso negado a Pessoa.getEndereco";
   }
@@ -146,7 +145,7 @@ Endereco Pessoa::getEndereco()
 
 string Pessoa::getEmail()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEmail"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getEmail"))
   {
     throw "Acesso negado a getEPessoamail.getEmail";
   }
@@ -158,7 +157,7 @@ string Pessoa::getEmail()
 
 string Pessoa::getDocumento()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getDocumento"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getDocumento"))
   {
     throw "Acesso negado a Pessoa.getDocumento";
   }
@@ -170,7 +169,7 @@ string Pessoa::getDocumento()
 
 long int Pessoa::getTelefone()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getTelefone"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Pessoa.getTelefone"))
   {
     throw "Acesso negado a Pessoa.getTelefone";
   }

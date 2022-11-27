@@ -16,7 +16,9 @@
 #include "Veiculo.h"
 #include "MateriaPrima.h"
 #include "OrdemDeCompra.h"
+#include "PermissaoNegada.h"
 #include "OrdemDeProducao.h"
+#include "Categoria.h"
 
 using namespace std;
 
@@ -27,6 +29,7 @@ class Empresa
     UsuarioLogado* usuarioLogado;
     Endereco endereco;
     vector <Cargo*> cargos;
+    vector <Categoria*> categorias;
     vector <Departamento*> departamentos;
     vector <Cliente*> clientes;
     vector <Funcionario*> funcionarios;
@@ -38,7 +41,7 @@ class Empresa
     vector <MateriaPrima*> materiaPrimaLista;
     vector <OrdemDeCompra*> ordemDeCompraLista;
     vector <OrdemDeProducao*> ordemDeProducaoLista;
-    //vector <AcessoNegado*> logsAcessoNegado; 
+    vector <PermissaoNegada*> logsAcessoNegado; 
 
     Empresa();
 
@@ -46,6 +49,8 @@ class Empresa
     static Empresa* getEmpresa();
     void login(UsuarioLogado* valUsuario);
     
+    Categoria* getCategoria(string valCategoria);
+    void excluiFuncionario(Funcionario *valFuncionario);
     MateriaPrima* getMateriaPrima(string valMateriaPrima);
     vector<MateriaPrima*> getMateriaPrimaLista();
     Turno* getTurno(string valTurno);
@@ -57,18 +62,19 @@ class Empresa
     Departamento* getDepartamento(string name);
     Cliente* getCliente(string doc);
     Funcionario* getFuncionario(string doc);
-    vector<Funcionario*> getFuncionario();
+    vector<Funcionario*> getFuncionarios();
     RegistroVendas* getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente);
     vector <LogEscrita*> getlogsEscrita();
     vector <LogLeitura*> getlogsLeitura();
     Endereco getEndereco();
     vector<OrdemDeCompra*> getOrdemDeCompraLista();
     vector<OrdemDeProducao*> getOrdemDeProducaoLista();
-    /* 
-    vector<Log> getLogLeitura();
-    vector<Log> getLogEscrita();
-    vector<Log> getLogAcesso(); 
-    */
+    vector<LogLeitura*> getLogLeitura();
+    vector<LogEscrita*> getLogEscrita();
+    vector<PermissaoNegada*> getLogAcesso(); 
+    vector<RegistroVendas*> getRegistrosVendas();
+
+    void setCategoria(Categoria* valCategoria);
     void setOrdemDeCompra(OrdemDeCompra* valOrdemDeCompra);
     void setOrdemDeProducao(OrdemDeProducao* valOrdemDeProducao);
     void setMateriaPrima(MateriaPrima* valMateriaPrima);
@@ -78,8 +84,9 @@ class Empresa
     void setTurnos(vector<Turno*> valTurnos);
     void setVeiculo(Veiculo* valVeiculo);
     void setVeiculos(vector<Veiculo*> valVeiculos);
-    void setlogEscrita(map<string, string>, map<string, string>, Data, string);
-    void setlogLeitura(string, Data, string);
+    void setlogEscrita(LogEscrita* valLogEscrita);
+    void setlogLeitura(LogLeitura* valLogLeitura);
+    void setlogAcessoNegado(PermissaoNegada* valPermissaoNegada);
     void setCargo(Cargo* valCargo);
     void setDepartamento(Departamento* valDepartamento);
     void setCliente(Cliente* valCliente);

@@ -21,11 +21,18 @@ Empresa *Empresa::getEmpresa(){
 vector <LogEscrita*> Empresa::getlogsEscrita(){
   return this->logsEscrita;
 }
-
+vector<RegistroVendas*> Empresa::getRegistrosVendas(){
+  return this->registrosVendas;
+}
 vector <LogLeitura*> Empresa::getlogsLeitura(){
   return this->logsLeitura;
 }
-
+void Empresa::setlogAcessoNegado(PermissaoNegada* valPermissaoNegada){
+  this->logsAcessoNegado.push_back(valPermissaoNegada);
+}
+vector<PermissaoNegada*> Empresa::getLogAcesso(){
+  return this->logsAcessoNegado;
+}
 MateriaPrima* Empresa::getMateriaPrima(string valMateriaPrima){
   for(auto it : this->materiaPrimaLista){
     if(it->getNome() == valMateriaPrima){
@@ -82,14 +89,12 @@ void Empresa::login(UsuarioLogado* valUsuario){
   this->usuarioLogado = valUsuario;
 }
 
-void Empresa::setlogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, Data valDataAcesso, string valEntidade){
-  LogEscrita *novologEscrita= new LogEscrita(valAtributosAntes, valAtributosDepois, valEntidade);
-  this->logsEscrita.push_back(novologEscrita);
+void Empresa::setlogEscrita(LogEscrita* valLogEscrita){
+  this->logsEscrita.push_back(valLogEscrita);
 }
 
-void Empresa::setlogLeitura(string valAtributo, Data valDataAcesso, string valEntidade){
-  LogLeitura *novologLeitura = new LogLeitura(valAtributo, valEntidade);
-  this->logsLeitura.push_back(novologLeitura);
+void Empresa::setlogLeitura(LogLeitura* valLogLeitura){
+  this->logsLeitura.push_back(valLogLeitura);
 }
 
 void Empresa::setCargo(Cargo *valCargo)
@@ -113,7 +118,19 @@ Departamento *Empresa::getDepartamento(string name){
   }
   return nullptr;
 }
-
+Categoria* Empresa::getCategoria(string valCategoria){
+  for(auto it : categorias){
+    if(it->getTipo()==valCategoria){
+      return it;
+    }
+  }
+  return nullptr;
+}
+void Empresa::setCategoria(Categoria* valCategoria){
+  if(getCategoria(valCategoria->getTipo())==nullptr){
+    this->categorias.push_back(valCategoria);
+  }
+}
 Turno* Empresa::getTurno(string valTurno){
   for(auto it : this->turnos){
     if(it->getPeriodo() == valTurno){
@@ -125,6 +142,23 @@ Turno* Empresa::getTurno(string valTurno){
 
 vector<Turno*> Empresa::getTurnos(){
   return this->turnos;
+}
+void Empresa::excluiFuncionario(Funcionario *valFuncionario){
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Empresa.excluiFuncionario"))
+  {
+    PermissaoNegada * b = new PermissaoNegada("excluiFuncionario", "Empresa");
+    string a = "Acesso negado a Empresa.excluiFuncionario.";
+    throw (a);
+  }
+  else
+  {
+    for(auto it = funcionarios.begin(); it != funcionarios.end(); it++){
+      if(*it == valFuncionario){
+        funcionarios.erase(it);
+        break;
+      }
+    }
+  }
 }
 
 Veiculo* Empresa::getVeiculo(Turno* valTurno){
@@ -183,7 +217,7 @@ Funcionario *Empresa::getFuncionario(string doc){
   return nullptr;
 }
 
-vector<Funcionario*> Empresa::getFuncionario(){
+vector<Funcionario*> Empresa::getFuncionarios(){
   return this->funcionarios;
 }
 

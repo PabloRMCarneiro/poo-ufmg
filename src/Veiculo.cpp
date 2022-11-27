@@ -4,7 +4,7 @@
 
 Veiculo::Veiculo()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Veiculo.Veiculo"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Veiculo.Veiculo"))
     {
         throw "Acesso negado a Veiculo.Veiculo";
     }
@@ -20,7 +20,7 @@ Veiculo::Veiculo()
 
 Veiculo::Veiculo(int valId, int valCapacidade, Turno *valTurno)
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Veiculo.Veiculo"))
+    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Veiculo.Veiculo"))
     {
         throw "Acesso negado a Veiculo.Veiculo";
     }
@@ -168,22 +168,10 @@ void Veiculo::excluiPassageiro(Funcionario *valPassageiro)
 bool Veiculo::setPassageiros(vector<Funcionario *> valPassageiros)
 {
     bool adicionar = false;
-    if (valPassageiros.size() <= this->capacidade)
-    {
-        rota.clear();
-        for (auto it : valPassageiros)
-        {
-            adicionar = this->setPassageiro(it);
-        }
-    }
-    else
-    {
-        adicionar = false;
-    }
     try
     {
         if (valPassageiros.size() <= this->capacidade)
-        {
+        {   
             rota.clear();
             for (auto it : valPassageiros)
             {
@@ -261,7 +249,9 @@ vector<Funcionario *> Veiculo::getPassageiros()
 {
     return this->passageiros;
 }
-
+Data Veiculo::getHoraSaida(){
+    return this->horaSaida;
+}
 Funcionario *Veiculo::getPassageiro(Endereco valEndereco)
 {
     Funcionario *encontrado = new Funcionario;

@@ -1,7 +1,7 @@
 #include "../include/Orcamento.h"
 
 void Orcamento::auxiliarMateriaPrima(){
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.auxiliarMateriaPrima")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.auxiliarMateriaPrima")) {
     throw "Acesso negado a Orcamento.auxiliarMateriaPrima";
   } else {
     double preco = 0.0;
@@ -14,10 +14,11 @@ void Orcamento::auxiliarMateriaPrima(){
         }
     }
   }
+  this->setTotal();
 }
 
 void Orcamento::auxiliarProduto(){
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.auxiliarProduto")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.auxiliarProduto")) {
     throw "Acesso negado a Orcamento.auxiliarProduto";
   } else {
     double preco = 0.0;
@@ -30,10 +31,11 @@ void Orcamento::auxiliarProduto(){
         }
     }
   }
+  this->setTotal();
 }
 
 Orcamento::Orcamento() {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
     throw "Acesso negado a Orcamento.Orcamento";
   } else {
     this->dataOrcamento = Data();
@@ -45,7 +47,7 @@ Orcamento::Orcamento() {
 }
 
 Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Cliente* valCliente){
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
     throw "Acesso negado a Orcamento.Orcamento";
   } else {
     this->dataOrcamento = valData;
@@ -60,7 +62,7 @@ Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valIte
 
 
 Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Fornecedor* valFornecedor){
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.Orcamento")) {
     throw "Acesso negado a Orcamento.Orcamento";
   } else {
     this->dataOrcamento = valData;
@@ -74,7 +76,7 @@ Orcamento::Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valIte
 }
 
 void Orcamento::setTotal(){
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setTotal")) {
+    if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setTotal")) {
     throw "Acesso negado a Orcamento.setTotal";
   } else {
     double valor = 0.0;
@@ -82,12 +84,11 @@ void Orcamento::setTotal(){
         valor = valor + it.second;
     }
     this->valorTotal = valor;
-  }
-    
+  } 
 }
 
 vector<pair<string, double>> Orcamento::getPrecos() {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getPrecos")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getPrecos")) {
     throw "Acesso negado a Orcamento.getPrecos";
   } else {
     return this->precos;
@@ -95,7 +96,7 @@ vector<pair<string, double>> Orcamento::getPrecos() {
 }
 
 void Orcamento::setCompraDeProduto(bool compraDeProduto){
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setCompraDeProduto")) {
+    if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setCompraDeProduto")) {
     throw "Acesso negado a Orcamento.setCompraDeProduto";
   } else {
     this->compraDeProduto = compraDeProduto;
@@ -103,7 +104,7 @@ void Orcamento::setCompraDeProduto(bool compraDeProduto){
 }
 
 bool Orcamento::isCompraDeProduto() {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.isCompraDeProduto")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.isCompraDeProduto")) {
     throw "Acesso negado a Orcamento.isCompraDeProduto";
   } else {
     return this->compraDeProduto;
@@ -111,7 +112,7 @@ bool Orcamento::isCompraDeProduto() {
 }
 
 double Orcamento::getPreco(string valItem) {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getPreco")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getPreco")) {
     throw "Acesso negado a Orcamento.getPreco";
   } else {
     int a =0;
@@ -124,12 +125,12 @@ double Orcamento::getPreco(string valItem) {
     if(a != 1){
         throw "Item nao encontrado.";
     }
-    return 0.0;
+    return false;
   }
 }
 
 void Orcamento::setDataOrcamento(Data valData) {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setDataOrcamento")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setDataOrcamento")) {
     throw "Acesso negado a Orcamento.setDataOrcamento";
   } else {
     this->dataOrcamento = valData;
@@ -137,7 +138,7 @@ void Orcamento::setDataOrcamento(Data valData) {
 }
 
 Data Orcamento::getDataOrcamento() {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getDataOrcamento")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getDataOrcamento")) {
     throw "Acesso negado a Orcamento.getDataOrcamento";
   } else {
     return this->dataOrcamento;
@@ -145,7 +146,7 @@ Data Orcamento::getDataOrcamento() {
 }
 
 Fornecedor* Orcamento::getFornecedor() {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getFornecedor")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getFornecedor")) {
     throw "Acesso negado a Orcamento.getFornecedor";
   } else {
     return this->fornecedor;
@@ -153,7 +154,7 @@ Fornecedor* Orcamento::getFornecedor() {
 }
 
 void Orcamento::setCliente(Cliente* valCliente) {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setCliente")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setCliente")) {
     throw "Acesso negado a Orcamento.setCliente";
   } else {
     this->cliente = valCliente;
@@ -161,7 +162,7 @@ void Orcamento::setCliente(Cliente* valCliente) {
 }
 
 Cliente* Orcamento::getCliente() {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getCliente")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getCliente")) {
     throw "Acesso negado a Orcamento.getCliente";
   } else {
     return this->cliente;
@@ -169,7 +170,7 @@ Cliente* Orcamento::getCliente() {
 }
 
 double Orcamento::getValorTotal() {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getValorTotal")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getValorTotal")) {
     throw "Acesso negado a Orcamento.getValorTotal";
   } else {
     return this->valorTotal;
@@ -177,7 +178,7 @@ double Orcamento::getValorTotal() {
 }
 
 vector<pair<string, double>> Orcamento::getItens(){
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getItens")) {
+  if(false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getItens")) {
     throw "Acesso negado a Orcamento.getItens";
   } else {
     return this->itens;
@@ -185,7 +186,7 @@ vector<pair<string, double>> Orcamento::getItens(){
 }
 
 void Orcamento::setFornecedor(Fornecedor * valFornecedor){
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setFornecedor")) {
+  if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setFornecedor")) {
     throw "Acesso negado a Orcamento.setFornecedor";
   } else {
     this->fornecedor = fornecedor;
@@ -193,7 +194,7 @@ void Orcamento::setFornecedor(Fornecedor * valFornecedor){
 }
 
 void Orcamento::setItens(vector<pair<string, double>> valItens){
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setItens")) {
+    if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.setItens")) {
     throw "Acesso negado a Orcamento.setItens";
   } else {
     this->itens = valItens;

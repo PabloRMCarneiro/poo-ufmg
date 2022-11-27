@@ -17,10 +17,9 @@ private:
 
 public:
   CartaoDeCredito();
-  CartaoDeCredito(string tipoDePagamento, int quantidadeDeParcelas,
-                  Data data, string numeroDoCartao, string nomeDoTitular,
+  CartaoDeCredito(string numeroDoCartao, string nomeDoTitular,
                   string codigoDeSeguranca, Data dataDeValidade);
-  virtual ~CartaoDeCredito();
+  //virtual ~CartaoDeCredito();
 
   string getNumeroDoCartao();
   string getNomeDoTitular();

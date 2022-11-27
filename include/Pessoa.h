@@ -14,7 +14,7 @@ class Pessoa{
     public:
         Pessoa();
         Pessoa(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone);
-        virtual ~Pessoa();
+        //virtual ~Pessoa();
         string getNome();
         Endereco getEndereco();
         string getEmail();

@@ -1,54 +1,70 @@
 #include "../include/Log.h"
 #include "../include/LogEscrita.h"
 #include "../include/UsuarioLogado.h"
+#include "../include/Empresa.h"
 #include <string>
 #include <map>
 
 using namespace std;
 
-LogEscrita::LogEscrita(map<string, string> valAtributosAntes, map<string, string> valAtributosDepois, string valEntidade) : Log(valEntidade)
+LogEscrita::LogEscrita(){
+
+}
+LogEscrita::LogEscrita(string valAtributo, string valAntes, string valDepois, string valEntidade) : Log(valEntidade)
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("LogEscrita.LogEscrita"))
+  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("LogEscrita.LogEscrita"))
   {
     throw "Acesso negado a LogEscrita.LogEscrita";
   }
   else
   {
-    this->atributosAntes = valAtributosAntes;
-    this->atributosDepois = valAtributosDepois;
+    this->atributo = valAtributo;
+    this->antes = valAntes;
+    this->depois = valDepois;
+    Empresa::getEmpresa()->setlogEscrita(this);
   }
 }
 
-map<string, string> LogEscrita::getAtributosAntes()
+string LogEscrita::getAtributoAntes()
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("LogEscrita.getAtributosAntes"))
+  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("LogEscrita.getAtributosAntes"))
   {
     throw "Acesso negado a LogEscrita.getAtributosAntes";
   }
   else
   {
-    return this->atributosAntes;
+    return this->antes;
   }
 }
 
-map<string, string> LogEscrita::getAtributosDepois()
+string LogEscrita::getAtributoDepois()
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("LogEscrita.getAtributosDepois"))
+  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("LogEscrita.getAtributosDepois"))
   {
     throw "Acesso negado a LogEscrita.getAtributosDepois";
   }
   else
   {
-    return this->atributosDepois;
+    return this->depois;
   }
 }
-
-void LogEscrita::setAtributosAntes(string valAtributo, string valValor)
+string LogEscrita::getAtributo(){
+  return this->atributo;
+}
+void LogEscrita::setAtributoAntes(string valAtributoAntes)
 {
-  this->atributosAntes[valAtributo] = valValor;
+  this->antes = valAtributoAntes;
 }
 
-void LogEscrita::setAtributosDepois(string valAtributo, string valValor)
+void LogEscrita::setAtributoDepois(string valAtributoDepois)
 {
-  this->atributosDepois[valAtributo] = valValor;
+  this->depois = valAtributoDepois;
+}
+
+void LogEscrita::setAtributo(string valAtributo){
+  this->atributo = valAtributo;
+}
+void LogEscrita::imprime(){
+  cout << "Em "<< this->getData().getData() << " - ";
+  cout << "atributo " <<this->atributo << " da classe "<< this->getEntidade() << " foi alterado: " << this->antes << " -> " << this->depois << "." << endl;
 }

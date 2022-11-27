@@ -6,7 +6,7 @@ using namespace std;
 
 CartaoDeCredito::CartaoDeCredito() : MetodoDePagamento()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.CartaoDeCredito"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.CartaoDeCredito"))
   {
     throw "Acesso negado a CartaoDeCredito.CartaoDeCredito";
   }
@@ -19,12 +19,11 @@ CartaoDeCredito::CartaoDeCredito() : MetodoDePagamento()
   }
 }
 
-CartaoDeCredito::CartaoDeCredito(string tipoDePagamento, int quantidadeDeParcelas,
-                                 Data data, string numeroDoCartao, string nomeDoTitular,
-                                 string codigoDeSeguranca, Data dataDeValidade)
-    : MetodoDePagamento(tipoDePagamento, quantidadeDeParcelas, quantidadeDeParcelas, data)
+CartaoDeCredito::CartaoDeCredito(string numeroDoCartao, string nomeDoTitular,
+                  string codigoDeSeguranca, Data dataDeValidade)
+    : MetodoDePagamento(0, 0)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.CartaoDeCredito"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.CartaoDeCredito"))
   {
     throw "Acesso negado a CartaoDeCredito.CartaoDeCredito";
   }
@@ -37,13 +36,13 @@ CartaoDeCredito::CartaoDeCredito(string tipoDePagamento, int quantidadeDeParcela
   }
 }
 
-CartaoDeCredito::~CartaoDeCredito()
-{
-}
+// CartaoDeCredito::~CartaoDeCredito()
+// {
+// }
 
 string CartaoDeCredito::getNumeroDoCartao()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getNumeroDoCartao"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getNumeroDoCartao"))
   {
     throw "Acesso negado a CartaoDeCredito.getNumeroDoCartao";
   }
@@ -55,7 +54,7 @@ string CartaoDeCredito::getNumeroDoCartao()
 
 string CartaoDeCredito::getNomeDoTitular()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getNomeDoTitular"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getNomeDoTitular"))
   {
     throw "Acesso negado a CartaoDeCredito.getNomeDoTitular";
   }
@@ -67,7 +66,7 @@ string CartaoDeCredito::getNomeDoTitular()
 
 string CartaoDeCredito::getCodigoDeSeguranca()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getCodigoDeSeguranca"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getCodigoDeSeguranca"))
   {
     throw "Acesso negado a CartaoDeCredito.getCodigoDeSeguranca";
   }
@@ -79,7 +78,7 @@ string CartaoDeCredito::getCodigoDeSeguranca()
 
 Data CartaoDeCredito::getDataDeValidade() 
 { 
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getDataDeValidade"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getDataDeValidade"))
   {
     throw "Acesso negado a CartaoDeCredito.getDataDeValidade";
   }

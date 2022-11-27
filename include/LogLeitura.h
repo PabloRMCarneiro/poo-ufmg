@@ -12,6 +12,7 @@ class LogLeitura : public Log
     LogLeitura(string valAtributo, string valEntidade);
     string getAtributo();
     void setAtributo(string);
+    void imprime();
 };
 
 #endif

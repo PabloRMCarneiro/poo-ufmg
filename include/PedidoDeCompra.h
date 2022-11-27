@@ -1,30 +1,35 @@
-#ifndef E6F900AC_81D9_430B_B639_840D874D80B7
-#define E6F900AC_81D9_430B_B639_840D874D80B7
-#include "MetodoDePagamento.h"
+#ifndef PEDIDODECOMPRA_H_INCLUDED
+#define PEDIDODECOMPRA_H_INCLUDED
 #include "data.h"
+#include "RegistroVendas.h"
 #include "Orcamento.h"
 #include "Boleto.h"
 #include "CartaoDeCredito.h"
 
 class PedidoDeCompra
 {
-    public:
-        PedidoDeCompra();
-        PedidoDeCompra(Orcamento *valOrcamento);
-        PedidoDeCompra(Orcamento *valOrcamento, CartaoDeCredito *valCartaoDeCredito);
-        ~PedidoDeCompra();
-        void setOrcamento(Orcamento *valOrcamento);
-        void setBoleto();
-        void setCartaoDeCredito(CartaoDeCredito *valCartaoDeCredito);
-        Orcamento *getOrcamento();
-        Boleto *getBoleto();
-        CartaoDeCredito *getCartaoDeCredito();
     private:
+      static int contPedidos;
+      int codigo;
       Orcamento *orcamento;
       Boleto *boleto;
       CartaoDeCredito *cartaoDeCredito;
       Data data;
+      bool vendaRealizada;
+    public:
+        PedidoDeCompra();
+        PedidoDeCompra(Orcamento *valOrcamento, Data valDataVencimento);
+        PedidoDeCompra(Orcamento *valOrcamento, CartaoDeCredito *valCartaoDeCredito, int parcelas);
+        ~PedidoDeCompra();
+        void setOrcamento(Orcamento *valOrcamento);
+        void setBoleto(Data valDataVencimento);
+        void setCartaoDeCredito(CartaoDeCredito *valCartaoDeCredito);
+        void setVenda();
+        int getCodigo();
+        Orcamento *getOrcamento();
+        Boleto *getBoleto();
+        CartaoDeCredito *getCartaoDeCredito();
 
 };
 
-#endif 
+#endif //PEDIDODECOMPRA_H_INCLUDED

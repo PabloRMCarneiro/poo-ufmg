@@ -13,9 +13,6 @@ class Categoria{
     ~Categoria();
     string getTipo();
     void setTipo(string t);
-    static vector <Categoria*> categorialist;
-    static void novaCategoria(Categoria* nova);
-    static Categoria* getCategoria(string t);
 };
 
 #endif 

@@ -16,7 +16,7 @@ class Data{
     public:
         static Data dataDeHoje;
         Data();
-        Data(int valDia, int valMes, int valAna);
+        Data(int valDia, int valMes, int valAno);
         Data(int valDia, int valMes, int valAno , int valHora, int valMin, int valSeg );
         int getAno();
         int getMes();
@@ -33,5 +33,6 @@ class Data{
         bool operator<(Data &d2);       
         bool operator==(Data &d2);      
         string getData(); 
+        string getHorario();
 };
 #endif //DATA_H_INCLUDED

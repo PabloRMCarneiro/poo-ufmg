@@ -6,7 +6,7 @@ vector<Produto *> Produto::produtolist;
 
 Produto::Produto()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.Produto"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.Produto"))
   {
     throw "Acesso negado a Produto.Produto";
   }
@@ -26,7 +26,7 @@ Produto::Produto()
 
 Produto::Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteMinimo, int estoqueMinimo, int qtdEstoque, string categ)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.Produto"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.Produto"))
   {
     throw "Acesso negado a Produto.Produto";
   }
@@ -49,7 +49,7 @@ Produto::~Produto()
 
 string Produto::getNome()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getNome"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getNome"))
   {
     throw "Acesso negado a Produto.getNome";
   }
@@ -62,7 +62,7 @@ string Produto::getNome()
 
 int Produto::getCodigo()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getCodigo"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getCodigo"))
   {
     throw "Acesso negado a Produto.getCodigo";
   }
@@ -72,10 +72,15 @@ int Produto::getCodigo()
     return this->codigo;
   }
 }
-
+vector<pair<MateriaPrima*, double>> Produto::getMateriaPrimaList(){
+  return this->materiaPrimaList;
+}
+void Produto::setMateriaPrimaList(vector<pair<MateriaPrima*, double>> valMateriaPrimaList){
+  this->materiaPrimaList = valMateriaPrimaList;
+}
 float Produto::getValorDeVenda()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getValorDeVenda"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getValorDeVenda"))
   {
     throw "Acesso negado a Produto.getValorDeVenda";
   }
@@ -88,7 +93,7 @@ float Produto::getValorDeVenda()
 
 int Produto::getTamanhoDoLoteMinimo()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getTamanhoDoLoteMinimo"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getTamanhoDoLoteMinimo"))
   {
     throw "Acesso negado a Produto.getTamanhoDoLoteMinimo";
   }
@@ -101,7 +106,7 @@ int Produto::getTamanhoDoLoteMinimo()
 
 int Produto::getEstoqueMinimo()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getEstoqueMinimo"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getEstoqueMinimo"))
   {
     throw "Acesso negado a Produto.getEstoqueMinimo";
   }
@@ -114,7 +119,7 @@ int Produto::getEstoqueMinimo()
 
 int Produto::getQtdEstoque()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getQtdEstoque"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getQtdEstoque"))
   {
     throw "Acesso negado a Produto.getQtdEstoque";
   }
@@ -124,21 +129,21 @@ int Produto::getQtdEstoque()
     return this->qtdEstoque;
   }
 }
-string Produto::getCategoria()
+Categoria* Produto::getCategoria()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getCategoria"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getCategoria"))
   {
     throw "Acesso negado a Produto.getCategoria";
   }
   else
 
   {
-    return this->categoria->getTipo();
+    return this->categoria;
   }
 }
 OrdemDeProducao *Produto::getOrdem()
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getOrdem"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getOrdem"))
   {
     throw "Acesso negado a Produto.getOrdem";
   }
@@ -151,7 +156,7 @@ OrdemDeProducao *Produto::getOrdem()
 
 Lote *Produto::getLote(int nl)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getLote"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getLote"))
   {
     throw "Acesso negado a Produto.getLote";
   }
@@ -201,46 +206,52 @@ void Produto::setQtdEstoque(int qtdEstoque)
 
 void Produto::setCategoria(string categ)
 {
-  if (Categoria::getCategoria(categ) != nullptr)
-  {
-    this->setCategoria(categ);
-  }
-  else
-  {
-    this->categoria = new Categoria(categ);
-  }
+  this->categoria= Empresa::getEmpresa()->getCategoria(categ);
 }
 
 void Produto::registraLote(int numeroLote, Data dataDeProducao)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.registraLote"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.registraLote"))
   {
     throw "Acesso negado a Produto.registraLote";
   }
   else
 
   {
-    this->lotes.push_back(new Lote(dataDeProducao, numeroLote, this->tamanhoDoLoteMinimo, this->nome));
-    this->qtdEstoque += this->tamanhoDoLoteMinimo;
+    int cont =0;
+    for(auto it : materiaPrimaList){
+      if(it.first->getEstoque() >= (it.second*this->tamanhoDoLoteMinimo)){
+        cont =1;
+      } else {
+        cont =0;
+        throw "Falta Materia Prima!";
+      }
+    }
+    if(cont == 1){
+      this->lotes.push_back(new Lote(dataDeProducao, numeroLote, this->tamanhoDoLoteMinimo, this->nome));
+      this->qtdEstoque += this->tamanhoDoLoteMinimo;
+      for(auto it : materiaPrimaList){
+        it.first->setEstoque((-it.second*this->tamanhoDoLoteMinimo), Data::dataDeHoje);
+      }
+    }
   }
 }
 
 pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.realizaVenda"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.realizaVenda"))
   {
     throw "Acesso negado a Produto.realizaVenda";
   }
   else
-
   {
-    int lote, faltaVender;
+    int lote, faltaVender=quantidade;
     for (auto it : this->lotes)
     {
       if (it->getQuantidadeAtual() > 0)
       {
         lote = it->getNumLote();
-        faltaVender = it->vende(quantidade);
+        faltaVender = it->vende(faltaVender);
         this->qtdEstoque -= (quantidade - faltaVender);
         break;
       }
@@ -255,7 +266,7 @@ pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
 
 void Produto::geraOrdem(Data dataQuandoAcabaEstoque)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.geraOrdem"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.geraOrdem"))
   {
     throw "Acesso negado a Produto.geraOrdem";
   }
@@ -268,7 +279,7 @@ void Produto::geraOrdem(Data dataQuandoAcabaEstoque)
 
 bool Produto::temEstoque(int q)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.temEstoque"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.temEstoque"))
   {
     throw "Acesso negado a Produto.temEstoque";
   }
@@ -281,7 +292,7 @@ bool Produto::temEstoque(int q)
 
 void Produto::novoProduto(Produto *novo)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.novoProduto"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.novoProduto"))
   {
     throw "Acesso negado a Produto.novoProduto";
   }
@@ -291,10 +302,12 @@ void Produto::novoProduto(Produto *novo)
     produtolist.push_back(novo);
   }
 }
-
+void Produto::alteraPreco(double alteracao){
+  this->valorDeVenda = this->valorDeVenda*alteracao;
+}
 Produto *Produto::getProduto(string n)
 {
-  if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getProduto"))
+  if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.getProduto"))
   {
     throw "Acesso negado a Produto.getProduto";
   }

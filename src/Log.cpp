@@ -1,6 +1,5 @@
 #include "../include/Log.h"
 #include "../include/data.h"
-#include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
 #include <string>
 
@@ -9,7 +8,7 @@ using namespace std;
 Log::Log()
 {
 
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.Log"))
+  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.Log"))
   {
     throw "Acesso negado a Log.Log";
   }
@@ -24,7 +23,7 @@ Log::Log()
 
 Log::Log(string valEntidade)
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.Log"))
+  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.Log"))
   {
     throw "Acesso negado a Log.Log";
   }
@@ -58,7 +57,7 @@ void Log::setEntidade(string valEntidade)
 
 Usuario* Log::getUsuario()
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.getUsuario"))
+  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.getUsuario"))
   {
     throw "Acesso negado a Log.getUsuario";
   }
@@ -70,7 +69,7 @@ Usuario* Log::getUsuario()
 
 Data Log::getData()
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.getData"))
+  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.getData"))
   {
     throw "Acesso negado a Log.getData";
   }
@@ -82,7 +81,7 @@ Data Log::getData()
 
 string Log::getEntidade()
 {
-  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.getEntidade"))
+  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Log.getEntidade"))
   {
     throw "Acesso negado a Log.getEntidade";
   }
@@ -91,4 +90,3 @@ string Log::getEntidade()
     return this->entidade;
   }
 }
-
