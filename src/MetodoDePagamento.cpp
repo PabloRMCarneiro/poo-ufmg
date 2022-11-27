@@ -1,6 +1,6 @@
 #include "../include/MetodoDePagamento.h"
 #include "../include/UsuarioLogado.h"
-#include "../include/Empresa.h"
+
 MetodoDePagamento::MetodoDePagamento()
 {
     if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.MetodoDePagamento"))
@@ -35,6 +35,7 @@ int MetodoDePagamento::getQuantidadeDeParcelas()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("quantidadeDeParcelas", "MetodoDePagamento");
         return quantidadeDeParcelas;
     }
 }
@@ -47,6 +48,7 @@ float MetodoDePagamento::getQuantiaPorParcelas()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("quantiaPorParcelas", "MetodoDePagamento");
         return quantiaPorParcelas;
     }
 }
