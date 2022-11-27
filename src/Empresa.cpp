@@ -21,6 +21,7 @@ vector <LogEscrita*> Empresa::getlogsEscrita(){
   return this->logsEscrita;
 }
 vector<RegistroVendas*> Empresa::getRegistrosVendas(){
+  LogLeitura *a = new LogLeitura("registrosVendas", "Empresa");
   return this->registrosVendas;
 }
 vector <LogLeitura*> Empresa::getlogsLeitura(){
@@ -35,6 +36,7 @@ vector<PermissaoNegada*> Empresa::getLogAcesso(){
 MateriaPrima* Empresa::getMateriaPrima(string valMateriaPrima){
   for(auto it : this->materiaPrimaLista){
     if(it->getNome() == valMateriaPrima){
+      LogLeitura *a = new LogLeitura("MateriaPrima", "Empresa");
       return it;
     }
   }
@@ -42,6 +44,7 @@ MateriaPrima* Empresa::getMateriaPrima(string valMateriaPrima){
 }
 
 vector<MateriaPrima*> Empresa::getMateriaPrimaLista(){
+  LogLeitura *a = new LogLeitura("materiaPrimaLista", "Empresa");
   return this->materiaPrimaLista;
 }
 
@@ -62,10 +65,12 @@ void Empresa::setOrdemDeProducao(OrdemDeProducao* valOrdemDeProducao){
 }
 
 vector<OrdemDeCompra*> Empresa::getOrdemDeCompraLista(){
+  LogLeitura *a = new LogLeitura("ordemDeCompraLista", "Empresa");
   return this->ordemDeCompraLista;
 }
 
 vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
+  LogLeitura *a = new LogLeitura("ordemDeProduçãoLista", "Empresa");
   return this->ordemDeProducaoLista;
 }
 
@@ -74,6 +79,7 @@ vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
   {
     if (empresa->cargos[i]->getNome() == valCargo)
     {
+      LogLeitura *a = new LogLeitura("cargos", "Empresa");
       return empresa->cargos[i];
     }
   }
@@ -81,6 +87,7 @@ vector<OrdemDeProducao*> Empresa::getOrdemDeProducaoLista(){
 }
 
 UsuarioLogado* Empresa::getUsuario(){
+  LogLeitura *a = new LogLeitura("usuarioLogado", "Empresa");
   return this->usuarioLogado;
 }
 
@@ -106,12 +113,14 @@ void Empresa::setEndereco(Endereco valEndereco){
 }
 
 Endereco Empresa::getEndereco(){
+  LogLeitura *a = new LogLeitura("endereco", "Empresa");
   return this->endereco;
 }
 
 Departamento *Empresa::getDepartamento(string name){
   for(auto it : departamentos){
     if(it->getNome() == name){
+      LogLeitura *a = new LogLeitura("departamento", "Empresa");
       return it;
     }
   }
@@ -120,6 +129,7 @@ Departamento *Empresa::getDepartamento(string name){
 Categoria* Empresa::getCategoria(string valCategoria){
   for(auto it : categorias){
     if(it->getTipo()==valCategoria){
+      LogLeitura *a = new LogLeitura("categoria", "Empresa");
       return it;
     }
   }
@@ -133,6 +143,7 @@ void Empresa::setCategoria(Categoria* valCategoria){
 Turno* Empresa::getTurno(string valTurno){
   for(auto it : this->turnos){
     if(it->getPeriodo() == valTurno){
+      LogLeitura *a = new LogLeitura("turno", "Empresa");
       return it;
     }
   }
@@ -140,6 +151,7 @@ Turno* Empresa::getTurno(string valTurno){
 }
 
 vector<Turno*> Empresa::getTurnos(){
+  LogLeitura *a = new LogLeitura("turnos", "Empresa");
   return this->turnos;
 }
 void Empresa::excluiFuncionario(Funcionario *valFuncionario){
@@ -163,6 +175,7 @@ void Empresa::excluiFuncionario(Funcionario *valFuncionario){
 Veiculo* Empresa::getVeiculo(Turno* valTurno){
   for(auto it : this->veiculos){
     if(it->getTurno() == valTurno){
+      LogLeitura *a = new LogLeitura("veiculo", "Empresa");
       return it;
     }
   }
@@ -170,6 +183,7 @@ Veiculo* Empresa::getVeiculo(Turno* valTurno){
 }
 
 vector<Veiculo*> Empresa::getVeiculos(){
+  LogLeitura *a = new LogLeitura("veiculos", "Empresa");
   return this->veiculos;
 }
 
@@ -197,6 +211,7 @@ Cliente *Empresa::getCliente(string doc){
 
   for(auto it : clientes){
     if(it->getDocumento() == doc){
+      LogLeitura *a = new LogLeitura("cliente", "Empresa");
       return it;
     }
   }
@@ -210,6 +225,7 @@ void Empresa::setCliente(Cliente *valCliente){
 Funcionario *Empresa::getFuncionario(string doc){
   for(auto it : funcionarios){
     if( it->getDocumento() == doc){
+      LogLeitura *a = new LogLeitura("funcionario", "Empresa");
       return it;
     }
   }
@@ -217,6 +233,7 @@ Funcionario *Empresa::getFuncionario(string doc){
 }
 
 vector<Funcionario*> Empresa::getFuncionarios(){
+  LogLeitura *a = new LogLeitura("funcionarios", "Empresa");
   return this->funcionarios;
 }
 
@@ -227,6 +244,7 @@ void Empresa::setFuncionario(Funcionario *valFuncionario){
 RegistroVendas *Empresa::getRegistroVendas(Data valData, Produto* valProduto, Cliente* valCliente){
   for(auto it : registrosVendas){
     if((it->getDataDeVenda() == valData) && (it->getProduto() == valProduto) && (it->getCliente()== valCliente)){
+      LogLeitura *a = new LogLeitura("registroVendas", "Empresa");
       return it;
     }
   }
