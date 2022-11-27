@@ -40,10 +40,12 @@ void OrdemDeProducao::setDataOrdem(Data dO)
 void OrdemDeProducao::setProduto(string p)
 {
     this->produto = p;
+    LogEscrita *a = new LogEscrita("produto", "indefinido", p, "OrdemDeProducao");
 }
 
 void OrdemDeProducao::setQuantidade(int q)
 {
+    LogEscrita *a = new LogEscrita("quantidade", "indefinido", to_string(q), "OrdemDeProducao");
     this->quantidade = q;
 }
 
