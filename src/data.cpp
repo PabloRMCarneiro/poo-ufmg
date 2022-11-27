@@ -72,7 +72,9 @@ int Data::getAno()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("ano", "Data");
         return ano;
+        
     }
 }
 
@@ -86,6 +88,7 @@ int Data::getMes()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("mes", "Data");
         return mes;
     }
     return mes;
@@ -101,6 +104,7 @@ int Data::getDia()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("dia", "Data");
         return dia;
     }
 }
@@ -115,6 +119,7 @@ int Data::getHora()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("hora", "Data");
         return hora;
     }
 }
@@ -129,6 +134,7 @@ int Data::getMin()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("min", "Data");
         return minuto;
     }
 }
@@ -143,6 +149,7 @@ int Data::getSeg()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("seg", "Data");
         return segundo;
     }
 }
@@ -257,6 +264,7 @@ string Data::getData()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("getData", "Data");
         string sDia = help(dia), sMes = help(mes), sAno = help(ano);
         string sHora = help(hora), sMinuto = help(minuto), sSegundo = help(segundo);
         return (sDia + "/" + sMes + "/" + sAno + " às " + sHora + ":" + sMinuto + ":" + sSegundo);
@@ -273,6 +281,7 @@ string Data::getHorario()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("horario", "Data");
         string sHora = help(hora), sMinuto = help(minuto), sSegundo = help(segundo);
         return (sHora + ":" + sMinuto + ":" + sSegundo);
     }
