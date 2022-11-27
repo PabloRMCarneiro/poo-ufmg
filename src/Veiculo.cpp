@@ -2,6 +2,7 @@
 #include "../include/UsuarioLogado.h"
 #include "../include/Empresa.h"
 #include "../include/PermissaoNegada.h"
+#include <string>
 
 Veiculo::Veiculo()
 {
@@ -36,6 +37,8 @@ Veiculo::Veiculo(int valId, int valCapacidade, Turno *valTurno)
         this->setTurno(valTurno);
         this->atual = 0;
         this->tempoDeRota = 0;
+        LogEscrita *a = new LogEscrita("atual", "indefinido", "0", "Veiculo");
+        LogEscrita *b = new LogEscrita("tempoDeRota", "indefinido", "0", "Veiculo");
     }
 }
 
@@ -49,6 +52,7 @@ void Veiculo::setId(int valId)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("id", "indefinido", to_string(valId), "Veiculo");
         this->id = valId;
     }
 }
@@ -63,6 +67,7 @@ void Veiculo::setCapacidade(int valCapacidade)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("capacidade", "indefinido", to_string(valCapacidade), "Veiculo");
         this->capacidade = valCapacidade;
     }
 }
@@ -78,13 +83,14 @@ bool Veiculo::setAtual(int valAtual)
     else
     {
         bool adicionar;
-        if (this->atual == this->capacidade)
+        if (this->getAtual() == this->getCapacidade())
             {
             adicionar = false;
             }
         else
             {
-            this->atual = this->atual + valAtual;
+            LogEscrita *a = new LogEscrita("atual", to_string(atual), to_string(atual+valAtual), "Veiculo");
+            this->atual= this->getAtual() + valAtual;
             adicionar = true;
             }
         return adicionar;
@@ -102,6 +108,7 @@ void Veiculo::setTempoDeRota(int valTempoDeRota)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("tempoDeRota", to_string(tempoDeRota), to_string(tempoDeRota + valTempoDeRota), "Veiculo");
         this->tempoDeRota = this->tempoDeRota + valTempoDeRota;
         this->setHoraSaida();
     }
@@ -117,6 +124,7 @@ void Veiculo::setTurno(Turno *valTurno)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("turno", "indefinido", valTurno->getPeriodo(), "Veiculo");
         this->turno = valTurno;
         this->setHoraSaida();
     }
@@ -175,9 +183,9 @@ void Veiculo::setHoraSaida()
     else
     {
         int tempoTotal, horaDoBusaoSair, horaturno, hora, minuto, segundo;
-        Data valInicioTurno = this->turno->getEntradaHora();
+        Data valInicioTurno = this->getTurno()->getEntradaHora();
         horaturno = this->auxiliarTempoSegundos(valInicioTurno);
-        horaDoBusaoSair = horaturno - 600 - this->tempoDeRota; // hora do turno -10 min -tempodeRota
+        horaDoBusaoSair = horaturno - 600 - this->getTempoDeRota(); // hora do turno -10 min -tempodeRota
         this->horaSaida = this->auxiliarTempoHora(horaDoBusaoSair);
     }
 }
@@ -227,10 +235,10 @@ int Veiculo::tempoEmpresaCasa(int valTempo)
     }
     else
     {
-        int tempoTotal, horaSaida, horaturno, hora, minuto, segundo;
-        Data valLocal = this->horaSaida;
-        horaSaida = valLocal.getHora() * 3600 + valLocal.getMin() * 60 + valLocal.getSeg();
-        tempoTotal = horaSaida + valTempo;
+        int tempoTotal, horaDeSaida, horaturno, hora, minuto, segundo;
+        Data valLocal = this->getHoraSaida();
+        horaDeSaida = valLocal.getHora() * 3600 + valLocal.getMin() * 60 + valLocal.getSeg();
+        tempoTotal = horaDeSaida + valTempo;
         return tempoTotal;
     }
 }
@@ -310,7 +318,7 @@ bool Veiculo::setPassageiros(vector<Funcionario *> valPassageiros)
         bool adicionar = false;
         try
         {
-            if (valPassageiros.size() <= this->capacidade)
+            if (valPassageiros.size() <= this->getCapacidade())
             {   
                 rota.clear();
                 for (auto it : valPassageiros)
@@ -453,7 +461,7 @@ Data Veiculo::getHoraPosicao(Funcionario *valPassageiro)
     else
     {
         int hora; // em segundos;
-        for (auto it : rota)
+        for (auto it : this->getRota())
         {
             if (it.second.getEndereco() == valPassageiro->getEndereco().getEndereco())
             {
@@ -503,7 +511,7 @@ Funcionario *Veiculo::getPassageiro(Endereco valEndereco)
     else
     {
         Funcionario *encontrado = new Funcionario;
-        for (auto it : passageiros)
+        for (auto it : this->getPassageiros())
         {
             if (it->getEndereco().getEndereco() == valEndereco.getEndereco())
             {
