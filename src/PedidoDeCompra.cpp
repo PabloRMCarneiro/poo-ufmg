@@ -55,7 +55,7 @@ PedidoDeCompra::PedidoDeCompra(Orcamento *valOrcamento, CartaoDeCredito *valCart
         LogEscrita *a = new LogEscrita("contPedidos", to_string(PedidoDeCompra::contPedidos), to_string(PedidoDeCompra::contPedidos+1), "PedidoDeCompra");
         PedidoDeCompra::contPedidos++;
         this->codigo = contPedidos;
-        LogEscrita *a = new LogEscrita("codigo", "indefinido", to_string(codigo), "PedidoDeCompra");
+        LogEscrita *b = new LogEscrita("codigo", "indefinido", to_string(codigo), "PedidoDeCompra");
         this->setVenda();
     }
 }
