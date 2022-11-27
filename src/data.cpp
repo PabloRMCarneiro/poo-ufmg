@@ -281,9 +281,8 @@ string Data::getData()
     }
     else
     {
-        LogLeitura *a = new LogLeitura("getData", "Data");
-        string sDia = help(dia), sMes = help(mes), sAno = help(ano);
-        string sHora = help(hora), sMinuto = help(minuto), sSegundo = help(segundo);
+        string sDia = help(this->getDia()), sMes = help(this->getMes()), sAno = help(this->getAno());
+        string sHora = help(this->getHora()), sMinuto = help(this->getMin()), sSegundo = help(this->getSeg());
         return (sDia + "/" + sMes + "/" + sAno + " às " + sHora + ":" + sMinuto + ":" + sSegundo);
     }
     
@@ -299,7 +298,7 @@ string Data::getHorario()
     else
     {
         LogLeitura *a = new LogLeitura("horario", "Data");
-        string sHora = help(hora), sMinuto = help(minuto), sSegundo = help(segundo);
+        string sHora = help(this->getHora()), sMinuto = help(this->getMin()), sSegundo = help(this->getSeg());
         return (sHora + ":" + sMinuto + ":" + sSegundo);
     }
     
