@@ -163,6 +163,7 @@ Turno* Funcionario::getJornada()
     PermissaoNegada *a = new PermissaoNegada("getJornada", "Funcionario");
     string mensagem = "Acesso negado a Funcionario.getJornada";
     throw mensagem;
+    
   }
   else
   {
