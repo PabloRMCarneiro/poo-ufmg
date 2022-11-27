@@ -85,13 +85,9 @@ Data OrdemDeProducao::getDataOrdem()
     string menssagem = "Acessa negado a OrdemDeProducao.getDataOrdem";
     throw menssagem;
     }
-<<<<<<< HEAD
-    else{
-=======
     else
     {
         LogLeitura *logLeitura = new LogLeitura("dataOrdem", "OrdemDeProdução");
->>>>>>> b1f3066a637964ac3651951183d3edbf0c767e5b
         return this->dataOrdem;
     }
 }
@@ -128,7 +124,7 @@ int OrdemDeProducao::getQuantidade()
 
 void OrdemDeProducao::getOrdem()
 {
-    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("getOrdem.getQuantidade"))
+    if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.getOrdem"))
     {
     PermissaoNegada *a = new PermissaoNegada("getOrdem", "OrdemDeProducao");
     string menssagem = "Acessa negado a OrdemDeProducao.getOrdem";
