@@ -1,6 +1,7 @@
 #include "../include/OrdemDeCompra.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
+#include "../include/Empresa.h"
 
 OrdemDeCompra::OrdemDeCompra()
 {
@@ -30,6 +31,7 @@ OrdemDeCompra::OrdemDeCompra(MateriaPrima *valMateriaPrima)
         this->setData(Data::dataDeHoje);
         this->setMateriaPrima(valMateriaPrima);
         this->valorTotal = 0.0;
+        LogEscrita *d = new LogEscrita("valorTotal", "indefinido", to_string(valorTotal), "OrdemDeCompra");
     }
 }
 
@@ -75,6 +77,8 @@ void OrdemDeCompra::setData(Data valData)
     else
     {
         this->dataOrdem = valData;
+        LogEscrita *d = new LogEscrita("dataOrdem", "indefinido", dataOrdem.getData(), "OrdemDeCompra");
+        
     }
 }
 
@@ -88,7 +92,9 @@ void OrdemDeCompra::setValorTotal(double valValorTotal)
     }
     else
     {
+        string valor =to_string(valorTotal);
         this->valorTotal = this->valorTotal + valValorTotal;
+        LogEscrita *d = new LogEscrita("valorTotal", valor, to_string(valorTotal), "OrdemDeCompra");
     }
 }
 
@@ -103,7 +109,7 @@ void OrdemDeCompra::setOrcamento()
     else
     {
         vector<pair<string, double>> valItens;
-        for (auto it : materiaPrimaLista)
+        for (auto it : this->getMateriaPrimaLista())
         {
             valItens.push_back(make_pair(it->getNome(), it->getEstoqueMinimo()));
         }
@@ -112,6 +118,7 @@ void OrdemDeCompra::setOrcamento()
             Orcamento *novo = new Orcamento(false, valItens, Data::dataDeHoje, it);
             this->orcamentos.push_back(novo);
         }
+        LogLeitura *d = new LogLeitura("forncedorList", "Fornecedor");
     }
 }
 
@@ -125,7 +132,7 @@ void OrdemDeCompra::gerarPedidos()
     }
     else
     {
-        for (auto it : melhoresPrecos)
+        for (auto it : this->getMelhoresPrecos())
         {
             this->setCompra(it.first->vende(it.second, it.second->getEstoqueMinimo(), Data::dataDeHoje));
         }
@@ -144,9 +151,9 @@ void OrdemDeCompra::setMelhoresPrecos()
     {
         double menorPreco = 0.0, precoAtual = 0.0;
         Fornecedor *forneceMenorPreco;
-        for (auto it : materiaPrimaLista)
+        for (auto it : this->getMateriaPrimaLista())
         {
-            for (auto it2 : this->orcamentos)
+            for (auto it2 : this->getOrcamentos())
             {
                 for (auto it3 : it2->getPrecos())
                 {
@@ -180,6 +187,85 @@ void OrdemDeCompra::setCompra(bool valCompra)
     }
     else
     {
+        LogEscrita *d = new LogEscrita("compra", to_string(compra), to_string(valCompra), "OrdemDeCompra");
         this->compra = valCompra;
+    }
+}
+Data OrdemDeCompra::getDatOrdem(){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.getDatOrdem"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("getDatOrdem", "OrdemDeCompra");
+        string mensagem = "Acesso negado a OrdemDeCompra.getDatOrdem";
+        throw mensagem;
+    }
+    else
+    {
+        LogLeitura *d = new LogLeitura("dataOrdem", "OrdemDeCompra");
+        return this->dataOrdem;
+    }
+}
+double OrdemDeCompra::getValorTotal(){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.setCompra"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("setCompra", "OrdemDeCompra");
+        string mensagem = "Acesso negado a OrdemDeCompra.setCompra";
+        throw mensagem;
+    }
+    else
+    {
+        LogLeitura *d = new LogLeitura("valorTotal", "OrdemDeCompra");
+        return this->valorTotal;
+    }
+}
+vector <Orcamento*> OrdemDeCompra::getOrcamentos(){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.getOrcamentos"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("getOrcamentos", "OrdemDeCompra");
+        string mensagem = "Acesso negado a OrdemDeCompra.getOrcamentos";
+        throw mensagem;
+    }
+    else
+    {
+        LogLeitura *d = new LogLeitura("orcamentos", "OrdemDeCompra");
+        return this->orcamentos;
+    }
+}
+vector<MateriaPrima*> OrdemDeCompra::getMateriaPrimaLista(){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.getMateriaPrimaLista"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("getMateriaPrimaLista", "OrdemDeCompra");
+        string mensagem = "Acesso negado a OrdemDeCompra.getMateriaPrimaLista";
+        throw mensagem;
+    }
+    else
+    {
+        LogLeitura *d = new LogLeitura("materiaPrimaLista", "OrdemDeCompra");
+        return this->materiaPrimaLista;
+    }
+}
+vector <pair<Fornecedor*, MateriaPrima*>> OrdemDeCompra::getMelhoresPrecos(){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.getMelhoresPrecos"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("getMelhoresPrecos", "OrdemDeCompra");
+        string mensagem = "Acesso negado a OrdemDeCompra.getMelhoresPrecos";
+        throw mensagem;
+    }
+    else
+    {
+        LogLeitura *d = new LogLeitura("melhoresPrecos", "OrdemDeCompra");
+        return this->melhoresPrecos;
+    }
+}
+bool OrdemDeCompra::getComprou(){
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeCompra.getComprou"))
+    {
+        PermissaoNegada *a = new PermissaoNegada("getComprou", "OrdemDeCompra");
+        string mensagem = "Acesso negado a OrdemDeCompra.getComprou";
+        throw mensagem;
+    }
+    else
+    {
+        LogLeitura *d = new LogLeitura("compra", "OrdemDeCompra");
+        return this->compra;
     }
 }
