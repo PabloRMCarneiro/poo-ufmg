@@ -15,10 +15,11 @@ using namespace std;
 
 Funcionario::Funcionario():Pessoa()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.Funcionario"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.Funcionario"))
   {
     PermissaoNegada *a = new PermissaoNegada("Funcionario", "Funcionario");
-    throw "Acesso negado a Funcionario.Funcionario";
+    string mensagem = "Acesso negado a Funcionario.Funcionario";
+    throw mensagem;
   }
   else
   { 
@@ -36,10 +37,11 @@ Funcionario::Funcionario():Pessoa()
 Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone, Departamento valDepartamento, Data valDataNascimento, Salario valSalario, vector <Data> valRegistro,Cargo valCargo, bool valEstadoAtivo)
 :Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.Funcionario"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.Funcionario"))
   {
     PermissaoNegada *a = new PermissaoNegada("Funcionario", "Funcionario");
-    throw "Acesso negado a Funcionario.Funcionario";
+    string mensagem = "Acesso negado a Funcionario.Funcionario";
+    throw mensagem;
   }
   else
   { 
@@ -66,10 +68,11 @@ Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, 
 
 Departamento Funcionario::getDepartamento()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getDepartamento"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getDepartamento"))
   {
     PermissaoNegada *a = new PermissaoNegada("getDepartamento", "Funcionario");
-    throw "Acesso negado a Funcionario.getDepartamento";
+    string mensagem = "Acesso negado a Funcionario.getDepartamento";
+    throw mensagem;
   }
   else
   {
@@ -80,10 +83,11 @@ Departamento Funcionario::getDepartamento()
 
 Data Funcionario::getDataNascimento()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getDataNascimento"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getDataNascimento"))
   {
     PermissaoNegada *a = new PermissaoNegada("getDataNascimento", "Funcionario");
-    throw "Acesso negado a Funcionario.getDataNascimento";
+    string mensagem = "Acesso negado a Funcionario.getDataNascimento";
+    throw mensagem;
   }
   else
   {
@@ -94,10 +98,11 @@ Data Funcionario::getDataNascimento()
 
 Salario Funcionario::getSalario()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getSalario"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getSalario"))
   {
     PermissaoNegada *a = new PermissaoNegada("getSalario", "Funcionario");
-    throw "Acesso negado a Funcionario.getSalario";
+    string mensagem = "Acesso negado a Funcionario.getSalario";
+    throw mensagem;
   }
   else
   {
@@ -108,10 +113,11 @@ Salario Funcionario::getSalario()
 
 vector <Data> Funcionario::getRegistro()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getRegistro"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getRegistro"))
   {
     PermissaoNegada *a = new PermissaoNegada("getRegistro", "Funcionario");
-    throw "Acesso negado a Funcionario.getRegistro";
+    string mensagem = "Acesso negado a Funcionario.getRegistro";
+    throw mensagem;
   }
   else
   {
@@ -122,10 +128,11 @@ vector <Data> Funcionario::getRegistro()
 
 Cargo Funcionario::getCargo()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getCargo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getCargo"))
   {
     PermissaoNegada *a = new PermissaoNegada("getCargo", "Funcionario");
-    throw "Acesso negado a Funcionario.getCargo";
+    string mensagem = "Acesso negado a Funcionario.getCargo";
+    throw mensagem;
   }
   else
   {
@@ -136,10 +143,11 @@ Cargo Funcionario::getCargo()
 
 bool Funcionario::getEstadoAtivo()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getEstadoAtivo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getEstadoAtivo"))
   {
     PermissaoNegada *a = new PermissaoNegada("getEstadoAtivo", "Funcionario");
-    throw "Acesso negado a Funcionario.getEstadoAtivo";
+    string mensagem = "Acesso negado a Funcionario.getEstadoAtivo";
+    throw mensagem;
   }
   else
   {
@@ -150,10 +158,11 @@ bool Funcionario::getEstadoAtivo()
 
 Turno* Funcionario::getJornada()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getJornada"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getJornada"))
   {
     PermissaoNegada *a = new PermissaoNegada("getJornada", "Funcionario");
-    throw "Acesso negado a Funcionario.getJornada";
+    string mensagem = "Acesso negado a Funcionario.getJornada";
+    throw mensagem;
   }
   else
   {
@@ -164,10 +173,11 @@ Turno* Funcionario::getJornada()
 
 int Funcionario::getIdVeiculo()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
   {
     PermissaoNegada *a = new PermissaoNegada("getIdVeiculo", "Funcionario");
-    throw "Acesso negado a Funcionario.getIdVeiculo";
+    string mensagem = "Acesso negado a Funcionario.getIdVeiculo";
+    throw mensagem;
   }
   else
   {
@@ -178,10 +188,11 @@ int Funcionario::getIdVeiculo()
 
 void Funcionario::setJornada(Turno* valJornada)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.setJornada"))
   {
     PermissaoNegada *a = new PermissaoNegada("setJornada", "Funcionario");
-    throw "Acesso negado a Funcionario.setJornada";
+    string mensagem = "Acesso negado a Funcionario.setJornada";
+    throw mensagem;
   }
   else
   {
@@ -191,10 +202,11 @@ void Funcionario::setJornada(Turno* valJornada)
 
 void Funcionario::setIdVeiculo(int valIdVeiculo)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.setIdVeiculo"))
   {
     PermissaoNegada *a = new PermissaoNegada("setIdVeiculo", "Funcionario");
-    throw "Acesso negado a Funcionario.setIdVeiculo";
+    string mensagem = "Acesso negado a Funcionario.setIdVeiculo";
+    throw mensagem;
   }
   else
   {
@@ -205,10 +217,11 @@ void Funcionario::setIdVeiculo(int valIdVeiculo)
 
 void Funcionario::setDepartamento(Departamento valDepartamento)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.setDepartamento"))
   {
     PermissaoNegada *a = new PermissaoNegada("setDepartamento", "Funcionario");
-    throw "Acesso negado a Funcionario.setDepartamento";
+    string mensagem = "Acesso negado a Funcionario.setDepartamento";
+    throw mensagem;
   }
   else
   {
@@ -218,10 +231,11 @@ void Funcionario::setDepartamento(Departamento valDepartamento)
 
 void Funcionario::setDataNascimento(Data valDataNascimento)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.setDataNascimento"))
   {
     PermissaoNegada *a = new PermissaoNegada("setDepartamento", "Funcionario");
-    throw "Acesso negado a Funcionario.setDepartamento";
+    string mensagem = "Acesso negado a Funcionario.setDataNascimento";
+    throw mensagem;
   }
   else
   {
@@ -231,10 +245,11 @@ void Funcionario::setDataNascimento(Data valDataNascimento)
 
 void Funcionario::setSalario(Data valData, Salario valSalario)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.setSalario"))
   {
     PermissaoNegada *a = new PermissaoNegada("setSalario", "Funcionario");
-    throw "Acesso negado a Funcionario.setSalario";
+    string mensagem = "Acesso negado a Funcionario.setSalario";
+    throw mensagem;
   }
   else
   {
@@ -244,10 +259,11 @@ void Funcionario::setSalario(Data valData, Salario valSalario)
 
 void Funcionario::setRegistro(vector <Data> valRegistro)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.setRegistro"))
   {
     PermissaoNegada *a = new PermissaoNegada("setRegistro", "Funcionario");
-    throw "Acesso negado a Funcionario.setRegistro";
+    string mensagem = "Acesso negado a Funcionario.setRegistro";
+    throw mensagem;
   }
   else
   {
@@ -257,10 +273,11 @@ void Funcionario::setRegistro(vector <Data> valRegistro)
 
 void Funcionario::setCargo(Cargo valCargo)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
   {
     PermissaoNegada *a = new PermissaoNegada("setCargo", "Funcionario");
-    throw "Acesso negado a Funcionario.setCargo";
+    string mensagem = "Acesso negado a Funcionario.setCargo";
+    throw mensagem;
   }
   else
   {
@@ -270,10 +287,11 @@ void Funcionario::setCargo(Cargo valCargo)
 
 void Funcionario::setEstadoAtivo(bool valEstadoAtivo)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.getIdVeiculo"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.setEstadoAtivo"))
   {
     PermissaoNegada *a = new PermissaoNegada("setEstadoAtivo", "Funcionario");
-    throw "Acesso negado a Funcionario.setEstadoAtivo";
+    string mensagem = "Acesso negado a Funcionario.setEstadoAtivo";
+    throw mensagem;
   }
   else
   {
@@ -284,10 +302,11 @@ void Funcionario::setEstadoAtivo(bool valEstadoAtivo)
 
 void Funcionario::alteraRegistro(Data valData)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.alteraRegistro"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.alteraRegistro"))
   {
     PermissaoNegada *a = new PermissaoNegada("alteraRegistro", "Funcionario");
-    throw "Acesso negado a Funcionario.alteraRegistro";
+    string mensagem = "Acesso negado a Funcionario.alteraRegistro";
+    throw mensagem;
   }
   else
   {
@@ -298,10 +317,11 @@ void Funcionario::alteraRegistro(Data valData)
 
 void Funcionario::demiteFuncionario()
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.demiteFuncionario"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.demiteFuncionario"))
   {
     PermissaoNegada *a = new PermissaoNegada("demiteFuncionario", "Funcionario");
-    throw "Acesso negado a Funcionario.demiteFuncionario";
+    string mensagem = "Acesso negado a Funcionario.demiteFuncionario";
+    throw mensagem;
   }
   else
   {
@@ -312,10 +332,11 @@ void Funcionario::demiteFuncionario()
 
 void Funcionario::promocao(Data valData, float valPercentual)
 {
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.promocao"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.promocao"))
   {
     PermissaoNegada *a = new PermissaoNegada("promocao", "Funcionario");
-    throw "Acesso negado a Funcionario.promocao";
+    string mensagem = "Acesso negado a Funcionario.promocao";
+    throw mensagem;
   }
   else
   {
@@ -325,10 +346,11 @@ void Funcionario::promocao(Data valData, float valPercentual)
 }
 
 void Funcionario::reajuste(Data valData, float valDissidio){
-  if(false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.reajuste"))
+  if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Funcionario.reajuste"))
   {
     PermissaoNegada *a = new PermissaoNegada("reajuste", "Funcionario");
-    throw "Acesso negado a Funcionario.reajuste";
+    string mensagem = "Acesso negado a Funcionario.reajuste";
+    throw mensagem;
   }
   else
   {
