@@ -47,8 +47,8 @@ string Categoria::getTipo()
   }
   else
   {
-    return this->tipo;
     LogLeitura *a = new LogLeitura("tipo", "Categoria");
+    return this->tipo;
   }
 }
 

@@ -1,6 +1,8 @@
 #include "../include/Lote.h"
 #include "../include/UsuarioLogado.h"
-
+#include "../include/Empresa.h"
+//LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
+//LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
 Lote::Lote()
 {
     if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))
@@ -39,7 +41,8 @@ Lote::Lote(Data d, int nl, int qp, string p)
     {
         this->setNumLote(nl);
         this->setProduto(p);
-        this->setQuantidadeAtual(qp);
+        this->quantidadeAtual = qp;
+        LogEscrita *a = new LogEscrita("quantidadeAtual", "indefinido", to_string(qp), "Lote");
         this->setQuantidadeProduzida(qp);
         this->setDataProd(d);
     }
@@ -48,25 +51,30 @@ Lote::Lote(Data d, int nl, int qp, string p)
 void Lote::setDataProd(Data d)
 {
     this->dataProd = d;
+    LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", d.getData(), "Lote");
 }
 
 void Lote::setNumLote(int nl)
 {
     this->numLote = nl;
+    LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", to_string(nl), "Lote");
 }
 
 void Lote::setProduto(string p)
 {
+    LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", p, "Lote");
     this->produto = p;
 }
 
 void Lote::setQuantidadeAtual(int qa)
 {
+    LogEscrita *a = new LogEscrita("tipoCliente", to_string(quantidadeAtual), to_string(qa), "Lote");
     this->quantidadeAtual = qa;
 }
 
 void Lote::setQuantidadeProduzida(int qp)
 {
+    LogEscrita *a = new LogEscrita("tipoCliente", to_string(quantidadeProduzida), to_string(qp), "Lote");
     this->quantidadeProduzida = qp;
 }
 

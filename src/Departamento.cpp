@@ -48,8 +48,8 @@ string Departamento::getNome()
   }
   else
   { 
-    return this->nome;
     LogLeitura *a = new LogLeitura("nome", "Departamento");
+    return this->nome;
   }
 }
 

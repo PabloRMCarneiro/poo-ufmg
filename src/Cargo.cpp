@@ -47,8 +47,8 @@ string Cargo::getNome()
   }
   else
   {
-    return this->nome;
     LogLeitura *a = new LogLeitura("nome", "Cargo");
+    return this->nome; 
   }
 }
 

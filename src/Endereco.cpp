@@ -90,8 +90,8 @@ string Endereco::getEndereco()
     }
     else
     {
-        return this->endereco;
         LogLeitura *a = new LogLeitura("endereco", "Endereco");
+        return this->endereco;
     }
 }
 
@@ -105,8 +105,8 @@ double Endereco::getX()
     }
     else
     {
-        return this->x;
         LogLeitura *a = new LogLeitura("x", "Endereco");
+        return this->x;  
     }
 }
 
@@ -121,8 +121,8 @@ double Endereco::getY()
     }
     else
     {
-        return this->y;
         LogLeitura *a = new LogLeitura("y", "Endereco");
+        return this->y;
     }
 }
 
