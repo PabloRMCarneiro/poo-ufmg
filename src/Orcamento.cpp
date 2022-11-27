@@ -1,4 +1,5 @@
 #include "../include/Orcamento.h"
+#include "../include/Empresa.h"
 
 void Orcamento::auxiliarMateriaPrima(){
   if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.auxiliarMateriaPrima")) {
