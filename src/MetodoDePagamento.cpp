@@ -1,6 +1,6 @@
 #include "../include/MetodoDePagamento.h"
 #include "../include/UsuarioLogado.h"
-
+#include "../include/Empresa.h"
 MetodoDePagamento::MetodoDePagamento()
 {
     if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("MetodoDePagamento.MetodoDePagamento"))
