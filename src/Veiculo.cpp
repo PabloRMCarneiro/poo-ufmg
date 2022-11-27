@@ -362,6 +362,7 @@ int Veiculo::getId()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("id", "Veiculo");
         return this->id;
     }
 }
@@ -376,6 +377,7 @@ int Veiculo::getCapacidade()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("capacidade", "Veiculo");
         return this->capacidade;
     }
 }
@@ -390,6 +392,7 @@ int Veiculo::getAtual()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("atual", "Veiculo");
         return this->atual;
     }
 }
@@ -404,6 +407,7 @@ int Veiculo::getTempoDeRota()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("tempoDeRota", "Veiculo");
         return this->tempoDeRota;
     }
 }
@@ -418,6 +422,7 @@ Turno *Veiculo::getTurno()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("turno", "Veiculo");
         return this->turno;
     }
 }
@@ -432,6 +437,7 @@ map<int, Endereco> Veiculo::getRota()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("rota", "Veiculo");
         return this->rota;
     }
 }
@@ -468,6 +474,7 @@ vector<Funcionario *> Veiculo::getPassageiros()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("passageiros", "Veiculo");
         return this->passageiros;
     }
 }
@@ -481,6 +488,7 @@ Data Veiculo::getHoraSaida()
     }
     else
     {
+        LogLeitura *logLeitura = new LogLeitura("horaSaida", "Veiculo");
         return this->horaSaida;
     }
 }
@@ -502,6 +510,7 @@ Funcionario *Veiculo::getPassageiro(Endereco valEndereco)
                 encontrado = it;
             }
         }
+        LogLeitura *logLeitura = new LogLeitura("encontrado", "Veiculo");
         return encontrado;
     }
     
