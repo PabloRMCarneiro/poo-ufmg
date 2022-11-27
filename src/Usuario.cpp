@@ -33,13 +33,16 @@ string Usuario::getSenha()
 
 bool Usuario::getPermissoes(string valFuncoes)
 {
-    for (auto it : this->permissoes)
+    for (auto it : this->getPermissaoLista())
     {
         if (it == valFuncoes) return true;
     }
     return false;
 }
-
+vector <string>  Usuario::getPermissaoLista(){
+    LogLeitura *logLeitura = new LogLeitura("permissoes", "Usuario");
+    return this->permissoes;
+}
 void Usuario::setEmail(string valEmail)
 {
     LogEscrita *a = new LogEscrita("email", email, valEmail, "Usuario");

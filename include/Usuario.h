@@ -16,6 +16,7 @@ class Usuario{
         string getEmail();
         string getSenha();
         bool getPermissoes(string valFuncoes);
+        vector <string> getPermissaoLista();
 
         void setEmail(string email);
         void setSenha(string senha);
