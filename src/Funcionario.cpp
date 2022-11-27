@@ -185,6 +185,7 @@ void Funcionario::setJornada(Turno* valJornada)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("salario", jornada->getPeriodo(), valJornada->getPeriodo(), "Funcionario");
     this->jornada = valJornada;
   }
 }
@@ -212,6 +213,7 @@ void Funcionario::setDepartamento(Departamento valDepartamento)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("salario", departamento.getNome(), valDepartamento.getNome(), "Funcionario");
     this->departamento = valDepartamento;
   }
 }
@@ -225,6 +227,7 @@ void Funcionario::setDataNascimento(Data valDataNascimento)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("salario", dataNascimento.getData(), valDataNascimento.getData(), "Funcionario");
     this->dataNascimento = valDataNascimento;
   }
 }
@@ -238,6 +241,7 @@ void Funcionario::setSalario(Data valData, Salario valSalario)
   }
   else
   {
+    LogEscrita *a = new LogEscrita("salario", to_string(salario.getValor()), to_string(valSalario.getValor()), "Funcionario");
     this->salario = valSalario;
   }
 }
@@ -264,6 +268,7 @@ void Funcionario::setCargo(Cargo valCargo)
   }
   else
   {
+    LogEscrita *f = new LogEscrita("cargo", cargo.getNome(), valCargo.getNome(), "Funcionario");
     this->cargo = valCargo;
   }
 }
