@@ -1,7 +1,9 @@
 #include "../include/data.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
-
+#include "../include/Empresa.h"
+//LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "data");
+//LogLeitura *a = new LogLeitura("tipoCliente", "data");
 Data Data::dataDeHoje;
 
 Data::Data()
@@ -38,6 +40,7 @@ Data::Data(int valDia, int valMes, int valAno)
         hora = 0;
         minuto = 0;
         segundo = 0;
+        //LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Cliente");
     }
 }
 Data::Data(int valDia, int valMes, int valAno, int valHora, int valMin, int valSeg)
