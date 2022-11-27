@@ -32,6 +32,7 @@ MateriaPrima::MateriaPrima(string valNome, string valUnidadeDeMedida, double val
     {
         this->setNome(valNome);
         this->estoque = 0.0;
+        LogEscrita *a = new LogEscrita("estoque", "indefinido", to_string(estoque), "MateriaPrima");
         this->setEstoqueMin(valEstoqueMinimo);
         this->setUnidadeDeMedida(valUnidadeDeMedida);
     }
@@ -48,7 +49,7 @@ void MateriaPrima::geraOrdemDeCompra(Data valData)
     else
     {
         OrdemDeCompra *nova = new OrdemDeCompra(this);
-        // Empresa::getEmpresa()->setOrdemDeCompra(nova);
+        Empresa::getEmpresa()->setOrdemDeCompra(nova);
     }
 }
 
@@ -118,6 +119,7 @@ void MateriaPrima::setEstoqueMin(double valEstoqueMinimo)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("estoque", "indefinido", to_string(valEstoqueMinimo), "MateriaPrima");
         this->estoqueMinimo = valEstoqueMinimo;
     }
 }
@@ -132,7 +134,9 @@ void MateriaPrima::setEstoque(double valEstoque, Data valData)
     }
     else
     {
+        double estoqueAntes = this->estoque;
         this->estoque = valEstoque + this->estoque;
+        LogEscrita *a = new LogEscrita("estoque", to_string(estoqueAntes), to_string(estoque), "MateriaPrima");
         if (this->estoque < this->estoqueMinimo)
         {
             this->geraOrdemDeCompra(valData);
@@ -150,6 +154,7 @@ void MateriaPrima::setNome(string valNome)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("estoque", "indefinido", valNome, "MateriaPrima");
         this->nome = valNome;
     }
 }
@@ -164,6 +169,7 @@ void MateriaPrima::setUnidadeDeMedida(string valUnidadeDeMedida)
     }
     else
     {
+        LogEscrita *a = new LogEscrita("estoque", "indefinido", valUnidadeDeMedida, "MateriaPrima");
         this->unidadeDeMedida = valUnidadeDeMedida;
     }
 }
