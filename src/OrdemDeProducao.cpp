@@ -1,7 +1,8 @@
 #include "../include/OrdemDeProducao.h"
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
-
+// LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
+// LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
 OrdemDeProducao::OrdemDeProducao()
 {
     if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.OrdemDeProducao"))
@@ -33,6 +34,7 @@ OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q)
 void OrdemDeProducao::setDataOrdem(Data dO)
 {
     this->dataOrdem = dO;
+    LogEscrita *a = new LogEscrita("dataOrdem", "indefinido", dataOrdem.getData(), "OrdemDeProducao");
 }
 
 void OrdemDeProducao::setProduto(string p)
