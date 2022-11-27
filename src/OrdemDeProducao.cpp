@@ -32,6 +32,7 @@ OrdemDeProducao::OrdemDeProducao(Data dO, string p, int q)
         this->setDataOrdem(dO);
         this->setProduto(p);
         this->setQuantidade(q);
+        Empresa::getEmpresa()->setOrdemDeProducao(this);
     }
 }
 

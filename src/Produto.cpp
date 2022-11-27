@@ -2,6 +2,9 @@
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
+#include <string>
+// LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
+// LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
 vector<Produto *> Produto::produtolist;
 
 Produto::Produto()
@@ -41,6 +44,12 @@ Produto::Produto(string nome, int codigo, float valorDeVenda, int tamanhoDoLoteM
     this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
     this->estoqueMinimo = estoqueMinimo;
     this->qtdEstoque = qtdEstoque;
+    LogEscrita *a = new LogEscrita("nome", "indefinido", this->nome, "Produto");
+    LogEscrita *b = new LogEscrita("codigo", "indefinido", to_string(this->codigo), "Produto");
+    LogEscrita *c = new LogEscrita("valorDeVenda", "indefinido", to_string(this->valorDeVenda), "Produto");
+    LogEscrita *d = new LogEscrita("tamanhoDoLoteMinimo", "indefinido", to_string(this->tamanhoDoLoteMinimo), "Produto");
+    LogEscrita *e = new LogEscrita("estoqueMinimo", "indefinido", to_string(this->estoqueMinimo), "Produto");
+    LogEscrita *f = new LogEscrita("qtdEstoque", "indefinido", to_string(this->qtdEstoque), "Produto");
     this->setCategoria(categ);
     this->novoProduto(this);
   }
@@ -207,7 +216,7 @@ Lote *Produto::getLote(int nl)
   }
 }
 
-void Produto::setNome(string nome)
+void Produto::setNome(string valNome)
 {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setNome"))
   {
@@ -217,11 +226,12 @@ void Produto::setNome(string nome)
   }
   else
   {
-    this->nome = nome;
+    LogEscrita *f = new LogEscrita("nome", this->nome, valNome, "Produto");
+    this->nome = valNome;
   }
 }
 
-void Produto::setCodigo(int codigo)
+void Produto::setCodigo(int valCodigo)
 {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setCodigo"))
   {
@@ -231,11 +241,12 @@ void Produto::setCodigo(int codigo)
   }
   else
   {
-    this->codigo = codigo;
+    LogEscrita *f = new LogEscrita("codigo", to_string(this->codigo), to_string(valCodigo), "Produto");
+    this->codigo = valCodigo;
   }
 }
 
-void Produto::setValorDeVenda(float valorDeVenda)
+void Produto::setValorDeVenda(float valValorDeVenda)
 {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setValorDeVenda"))
   {
@@ -245,11 +256,12 @@ void Produto::setValorDeVenda(float valorDeVenda)
   }
   else
   {
-    this->valorDeVenda = valorDeVenda;
+    LogEscrita *f = new LogEscrita("valorDeVenda", to_string(valorDeVenda), to_string(valValorDeVenda), "Produto");
+    this->valorDeVenda = valValorDeVenda;
   }
 }
 
-void Produto::setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo)
+void Produto::setTamanhoDoLoteMinimo(int valTamanhoDoLoteMinimo)
 {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setTamanhoDoLoteMinimo"))
   {
@@ -259,11 +271,12 @@ void Produto::setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo)
   }
   else
   {
-    this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
+    LogEscrita *f = new LogEscrita("tamanhoDoLoteMinimo", to_string(tamanhoDoLoteMinimo), to_string(valTamanhoDoLoteMinimo), "Produto");
+    this->tamanhoDoLoteMinimo = valTamanhoDoLoteMinimo;
   }
 }
 
-void Produto::setEstoqueMinimo(int estoqueMinimo)
+void Produto::setEstoqueMinimo(int valEstoqueMinimo)
 {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setEstoqueMinimo"))
   {
@@ -273,11 +286,12 @@ void Produto::setEstoqueMinimo(int estoqueMinimo)
   }
   else
   {
-    this->estoqueMinimo = estoqueMinimo;
+    LogEscrita *f = new LogEscrita("estoqueMinimo", to_string(estoqueMinimo), to_string(valEstoqueMinimo), "Produto");
+    this->estoqueMinimo = valEstoqueMinimo;
   }
 }
 
-void Produto::setQtdEstoque(int qtdEstoque)
+void Produto::setQtdEstoque(int valQtdEstoque)
 {
   if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Produto.setQtdEstoque"))
   {
@@ -287,7 +301,8 @@ void Produto::setQtdEstoque(int qtdEstoque)
   }
   else
   {
-    this->qtdEstoque = qtdEstoque;
+    LogEscrita *f = new LogEscrita("qtdEstoque", to_string(qtdEstoque), to_string(valQtdEstoque), "Produto");
+    this->qtdEstoque = valQtdEstoque;
   }
 }
 
@@ -301,6 +316,7 @@ void Produto::setCategoria(string categ)
   }
   else
   {
+    LogEscrita *f = new LogEscrita("categoria", "indefinido", categ, "Produto");
     this->categoria= Empresa::getEmpresa()->getCategoria(categ);
   }
 }
@@ -316,7 +332,7 @@ void Produto::registraLote(int numeroLote, Data dataDeProducao)
   else
   {
     int cont =0;
-    for(auto it : materiaPrimaList){
+    for(auto it : this->getMateriaPrimaList()){
       if(it.first->getEstoque() >= (it.second*this->tamanhoDoLoteMinimo)){
         cont =1;
       } else {
@@ -326,7 +342,7 @@ void Produto::registraLote(int numeroLote, Data dataDeProducao)
     }
     if(cont == 1){
       this->lotes.push_back(new Lote(dataDeProducao, numeroLote, this->tamanhoDoLoteMinimo, this->nome));
-      this->qtdEstoque += this->tamanhoDoLoteMinimo;
+      this->setQtdEstoque(this->qtdEstoque + this->tamanhoDoLoteMinimo);
       for(auto it : materiaPrimaList){
         it.first->setEstoque((-it.second*this->tamanhoDoLoteMinimo), Data::dataDeHoje);
       }
@@ -352,14 +368,14 @@ pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
       {
         lote = it->getNumLote();
         faltaVender = it->vende(faltaVender);
-        this->qtdEstoque -= (quantidade - faltaVender);
+        this->setQtdEstoque(this->qtdEstoque -(quantidade - faltaVender));
         for(auto it : this->getMateriaPrimaList()){
           it.first->setEstoque((-it.second), venda);
         }
         break;
       }
     }
-    if (this->qtdEstoque < this->estoqueMinimo)
+    if (this->getQtdEstoque() < this->getEstoqueMinimo())
     {
       geraOrdem(venda);
     }
@@ -391,7 +407,7 @@ bool Produto::temEstoque(int q)
   }
   else
   {
-    return this->qtdEstoque >= q;
+    return this->getQtdEstoque() >= q;
   }
 }
 
@@ -409,7 +425,9 @@ void Produto::novoProduto(Produto *novo)
   }
 }
 void Produto::alteraPreco(double alteracao){
+  string valorvenda = to_string(valorDeVenda);
   this->valorDeVenda = this->valorDeVenda*alteracao;
+  LogEscrita *f = new LogEscrita("valorDeVenda", valorvenda, to_string(valorDeVenda), "Produto");
 }
 
 Produto *Produto::getProduto(string n)
@@ -422,6 +440,7 @@ Produto *Produto::getProduto(string n)
   }
   else
   {
+    LogLeitura *f = new LogLeitura("produtolist", "Produto");
     for (auto it : produtolist)
     {
       if (it->getNome() == n)
