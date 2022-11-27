@@ -92,6 +92,7 @@ vector<pair<string, double>> Orcamento::getPrecos() {
   if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getPrecos")) {
     throw "Acesso negado a Orcamento.getPrecos";
   } else {
+    LogLeitura *a = new LogLeitura("precos", "Orcamento");
     return this->precos;
   }
 }
@@ -108,6 +109,7 @@ bool Orcamento::isCompraDeProduto() {
   if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.isCompraDeProduto")) {
     throw "Acesso negado a Orcamento.isCompraDeProduto";
   } else {
+    LogLeitura *a = new LogLeitura("compraDeProduto", "Orcamento");
     return this->compraDeProduto;
   }
 }
@@ -142,6 +144,7 @@ Data Orcamento::getDataOrcamento() {
   if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getDataOrcamento")) {
     throw "Acesso negado a Orcamento.getDataOrcamento";
   } else {
+    LogLeitura *a = new LogLeitura("dataOrcamento", "Orcamento");
     return this->dataOrcamento;
   }
 }
@@ -150,6 +153,7 @@ Fornecedor* Orcamento::getFornecedor() {
   if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getFornecedor")) {
     throw "Acesso negado a Orcamento.getFornecedor";
   } else {
+    LogLeitura *a = new LogLeitura("fornecedor", "Orcamento");
     return this->fornecedor;
   }
 }
@@ -166,6 +170,7 @@ Cliente* Orcamento::getCliente() {
   if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getCliente")) {
     throw "Acesso negado a Orcamento.getCliente";
   } else {
+    LogLeitura *a = new LogLeitura("cliente", "Orcamento");
     return this->cliente;
   }
 }
@@ -174,6 +179,7 @@ double Orcamento::getValorTotal() {
   if (false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getValorTotal")) {
     throw "Acesso negado a Orcamento.getValorTotal";
   } else {
+    LogLeitura *a = new LogLeitura("valorTotal", "Orcamento");
     return this->valorTotal;
   }
 }
@@ -182,6 +188,7 @@ vector<pair<string, double>> Orcamento::getItens(){
   if(false){//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Orcamento.getItens")) {
     throw "Acesso negado a Orcamento.getItens";
   } else {
+    LogLeitura *a = new LogLeitura("itens", "Orcamento");
     return this->itens;
   }
 }
