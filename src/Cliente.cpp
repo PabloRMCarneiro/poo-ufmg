@@ -1,14 +1,17 @@
 #include "../include/Cliente.h"
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
+#include "../include/PermissaoNegada.h"
 
 using namespace std;
 
 Cliente::Cliente() : Pessoa()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.Cliente"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.Cliente"))
     {
-        throw "Acesso negado a Cliente.Cliente";
+        PermissaoNegada *permissaoNegada = new PermissaoNegada("Cliente", "Cliente");
+        string mensagem = "Acesso negado a Cliente.Cliente";
+        throw mensagem;
     }
     else
     {
@@ -18,10 +21,11 @@ Cliente::Cliente() : Pessoa()
 
 Cliente::Cliente(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone) : Pessoa(valNome, valEndereco, valEmail, valDocumento, valTelefone)
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.Cliente"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.Cliente"))
     {
         PermissaoNegada *a = new PermissaoNegada("Cliente", "Cliente");
-        throw "Acesso negado a Cliente.Cliente";
+        string mensagem = "Acesso negado a Cliente.Cliente";
+        throw mensagem;
     }
     else
     {
@@ -31,10 +35,11 @@ Cliente::Cliente(string valNome, Endereco valEndereco, string valEmail, string v
 
 void Cliente::setTipoCliente(string tc)
 {   
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.Cliente"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.Cliente"))
     {
         PermissaoNegada *a = new PermissaoNegada("setTipoCliente", "Cliente");
-        throw "Acesso negado a setTipoCliente.Cliente";
+        string mensagem = "Acesso negado a Cliente.setTipoCliente";
+        throw mensagem;
     }
     else
     {
@@ -50,10 +55,11 @@ void Cliente::setTipoCliente(string tc)
 }
 string Cliente::getTipoCliente()
 {
-    if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.getTipoCliente"))
+    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Cliente.getTipoCliente"))
     {
         PermissaoNegada *a = new PermissaoNegada("getTipoCliente", "Cliente");
-        throw "Acesso negado a Cliente.getTipoCliente";
+        string mensagem = "Acesso negado a Cliente.getTipoCliente";
+        throw mensagem;
     }
     else
     {
