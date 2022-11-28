@@ -28,7 +28,7 @@
 #include "../include/Usuario.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/Veiculo.h"
-
+using namespace std;
 vector<string> permissoes(){
   vector<string> permissoes;
 
@@ -125,6 +125,7 @@ vector<string> permissoes(){
   permissoes.push_back("MateriaPrima.setEstoque");
   permissoes.push_back("MateriaPrima.setNome");
   permissoes.push_back("MateriaPrima.setUnidadeDeMedida");
+  permissoes.push_back("MateriaPrima.getEstoque");
 
   permissoes.push_back("MetodoDePagamento.MetodoDePagamento");
   permissoes.push_back("MetodoDePagamento.getQuantidadeDeParcelas");
@@ -165,6 +166,15 @@ vector<string> permissoes(){
   permissoes.push_back("OrdemDeCompra.getMateriaPrimaLista");
   permissoes.push_back("OrdemDeCompra.getMelhoresPrecos");
   permissoes.push_back("OrdemDeCompra.getComprou");
+
+  permissoes.push_back("OrdemDeProducao.OrdemDeProducao");
+  permissoes.push_back("OrdemDeProducao.setDataOrdem");
+  permissoes.push_back("OrdemDeProducao.setProduto");
+  permissoes.push_back("OrdemDeProducao.setQuantidade");
+  permissoes.push_back("OrdemDeProducao.getDataOrdem");
+  permissoes.push_back("OrdemDeProducao.getProduto");
+  permissoes.push_back("OrdemDeProducao.getQuantidade");
+  permissoes.push_back("OrdemDeProducao.getOrdem");
 
   permissoes.push_back("PedidoDeCompra.PedidoDeCompra");
   permissoes.push_back("PedidoDeCompra.getCodigo");
@@ -258,11 +268,14 @@ vector<string> permissoes(){
   permissoes.push_back("Veiculo.setTurno");
   permissoes.push_back("Veiculo.setRota");
   permissoes.push_back("Veiculo.setPosicaoRota");
+  permissoes.push_back("Veiculo.setPassageiros");
+  permissoes.push_back("Veiculo.setPassageiro");
   permissoes.push_back("Veiculo.calculaTempo");
   permissoes.push_back("Veiculo.setHoraSaida");
   permissoes.push_back("Veiculo.auxiliarTempoSegundos");
   permissoes.push_back("Veiculo.auxiliarTempoHora");
   permissoes.push_back("Veiculo.tempoEmpresaCasa");
+  permissoes.push_back("Veiculo.getPassageiro");
   permissoes.push_back("Veiculo.calculaRota");
   permissoes.push_back("Veiculo.excluiPassageiro");
   permissoes.push_back("Veiculo.setPassageiros");
@@ -304,7 +317,7 @@ vector<string> permissoes(){
   permissoes.push_back("Empresa.setCategoria");
   permissoes.push_back("Empresa.getTurno");
   permissoes.push_back("Empresa.getTurnos");
-  permissoes.push_back("Empresa.excluiFuncionario");
+  // permissoes.push_back("Empresa.excluiFuncionario");
   permissoes.push_back("Empresa.getVeiculo");
   permissoes.push_back("Empresa.getVeiculos");
   permissoes.push_back("Empresa.setTurno");
@@ -340,13 +353,12 @@ vector<string> permissoes(){
 
 
 int main() {
-cout << "Teste" << endl;
-  Data::dataDeHoje = Data(25,11,2022,22,9,43);
-  cout << Data::dataDeHoje.getData() << endl;
+  cout << "Teste" << endl;
   Usuario *usuario = new Usuario("admin", "admin");
   UsuarioLogado *usuarioLogado = UsuarioLogado::getUsuarioLogado();
   usuario->setPermissoes(permissoes());
   usuarioLogado->setUsuario(usuario);
+  Data::dataDeHoje = Data(25,11,2022,22,9,43);
   Empresa *empresa = Empresa::getEmpresa();
   empresa->setEndereco(Endereco("Rua Capitao ALexandre Guimaraes", -19.795, -45.684));
 
@@ -477,24 +489,16 @@ empresa->login(usuarioLogado);
   
   Data::dataDeHoje = Data(26,11,2022,13,31,25);
   /*LOGS DE TODAS AS OPERACOES*/
-  LogEscrita *logescrita1 = new LogEscrita("preco", "9.9", "10.6", "Produto");
-  //logescrita->imprime();
-  LogEscrita *logescrita2 = new LogEscrita("nome", "mesa", "mesa 3x4", "Produto");
-  //logescrita->imprime();
-  LogLeitura *logleitura = new LogLeitura("preco", "Produto");
-  //logleitura->imprime();
-  PermissaoNegada * permissaonegada = new PermissaoNegada("getNome", "Produto");
-  //permissaonegada->imprime();
   
-  // for(auto it : empresa->getlogsEscrita()){
-  //   it->imprime();
-  // }
-  // for(auto it : empresa->getlogsLeitura()){
-  //   it->imprime();
-  // }
-  // for(auto it : empresa->getLogAcesso()){
-  //   it->imprime();
-  // }
+  for(auto it : empresa->getlogsEscrita()){
+    it->imprime();
+  }
+  for(auto it : empresa->getlogsLeitura()){
+    it->imprime();
+  }
+  for(auto it : empresa->getLogAcesso()){
+    it->imprime();
+  }
 
   return 0;
 }
