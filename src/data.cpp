@@ -74,7 +74,7 @@ int Data::getAno()
     }
     else
     {
-        LogLeitura *a = new LogLeitura("ano", "Data");
+        //LogLeitura *a = new LogLeitura("ano", "Data");
         return ano;
         
     }
@@ -90,7 +90,7 @@ int Data::getMes()
     }
     else
     {
-        LogLeitura *a = new LogLeitura("mes", "Data");
+       // LogLeitura *a = new LogLeitura("mes", "Data");
         return mes;
     }
     return mes;
@@ -106,7 +106,7 @@ int Data::getDia()
     }
     else
     {
-        LogLeitura *a = new LogLeitura("dia", "Data");
+       // LogLeitura *a = new LogLeitura("dia", "Data");
         return dia;
     }
 }
@@ -121,7 +121,7 @@ int Data::getHora()
     }
     else
     {
-        LogLeitura *a = new LogLeitura("hora", "Data");
+       // LogLeitura *a = new LogLeitura("hora", "Data");
         return hora;
     }
 }
@@ -136,7 +136,7 @@ int Data::getMin()
     }
     else
     {
-        LogLeitura *a = new LogLeitura("min", "Data");
+        //LogLeitura *a = new LogLeitura("min", "Data");
         return minuto;
     }
 }
@@ -151,7 +151,7 @@ int Data::getSeg()
     }
     else
     {
-        LogLeitura *a = new LogLeitura("seg", "Data");
+        //LogLeitura *a = new LogLeitura("seg", "Data");
         return segundo;
     }
 }
@@ -272,6 +272,7 @@ string Data::getData()
     }
     else
     {
+        LogLeitura *a = new LogLeitura("data", "Data");
         string sDia = help(this->getDia()), sMes = help(this->getMes()), sAno = help(this->getAno());
         string sHora = help(this->getHora()), sMinuto = help(this->getMin()), sSegundo = help(this->getSeg());
         return (sDia + "/" + sMes + "/" + sAno + " às " + sHora + ":" + sMinuto + ":" + sSegundo);
