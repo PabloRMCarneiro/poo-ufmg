@@ -12,17 +12,14 @@ UsuarioLogado* UsuarioLogado::getUsuarioLogado(){
     {
         usuarioLogado = new UsuarioLogado;
     }
-    LogLeitura *logLeitura = new LogLeitura("usuarioLogado", "UsuarioLogado");
     return usuarioLogado;
 }
 
 void UsuarioLogado::setUsuario(Usuario* valUsuario){
-    LogEscrita *a = new LogEscrita("usuario", "indefinido", valUsuario->getEmail(), "UsuarioLogado");
     this->usuario = valUsuario;
 }
 
 Usuario* UsuarioLogado::getUsuario() {
-    LogLeitura *logLeitura = new LogLeitura("usuario", "UsuarioLogado");
     return this->usuario;
 }
 

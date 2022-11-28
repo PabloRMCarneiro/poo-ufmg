@@ -197,7 +197,7 @@ void Funcionario::setJornada(Turno* valJornada)
   }
   else
   {
-    LogEscrita *a = new LogEscrita("salario", jornada->getPeriodo(), valJornada->getPeriodo(), "Funcionario");
+    LogEscrita *a = new LogEscrita("salario", "indefinido", valJornada->getPeriodo(), "Funcionario");
     this->jornada = valJornada;
   }
 }

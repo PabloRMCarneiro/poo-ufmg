@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+    {
+    "label": "Compilar",
+    "type": "shell",
+    "command": "g++ ./src/Boleto.cpp ./src/Cargo.cpp ./src/CartaoDeCredito.cpp ./src/Categoria.cpp ./src/Cliente.cpp ./src/data.cpp ./src/Departamento.cpp ./src/Empresa.cpp ./src/Endereco.cpp ./src/Fornecedor.cpp ./src/Funcionario.cpp ./src/Log.cpp ./src/LogEscrita.cpp ./src/LogLeitura.cpp ./src/Lote.cpp ./src/MateriaPrima.cpp ./src/MetodoDePagamento.cpp ./src/Orcamento.cpp ./src/OrdemDeCompra.cpp ./src/OrdemDeProducao.cpp ./src/PedidoDeCompra.cpp ./src/PermissaoNegada.cpp ./src/Pessoa.cpp ./src/Produto.cpp ./src/RegistroVendas.cpp ./src/Salario.cpp ./src/Turno.cpp ./src/Usuario.cpp ./src/UsuarioLogado.cpp ./src/Veiculo.cpp ./program/main.cpp -o e-commerce",
+    "problemMatcher": [],
+    "group": {
+    "kind": "build",
+    "isDefault": true
+    }
+    },
+    {
+    "label": "Executar",
+    "type": "shell",
+    "command": "./e-commerce",
+    "problemMatcher": [],
+    "group": {
+    "kind": "test",
+    "isDefault": true
+    }
+    }
+    ]
+    }

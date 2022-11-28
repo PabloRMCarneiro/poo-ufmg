@@ -8,21 +8,12 @@ Data Data::dataDeHoje;
 
 Data::Data()
 {
-    if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Data.Data"))
-    {
-        PermissaoNegada *permissaoNegada = new PermissaoNegada("Data", "Data");
-        string mensagem = "Acesso negado a Data.Data";
-        throw mensagem;
-    }
-    else
-    {
         ano = 0;
         mes = 0;
         dia = 0;
         hora = 0;
         minuto = 0;
         segundo = 0;
-    }
 }
 Data::Data(int valDia, int valMes, int valAno)
 {
@@ -64,12 +55,12 @@ Data::Data(int valDia, int valMes, int valAno, int valHora, int valMin, int valS
         hora = valHora;
         minuto = valMin;
         segundo = valSeg;
-        LogEscrita *a = new LogEscrita("dia", "indefinido", to_string(ano), "data");
-        LogEscrita *b = new LogEscrita("dia", "indefinido", to_string(mes), "data");
-        LogEscrita *c = new LogEscrita("dia", "indefinido", to_string(dia), "data");
-        LogEscrita *d = new LogEscrita("dia", "indefinido", to_string(hora), "data");
-        LogEscrita *e = new LogEscrita("dia", "indefinido", to_string(minuto), "data");
-        LogEscrita *f = new LogEscrita("dia", "indefinido", to_string(segundo), "data");
+        // LogEscrita *a = new LogEscrita("dia", "indefinido", to_string(ano), "data");
+        // LogEscrita *b = new LogEscrita("dia", "indefinido", to_string(mes), "data");
+        // LogEscrita *c = new LogEscrita("dia", "indefinido", to_string(dia), "data");
+        // LogEscrita *d = new LogEscrita("dia", "indefinido", to_string(hora), "data");
+        // LogEscrita *e = new LogEscrita("dia", "indefinido", to_string(minuto), "data");
+        // LogEscrita *f = new LogEscrita("dia", "indefinido", to_string(segundo), "data");
     }
 }
 

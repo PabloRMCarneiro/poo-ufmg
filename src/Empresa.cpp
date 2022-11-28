@@ -21,7 +21,6 @@ Empresa *Empresa::getEmpresa(){
     if(empresa ==nullptr){
       empresa = new Empresa;
     }
-    LogLeitura *a = new LogLeitura("empresa", "Empresa");
     return empresa;
   }
 }
