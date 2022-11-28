@@ -1,3 +1,742 @@
+/*
+  COMO EXECUTAR O TESTE:
+
+  1° - Entre na pasta 'program' 
+  2° - Execute o 'ScriptMain' 
+  3° - Execute o arquivo 'e-commerce'
+*/
+
+/*
+  ---TOTAL DE 275 commits por volta de 43k linhas de código (13k linhas de código usadas no projeto) e algumas noites sem dormir---
+
+  RESULTADO:
+    Teste
+    1 : 0x7ffca2bd6bd8
+    2 : 0x7ffca2bd6bd8
+    Acesso negado a Empresa.excluiFuncionario.
+    Codigo do pedido: 1
+    Em 25/11/2022 às 22:09:43, foram vendidas 10 unidades de Mesa pelo cliente Livia Carvalho.
+    Codigo do pedido: 1
+    Lote vendido 1
+    João Marcus embarca às 07:36:25
+    Maria Oscalina embarca às 07:39:23
+    João da Silva embarca às 07:46:02
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi alterado: indefinido -> Rua Capitao ALexandre Guimaraes.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi alterado: indefinido -> -19.795000.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi alterado: indefinido -> -45.684000.
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2019.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2020.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2021.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2019.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 3.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2020.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 4.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2021.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 6.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2019.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2020.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 4.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2021.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 9.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi alterado: indefinido -> Avenida Carlos Prastes, 6783.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi alterado: indefinido -> -19.791000.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi alterado: indefinido -> -45.674000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Departamento foi alterado: indefinido -> TI.
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2000.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 15.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo valor da classe Salario foi alterado: indefinido -> 15000.000000.
+    Em 25/11/2022 às 22:09:43 - atributo dissidio da classe Salario foi alterado: indefinido -> 0.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Cargo foi alterado: indefinido -> DevOps Senior.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi alterado: indefinido -> João da Silva.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi alterado: indefinido -> Avenida Carlos Prastes, 6783.
+    Em 25/11/2022 às 22:09:43 - atributo email da classe Pessoa foi alterado: indefinido -> joaoDaSilva@gmail.com.
+    Em 25/11/2022 às 22:09:43 - atributo telefone da classe Pessoa foi alterado: indefinido -> 77988487960.
+    Em 25/11/2022 às 22:09:43 - atributo documento da classe Pessoa foi alterado: indefinido -> 29380512040.
+    Em 25/11/2022 às 22:09:43 - atributo dataNascimento da classe Funcionario foi alterado: indefinido -> 15/11/2000 às 00:00:00.
+    Em 25/11/2022 às 22:09:43 - atributo salario da classe Funcionario foi alterado: indefinido -> 15000.000000.
+    Em 25/11/2022 às 22:09:43 - atributo cargo da classe Funcionario foi alterado: indefinido -> DevOps Senior.
+    Em 25/11/2022 às 22:09:43 - atributo estadoAtivo da classe Funcionario foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo idVeiculo da classe Funcionario foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi alterado: indefinido -> Avenida Luz, 23.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi alterado: indefinido -> -19.793000.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi alterado: indefinido -> -45.681000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Departamento foi alterado: indefinido -> TI.
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 1998.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 10.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 2.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo valor da classe Salario foi alterado: indefinido -> 10000.000000.
+    Em 25/11/2022 às 22:09:43 - atributo dissidio da classe Salario foi alterado: indefinido -> 0.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Cargo foi alterado: indefinido -> Dev FullStack Senior.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi alterado: indefinido -> Maria Oscalina.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi alterado: indefinido -> Avenida Luz, 23.
+    Em 25/11/2022 às 22:09:43 - atributo email da classe Pessoa foi alterado: indefinido -> mariaOscalina@gmail.com.
+    Em 25/11/2022 às 22:09:43 - atributo telefone da classe Pessoa foi alterado: indefinido -> 11804744532.
+    Em 25/11/2022 às 22:09:43 - atributo documento da classe Pessoa foi alterado: indefinido -> 72060108063.
+    Em 25/11/2022 às 22:09:43 - atributo dataNascimento da classe Funcionario foi alterado: indefinido -> 02/10/1998 às 00:00:00.
+    Em 25/11/2022 às 22:09:43 - atributo salario da classe Funcionario foi alterado: indefinido -> 10000.000000.
+    Em 25/11/2022 às 22:09:43 - atributo cargo da classe Funcionario foi alterado: indefinido -> Dev FullStack Senior.
+    Em 25/11/2022 às 22:09:43 - atributo estadoAtivo da classe Funcionario foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo idVeiculo da classe Funcionario foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi alterado: indefinido -> Avenida JK, 581.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi alterado: indefinido -> -19.789000.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi alterado: indefinido -> -45.679000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Departamento foi alterado: indefinido -> TI.
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2000.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 15.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo valor da classe Salario foi alterado: indefinido -> 15000.000000.
+    Em 25/11/2022 às 22:09:43 - atributo dissidio da classe Salario foi alterado: indefinido -> 0.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Cargo foi alterado: indefinido -> DevOps Senior.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi alterado: indefinido -> João Marcus.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi alterado: indefinido -> Avenida JK, 581.
+    Em 25/11/2022 às 22:09:43 - atributo email da classe Pessoa foi alterado: indefinido -> joaoDaSilva@gmail.com.
+    Em 25/11/2022 às 22:09:43 - atributo telefone da classe Pessoa foi alterado: indefinido -> 77988487960.
+    Em 25/11/2022 às 22:09:43 - atributo documento da classe Pessoa foi alterado: indefinido -> 29380512040.
+    Em 25/11/2022 às 22:09:43 - atributo dataNascimento da classe Funcionario foi alterado: indefinido -> 15/11/2000 às 00:00:00.
+    Em 25/11/2022 às 22:09:43 - atributo salario da classe Funcionario foi alterado: indefinido -> 15000.000000.
+    Em 25/11/2022 às 22:09:43 - atributo cargo da classe Funcionario foi alterado: indefinido -> DevOps Senior.
+    Em 25/11/2022 às 22:09:43 - atributo estadoAtivo da classe Funcionario foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo idVeiculo da classe Funcionario foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi alterado: indefinido -> Rua das Camelias.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi alterado: indefinido -> 1.000000.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi alterado: indefinido -> 2.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi alterado: indefinido -> Maria Ines.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi alterado: indefinido -> Rua das Camelias.
+    Em 25/11/2022 às 22:09:43 - atributo email da classe Pessoa foi alterado: indefinido -> abcLuz@gmail.com.
+    Em 25/11/2022 às 22:09:43 - atributo telefone da classe Pessoa foi alterado: indefinido -> 37991232625.
+    Em 25/11/2022 às 22:09:43 - atributo documento da classe Pessoa foi alterado: indefinido -> 13218864623.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Cliente foi alterado: indefinido -> Pessoa física.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi alterado: indefinido -> Rua das Oliveiras.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi alterado: indefinido -> 1.000000.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi alterado: indefinido -> 3.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi alterado: indefinido -> Livia Carvalho.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi alterado: indefinido -> Rua das Oliveiras.
+    Em 25/11/2022 às 22:09:43 - atributo email da classe Pessoa foi alterado: indefinido -> luzLuz@gmail.com.
+    Em 25/11/2022 às 22:09:43 - atributo telefone da classe Pessoa foi alterado: indefinido -> 37991205080.
+    Em 25/11/2022 às 22:09:43 - atributo documento da classe Pessoa foi alterado: indefinido -> 99058771000105.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Cliente foi alterado: indefinido -> Pessoa jurídica.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe MateriaPrima foi alterado: indefinido -> Madeira.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: indefinido -> 0.000000.
+    Em 25/11/2022 às 22:09:43 - atributo estoqueMinimo da classe MateriaPrima foi alterado: indefinido -> 1.000000.
+    Em 25/11/2022 às 22:09:43 - atributo unidadeDeMedida da classe MateriaPrima foi alterado: indefinido -> kg.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 0.000000 -> 20.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe MateriaPrima foi alterado: indefinido -> Plastico.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: indefinido -> 0.000000.
+    Em 25/11/2022 às 22:09:43 - atributo estoqueMinimo da classe MateriaPrima foi alterado: indefinido -> 1.000000.
+    Em 25/11/2022 às 22:09:43 - atributo unidadeDeMedida da classe MateriaPrima foi alterado: indefinido -> kg.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 0.000000 -> 20.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe MateriaPrima foi alterado: indefinido -> Aluminio.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: indefinido -> 0.000000.
+    Em 25/11/2022 às 22:09:43 - atributo estoqueMinimo da classe MateriaPrima foi alterado: indefinido -> 1.000000.
+    Em 25/11/2022 às 22:09:43 - atributo unidadeDeMedida da classe MateriaPrima foi alterado: indefinido -> kg.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 0.000000 -> 20.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe MateriaPrima foi alterado: indefinido -> Parafuso.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: indefinido -> 0.000000.
+    Em 25/11/2022 às 22:09:43 - atributo estoqueMinimo da classe MateriaPrima foi alterado: indefinido -> 20.000000.
+    Em 25/11/2022 às 22:09:43 - atributo unidadeDeMedida da classe MateriaPrima foi alterado: indefinido -> unidades.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 0.000000 -> 300.000000.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Produto foi alterado: indefinido -> Mesa.
+    Em 25/11/2022 às 22:09:43 - atributo codigo da classe Produto foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo valorDeVenda da classe Produto foi alterado: indefinido -> 750.000000.
+    Em 25/11/2022 às 22:09:43 - atributo tamanhoDoLoteMinimo da classe Produto foi alterado: indefinido -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo estoqueMinimo da classe Produto foi alterado: indefinido -> 20.
+    Em 25/11/2022 às 22:09:43 - atributo qtdEstoque da classe Produto foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo categoria da classe Produto foi alterado: indefinido -> Moveis.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: indefinido -> Mesa.
+    Em 25/11/2022 às 22:09:43 - atributo quantidadeAtual da classe Lote foi alterado: indefinido -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: 22006 -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: indefinido -> 25/11/2022 às 22:09:43.
+    Em 25/11/2022 às 22:09:43 - atributo qtdEstoque da classe Produto foi alterado: 0 -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 20.000000 -> 15.050000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 20.000000 -> 18.350000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 20.000000 -> 18.900000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 300.000000 -> 212.000000.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: indefinido -> 2.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: indefinido -> Mesa.
+    Em 25/11/2022 às 22:09:43 - atributo quantidadeAtual da classe Lote foi alterado: indefinido -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: 22006 -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: indefinido -> 25/11/2022 às 22:09:43.
+    Em 25/11/2022 às 22:09:43 - atributo qtdEstoque da classe Produto foi alterado: 11 -> 22.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 15.050000 -> 10.100000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 18.350000 -> 16.700000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 18.900000 -> 17.800000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 212.000000 -> 124.000000.
+    Em 25/11/2022 às 22:09:43 - atributo dataOrcamento da classe Orcamento foi alterado: indefinido -> 25/11/2022 às 22:09:43.
+    Em 25/11/2022 às 22:09:43 - atributo cliente da classe Orcamento foi alterado: indefinido -> Livia Carvalho.
+    Em 25/11/2022 às 22:09:43 - atributo compraDeProduto da classe Orcamento foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo valorTotal da classe Orcamento foi alterado: indefinido -> 0.000000.
+    Em 25/11/2022 às 22:09:43 - atributo valorTotal da classe Orcamento foi alterado: indefinido -> 7500.000000.
+    Em 25/11/2022 às 22:09:43 - atributo valorDeVenda da classe Produto foi alterado: 750.000000 -> 787.500000.
+    Em 25/11/2022 às 22:09:43 - atributo ano da classe data foi alterado: indefinido -> 2022.
+    Em 25/11/2022 às 22:09:43 - atributo mes da classe data foi alterado: indefinido -> 12.
+    Em 25/11/2022 às 22:09:43 - atributo dia da classe data foi alterado: indefinido -> 27.
+    Em 25/11/2022 às 22:09:43 - atributo hora da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo minuto da classe data foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo segundo da classe data foi alterado: indefinido -> 0 .
+    Em 25/11/2022 às 22:09:43 - atributo quantidadeDeParcelas da classe MetodoDePagamento foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo quantiaPorParcelas da classe MetodoDePagamento foi alterado: indefinido -> 7875.000000.
+    Em 25/11/2022 às 22:09:43 - atributo dataDeVencimento da classe Boleto foi alterado: indefinido -> 27/12/2022 às 00:00:00.
+    Em 25/11/2022 às 22:09:43 - atributo dataDeVenda da classe RegistroVendas foi alterado: indefinido -> 25/11/2022 às 22:09:43.
+    Em 25/11/2022 às 22:09:43 - atributo produto da classe RegistroVendas foi alterado: indefinido -> Mesa.
+    Em 25/11/2022 às 22:09:43 - atributo quantidadeVenda da classe RegistroVendas foi alterado: indefinido -> 10.
+    Em 25/11/2022 às 22:09:43 - atributo vendido da classe RegistroVendas foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo tipoCliente da classe Lote foi alterado: 11 -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo qtdEstoque da classe Produto foi alterado: 22 -> 12.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 10.100000 -> 9.650000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 16.700000 -> 16.550000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 17.800000 -> 17.700000.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi alterado: 124.000000 -> 116.000000.
+    Em 25/11/2022 às 22:09:43 - atributo dataOrdem da classe OrdemDeProducao foi alterado: indefinido -> 25/11/2022 às 22:09:43.
+    Em 25/11/2022 às 22:09:43 - atributo produto da classe OrdemDeProducao foi alterado: indefinido -> Mesa.
+    Em 25/11/2022 às 22:09:43 - atributo quantidade da classe OrdemDeProducao foi alterado: indefinido -> 11.
+    Em 25/11/2022 às 22:09:43 - atributo cliente da classe RegistroVendas foi alterado: indefinido -> Livia Carvalho.
+    Em 25/11/2022 às 22:09:43 - atributo codigoPedido da classe RegistroVendas foi alterado: indefinido -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo entradaHora da classe Turno foi alterado: indefinido -> 00/00/00 às 08:00:00.
+    Em 25/11/2022 às 22:09:43 - atributo jornada da classe Turno foi alterado: indefinido -> 8.000000.
+    Em 25/11/2022 às 22:09:43 - atributo periodo da classe Turno foi alterado: indefinido -> manha.
+    Em 25/11/2022 às 22:09:43 - atributo saidaHora da classe Turno foi alterado: indefinido -> 00/00/00 às 16:00:00.
+    Em 25/11/2022 às 22:09:43 - atributo salario da classe Funcionario foi alterado: indefinido -> manha.
+    Em 25/11/2022 às 22:09:43 - atributo salario da classe Funcionario foi alterado: indefinido -> manha.
+    Em 25/11/2022 às 22:09:43 - atributo salario da classe Funcionario foi alterado: indefinido -> manha.
+    Em 25/11/2022 às 22:09:43 - atributo id da classe Veiculo foi alterado: indefinido -> 1550.
+    Em 25/11/2022 às 22:09:43 - atributo capacidade da classe Veiculo foi alterado: indefinido -> 20.
+    Em 25/11/2022 às 22:09:43 - atributo turno da classe Veiculo foi alterado: indefinido -> manha.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo tempoDeRota da classe Veiculo foi alterado: indefinido -> 0.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi alterado: 0 -> 1.
+    Em 25/11/2022 às 22:09:43 - atributo tempoDeRota da classe Veiculo foi alterado: 0 -> 476.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi alterado: 1 -> 2.
+    Em 25/11/2022 às 22:09:43 - atributo tempoDeRota da classe Veiculo foi alterado: 476 -> 716.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi alterado: 2 -> 3.
+    Em 25/11/2022 às 22:09:43 - atributo tempoDeRota da classe Veiculo foi alterado: 716 -> 987.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo valor da classe Salario foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Cargo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo valor da classe Salario foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Cargo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo valor da classe Salario foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Cargo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo materiaPrimaList da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo materiaPrimaList da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoque da classe MateriaPrima foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo itens da classe Orcamento foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo valorDeVenda da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo produtolist da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo orcamento da classe PedidoDeCompra foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo itens da classe Orcamento foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo valorDeVenda da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo produtolist da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo orcamento da classe PedidoDeCompra foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo itens da classe Orcamento foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo qtdEstoque da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo cliente da classe Orcamento foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo produto da classe RegistroVendas foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo qtdEstoque da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo produto da classe RegistroVendas foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo quantidadeAtual da classe Lote foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo numLote da classe Lote foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo quantidadeAtual da classe Lote foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo materiaPrimaList da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo qtdEstoque da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo estoqueMinimo da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo produtolist da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo codigo da classe PedidoDeCompra foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo registrosVendas da classe Empresa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo dataDeVenda da classe RegistroVendas foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo quantidadeVenda da classe RegistroVendas foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo produto da classe RegistroVendas foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Produto foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo cliente da classe RegistroVendas foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo codigoPedido da classe RegistroVendas foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo lote da classe RegistroVendas foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo data da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo periodo da classe Turno foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo periodo da classe Turno foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo periodo da classe Turno foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo periodo da classe Turno foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo turno da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo entradaHora da classe Turno foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo tempoDeRota da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo capacidade da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo capacidade da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Empresa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Empresa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo turno da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo entradaHora da classe Turno foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo tempoDeRota da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo horaSaida da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo capacidade da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Empresa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Empresa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo turno da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo entradaHora da classe Turno foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo tempoDeRota da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo horaSaida da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo capacidade da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo atual da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Empresa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Empresa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo x da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo y da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo turno da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo entradaHora da classe Turno foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo tempoDeRota da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo horaSaida da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo rota da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo passageiros da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo encontrado da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo passageiros da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo encontrado da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo rota da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo horario da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo passageiros da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo encontrado da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo passageiros da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo encontrado da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo rota da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo horario da classe Data foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo passageiros da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo encontrado da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo nome da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo passageiros da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo encontrado da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo rota da classe Veiculo foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Pessoa foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo endereco da classe Endereco foi lido.
+    Em 25/11/2022 às 22:09:43 - atributo horario da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo logsEscrita da classe Empresa foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo data da classe Data foi lido.
+    Em 26/11/2022 às 13:31:25 - atributo logsLeitura da classe Empresa foi lido.
+    Em 25/11/2022 às 22:09:43 - usuario admin teve acesso negado à função excluiFuncionario da classe Empresa.
+
+*/
+
 #include "../include/Boleto.h"
 #include "../include/Cargo.h"
 #include "../include/CartaoDeCredito.h"
@@ -28,7 +767,9 @@
 #include "../include/Usuario.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/Veiculo.h"
+
 using namespace std;
+
 vector<string> permissoes(){
   vector<string> permissoes;
 
@@ -333,20 +1074,6 @@ vector<string> permissoes(){
   permissoes.push_back("Empresa.getRegistroVendas");
   permissoes.push_back("Empresa.setRegistroVendas");
 
-  //  PERMISSOES HABILITADAS ANTERIORMENTE
-  /* permissoes.push_back(("Empresa.getUsuario"));
-  permissoes.push_back(("Empresa.getCargo"));
-  permissoes.push_back(("Cargo.Cargo"));
-  permissoes.push_back(("Cargo.getNome"));
-  permissoes.push_back(("Empresa.getDepartamento"));    // Acesso a método getDepartamento
-  permissoes.push_back(("Departamento.Departamento"));  // Acesso ao construtor Departamento
-  permissoes.push_back(("Departamento.getNome"));       // Acesso ao método getNome
-  permissoes.push_back(("Empresa.getCliente"));  // Acesso ao método getCiente
-  permissoes.push_back(("Cliente.Cliente"));     // Acesso ao construtor Cliente
-  permissoes.push_back(("Cliente.getTipoCliente"));   */
-
-  // adicionar os restantes das permissoes
-
   return permissoes;
 }
 
@@ -354,105 +1081,96 @@ vector<string> permissoes(){
 
 int main() {
   cout << "Teste" << endl;
+  
   Usuario *usuario = new Usuario("admin", "admin");
   UsuarioLogado *usuarioLogado = UsuarioLogado::getUsuarioLogado();
+  
   usuario->setPermissoes(permissoes());
   usuarioLogado->setUsuario(usuario);
+  
   Data::dataDeHoje = Data(25,11,2022,22,9,43);
   Empresa *empresa = Empresa::getEmpresa();
   empresa->setEndereco(Endereco("Rua Capitao ALexandre Guimaraes", -19.795, -45.684));
 
-
-
-
   /*PROVA USUARIO LOGADO SINGLETON*/
-cout << "1 : " << &usuarioLogado << endl;
+  
+  cout << "1 : " << &usuarioLogado << endl;
 
-UsuarioLogado *usuarioLogado2 = UsuarioLogado::getUsuarioLogado();
-cout << "2 : " << &usuarioLogado << endl;
+  UsuarioLogado *usuarioLogado2 = UsuarioLogado::getUsuarioLogado();
+  
+  cout << "2 : " << &usuarioLogado << endl;
 
-empresa->login(usuarioLogado);
+  empresa->login(usuarioLogado);
 
-  /*cadastro de 3 funcionários*/
+  /*CADASTRO DE 3 FUNCIONARIOS*/
 
   vector<Data> registroFuncionario1 = {Data(1,1,2019), Data(1,1,2020), Data(1,1,2021)};
   vector<Data> registroFuncionario2 = {Data(1,3,2019), Data(1,4,2020), Data(1,6,2021)};
   vector<Data> registroFuncionario3 = {Data(1,1,2019), Data(1,4,2020), Data(1,9,2021)};
-  //cout << registroFuncionario1[0].getData()<< endl;
-  Funcionario *funcionario1 = new Funcionario("João da Silva", Endereco("Avenida Carlos Prastes, 6783", -19.791, -45.674), "joaoDaSilva@gmail.com", "29380512040", 77988487960, Departamento("TI"), Data(15, 11, 2000), Salario(15000), registroFuncionario1, Cargo("DevOps Senior"), true);
-  Funcionario *funcionario2 = new Funcionario("Maria Oscalina", Endereco("Avenida Luz, 23", -19.793, -45.681), "mariaOscalina@gmail.com", "72060108063", 11804744532, Departamento("TI"), Data(2, 10, 1998), Salario(10000), registroFuncionario1, Cargo("Dev FullStack Senior"), true);
-  Funcionario *funcionario3 = new Funcionario("João Marcus", Endereco("Avenida JK, 581", -19.789, -45.679), "joaoDaSilva@gmail.com", "29380512040", 77988487960, Departamento("TI"), Data(15, 11, 2000), Salario(15000), registroFuncionario1, Cargo("DevOps Senior"), true);
-  // cout << funcionario1->getCargo().getNome() << ", " << funcionario1->getEndereco().getX() << ", " << funcionario1->getDocumento() << endl;
   
+  Funcionario *funcionario1 = new Funcionario("João da Silva", Endereco("Avenida Carlos Prastes, 6783", -19.791, -45.674), "joaoDaSilva@gmail.com", "29380512040", 77988487960, Departamento("TI"), Data(15, 11, 2000), Salario(15000), registroFuncionario1, Cargo("DevOps Senior"), true);
+  
+  Funcionario *funcionario2 = new Funcionario("Maria Oscalina", Endereco("Avenida Luz, 23", -19.793, -45.681), "mariaOscalina@gmail.com", "72060108063", 11804744532, Departamento("TI"), Data(2, 10, 1998), Salario(10000), registroFuncionario1, Cargo("Dev FullStack Senior"), true);
+  
+  Funcionario *funcionario3 = new Funcionario("João Marcus", Endereco("Avenida JK, 581", -19.789, -45.679), "joaoDaSilva@gmail.com", "29380512040", 77988487960, 
+  
+  Departamento("TI"), Data(15, 11, 2000), Salario(15000), registroFuncionario1, Cargo("DevOps Senior"), true);
 
-
-  /*cadastro de 2 clientes*/
+  /*CADASTRO DE 2 CLIENTES*/
 
   Cliente *clientePF = new Cliente("Maria Ines", Endereco("Rua das Camelias", 1, 2), "abcLuz@gmail.com", "13218864623", 37991232625);
   Cliente *clientePJ = new Cliente("Livia Carvalho", Endereco("Rua das Oliveiras", 1, 3), "luzLuz@gmail.com", "99058771000105", 37991205080);
-  // cout << cliente1->getNome() << ", " << cliente1->getEndereco().getX() << ", " << cliente1->getDocumento() << ", " << cliente1->getTipoCliente() << endl;
-  // cout << cliente2->getNome() << ", " << cliente2->getEndereco().getX() << ", " << cliente2->getDocumento() << ", " << cliente2->getTipoCliente() << endl;
+
+  /*CADASTRO DE 1 PRODUTO*/
   
-
-
-  /*cadastro de 1 produto*/
   vector<pair<MateriaPrima*, double>> materiaPrimaList;
+  
   MateriaPrima *madeira = new MateriaPrima("Madeira", "kg", 1);
   madeira->setEstoque(20, Data::dataDeHoje);
+  
   MateriaPrima *plastico = new MateriaPrima("Plastico", "kg", 1);
   plastico->setEstoque(20, Data::dataDeHoje);
+  
   MateriaPrima *aluminio = new MateriaPrima("Aluminio", "kg", 1);
   aluminio->setEstoque(20, Data::dataDeHoje);
+  
   MateriaPrima *parafuso = new MateriaPrima("Parafuso", "unidades", 20);
   parafuso->setEstoque(300, Data::dataDeHoje);
+  
   materiaPrimaList.push_back(make_pair(madeira, 0.45));
   materiaPrimaList.push_back(make_pair(plastico, 0.15));
   materiaPrimaList.push_back(make_pair(aluminio, 0.1));
   materiaPrimaList.push_back(make_pair(parafuso, 8));
-  // cout << madeira->getNome() << ", " << madeira->getEstoque() << " " << madeira->getUnidadeMedida() << ", minimo: " << madeira->getEstoqueMinimo() << endl;
-  // cout << plastico->getNome() << ", " << plastico->getEstoque() << " " << plastico->getUnidadeMedida() << ", minimo: " << plastico->getEstoqueMinimo() << endl;
-  // cout << aluminio->getNome() << ", " << aluminio->getEstoque() << " " << aluminio->getUnidadeMedida() << ", minimo: " << aluminio->getEstoqueMinimo() << endl;
-  // cout << parafuso->getNome() << ", " << parafuso->getEstoque() << " " << parafuso->getUnidadeMedida() << ", minimo: " << parafuso->getEstoqueMinimo() << endl;
+  
   Produto *mesa = new Produto("Mesa", 1, 750, 11, 20, 0, "Moveis");
   mesa->setMateriaPrimaList(materiaPrimaList);
-  //cout << mesa->getNome() << ", " << mesa->getValorDeVenda() << ", " << mesa->getCategoria()->getTipo() << endl;
 
-
-
-  /*producao de lotes*/
-  mesa->registraLote(1, Data::dataDeHoje);
-  //cout << mesa->getQtdEstoque() << endl;
-  mesa->registraLote(2, Data::dataDeHoje);
-  //cout << mesa->getQtdEstoque() << endl;
-
-
+  /*PRODUCAO DE LOTES*/
   
-  /*tentar excluir funcionario*/
+  mesa->registraLote(1, Data::dataDeHoje);
+  mesa->registraLote(2, Data::dataDeHoje);
+  
+  /*TENTA EXCUIR FUNCIONARIO*/
+  
   try{
     empresa->excluiFuncionario(funcionario2);
   } catch (string e){
     cout << e << endl;
   }  
 
+  /*CLIENTE PJ SOLICITA ORCAMENTO DE 10 MESAS*/
 
-
-  /*cliente pj solicita orcamento de 10 mesas*/
   vector<pair<string, double>> valItens;
   valItens.push_back(make_pair(mesa->getNome(), 10));
   Orcamento *orcamento = new Orcamento(1, valItens, Data::dataDeHoje, clientePJ);
-  //cout << orcamento->getDataOrcamento().getData() << endl;
-  //cout << orcamento->getPreco(mesa->getNome()) << endl;
-  //cout << orcamento->getValorTotal() << endl;
+ 
+  /*AUMENTA O PREÇO EM 5% PARA O CLIENTE PJ EM UMA COMPRA DE 10 MESAS*/
 
-
-
-  /*aumenta o preço 5% cliente pj compra 10 mesas*/
   mesa->alteraPreco(1.05);
-  //cout << mesa->getValorDeVenda() << endl;
+
   PedidoDeCompra *pedido = new PedidoDeCompra(orcamento, Data(27,12, 2022));
   cout << "Codigo do pedido: " << pedido->getCodigo() << endl;
-  //cout << mesa->getQtdEstoque() << endl;
-  //cout << mesa->getLote(1)->getQuantidadeAtual() << endl;
+
   for(auto it : empresa->getRegistrosVendas()){
     it->imprime();
     cout << "Codigo do pedido: " << it->getCodigoPedido() << endl;
@@ -460,34 +1178,32 @@ empresa->login(usuarioLogado);
       cout << "Lote vendido " << it2 << endl;
     }
   }
-  //cout << mesa->getQtdEstoque() << endl;
 
+  /*ROTA DO TURNO DA MANHÃ*/
 
-
-  /*rota turno da manha*/
   Turno *matutino = new Turno("manha", Data(0,0,0,8,0,0), Data(0,0,0,16,0,0), 8);
-  //cout << matutino->getEntradaHora().getData() << ", " << matutino->getPeriodo() << ", " << matutino->getSaidaHora().getData() << endl;
+
   funcionario1->setJornada(matutino);
   funcionario2->setJornada(matutino);
   funcionario3->setJornada(matutino);
-  //cout << funcionario1->getJornada()->getPeriodo() << endl;
+
   Veiculo *primeiro = new Veiculo(1550, 20, matutino);
-  //cout << primeiro->getCapacidade() << ", " << primeiro->getHoraSaida().getData();
+
   vector<Funcionario*> passageiros;
   passageiros.push_back(funcionario1);
   passageiros.push_back(funcionario2);
   passageiros.push_back(funcionario3);
-  //cout << passageiros[1]->getNome() << endl;
+
   bool embarque = primeiro->setPassageiros(passageiros);
-  //cout << embarque << endl;
+
   for(auto it : primeiro->getRota()){
     cout << primeiro->getPassageiro(it.second)->getNome() << " embarca às ";
     Data a = primeiro->getHoraPosicao(primeiro->getPassageiro(it.second)); 
     cout << a.getHorario() << endl;
   }
   
-  
   Data::dataDeHoje = Data(26,11,2022,13,31,25);
+  
   /*LOGS DE TODAS AS OPERACOES*/
   
   for(auto it : empresa->getlogsEscrita()){
@@ -502,3 +1218,4 @@ empresa->login(usuarioLogado);
 
   return 0;
 }
+
