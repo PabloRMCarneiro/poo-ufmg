@@ -14,7 +14,6 @@ private:
 public:
   MetodoDePagamento();
   MetodoDePagamento(int valQuantidadeDeParcelas, float valQuantiaPorParcela);
-  //virtual ~MetodoDePagamento();
 
   int getQuantidadeDeParcelas();
   float getQuantiaPorParcelas();

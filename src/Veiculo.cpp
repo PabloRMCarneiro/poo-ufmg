@@ -185,7 +185,7 @@ void Veiculo::setHoraSaida()
         int tempoTotal, horaDoBusaoSair, horaturno, hora, minuto, segundo;
         Data valInicioTurno = this->getTurno()->getEntradaHora();
         horaturno = this->auxiliarTempoSegundos(valInicioTurno);
-        horaDoBusaoSair = horaturno - 600 - this->getTempoDeRota(); // hora do turno -10 min -tempodeRota
+        horaDoBusaoSair = horaturno - 600 - this->getTempoDeRota();
         this->horaSaida = this->auxiliarTempoHora(horaDoBusaoSair);
     }
 }
@@ -201,7 +201,7 @@ int Veiculo::auxiliarTempoSegundos(Data valHora)
     else
     {
         int tempo;
-        tempo = valHora.getHora() * 3600 + valHora.getMin() * 60 + valHora.getSeg(); // em segundos
+        tempo = valHora.getHora() * 3600 + valHora.getMin() * 60 + valHora.getSeg(); 
         return tempo;
     }
 }
@@ -257,11 +257,11 @@ void Veiculo::calculaRota(Endereco valEndereco)
         int tempoAteEmpresa = 0, tempoTot = 0, horaCasa1 = 0;
         if (this->rota.empty())
         {
-            distanciaDaEmpresa = valEndereco.getDistancia(Empresa::getEmpresa()->getEndereco().getX(), Empresa::getEmpresa()->getEndereco().getY()); // em km
-            distanciaTotal = distanciaDaEmpresa * 2;             // em km
-            tempoTot = int(this->calculaTempo(distanciaTotal));  // em segundos
+            distanciaDaEmpresa = valEndereco.getDistancia(Empresa::getEmpresa()->getEndereco().getX(), Empresa::getEmpresa()->getEndereco().getY()); 
+            distanciaTotal = distanciaDaEmpresa * 2;             
+            tempoTot = int(this->calculaTempo(distanciaTotal));  
             this->setTempoDeRota(tempoTot);
-            tempoAteEmpresa = int(this->calculaTempo(distanciaDaEmpresa)); // tempo da empresa ate a nova casa 1
+            tempoAteEmpresa = int(this->calculaTempo(distanciaDaEmpresa)); 
             horaCasa1 = this->tempoEmpresaCasa(tempoAteEmpresa);
             rota[horaCasa1] = valEndereco;
         }

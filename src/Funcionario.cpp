@@ -8,7 +8,6 @@
 #include "../include/UsuarioLogado.h"
 #include <string>
 #include <vector>
-//LogLeitura *a = new LogLeitura("nome", "Cargo");
 
 using namespace std;
 
@@ -61,10 +60,6 @@ Funcionario::Funcionario(string valNome, Endereco valEndereco, string valEmail, 
     Empresa::getEmpresa()->setFuncionario(this);
   }
 }
-
-// Funcionario::~Funcionario()
-// {
-// }
 
 Departamento Funcionario::getDepartamento()
 {

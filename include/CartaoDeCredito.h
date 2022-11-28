@@ -19,7 +19,6 @@ public:
   CartaoDeCredito();
   CartaoDeCredito(string numeroDoCartao, string nomeDoTitular,
                   string codigoDeSeguranca, Data dataDeValidade);
-  //virtual ~CartaoDeCredito();
 
   string getNumeroDoCartao();
   string getNomeDoTitular();

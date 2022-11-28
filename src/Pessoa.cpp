@@ -4,8 +4,7 @@
 #include "../include/Empresa.h"
 #include <iostream>
 #include <string>
-// LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
-// LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
+
 using namespace std;
 
 bool validaCPF(string Cpf)
@@ -124,10 +123,6 @@ Pessoa::Pessoa(string valNome, Endereco valEndereco, string valEmail,
     this->setDocumento(valDocumento);
   }
 }
-
-// Pessoa::~Pessoa()
-// {
-// }
 
 string Pessoa::getNome()
 {

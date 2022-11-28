@@ -1,8 +1,7 @@
 #include "../include/OrdemDeProducao.h"
 #include "../include/Empresa.h"
 #include "../include/UsuarioLogado.h"
-// LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
-// LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
+
 OrdemDeProducao::OrdemDeProducao()
 {
     if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("OrdemDeProducao.OrdemDeProducao"))

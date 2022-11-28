@@ -2,8 +2,7 @@
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
 #include "../include/Empresa.h"
-//LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "data");
-//LogLeitura *a = new LogLeitura("tipoCliente", "data");
+
 Data Data::dataDeHoje;
 
 Data::Data()
@@ -55,12 +54,6 @@ Data::Data(int valDia, int valMes, int valAno, int valHora, int valMin, int valS
         hora = valHora;
         minuto = valMin;
         segundo = valSeg;
-        // LogEscrita *a = new LogEscrita("dia", "indefinido", to_string(ano), "data");
-        // LogEscrita *b = new LogEscrita("dia", "indefinido", to_string(mes), "data");
-        // LogEscrita *c = new LogEscrita("dia", "indefinido", to_string(dia), "data");
-        // LogEscrita *d = new LogEscrita("dia", "indefinido", to_string(hora), "data");
-        // LogEscrita *e = new LogEscrita("dia", "indefinido", to_string(minuto), "data");
-        // LogEscrita *f = new LogEscrita("dia", "indefinido", to_string(segundo), "data");
     }
 }
 
@@ -74,7 +67,6 @@ int Data::getAno()
     }
     else
     {
-        //LogLeitura *a = new LogLeitura("ano", "Data");
         return ano;
         
     }
@@ -90,7 +82,6 @@ int Data::getMes()
     }
     else
     {
-       // LogLeitura *a = new LogLeitura("mes", "Data");
         return mes;
     }
     return mes;
@@ -106,7 +97,6 @@ int Data::getDia()
     }
     else
     {
-       // LogLeitura *a = new LogLeitura("dia", "Data");
         return dia;
     }
 }
@@ -121,7 +111,6 @@ int Data::getHora()
     }
     else
     {
-       // LogLeitura *a = new LogLeitura("hora", "Data");
         return hora;
     }
 }
@@ -136,7 +125,6 @@ int Data::getMin()
     }
     else
     {
-        //LogLeitura *a = new LogLeitura("min", "Data");
         return minuto;
     }
 }
@@ -151,7 +139,6 @@ int Data::getSeg()
     }
     else
     {
-        //LogLeitura *a = new LogLeitura("seg", "Data");
         return segundo;
     }
 }
@@ -320,7 +307,6 @@ bool Data::operator==(Data &d2)
     }
     else
     {
-        return ((ano == d2.ano) && (mes == d2.mes) && (dia == d2.dia) /* && (hora == d2.hora) &&
-            (minuto == d2.minuto) && (segundo == d2.segundo) */);
+        return ((ano == d2.ano) && (mes == d2.mes) && (dia == d2.dia));
     }
 }

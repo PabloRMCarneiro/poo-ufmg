@@ -14,10 +14,8 @@ class Departamento
     Departamento(string valNome);
     virtual ~Departamento();
     
-    //Metodos get:
     string getNome();
     
-    //Metodos set:
     void setNome(string valNome);
 };
 

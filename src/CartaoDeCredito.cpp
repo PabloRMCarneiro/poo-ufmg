@@ -36,10 +36,6 @@ CartaoDeCredito::CartaoDeCredito(string numeroDoCartao, string nomeDoTitular,
   }
 }
 
-// CartaoDeCredito::~CartaoDeCredito()
-// {
-// }
-
 string CartaoDeCredito::getNumeroDoCartao()
 {
   if (false)//!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("CartaoDeCredito.getNumeroDoCartao"))
