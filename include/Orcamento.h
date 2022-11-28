@@ -26,7 +26,6 @@ public:
   Orcamento();
   Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Fornecedor* valFornecedor);
   Orcamento(bool isCompraDeProduto, vector<pair<string, double>> valItens, Data valData, Cliente* valCliente);
-  //
   vector<pair<string, double>> getPrecos();
   double getValorTotal();
   Cliente* getCliente();

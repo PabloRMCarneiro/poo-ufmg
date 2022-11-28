@@ -15,4 +15,4 @@ class PermissaoNegada : public Log{
         string getMetodo();
         void imprime();
 };
-#endif //PERMISSAONEGADA_H_INCLUDED
+#endif 

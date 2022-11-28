@@ -4,8 +4,6 @@
 #include "../include/Empresa.h"
 #include "../include/LogLeitura.h"
 
-//LogEscrita *a = new LogEscrita("nome", "indefinido", valNome, "Cargo");
-//LogLeitura *a = new LogLeitura("nome", "Cargo");
 using namespace std;
 
 Boleto::Boleto():MetodoDePagamento() 
@@ -36,10 +34,6 @@ Boleto::Boleto(int quantidadeDeParcelas, Data valDataDeVencimento, double valVal
     }
 }
 
-// Boleto::~Boleto()
-// {
-
-// }
 Data Boleto::getDataDeVencimento()
 {
     if(!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Boleto.getDataDeVencimento"))

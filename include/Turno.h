@@ -12,15 +12,14 @@ class Turno{
         double jornada;
 
     public:
-    //construtor
         Turno(string valPeriodo, Data valEntradaHora, Data valSaidaHora, double valJornada);
         Turno();
-    //metodos set
+
         void setPeriodo(string valPeriodo);
         void setEntradaHora(Data valEntradaHora);
         void setSaidaHora(Data valSaidaHora);
         void setJornada(double valJornada);
-    //metodos get
+
         string getPeriodo();
         Data getEntradaHora();
         Data getSaidaHora();

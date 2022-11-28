@@ -14,7 +14,6 @@ private:
 public:
   Boleto();
   Boleto(int quantidadeDeParcelas, Data valDataDeVencimento, double valValor);
-  //virtual ~Boleto();
 
   Data getDataDeVencimento();
   void setDataDeVencimento(Data valDataDeVencimento);

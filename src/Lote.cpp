@@ -2,8 +2,7 @@
 #include "../include/UsuarioLogado.h"
 #include "../include/Empresa.h"
 #include "../include/PermissaoNegada.h"
-// LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
-// LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
+
 Lote::Lote()
 {
     if (!UsuarioLogado::getUsuarioLogado()->getUsuario()->getPermissoes("Lote.Lote"))

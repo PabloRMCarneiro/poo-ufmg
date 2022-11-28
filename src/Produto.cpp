@@ -3,8 +3,7 @@
 #include "../include/UsuarioLogado.h"
 #include "../include/PermissaoNegada.h"
 #include <string>
-// LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
-// LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
+
 vector<Produto *> Produto::produtolist;
 
 Produto::Produto()

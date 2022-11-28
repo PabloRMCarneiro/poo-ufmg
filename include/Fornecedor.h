@@ -14,14 +14,13 @@ class Fornecedor : public Pessoa{
         string tipoFornecedor;
         vector <pair<MateriaPrima*, double>> precos;
     public:
-    //construtor
         Fornecedor();
         Fornecedor(string valNome, Endereco valEndereco, string valEmail, string valDocumento, long int valTelefone);
-    //metodos set
+    
         void setPrecos(vector<pair<MateriaPrima*, double>> valPrecos);
         void setPreco(pair<MateriaPrima*, double> valMateriaPrima);
         void setTipoFornecedor(string valTipoFornecedor);
-    //metodos get
+    
         string getTipoFornecedor(string valTipoFornecedor);
         double getPreco(MateriaPrima* valMateriaPrima);
         vector <pair<MateriaPrima*, double>> getPrecos();

@@ -9,16 +9,15 @@ class Veiculo{
         int id;
         int capacidade;
         int atual;
-        int tempoDeRota; //segundos
+        int tempoDeRota; 
         Data horaSaida;
         Turno* turno;
-        map<int, Endereco> rota; //int -> hora em segundos, string -> endereço
+        map<int, Endereco> rota; 
         vector<Funcionario*> passageiros;
     public:
-    //construtor
         Veiculo();
         Veiculo(int valId, int valCapacidade, Turno* valTurno);
-    //metodos set
+
         void setId(int valId);
         void setCapacidade(int valCapacidade);
         bool setAtual(int valAtual);
@@ -29,7 +28,7 @@ class Veiculo{
         bool setPassageiros(vector<Funcionario*> valPassageiros);
         bool setPassageiro(Funcionario* valPassageiro);
         void setHoraSaida();
-    //metodos get
+
         int getId();
         int getCapacidade();
         int getAtual();
@@ -43,8 +42,8 @@ class Veiculo{
         void calculaRota(Endereco valEndereco);
         double calculaTempo(double valDistancia);
         int tempoEmpresaCasa(int valTempo);
-        int auxiliarTempoSegundos(Data valHora); //retorna hora em segundos
-        Data auxiliarTempoHora(int valHora); //retorna hora em Data
+        int auxiliarTempoSegundos(Data valHora); 
+        Data auxiliarTempoHora(int valHora); 
         void excluiPassageiro(Funcionario* valPassageiro);
 };
-#endif //VEICULO_H_INCLUDED
+#endif 

@@ -2,8 +2,7 @@
 #include "../include/PermissaoNegada.h"
 #include "../include/UsuarioLogado.h"
 #include "../include/Empresa.h"
-// LogEscrita *a = new LogEscrita("tipoCliente", "indefinido", this->tipoCliente, "Lote");
-// LogLeitura *a = new LogLeitura("tipoCliente", "Lote");
+
 int PedidoDeCompra::contPedidos = 0;
 
 PedidoDeCompra::PedidoDeCompra() {}
