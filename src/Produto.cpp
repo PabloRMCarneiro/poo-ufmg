@@ -378,9 +378,6 @@ pair<int, int> Produto::realizaVenda(int quantidade, Data venda)
         lote = it->getNumLote();
         faltaVender = it->vende(faltaVender);
         this->setQtdEstoque(this->qtdEstoque -(quantidade - faltaVender));
-        for(auto it : this->getMateriaPrimaList()){
-          it.first->setEstoque((-it.second), venda);
-        }
         break;
       }
     }
